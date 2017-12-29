@@ -4,8 +4,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
@@ -15,7 +13,6 @@ import javafx.util.Pair;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.HashSet;
 
@@ -37,6 +34,12 @@ public class MainWindow {
     private Button showCacheButton;
     @FXML
     private Button saveCacheAndDictionaryButton;
+    @FXML
+    private Button pathBrowseButton;
+    @FXML
+    private Button directoryBrowseButton;
+    @FXML
+    private Button loadCacheDictionaryButton;
 
     private static String corpusPath;
     private static String workingDirectoryPath;
@@ -132,75 +135,86 @@ public class MainWindow {
         if (!checkIfFolderExist())
             return;
 
-        System.out.println("Stemming method: " + stemmingCheckBox.isSelected());
-
-        //disable button
-        playButton.disableProperty().setValue(true);
-
-        //create folders for the posting files
-        createTempPostingDirectory();
-
-        //log
-        System.out.println("Indexer starts");
-        Main.time.setPlayStartTime(System.currentTimeMillis());
-
-        //start indexer process
-        Indexer indexer = new Indexer(workingDirectoryPath, stemmingCheckBox.isSelected());
-        long startTime = System.currentTimeMillis();
-
-        //set posting time
-        Main.time.setTempPostingStartTime(System.currentTimeMillis());
-        System.out.println("Creating temp posting files");
-
-        createTempPosting();
-        int numOfDocs = indexer.writeDocsToFile();
-        System.out.println("Amount of docs: " + numOfDocs);
-
-        //log
-        System.out.println("Finished creating temp posting files in " + (System.currentTimeMillis() - Main.time.getTempPostingStartTime()) + "ms (" + ((System.currentTimeMillis() - Main.time.getTempPostingStartTime()) / 1000.0 / 60.0) + " minutes)");
-
-        System.out.println("Finding 10,000 most important words");
-        indexer.findMostImportantWords();
-
-        //set final posting start time
-        Main.time.setFinalPostingStartTime(System.currentTimeMillis());
-        System.out.println("Merging temp posting files and creating final posting file");
-
-        indexer.mergeTempPostingFiles();
-
-        System.out.println("Splitting posting file to A-Z and 0-9");
         try {
-            indexer.splitPostingSortCreateCacheAndUpdateDictionary();
-            //indexer.splitPostingThreads();
-        } catch (IOException e) {
-            e.printStackTrace();
+
+            //all good let's run
+            System.out.println("Stemming method: " + stemmingCheckBox.isSelected());
+
+            //disable button
+            //playButton.disableProperty().setValue(true);
+
+            //create folders for the posting files
+            createTempPostingDirectory();
+
+            //log
+            System.out.println("Indexer starts");
+            Main.time.setPlayStartTime(System.currentTimeMillis());
+
+            //start indexer process
+            Indexer indexer = new Indexer(workingDirectoryPath, stemmingCheckBox.isSelected());
+            long startTime = System.currentTimeMillis();
+
+            //set posting time
+            Main.time.setTempPostingStartTime(System.currentTimeMillis());
+            System.out.println("Creating temp posting files");
+
+            createTempPosting();
+            int numOfDocs = indexer.writeDocsToFile();
+            System.out.println("Amount of docs: " + numOfDocs);
+
+            //log
+            System.out.println("Finished creating temp posting files in " + (System.currentTimeMillis() - Main.time.getTempPostingStartTime()) + "ms (" + ((System.currentTimeMillis() - Main.time.getTempPostingStartTime()) / 1000.0 / 60.0) + " minutes)");
+
+            System.out.println("Finding 10,000 most important words");
+            indexer.findMostImportantWords();
+
+            //set final posting start time
+            Main.time.setFinalPostingStartTime(System.currentTimeMillis());
+            System.out.println("Merging temp posting files and creating final posting file");
+
+            indexer.mergeTempPostingFiles();
+
+            System.out.println("Splitting posting file to A-Z and 0-9");
+            try {
+                indexer.splitPostingSortCreateCacheAndUpdateDictionary();
+                //indexer.splitPostingThreads();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            indexer.writeDictionaryToFile(workingDirectoryPath + "\\dictionary.txt");
+
+            System.out.println("Finished merging, splitting and creating final posting file in " + (System.currentTimeMillis() - Main.time.getFinalPostingStartTime()) + "ms (" + ((System.currentTimeMillis() - Main.time.getFinalPostingStartTime()) / 1000.0 / 60.0) + " minutes)");
+
+            //System.out.println("Writing cache to file");
+            //indexer.writeCacheToFile(workingDirectoryPath + "\\cache.txt");
+
+            System.out.println("Creating information message");
+            //create information message
+            long endTime = System.currentTimeMillis();
+            //File posting = new File(workingDirectoryPath + "\\posting_files");
+            File dictionary = new File(workingDirectoryPath + "\\dictionary.txt");
+            //File cache = new File(workingDirectoryPath + "\\cache.txt");
+            long indexSize;
+            if (stemmingCheckBox.isSelected())
+                indexSize = (getFolderSize(new File(workingDirectoryPath + "\\posting_files\\Stemming")) + dictionary.length()) / (long) Math.pow(2, 20);
+            else
+                indexSize = (getFolderSize(new File(workingDirectoryPath + "\\posting_files\\No_Stemming")) + dictionary.length()) / (long) Math.pow(2, 20);
+            //long cacheSize = cache.length() / (long) Math.pow(2, 20);
+
+            showAlert("Documents: " + numOfDocs + "\n" +
+                    "Index Size: " + indexSize + " MB\n" +
+                    //"Cache Size: " + cacheSize + " MB\n" +
+                    "Running Time: " + (endTime - startTime) / 60000.0 + "minutes");
+
+            showCacheButton.setDisable(false);
+            showDictionaryButton.setDisable(false);
+            saveCacheAndDictionaryButton.setDisable(false);
+
+            System.out.println("Finished everything in " + (System.currentTimeMillis() - Main.time.getPlayStartTime()) + "ms (" + ((System.currentTimeMillis() - Main.time.getPlayStartTime()) / 1000.0 / 60.0) + " minutes)");
+
+        } catch (Exception e) {
+
         }
-        indexer.writeDictionaryToFile(workingDirectoryPath + "\\dictionary.txt");
-
-        System.out.println("Finished merging, splitting and creating final posting file in " + (System.currentTimeMillis() - Main.time.getFinalPostingStartTime()) + "ms (" + ((System.currentTimeMillis() - Main.time.getFinalPostingStartTime()) / 1000.0 / 60.0) + " minutes)");
-
-        System.out.println("Writing cache to file");
-        indexer.writeCacheToFile(workingDirectoryPath + "\\cache.txt");
-
-        System.out.println("Creating information message");
-        //create information message
-        long endTime = System.currentTimeMillis();
-        File posting = new File(workingDirectoryPath + "\\posting_files");
-        File dictionary = new File(workingDirectoryPath + "\\dictionary.txt");
-        File cache = new File(workingDirectoryPath + "\\cache.txt");
-        long indexSize = (getFolderSize(posting) + dictionary.length()) / (long) Math.pow(2, 20);
-        long cacheSize = cache.length() / (long) Math.pow(2, 20);
-
-        showAlert("Documents: " + numOfDocs + "\n" +
-                "Index Size: " + indexSize + " MB\n" +
-                "Cache Size: " + cacheSize + " MB\n" +
-                "Running Time: " + (endTime - startTime) / 60000.0 + "minutes");
-
-        showCacheButton.setDisable(false);
-        showDictionaryButton.setDisable(false);
-        saveCacheAndDictionaryButton.setDisable(false);
-
-        System.out.println("Finished everything in " + (System.currentTimeMillis() - Main.time.getPlayStartTime()) + "ms (" + ((System.currentTimeMillis() - Main.time.getPlayStartTime()) / 1000.0 / 60.0) + " minutes)");
 
     }
 
@@ -283,13 +297,11 @@ public class MainWindow {
         }
 
         //write hash
-        /*
         try {
-            DocNameHash.writeHashToFile(new File("C:\\corpus\\hash.txt"));
+            DocNameHash.writeHashToFile(new File(corpusPath + "\\hash.txt"));
         } catch (IOException e) {
             e.printStackTrace();
         }
-        */
     }
 
     /**
@@ -312,6 +324,10 @@ public class MainWindow {
         //delete main memory
         Indexer indexer = new Indexer();
         indexer.resetStaticFields();
+
+        showCacheButton.setDisable(true);
+        showDictionaryButton.setDisable(true);
+        saveCacheAndDictionaryButton.setDisable(true);
 
         showAlert("Program Restarted Successfully");
     }
@@ -355,10 +371,12 @@ public class MainWindow {
             HashMap<String, Pair<Integer, Integer>> dictionary = loadDictionary(dictionaryFile);
             //HashMap<String, Pair<ArrayList<TermInDocCache>, Integer>> cache = loadCache(cacheFile);
             HashMap<String, Pair<ArrayList<Pair<String, Pair<String, String>>>, Integer>> cache = loadCache(cacheFile);
+            Indexer indexer = new Indexer(dictionary, cache);
 
             //load hash
             try {
-                DocNameHash.readHashToArray(new File(corpusPath + "\\hash.txt"));
+                DocNameHash docNameHash = new DocNameHash();
+                docNameHash.readHashToArray(new File(corpusPath + "\\hash.txt"));
             } catch (IOException e) {
                 e.printStackTrace();
             }

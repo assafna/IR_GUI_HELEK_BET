@@ -9,12 +9,11 @@ public class Doc {
     private String date;
     private String text;
 
-    public Doc(String name, String date, String text) {
+    Doc(String name, String date, String text) {
         this.name = name;
         this.date = date;
         this.text = text;
     }
-
 
     public String getName() {
         return name;
@@ -39,7 +38,6 @@ public class Doc {
     public void setText(String text) {
         this.text = text;
     }
-
 
     @Override
     public String toString() {

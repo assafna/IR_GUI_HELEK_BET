@@ -9,7 +9,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by USER on 12/4/2017.
+ * Used to index
  */
 public class Indexer {
 
@@ -17,6 +17,7 @@ public class Indexer {
     private static HashMap<String, Pair<Integer, Integer>> termsDictionary;
     private static HashMap<String, Pair<Integer, Integer>> finalTermsDictionary;
     private static HashMap<String, Integer> docsDictionary;
+    //private static HashMap<String, Pair<ArrayList<TermInDocCache>, Integer>> cache;
     //term, list of (doc, num of occurrences in doc, first index of term in doc), line number in posting
     private static HashMap<String, Pair<ArrayList<Pair<String, Pair<String, String>>>, Integer>> cache;
     private static int docsCounter = 0;
@@ -26,6 +27,7 @@ public class Indexer {
     private static Parser parser;
 
     //constants for class
+    //private String tempPostingFilesPath = "C:\\corpus\\temp_posting";
     private String tempPostingFilesPath;
     private int postingFileIndex = 5000; //starts from 5000 because there will be no more than 5000 files
     private final int termsArraysSize = 500000;
@@ -42,16 +44,15 @@ public class Indexer {
     private BufferedWriter tempPosting;
     private BufferedWriter docWriter;
     private HashSet<String> mostCommonTerms;
-    private boolean isStemm;
-
+    private boolean isStem;
 
     /**
      * initial all data structures and counters
      *
      * @param fileIndex index of the file
      */
-    Indexer(int fileIndex, String path, boolean isStemm) {
-        this.isStemm = isStemm;
+    Indexer(int fileIndex, String path, boolean isStem) {
+        this.isStem = isStem;
 
         //initial static data structures
         if (docsCounter == 0) {
@@ -75,7 +76,7 @@ public class Indexer {
         wights = new HashMap[termsArraysSize];
         stemmedWords = new HashMap<>();
         stemmer = new Stemmer();
-        if (isStemm)
+        if (isStem)
             tempPostingFilesPath = path + "\\posting_files\\Stemming";
         else
             tempPostingFilesPath = path + "\\posting_files\\No_Stemming";
@@ -87,9 +88,9 @@ public class Indexer {
 
     }
 
-    Indexer(String path, boolean isStemm) {
-        this.isStemm = isStemm;
-        if (isStemm)
+    Indexer(String path, boolean isStem) {
+        this.isStem = isStem;
+        if (isStem)
             tempPostingFilesPath = path + "\\posting_files\\Stemming";
         else
             tempPostingFilesPath = path + "\\posting_files\\No_Stemming";
@@ -106,7 +107,7 @@ public class Indexer {
     }
 
     Indexer(HashMap<String, Pair<Integer, Integer>> loadDictionary, HashMap<String, Pair<ArrayList<Pair<String, Pair<String, String>>>, Integer>> loadCache) {
-        termsDictionary = loadDictionary;
+        finalTermsDictionary = loadDictionary;
         cache = loadCache;
     }
 
@@ -130,7 +131,7 @@ public class Indexer {
             docsDictionary.put(doc.getName(), docsCounter);
 
             //index terms in doc
-            indexTerms(termsInFile, isStemm, doc.getName());
+            indexTerms(termsInFile, isStem, doc.getName());
             calculateTfPerTerm(docsLength[docsCounter], doc.getName(), termsInFile);
             docsCounter++;
 
@@ -547,7 +548,7 @@ public class Indexer {
         }
         Runnable[] runnables = new Runnable[abcLength];
 
-        for (int i = 0; i < abcLength; i++){
+        for (int i = 0; i < abcLength; i++) {
             int finalI = i;
             runnables[i] = () -> {
                 BufferedWriter bufferedWriter = bufferedWriterHashMap.get(abc[finalI]);
@@ -644,7 +645,7 @@ public class Indexer {
                     bw.write(docsInLineLength + '\n');
 
                     //get list of cacheDocsPerTerm terms in docs and insert to cache, reference to posting
-                    cache.put(lineSplit[0], new Pair<>(getSortedListOfDocsPerTerm(lineSplit[0], docsInLine, docsInLineLength, cacheDocsPerTerm), bwln));
+                    cache.put(lineSplit[0], new Pair<>(getSortedListOfDocsPerTerm(lineSplit[0], docsInLine, docsInLineLength, cacheDocsPerTerm + 1), bwln));
 
                     //update line number
                     bufferedWriterLineNumberHashMap.put(c, bwln + 1);
@@ -832,7 +833,7 @@ public class Indexer {
 
             //run through all docs
             int termInDocCachesSize = termInDocCaches.size();
-            for (int i = 0; i < termInDocCachesSize; i++) {
+            for (int i = 0; i < termInDocCachesSize && i < 100; i++) {
                 //TermInDocCache termInDocCache = termInDocCaches.get(i);
                 Pair<String, Pair<String, String>> termInDocCache = termInDocCaches.get(i);
                 stringBuilder.append("\t(Doc: " + docNameHash.getDocNoFromHash(termInDocCache.getKey()) +
@@ -870,7 +871,7 @@ public class Indexer {
         return strings;
     }
 
-    private void calculateTfPerTerm(int docLength,String docNo, List<String> termsInFile) {
+    private void calculateTfPerTerm(int docLength, String docNo, List<String> termsInFile) {
         try {
             HashSet<String> duplicateTerms = new HashSet<>();
             int listSize = termsInFile.size();
@@ -886,14 +887,12 @@ public class Indexer {
 
 
             }
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
 
     }
-
 
 
 }

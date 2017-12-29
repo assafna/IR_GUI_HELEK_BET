@@ -1,8 +1,9 @@
 package main;
 
-import javafx.util.Pair;
-
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -78,7 +79,7 @@ public class ReadFile {
                     while (line != null) {
 
                         //find date of files that start with LA
-                        if(line.contains("<DATE")) {
+                        if (line.contains("<DATE")) {
                             if (file.getName().startsWith("LA") && line.contains("<DATE>")) {
                                 line = br.readLine();
                                 line = br.readLine();
@@ -164,50 +165,51 @@ public class ReadFile {
 
     /**
      * parse date for files that start with "FB" or "FT"
-     * @param line line to parse
+     *
+     * @param line     line to parse
      * @param fileName name of the file
      * @return date
      */
     private StringBuilder parseDateForFBorFTfiles(String line, String fileName) {
         StringBuilder date = new StringBuilder();
 
-            char[] lineCharArray;
+        char[] lineCharArray;
 
-            //for files that start with "FB"
-            if (fileName.startsWith("FB") && line.contains("<DATE1>")) {
-                lineCharArray = line.toCharArray();
-                int i = 7;
-                while (lineCharArray[i] == 32)
+        //for files that start with "FB"
+        if (fileName.startsWith("FB") && line.contains("<DATE1>")) {
+            lineCharArray = line.toCharArray();
+            int i = 7;
+            while (lineCharArray[i] == 32)
+                i++;
+
+            while (lineCharArray[i] != '<') {
+                if (lineCharArray[i] == 32 && lineCharArray[i + 1] == '<')
+                    break;
+                if (lineCharArray[i] == 32 && lineCharArray[i + 1] == 32) {
                     i++;
-
-                while (lineCharArray[i] != '<') {
-                    if (lineCharArray[i] == 32 && lineCharArray[i + 1] == '<')
-                        break;
-                    if (lineCharArray[i] == 32 && lineCharArray[i + 1] == 32) {
-                        i++;
-                        continue;
-                    }
-                    date.append(lineCharArray[i]);
-                    i++;
-
+                    continue;
                 }
-                return date;
-            }
+                date.append(lineCharArray[i]);
+                i++;
 
-            //for files that start with "FT"
-            if (fileName.startsWith("FT") && line.contains("<DATE>")) {
-                lineCharArray = line.toCharArray();
-                date.append(lineCharArray[10]);
-                date.append(lineCharArray[11]);
-                date.append("/");
-                date.append(lineCharArray[8]);
-                date.append(lineCharArray[9]);
-                date.append("/19");
-                date.append(lineCharArray[6]);
-                date.append(lineCharArray[7]);
-
-                return date;
             }
+            return date;
+        }
+
+        //for files that start with "FT"
+        if (fileName.startsWith("FT") && line.contains("<DATE>")) {
+            lineCharArray = line.toCharArray();
+            date.append(lineCharArray[10]);
+            date.append(lineCharArray[11]);
+            date.append("/");
+            date.append(lineCharArray[8]);
+            date.append(lineCharArray[9]);
+            date.append("/19");
+            date.append(lineCharArray[6]);
+            date.append(lineCharArray[7]);
+
+            return date;
+        }
         return date;
     }
 
