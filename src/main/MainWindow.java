@@ -542,5 +542,11 @@ public class MainWindow {
         stage.setScene(new Scene(pane, 1000, 800));
         stage.show();
     }
+
+    public void runQueryStringButtonClick(ActionEvent actionEvent) {
+    }
+
+    public void resetQueriesDataButtonClick(ActionEvent actionEvent) {
+    }
 }
 
