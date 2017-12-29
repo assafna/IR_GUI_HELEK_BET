@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class Indexer {
 
-    private int assaf;
+    private int assaf2;
 
     //static data structures for docs and terms
     private static HashMap<String, Pair<Integer, Integer>> termsDictionary;
