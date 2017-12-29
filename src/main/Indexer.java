@@ -17,7 +17,6 @@ public class Indexer {
     private static HashMap<String, Pair<Integer, Integer>> termsDictionary;
     private static HashMap<String, Pair<Integer, Integer>> finalTermsDictionary;
     private static HashMap<String, Integer> docsDictionary;
-    //private static HashMap<String, Pair<ArrayList<TermInDocCache>, Integer>> cache;
     //term, list of (doc, num of occurrences in doc, first index of term in doc), line number in posting
     private static HashMap<String, Pair<ArrayList<Pair<String, Pair<String, String>>>, Integer>> cache;
     private static int docsCounter = 0;
@@ -27,7 +26,6 @@ public class Indexer {
     private static Parser parser;
 
     //constants for class
-    //private String tempPostingFilesPath = "C:\\corpus\\temp_posting";
     private String tempPostingFilesPath;
     private int postingFileIndex = 5000; //starts from 5000 because there will be no more than 5000 files
     private final int termsArraysSize = 500000;
@@ -39,6 +37,8 @@ public class Indexer {
     //data structures for terms
     private HashMap<String, Integer> tempTermsDictionary;
     private HashMap<String, Pair<Integer, Integer>>[] postingListArray;
+    private HashMap<String, Double>[] tfPerDoc;
+    private HashMap<Integer, Double>[] wights;
     private BufferedWriter tempPosting;
     private BufferedWriter docWriter;
     private HashSet<String> mostCommonTerms;
@@ -66,12 +66,13 @@ public class Indexer {
         }
 
         //initial class data structures and fields
-
         termIndex = 0;
         tempTermsDictionary = new HashMap<>();
         //termsFrequency = new int[termsArraysSize];
         //termsDf = new int[termsArraysSize];
         postingListArray = new HashMap[termsArraysSize];
+        tfPerDoc = new HashMap[termsArraysSize];
+        wights = new HashMap[termsArraysSize];
         stemmedWords = new HashMap<>();
         stemmer = new Stemmer();
         if (isStemm)
@@ -130,6 +131,7 @@ public class Indexer {
 
             //index terms in doc
             indexTerms(termsInFile, isStemm, doc.getName());
+            calculateTfPerTerm(docsLength[docsCounter], doc.getName(), termsInFile);
             docsCounter++;
 
         }
@@ -145,6 +147,7 @@ public class Indexer {
      * @param docName    name of he doc
      */
     private void indexTerms(List<String> stringList, boolean isStem, String docName) {
+
         int listSize = stringList.size();
 
         //for each term in the list
@@ -157,7 +160,9 @@ public class Indexer {
                 if (!stemmedWords.containsKey(term)) {
                     stemmer.add(term.toCharArray(), term.length());
                     stemmer.stem();
+                    String prevTerm = term;
                     term = stemmer.toString();
+                    stemmedWords.put(prevTerm, term);
                 } else
                     term = stemmedWords.get(term);
             }
@@ -194,6 +199,7 @@ public class Indexer {
         } else { //add term to all dictionaries
             tempTermsDictionary.put(term, index);
             postingListArray[index] = new HashMap<>();
+            tfPerDoc[index] = new HashMap<>();
             postingListArray[index].put(docName, new Pair<Integer, Integer>(1, indexOfTermInDoc));
 
         }
@@ -239,23 +245,23 @@ public class Indexer {
                     numOfDocsOfTerm = termsDictionary.get(term).getValue();
                 }
 
-                int termIndex = tempTermsDictionary.get(term);
+                int indexTerm = tempTermsDictionary.get(term);
                 if (term.length() > 1) {
                     tempPosting.write(term);
                     tempPosting.write('\t');
                     //write the posting list
-                    Collection<String> postingDocs = postingListArray[termIndex].keySet();
+                    Collection<String> postingDocs = postingListArray[indexTerm].keySet();
                     int counter = 0;
                     int postingDocsSize = postingDocs.size();
                     numOfDocsOfTerm += postingDocsSize;
                     for (String doc : postingDocs) {
                         counter++;
                         tempPosting.write(doc);
-                        int tf = postingListArray[termIndex].get(doc).getKey();
-                        tempPosting.write(tf + "");
-                        tempPosting.write('*');
-                        int indexInDoc = postingListArray[termIndex].get(doc).getValue();
-                        tempPosting.write(indexInDoc + "");
+                        int tf = postingListArray[indexTerm].get(doc).getKey();
+                        tempPosting.write(tf + "*");
+                        int indexInDoc = postingListArray[indexTerm].get(doc).getValue();
+                        tempPosting.write(indexInDoc + "*");
+                        tempPosting.write(tfPerDoc[indexTerm].get(doc) + "");
                         if (counter < postingDocsSize)
                             tempPosting.write('\t');
                         //m.lock();
@@ -863,4 +869,31 @@ public class Indexer {
 
         return strings;
     }
+
+    private void calculateTfPerTerm(int docLength,String docNo, List<String> termsInFile) {
+        try {
+            HashSet<String> duplicateTerms = new HashSet<>();
+            int listSize = termsInFile.size();
+            for (int i = 0; i < listSize; i++) {
+                String term = stemmedWords.get(termsInFile.get(i));
+                if (!duplicateTerms.contains(term)) {
+                    duplicateTerms.add(term);
+                    int index = tempTermsDictionary.get(term);
+                    double tfNormToDocLength = (double) postingListArray[index].get(docNo).getKey() / docLength;
+                    tfPerDoc[index].put(docNo, tfNormToDocLength);
+
+                }
+
+
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
+
+    }
+
+
+
 }
