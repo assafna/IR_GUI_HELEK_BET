@@ -401,7 +401,7 @@ public class Indexer {
      *
      * @param f1       file 1
      * @param f2       file 2
-     * @param fileName
+     * @param fileName file name decided ahead
      * @throws IOException exception
      */
     private void mergeTwoFiles(File f1, File f2, int fileName) throws IOException {
@@ -426,6 +426,7 @@ public class Indexer {
             int compareAnswer = line1Split[0].compareTo(line2Split[0]);
             if (compareAnswer == 0) {
                 if (finalTermsDictionary.containsKey(line1Split[0])) {
+                    //term tab line1 tab line 2
                     bw.write(line1Split[0] + '\t' + line1Split[1] + '\t' + line2Split[1] + '\n');
                 }
                 //next lines please
@@ -454,7 +455,6 @@ public class Indexer {
                 if (line2 != null) line2Split = splitTermLine(line2);
             }
         }
-
 
         //check if only one file is left, get him all
         while (line1 != null) {
@@ -504,84 +504,6 @@ public class Indexer {
 
         //return, including the rest of the line
         return new String[]{term.toString(), line.substring(i, lineCharsArrayLength)};
-
-    }
-
-    public void splitPostingThreads() throws IOException {
-        File directory = new File(tempPostingFilesPath);
-        //get posting file (the only one in the folder)
-        File postingFile = Objects.requireNonNull(directory.listFiles())[0];
-        BufferedReader br = new BufferedReader(new FileReader(postingFile));
-
-        //strings
-        ArrayList<ArrayList<String>> strings = new ArrayList<>();
-
-        //run through the posting file line by line
-        String line;
-        char c = '0';
-        ArrayList<String> strings0 = new ArrayList<>();
-        while ((line = br.readLine()) != null) {
-            if (line.charAt(0) == c)
-                strings0.add(line);
-            else {
-                strings.add(strings0);
-                strings0 = new ArrayList<>();
-                c = line.charAt(0);
-                strings0.add(line);
-            }
-        }
-        br.close();
-
-        //threads
-        ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
-
-        //create writers for all the files
-        HashMap<Character, BufferedWriter> bufferedWriterHashMap = new HashMap<>();
-        HashMap<Character, Integer> bufferedWriterLineNumberHashMap = new HashMap<>();
-        char[] abc = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-                'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
-                'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-        int abcLength = abc.length;
-        for (int i = 0; i < abcLength; i++) {
-            bufferedWriterHashMap.put(abc[i], new BufferedWriter(new FileWriter(tempPostingFilesPath + "\\" + abc[i] + ".txt")));
-            bufferedWriterLineNumberHashMap.put(abc[i], 0);
-        }
-        Runnable[] runnables = new Runnable[abcLength];
-
-        for (int i = 0; i < abcLength; i++) {
-            int finalI = i;
-            runnables[i] = () -> {
-                BufferedWriter bufferedWriter = bufferedWriterHashMap.get(abc[finalI]);
-                ArrayList<String> strings1 = strings.get(finalI);
-                int size = strings1.size();
-                for (int j = 0; j < size; j++) {
-                    try {
-                        bufferedWriter.write(strings1.get(j) + '\n');
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-                try {
-                    bufferedWriter.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            };
-        }
-
-        //run them together
-        for (int i = 0; i < runnables.length; i++)
-            executorService.execute(runnables[i]);
-
-        //wait for them to finish
-        executorService.shutdown();
-        try {
-            executorService.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        br.close();
 
     }
 
