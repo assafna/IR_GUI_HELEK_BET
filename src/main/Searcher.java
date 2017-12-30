@@ -1,9 +1,12 @@
 package main;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
+import javafx.util.Pair;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.*;
 
 /**
  * Created by USER on 12/29/2017.
@@ -68,5 +71,58 @@ public class Searcher {
 
         return queriesResults;
     }
+
+    /**
+     * find 5 most important sentences in doc
+     * @param docNo doc number
+     * @return list of 5 most important sentences in doc
+     */
+    public List<String> find5MostImportantSentences(String docNo) {
+        List<Pair<String, Double>> sumTfPerSent = new ArrayList<>();
+        File file = getFile(docNo);
+        //get list of all sentences in doc
+        List<String> sentences = new ReadFile().getListOfSentencesInFile(file, docNo);
+
+        //parse per sentence
+        Parser parser = new Parser(stopWords);
+        for (int i = 0; i < sentences.size(); i++) {
+            List<String> terms = parser.parse(sentences.get(i).toCharArray());
+
+            //sum tf of all the term in the sentence
+            double sumTf = 0;
+            for (int j = 0; j < terms.size(); j++)
+                sumTf += getTf(terms.get(j), docNo);
+            sumTfPerSent.add(new Pair<>(sentences.get(i), sumTf));
+        }
+        //sort list according to sumTf
+        Collections.sort(sumTfPerSent, new Comparator<Pair<String, Double>>() {
+            @Override
+            public int compare(Pair<String, Double> o1, Pair<String, Double> o2) {
+                if (o1.getValue() < o2.getValue())
+                    return -1;
+                return 1;
+            }
+        });
+
+        //add 5 sentences with biggest sumTf to list
+        List<String> mostImportantSentences = new ArrayList<>();
+        for(int i = 0; i < 5; i++)
+            mostImportantSentences.add(sumTfPerSent.get(i).getKey());
+
+        return mostImportantSentences;
+
+    }
+
+    private double getTf(String term, String doc){
+        //TODO: implement
+        return 0;
+    }
+
+    private File getFile(String doc){
+        //TODO: implement
+        return null;
+    }
+
+
 
 }

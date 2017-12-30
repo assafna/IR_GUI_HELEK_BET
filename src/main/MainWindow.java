@@ -47,6 +47,8 @@ public class MainWindow {
     private TextField queryStringText;
     @FXML
     private Button loadQueriesFileButton;
+    @FXML
+    private CheckBox mostImportantLinesCheckBox;
 
     private static String corpusPath;
     private static String workingDirectoryPath;
@@ -580,13 +582,20 @@ public class MainWindow {
     }
 
     public void runQueryStringButtonClick(ActionEvent actionEvent) {
-
-        String query = queryStringText.getText();
-        if(searcher == null)
+        if (searcher == null)
             searcher = new Searcher(stopWords);
-        List<String> results = searcher.search(query, stemmingCheckBox.isSelected());
+        if(!mostImportantLinesCheckBox.isSelected()) {
+            String query = queryStringText.getText();
+            List<String> results = searcher.search(query, stemmingCheckBox.isSelected());
 
-        //TODO: show the results
+            //TODO: show the results
+        }
+        else{
+            List<String> mostImportantSenences = searcher.find5MostImportantSentences(queryStringText.getText());
+            //TODO: show the results
+
+        }
+
     }
 
     public void resetQueriesDataButtonClick(ActionEvent actionEvent) {

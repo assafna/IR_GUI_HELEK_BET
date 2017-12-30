@@ -286,6 +286,11 @@ public class ReadFile {
         return newDate.toString();
     }
 
+    /**
+     * read queries from file
+     * @param file
+     * @return list of queries
+     */
     public ArrayList<String> readQueriesFile(String file){
         ArrayList<String> queries = new ArrayList<>();
         try{
@@ -301,6 +306,59 @@ public class ReadFile {
         }
         return queries;
 
+    }
+
+    /**
+     * split file into sentences
+     * @param file file to split
+     * @return list of all sentences in file
+     */
+    public List<String> getListOfSentencesInFile(File file, String docNo){
+        List<String> sentences = new ArrayList<>();
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            StringBuilder text = new StringBuilder();
+            String line;
+            while ((line = br.readLine()) != null) {
+                //looking for the doc
+                if (line.contains(docNo)) {
+                    while ((line = br.readLine()) != null) {
+                        //looking for text
+                        if (line.contains("<TEXT>")) {
+
+                            line = br.readLine();
+
+                            //reading all the text
+                            while (line != null && !line.contains("</TEXT>")) {
+
+                                text.append(line);
+                                text.append(" ");
+                                line = br.readLine();
+                            }
+                            break;
+                        }
+                    }
+                    break;
+                }
+            }
+
+            char[] textArray = text.toString().toCharArray();
+            StringBuilder sentence = new StringBuilder();
+            int i = 0;
+            while (i < textArray.length) {
+                if (i > 0 && !isDigit(textArray[i - 1]) && textArray[i] == '.') {
+                    sentences.add(sentence.toString());
+                    sentence = new StringBuilder();
+                } else
+                    sentence.append(textArray[i]);
+                i++;
+            }
+
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+        return sentences;
     }
 
     public int getNumOfDocs() {
