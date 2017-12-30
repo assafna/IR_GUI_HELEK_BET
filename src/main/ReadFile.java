@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 /**
  * Used to read the corpus files
@@ -13,6 +14,7 @@ import java.util.HashSet;
 public class ReadFile {
 
     private DocNameHash docNameHash;
+    static int counter = 0;
 
     ReadFile() {
         docNameHash = new DocNameHash();
@@ -87,8 +89,11 @@ public class ReadFile {
                                 int countComma = 0;
                                 int index = 0;
                                 while (index < lineCharArray.length) {
-                                    if (lineCharArray[index] == ',')
+                                    if (lineCharArray[index] == ',') {
                                         countComma++;
+                                        index++;
+                                        continue;
+                                    }
                                     if (countComma == 2)
                                         break;
                                     else
@@ -124,15 +129,18 @@ public class ReadFile {
 
                     }
 
-                    //add to pairs
-                    if (date.toString().length() == 0)
+                    String convertedDate;
+                    if (date.toString().length() == 0) {
                         date.append("-");
-
-                    pairs.add(new Doc(docNameHash.getHashFromDocNo(docNo.toString()), date.toString(), text.toString()));
+                        convertedDate = date.toString();
+                    }
+                    else
+                        convertedDate = convertDateToUniformFormat(date.toString(), file.getName());
+                    pairs.add(new Doc(docNameHash.getHashFromDocNo(docNo.toString()),convertedDate , text.toString()));
                 }
 
             }
-
+            counter++;
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -213,6 +221,88 @@ public class ReadFile {
         return date;
     }
 
+    /**
+     * convert date according to the format DD/NN/YYYY
+     * @param date date to convert
+     * @param fileName file name
+     * @return converted date
+     */
+    private String convertDateToUniformFormat(String date, String fileName) {
+        char[] nameArray = fileName.toCharArray();
+        if (nameArray[0] == 'F' && nameArray[1] == 'T')
+            return date;
+
+        char[] dateArray = date.toCharArray();
+        StringBuilder newDate = new StringBuilder();
+
+        //file name start with "FB"
+        if (nameArray[0] == 'F' && nameArray[1] == 'B') {
+            int monthIndex;
+            //day has 1 digit
+            if (dateArray[1] == 32) {
+                newDate.append(0);
+                newDate.append(dateArray[0]);
+                monthIndex = 2;
+            } else {
+                newDate.append(dateArray[0]);
+                newDate.append(dateArray[1]);
+                monthIndex = 3;
+            }
+            newDate.append("/");
+            //add month
+            Parser parser = new Parser(dateArray, monthIndex);
+            newDate.append(parser.getMonth());
+
+        }
+
+        //file name starts with "LA"
+        if (nameArray[0] == 'L' && nameArray[1] == 'A') {
+
+            //add day
+            int i;
+            for (i = 0; i < dateArray.length && !isDigit(dateArray[i]); i++) ;
+            if(i == dateArray.length)
+                return date.toString();
+            if (dateArray[i + 1] == 32) {
+                newDate.append(0);
+                newDate.append(dateArray[i]);
+            }
+            else {
+                newDate.append(dateArray[i]);
+                newDate.append(dateArray[i + 1]);
+            }
+
+            newDate.append("/");
+            //add month
+            Parser parser = new Parser(dateArray, 0);
+            newDate.append(parser.getMonth());
+        }
+        newDate.append("/");
+        //add year
+        newDate.append(dateArray[dateArray.length - 4]);
+        newDate.append(dateArray[dateArray.length - 3]);
+        newDate.append(dateArray[dateArray.length - 2]);
+        newDate.append(dateArray[dateArray.length - 1]);
+        return newDate.toString();
+    }
+
+    public ArrayList<String> readQueriesFile(String file){
+        ArrayList<String> queries = new ArrayList<>();
+        try{
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String line;
+            while((line = br.readLine()) != null){
+                if(line.contains("<title>"))
+                    queries.add(line.substring(8));
+            }
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+        return queries;
+
+    }
+
     public int getNumOfDocs() {
         return numOfDocs;
     }
@@ -220,6 +310,15 @@ public class ReadFile {
     @Override
     public String toString() {
         return numOfDocs + "";
+    }
+
+    /**
+     * check if the char is a digit
+     * @param c char to check
+     * @return true if the char is digit
+     */
+    private boolean isDigit(char c){
+        return c >= 48 && c <= 57;
     }
 
 }

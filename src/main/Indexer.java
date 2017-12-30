@@ -695,6 +695,10 @@ public class Indexer {
     }
 
 
+    /**
+     * write cache object to file
+     * @param path path of the file
+     */
     public void writeCacheToFile(String path) {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(path));
@@ -720,6 +724,9 @@ public class Indexer {
         }
     }
 
+    /**
+     * reset dictionaries and static values
+     */
     public void resetStaticFields() {
         if (docsCounter > 0) {
             termsDictionary.clear();
@@ -793,6 +800,12 @@ public class Indexer {
         return strings;
     }
 
+    /**
+     * calculate tf for each term in each doc
+     * @param docLength number of terms in doc
+     * @param docNo doc name
+     * @param termsInFile list of terms in file
+     */
     private void calculateTfPerTerm(int docLength, String docNo, List<String> termsInFile) {
         try {
             HashSet<String> duplicateTerms = new HashSet<>();

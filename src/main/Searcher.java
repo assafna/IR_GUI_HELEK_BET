@@ -2,12 +2,19 @@ package main;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 
 /**
  * Created by USER on 12/29/2017.
  */
 public class Searcher {
+
+    private HashSet<String> stopWords = new HashSet();
+
+    public Searcher(HashSet<String> stopWords){
+        this.stopWords = stopWords;
+    }
 
     /**
      * searches for a query given as a string, and returns relevant docs
@@ -18,7 +25,7 @@ public class Searcher {
      */
     public List<String> search(String query, boolean isStem) {
         //create parser and parse text
-        Parser parser = new Parser();
+        Parser parser = new Parser(stopWords);
         List<String> queryTerms = parser.parse(query.toCharArray());
 
         //stem
@@ -27,7 +34,8 @@ public class Searcher {
             Stemmer stemmer = new Stemmer();
 
             //stem each term
-            for (String s : queryTerms) {
+            for (int i = 0; i < queryTerms.size(); i++) {
+                String s = queryTerms.get(i);
                 stemmer.add(s.toCharArray(), s.length());
                 stemmer.stem();
                 queryTermsStemmed.add(stemmer.toString());
@@ -37,7 +45,10 @@ public class Searcher {
         }
 
         //ranking method
+        Ranker ranker = new Ranker();
         List<String> rankedDocs = new ArrayList<>();
+        for (int i = 0; i < rankedDocs.size(); i++)
+            rankedDocs.addAll(ranker.getRankedDocs(rankedDocs.get(i)));
         return rankedDocs;
     }
 
@@ -52,8 +63,8 @@ public class Searcher {
         HashMap<String, List<String>> queriesResults = new HashMap<>();
 
         //send each query to search function
-        for (String s : queries)
-            queriesResults.put(s, search(s, isStem));
+        for(int i = 0; i < queries.size(); i++)
+            queriesResults.put(queries.get(i), search(queries.get(i), isStem));
 
         return queriesResults;
     }

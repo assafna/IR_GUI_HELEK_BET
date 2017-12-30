@@ -15,6 +15,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 
 public class MainWindow {
 
@@ -40,11 +41,22 @@ public class MainWindow {
     private Button directoryBrowseButton;
     @FXML
     private Button loadCacheDictionaryButton;
+    @FXML
+    private Button runQueryStringButton;
+    @FXML
+    private TextField queryStringText;
+    @FXML
+    private Button loadQueriesFileButton;
 
     private static String corpusPath;
     private static String workingDirectoryPath;
     private static String pathToSaveDictionaryAndCache = null;
-    private static String pathToLoadDictionaryAndCache;
+    private static String pathToLoadDictionaryAndCache = null;
+    private static Searcher searcher = null;
+    private static HashSet<String> stopWords;
+    private static boolean engineCreated = false;
+
+
 
     public void initialize() {
         System.out.println("GUI launched");
@@ -209,6 +221,8 @@ public class MainWindow {
             showCacheButton.setDisable(false);
             showDictionaryButton.setDisable(false);
             saveCacheAndDictionaryButton.setDisable(false);
+            engineCreated = true;
+            loadQueriesFileButton.setDisable(false);
 
             System.out.println("Finished everything in " + (System.currentTimeMillis() - Main.time.getPlayStartTime()) + "ms (" + ((System.currentTimeMillis() - Main.time.getPlayStartTime()) / 1000.0 / 60.0) + " minutes)");
 
@@ -283,7 +297,7 @@ public class MainWindow {
      */
     private void createTempPosting() {
         ReadFile readFile = new ReadFile();
-        HashSet<String> stopWords = readFile.createStopWordsMap(corpusPath + "\\stop_words.txt");
+        stopWords = readFile.createStopWordsMap(corpusPath + "\\stop_words.txt");
         Parser parser = new Parser(stopWords);
         ArrayList<File> files = new ArrayList<>();
         readFile.getListOfAllFiles(corpusPath + "\\corpus", files);
@@ -376,13 +390,17 @@ public class MainWindow {
             //load hash
             try {
                 DocNameHash docNameHash = new DocNameHash();
-                docNameHash.readHashToArray(new File(corpusPath + "\\hash.txt"));
+                docNameHash.readHashToArray(new File(pathToLoadDictionaryAndCache + "\\hash.txt"));
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
             showDictionaryButton.setDisable(false);
             showCacheButton.setDisable(false);
+            if(stopWords == null)
+                stopWords = new ReadFile().createStopWordsMap(pathToLoadDictionaryAndCache + "\\stop_words.txt");
+            engineCreated = true;
+            loadQueriesFileButton.setDisable(false);
             showAlert("Dictionary and Cache Loaded Successfully");
         } catch (FileNotFoundException e) {
             showAlert("No Dictionary and Cache in the Directory");
@@ -562,9 +580,41 @@ public class MainWindow {
     }
 
     public void runQueryStringButtonClick(ActionEvent actionEvent) {
+
+        String query = queryStringText.getText();
+        if(searcher == null)
+            searcher = new Searcher(stopWords);
+        List<String> results = searcher.search(query, stemmingCheckBox.isSelected());
+
+        //TODO: show the results
     }
 
     public void resetQueriesDataButtonClick(ActionEvent actionEvent) {
     }
+
+    public void queryTextFieldKeyReleased(){
+        if(queryStringText.getText().length() > 0 && engineCreated)
+            runQueryStringButton.setDisable(false);
+    }
+
+    public void loadQueriesFileButtonPressed(){
+        String pathForQueriesFile;
+        //choose directory to load queries file
+        DirectoryChooser directoryChooser = new DirectoryChooser();
+        File selectedDirectory = directoryChooser.showDialog(null);
+
+        if (selectedDirectory != null) {
+            pathForQueriesFile = selectedDirectory.getAbsolutePath();
+            List<String> queries = new ReadFile().readQueriesFile(pathForQueriesFile + "\\queries.txt");
+            if(searcher == null)
+                searcher = new Searcher(stopWords);
+            HashMap<String, List<String>> results = searcher.search(queries, stemmingCheckBox.isSelected());
+
+            //TODO: show the results
+
+        }
+
+    }
+
 }
 

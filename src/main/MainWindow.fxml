@@ -140,14 +140,14 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
                     </GridPane.margin>
                 </Label>
-                <TextField fx:id="queryStringText" onKeyReleased="#workingDirectoryTextFieldKeyReleased"
+                <TextField fx:id="queryStringText" onKeyReleased="#queryTextFieldKeyReleased"
                            prefHeight="19.0" prefWidth="385.0" promptText="Insert query.." GridPane.columnIndex="1"
                            GridPane.rowIndex="4">
                     <GridPane.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
                     </GridPane.margin>
                 </TextField>
-                <Button fx:id="runQueryStringButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+                <Button fx:id="runQueryStringButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" disable="true"
                         onAction="#runQueryStringButtonClick" text="Run" GridPane.columnIndex="2" GridPane.rowIndex="4">
                     <GridPane.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
@@ -158,8 +158,8 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
                     </GridPane.margin>
                 </Label>
-                <Button mnemonicParsing="false" text="Load &amp; Run" GridPane.columnIndex="1"
-                        GridPane.halignment="LEFT" GridPane.rowIndex="5">
+                <Button fx:id="loadQueriesFileButton" mnemonicParsing="false" text="Load &amp; Run" GridPane.columnIndex="1"
+                        GridPane.halignment="LEFT" GridPane.rowIndex="5" onAction="#loadQueriesFileButtonPressed" disable="false">
                     <GridPane.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
                     </GridPane.margin>

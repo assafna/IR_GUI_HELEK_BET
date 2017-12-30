@@ -20,6 +20,12 @@ public class Parser {
     Parser() {
     }
 
+    Parser(char[] docArray, int index){
+        this.docArray = docArray;
+        this.index = index;
+        this.arrayLength = docArray.length;
+    }
+
     /**
      * parse the doc array according to the given rules
      *
@@ -364,7 +370,7 @@ public class Parser {
      *
      * @return int to represent the month, 0 otherwise
      */
-    private String getMonth() {
+    public String getMonth() {
 
         if (index + 3 >= arrayLength) return null; //out of bound check
 
