@@ -591,7 +591,7 @@ public class MainWindow {
             //TODO: show the results
         }
         else{
-            List<String> mostImportantSenences = searcher.find5MostImportantSentences(queryStringText.getText());
+            List<String> mostImportantSenences = searcher.find5MostImportantSentences(queryStringText.getText(), pathToLoadDictionaryAndCache);
             //TODO: show the results
 
         }

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/MainWindow.java" afterPath="$PROJECT_DIR$/src/main/MainWindow.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -61,11 +62,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="MainWindow.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainWindow.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/MainWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
-              <caret line="591" column="9" lean-forward="true" selection-start-line="591" selection-start-column="9" selection-end-line="591" selection-end-column="9" />
+            <state relative-caret-position="359">
+              <caret line="593" column="141" lean-forward="false" selection-start-line="593" selection-start-column="141" selection-end-line="593" selection-end-column="141" />
               <folding>
                 <element signature="e#1633#1634#0" expanded="true" />
                 <element signature="e#1683#1684#0" expanded="true" />
@@ -92,10 +93,10 @@
                 <element signature="docComment;method#showCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
                 <element signature="docComment;method#showDictionaryButtonPressed#0;class#MainWindow#0" expanded="false" />
                 <element signature="method#showData#0;class#MainWindow#0" expanded="false" />
-                <marker date="1514652111092" expanded="false" signature="18832:18843" ph=" { " />
-                <marker date="1514652111092" expanded="false" signature="18858:18864" ph=" }" />
-                <marker date="1514652111092" expanded="false" signature="19056:19067" ph=" { " />
-                <marker date="1514652111092" expanded="false" signature="19083:19089" ph=" }" />
+                <marker date="1514741758392" expanded="false" signature="18832:18843" ph=" { " />
+                <marker date="1514741758392" expanded="false" signature="18858:18864" ph=" }" />
+                <marker date="1514741758392" expanded="false" signature="19056:19067" ph=" { " />
+                <marker date="1514741758392" expanded="false" signature="19083:19089" ph=" }" />
               </folding>
             </state>
           </provider>
@@ -200,7 +201,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Searcher.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Searcher.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Searcher.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="666">
@@ -358,11 +359,11 @@
         <option value="$PROJECT_DIR$/src/main/Ranker.java" />
         <option value="$PROJECT_DIR$/src/main/Main.java" />
         <option value="$PROJECT_DIR$/src/main/MainWindow.fxml" />
-        <option value="$PROJECT_DIR$/src/main/MainWindow.java" />
         <option value="$PROJECT_DIR$/src/main/Indexer.java" />
         <option value="$PROJECT_DIR$/src/main/Doc.java" />
         <option value="$PROJECT_DIR$/src/main/ReadFile.java" />
         <option value="$PROJECT_DIR$/src/main/Searcher.java" />
+        <option value="$PROJECT_DIR$/src/main/MainWindow.java" />
       </list>
     </option>
   </component>
@@ -1039,7 +1040,7 @@
       <workItem from="1513557760719" duration="38000" />
       <workItem from="1514535894246" duration="76000" />
       <workItem from="1514536099713" duration="1207000" />
-      <workItem from="1514539945103" duration="53108000" />
+      <workItem from="1514539945103" duration="54352000" />
     </task>
     <task id="LOCAL-00001" summary="searcher">
       <created>1514540300666</created>
@@ -1097,11 +1098,18 @@
       <option name="project" value="LOCAL" />
       <updated>1514740401144</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="get doc file implemented">
+      <created>1514740433454</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1514740433454</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102477000" />
+    <option name="totallyTimeSpent" value="103721000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-14" y="-14" width="3228" height="1738" extended-state="6" />
@@ -1126,7 +1134,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17615893" sideWeight="0.49625" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13907285" sideWeight="0.4359375" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13907285" sideWeight="0.4359375" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Floobits" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14701986" sideWeight="0.5640625" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2009375" sideWeight="0.6703755" order="1" side_tool="false" content_ui="combo" />
@@ -1307,10 +1315,10 @@
             <element signature="docComment;method#showCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
             <element signature="docComment;method#showDictionaryButtonPressed#0;class#MainWindow#0" expanded="false" />
             <element signature="method#showData#0;class#MainWindow#0" expanded="false" />
-            <marker date="1514652111092" expanded="false" signature="18832:18843" ph=" { " />
-            <marker date="1514652111092" expanded="false" signature="18858:18864" ph=" }" />
-            <marker date="1514652111092" expanded="false" signature="19056:19067" ph=" { " />
-            <marker date="1514652111092" expanded="false" signature="19083:19089" ph=" }" />
+            <marker date="1514741758392" expanded="false" signature="18832:18843" ph=" { " />
+            <marker date="1514741758392" expanded="false" signature="18858:18864" ph=" }" />
+            <marker date="1514741758392" expanded="false" signature="19056:19067" ph=" { " />
+            <marker date="1514741758392" expanded="false" signature="19083:19089" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -1476,10 +1484,10 @@
             <element signature="docComment;method#showCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
             <element signature="docComment;method#showDictionaryButtonPressed#0;class#MainWindow#0" expanded="false" />
             <element signature="method#showData#0;class#MainWindow#0" expanded="false" />
-            <marker date="1514652111092" expanded="false" signature="18832:18843" ph=" { " />
-            <marker date="1514652111092" expanded="false" signature="18858:18864" ph=" }" />
-            <marker date="1514652111092" expanded="false" signature="19056:19067" ph=" { " />
-            <marker date="1514652111092" expanded="false" signature="19083:19089" ph=" }" />
+            <marker date="1514741758392" expanded="false" signature="18832:18843" ph=" { " />
+            <marker date="1514741758392" expanded="false" signature="18858:18864" ph=" }" />
+            <marker date="1514741758392" expanded="false" signature="19056:19067" ph=" { " />
+            <marker date="1514741758392" expanded="false" signature="19083:19089" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -1772,44 +1780,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/MainWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="591" column="9" lean-forward="true" selection-start-line="591" selection-start-column="9" selection-end-line="591" selection-end-column="9" />
-          <folding>
-            <element signature="e#1633#1634#0" expanded="true" />
-            <element signature="e#1683#1684#0" expanded="true" />
-            <element signature="method#checkIfEnteredPath#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#checkIfFolderExist#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#checkIfFolderExist#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#createTempPostingDirectory#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#createTempPostingDirectory#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#getFolderSize#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#getFolderSize#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#createTempPosting#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#createTempPosting#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#resetButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#resetButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#deleteFolder#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#loadDictionary#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#loadDictionary#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#loadCache#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#loadCache#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#saveDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#saveDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#showAlert#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#showAlert#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#showCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#showDictionaryButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#showData#0;class#MainWindow#0" expanded="false" />
-            <marker date="1514652111092" expanded="false" signature="18832:18843" ph=" { " />
-            <marker date="1514652111092" expanded="false" signature="18858:18864" ph=" }" />
-            <marker date="1514652111092" expanded="false" signature="19056:19067" ph=" { " />
-            <marker date="1514652111092" expanded="false" signature="19083:19089" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Parser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2183">
@@ -1926,6 +1896,44 @@
             <element signature="e#380#381#0" expanded="true" />
             <element signature="method#find5MostImportantSentences#0;class#Searcher#0" expanded="false" />
             <element signature="method#compare#0;class#3367:3640" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="593" column="141" lean-forward="false" selection-start-line="593" selection-start-column="141" selection-end-line="593" selection-end-column="141" />
+          <folding>
+            <element signature="e#1633#1634#0" expanded="true" />
+            <element signature="e#1683#1684#0" expanded="true" />
+            <element signature="method#checkIfEnteredPath#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#checkIfFolderExist#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#checkIfFolderExist#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#createTempPostingDirectory#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#createTempPostingDirectory#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#getFolderSize#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#getFolderSize#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#createTempPosting#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#createTempPosting#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#resetButtonPressed#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#resetButtonPressed#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#deleteFolder#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#loadDictionary#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#loadDictionary#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#loadCache#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#loadCache#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#saveDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#saveDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#showAlert#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#showAlert#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#showCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#showDictionaryButtonPressed#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#showData#0;class#MainWindow#0" expanded="false" />
+            <marker date="1514741758392" expanded="false" signature="18832:18843" ph=" { " />
+            <marker date="1514741758392" expanded="false" signature="18858:18864" ph=" }" />
+            <marker date="1514741758392" expanded="false" signature="19056:19067" ph=" { " />
+            <marker date="1514741758392" expanded="false" signature="19083:19089" ph=" }" />
           </folding>
         </state>
       </provider>
