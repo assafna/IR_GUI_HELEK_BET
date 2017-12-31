@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 public class Indexer {
 
     //static data structures for docs and terms
-    private static HashMap<String, Pair<Integer, Integer>> termsDictionary;
+    private static HashMap<String, Pair<Integer, Integer>> termsDictionary; //need to change to - term, df, idf, pointer to posting list
     private static HashMap<String, Pair<Integer, Integer>> finalTermsDictionary;
     private static HashMap<String, Integer> docsDictionary;
     //private static HashMap<String, Pair<ArrayList<TermInDocCache>, Integer>> cache;
@@ -24,6 +24,7 @@ public class Indexer {
     private static int[] mostCommonTermFrequency;
     private static String[] docsDates;
     private static int[] docsLength;
+    private static String[] docsFile;
     private static Parser parser;
 
     //constants for class
@@ -61,6 +62,7 @@ public class Indexer {
             mostCommonTermFrequency = new int[1000000];
             docsDates = new String[1000000];
             docsLength = new int[1000000];
+            docsFile = new String[1000000];
             cache = new HashMap<>();
             finalTermsDictionary = new HashMap<>();
             parser = new Parser();
@@ -128,6 +130,7 @@ public class Indexer {
             //add doc to dictionary
             docsDates[docsCounter] = doc.getDate();
             docsLength[docsCounter] = termsInFile.size();
+            docsFile[docsCounter] = doc.getFile();
             docsDictionary.put(doc.getName(), docsCounter);
 
             //index terms in doc
@@ -300,6 +303,8 @@ public class Indexer {
                 docWriter.write(mostCommonTermFrequency[docIndex] + "");
                 docWriter.write('\t');
                 docWriter.write(docsDates[docIndex]);
+                docWriter.write('\t');
+                docWriter.write(docsFile[docIndex]);
                 docWriter.write('\n');
 
             }

@@ -75,11 +75,14 @@ public class Searcher {
     /**
      * find 5 most important sentences in doc
      * @param docNo doc number
+     * @param path path to docs file
      * @return list of 5 most important sentences in doc
      */
-    public List<String> find5MostImportantSentences(String docNo) {
+    public List<String> find5MostImportantSentences(String docNo, String path) {
         List<Pair<String, Double>> sumTfPerSent = new ArrayList<>();
-        File file = getFile(docNo);
+        String fileName = new ReadFile().getDoc(docNo, path).getFile();
+        File file;
+        file = new File(fileName);
         //get list of all sentences in doc
         List<String> sentences = new ReadFile().getListOfSentencesInFile(file, docNo);
 
@@ -118,10 +121,7 @@ public class Searcher {
         return 0;
     }
 
-    private File getFile(String doc){
-        //TODO: implement
-        return null;
-    }
+
 
 
 

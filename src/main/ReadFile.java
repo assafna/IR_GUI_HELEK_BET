@@ -136,7 +136,7 @@ public class ReadFile {
                     }
                     else
                         convertedDate = convertDateToUniformFormat(date.toString(), file.getName());
-                    pairs.add(new Doc(docNameHash.getHashFromDocNo(docNo.toString()),convertedDate , text.toString()));
+                    pairs.add(new Doc(docNameHash.getHashFromDocNo(docNo.toString()),convertedDate , text.toString(), file.getAbsolutePath()));
                 }
 
             }
@@ -361,6 +361,26 @@ public class ReadFile {
         return sentences;
     }
 
+    public Doc getDoc(String docNo, String path){
+        Doc doc = null;
+        try{
+            BufferedReader br= new BufferedReader(new FileReader(path + "docs.txt"));
+            String line;
+            while((line = br.readLine()) != null){
+                if(line.contains(docNo)){
+                    String[] docLine = line.split("\t");
+                    doc = new Doc(docNo,Integer.parseInt(docLine[0]), Integer.parseInt(docLine[1]),docLine[2], docLine[3]);
+
+                }
+            }
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+        return doc;
+
+    }
+
     public int getNumOfDocs() {
         return numOfDocs;
     }
@@ -369,6 +389,7 @@ public class ReadFile {
     public String toString() {
         return numOfDocs + "";
     }
+
 
     /**
      * check if the char is a digit
