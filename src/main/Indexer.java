@@ -561,9 +561,9 @@ public class Indexer {
                 bufferedWriterHashMap.get(prev).close();
                 prev = c;
                 System.out.println("Started character: " + c);
-                Runtime runtime = Runtime.getRuntime();
-                int mb = 1024*1024;
-                System.out.println("Free memory: " + runtime.freeMemory() / mb + "MB");
+                //Runtime runtime = Runtime.getRuntime();
+                //int mb = 1024*1024;
+                //System.out.println("Free memory: " + runtime.freeMemory() / mb + "MB");
             }
 
             BufferedWriter bw = bufferedWriterHashMap.get(c);
