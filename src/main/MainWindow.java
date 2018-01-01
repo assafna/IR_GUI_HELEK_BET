@@ -386,7 +386,7 @@ public class MainWindow {
             BufferedReader cacheFile = new BufferedReader(new FileReader(pathToLoadDictionaryAndCache + "\\cache.txt"));
             HashMap<String, Pair<Integer, Integer>> dictionary = loadDictionary(dictionaryFile);
             //HashMap<String, Pair<ArrayList<TermInDocCache>, Integer>> cache = loadCache(cacheFile);
-            HashMap<String, Pair<ArrayList<Pair<String, Pair<String, String>>>, Integer>> cache = loadCache(cacheFile);
+            HashMap<String, Pair<ArrayList<Pair<String, TermInDocCache>>, Integer>> cache = loadCache(cacheFile);
             Indexer indexer = new Indexer(dictionary, cache);
 
             //load hash
@@ -436,14 +436,14 @@ public class MainWindow {
      *
      * @return cache
      */
-    private HashMap<String, Pair<ArrayList<Pair<String, Pair<String, String>>>, Integer>> loadCache(BufferedReader cacheFile) {
-        HashMap<String, Pair<ArrayList<Pair<String, Pair<String, String>>>, Integer>> cache = new HashMap<>();
+    private HashMap<String, Pair<ArrayList<Pair<String, TermInDocCache>>, Integer>> loadCache(BufferedReader cacheFile) {
+        HashMap<String, Pair<ArrayList<Pair<String, TermInDocCache>>, Integer>> cache = new HashMap<>();
 
         try {
             String line;
             while ((line = cacheFile.readLine()) != null) {
                 char[] termLine = line.toCharArray();
-                ArrayList<Pair<String, Pair<String, String>>> docs = new ArrayList<>();
+                ArrayList<Pair<String, TermInDocCache>> docs = new ArrayList<>();
                 int index = 0;
                 StringBuilder term = new StringBuilder();
                 StringBuilder lineInPosting = new StringBuilder();
@@ -462,6 +462,7 @@ public class MainWindow {
                     StringBuilder docName = new StringBuilder();
                     StringBuilder frequency = new StringBuilder();
                     StringBuilder indexInDoc = new StringBuilder();
+                    StringBuilder tf = new StringBuilder();
 
                     //read doc name
                     for (int i = 0; i < 3; i++)
@@ -473,13 +474,22 @@ public class MainWindow {
                     index++;
 
                     //read term index in doc
-                    while (index < termLine.length && termLine[index] != '\t')
+                    while (termLine[index] != '*')
                         indexInDoc.append(termLine[index++]);
+                    index++;
+
+                    //read tf
+                    while (index < termLine.length && termLine[index] != '\t')
+                        tf.append(termLine[index++]);
                     index++;
 
                     //TermInDocCache doc = new TermInDocCache(docName.toString(), Integer.parseInt(frequency.toString()), Integer.parseInt(indexInDoc.toString()));
                     //docs.add(doc);
-                    docs.add(new Pair<>(docName.toString(), new Pair<>(frequency.toString(), indexInDoc.toString())));
+                    docs.add(new Pair<>(docName.toString(),
+                            new TermInDocCache(
+                                    Integer.parseInt(frequency.toString()),
+                                    Integer.parseInt(indexInDoc.toString()),
+                                    Double.parseDouble(tf.toString()))));
                 }
 
                 cache.put(term.toString(), new Pair<>(docs, Integer.parseInt(lineInPosting.toString())));
