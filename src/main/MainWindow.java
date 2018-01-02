@@ -179,14 +179,14 @@ public class MainWindow {
             //log
             System.out.println("Finished creating temp posting files in " + (System.currentTimeMillis() - Main.time.getTempPostingStartTime()) + "ms (" + ((System.currentTimeMillis() - Main.time.getTempPostingStartTime()) / 1000.0 / 60.0) + " minutes)");
 
+            indexer.mergeTempPostingFiles();
+            System.out.println("Merging temp posting files and creating final posting file");
+
             System.out.println("Finding 10,000 most important words");
             indexer.findMostImportantWords();
 
             //set final posting start time
             Main.time.setFinalPostingStartTime(System.currentTimeMillis());
-            System.out.println("Merging temp posting files and creating final posting file");
-
-            indexer.mergeTempPostingFiles();
 
             System.out.println("Splitting posting file to A-Z and 0-9");
             try {
@@ -368,7 +368,7 @@ public class MainWindow {
     }
 
     /**
-     * load dictionary and cache from file to memory
+     * load dictionary,cache and docs from file to memory
      */
     public void loadDictionaryAndCacheButtonPressed() {
 
@@ -384,9 +384,10 @@ public class MainWindow {
         try {
             BufferedReader dictionaryFile = new BufferedReader(new FileReader(pathToLoadDictionaryAndCache + "\\dictionary.txt"));
             BufferedReader cacheFile = new BufferedReader(new FileReader(pathToLoadDictionaryAndCache + "\\cache.txt"));
-            HashMap<String, Pair<Integer, Integer>> dictionary = loadDictionary(dictionaryFile);
-            //HashMap<String, Pair<ArrayList<TermInDocCache>, Integer>> cache = loadCache(cacheFile);
+            BufferedReader docsFile = new BufferedReader(new FileReader(pathToLoadDictionaryAndCache + "\\docs.txt"));
+            HashMap<String, Term> dictionary = loadDictionary(dictionaryFile);
             HashMap<String, Pair<ArrayList<Pair<String, TermInDocCache>>, Integer>> cache = loadCache(cacheFile);
+            HashMap<String, String> docs = loadDocs(docsFile);
             Indexer indexer = new Indexer(dictionary, cache);
 
             //load hash
@@ -415,20 +416,41 @@ public class MainWindow {
      *
      * @return dictionary
      */
-    private HashMap<String, Pair<Integer, Integer>> loadDictionary(BufferedReader dictionaryFile) {
-        HashMap<String, Pair<Integer, Integer>> termsDictionary = new HashMap<>();
+    private HashMap<String, Term> loadDictionary(BufferedReader dictionaryFile) {
+        HashMap<String, Term> termsDictionary = new HashMap<>();
 
         try {
             String line;
             while ((line = dictionaryFile.readLine()) != null) {
                 String[] termLine = line.split("\t");
-                termsDictionary.put(termLine[0], new Pair<>(Integer.parseInt(termLine[1]), Integer.parseInt(termLine[2])));
+                termsDictionary.put(termLine[0], new Term(termLine[0], Integer.parseInt(termLine[1]), Double.parseDouble(termLine[2]), Integer.parseInt(termLine[3])));
             }
             dictionaryFile.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
         return termsDictionary;
+    }
+
+    private HashMap<String, String> loadDocs(BufferedReader docsFile){
+        HashMap<String, String> docDictionary = new HashMap<>();
+
+        try {
+            String line;
+            while ((line = docsFile.readLine()) != null) {
+                char[] lineArray = line.toCharArray();
+                StringBuilder name = new StringBuilder();
+                int index = 0;
+                while(lineArray[index] != '\t')
+                    name.append(lineArray[index++]);
+
+                docDictionary.put(name.toString(), line.substring(name.length() + 1));
+            }
+            docsFile.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return docDictionary;
     }
 
     /**

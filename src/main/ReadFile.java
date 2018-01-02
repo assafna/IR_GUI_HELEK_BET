@@ -136,7 +136,7 @@ public class ReadFile {
                     }
                     else
                         convertedDate = convertDateToUniformFormat(date.toString(), file.getName());
-                    pairs.add(new Doc(docNameHash.getHashFromDocNo(docNo.toString()),convertedDate , text.toString(), file.getAbsolutePath()));
+                    pairs.add(new Doc(docNo.toString(), docNameHash.getHashFromDocNo(docNo.toString()),text.toString(), convertedDate ,file.getName()));
                 }
 
             }
@@ -369,7 +369,7 @@ public class ReadFile {
             while((line = br.readLine()) != null){
                 if(line.contains(docNo)){
                     String[] docLine = line.split("\t");
-                    doc = new Doc(docNo,Integer.parseInt(docLine[0]), Integer.parseInt(docLine[1]),docLine[2], docLine[3]);
+                   // doc = new Doc(docNo,Integer.parseInt(docLine[0]), Integer.parseInt(docLine[1]),docLine[2], docLine[3]);
 
                 }
             }
