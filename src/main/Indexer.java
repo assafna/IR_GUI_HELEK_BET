@@ -854,5 +854,19 @@ public class Indexer {
 
     }
 
+    public HashMap<String, Pair<Integer, Integer>> getFinalTermsDictionary() {
+        return finalTermsDictionary;
+    }
 
+    public HashMap<String, Integer> getDocsDictionary() {
+        return docsDictionary;
+    }
+
+    public HashMap<String, Pair<ArrayList<Pair<String, TermInDocCache>>, Integer>> getCache() {
+        return cache;
+    }
+
+    public String getTempPostingFilesPath() {
+        return tempPostingFilesPath;
+    }
 }

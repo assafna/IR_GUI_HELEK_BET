@@ -1,5 +1,7 @@
 package main;
 
+import javafx.util.Pair;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -398,6 +400,75 @@ public class ReadFile {
      */
     private boolean isDigit(char c){
         return c >= 48 && c <= 57;
+    }
+
+    /**
+     * reads a term from posting file and returns list of docs for this term
+     * @param indexer indexer to use
+     * @param term term to read
+     * @return list of docs for this term
+     * @throws IOException exception
+     */
+    public ArrayList<Pair<String, TermInDocCache>> getTermDocsFromPosting(Indexer indexer, String term) throws IOException {
+        //get posting path
+        String postingFilesPath = indexer.getTempPostingFilesPath();
+        //get relevant row number
+        int rowNum = indexer.getFinalTermsDictionary().get(term).getValue();
+
+        //read from posting file until reaching relevant term
+        BufferedReader br = new BufferedReader(new FileReader(postingFilesPath + "\\" + term.charAt(0) + ".txt"));
+        for (int i = 0; i < rowNum; i++)
+            br.readLine();
+
+        //reached relevant line, read term
+        String line = br.readLine();
+
+        //split to get data
+        String[] docsPerTerm = line.split("\t");
+
+        //create a list of docs
+        ArrayList<Pair<String, TermInDocCache>> docsList = new ArrayList<>();
+        for (int i = 1; i < docsPerTerm.length; i++){
+            char[] docsPerTermArray = docsPerTerm[i].toCharArray();
+
+            //get doc name hash
+            String docNameHash = String.valueOf(docsPerTermArray[0]) + docsPerTermArray[1] + docsPerTermArray[2];
+
+            StringBuilder occurrences = new StringBuilder();
+            StringBuilder index = new StringBuilder();
+            StringBuilder tf = new StringBuilder();
+
+            int j;
+            //find numOfOccurrencesInDoc
+            for (j = 3; j < docsPerTermArray.length; j++)
+                if (docsPerTermArray[j] != '*')
+                    occurrences.append(docsPerTermArray[j]);
+                else
+                    break;
+
+            //find firstIndexOfTermInDoc
+            for (j = j + 1; j < docsPerTermArray.length; j++)
+                if (docsPerTermArray[j] != '*')
+                    index.append(docsPerTermArray[j]);
+                else
+                    break;
+
+            //find tf
+            for (j = j + 1; j < docsPerTermArray.length; j++)
+                if (docsPerTermArray[j] != '*')
+                    tf.append(docsPerTermArray[j]);
+                else
+                    break;
+
+            //add
+            docsList.add(new Pair<>(docNameHash,
+                    new TermInDocCache(Integer.parseInt(
+                            occurrences.toString()),
+                            Integer.parseInt(index.toString()),
+                            Double.parseDouble(tf.toString()))));
+        }
+
+        return docsList;
     }
 
 }

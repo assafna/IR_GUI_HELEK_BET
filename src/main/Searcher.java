@@ -2,10 +2,7 @@ package main;
 
 import javafx.util.Pair;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.*;
 
 /**
@@ -13,9 +10,9 @@ import java.util.*;
  */
 public class Searcher {
 
-    private HashSet<String> stopWords = new HashSet();
+    private HashSet<String> stopWords;
 
-    public Searcher(HashSet<String> stopWords){
+    Searcher(HashSet<String> stopWords){
         this.stopWords = stopWords;
     }
 
@@ -29,14 +26,14 @@ public class Searcher {
     public List<String> search(String query, boolean isStem) {
         //create parser and parse text
         Parser parser = new Parser(stopWords);
-        List<String> queryTerms = parser.parse(query.toCharArray());
+        ArrayList<String> queryTerms = parser.parse(query.toCharArray());
 
         //stem
         if (isStem) {
-            List<String> queryTermsStemmed = new ArrayList<>();
+            ArrayList<String> queryTermsStemmed = new ArrayList<>();
             Stemmer stemmer = new Stemmer();
 
-            //stem each term
+            //stem each term in query stem it
             for (int i = 0; i < queryTerms.size(); i++) {
                 String s = queryTerms.get(i);
                 stemmer.add(s.toCharArray(), s.length());
@@ -49,10 +46,7 @@ public class Searcher {
 
         //ranking method
         Ranker ranker = new Ranker();
-        List<String> rankedDocs = new ArrayList<>();
-        for (int i = 0; i < rankedDocs.size(); i++)
-            rankedDocs.addAll(ranker.getRankedDocs(rankedDocs.get(i)));
-        return rankedDocs;
+        return ranker.getRankedDocs(queryTerms);
     }
 
     /**
