@@ -302,7 +302,7 @@ public class MainWindow {
         stopWords = readFile.createStopWordsMap(corpusPath + "\\stop_words.txt");
         Parser parser = new Parser(stopWords);
         ArrayList<File> files = new ArrayList<>();
-        readFile.getListOfAllFiles(corpusPath + "\\corpus", files);
+        readFile.getListOfAllFiles(corpusPath + "\\corpus2", files);
         int filesLength = files.size();
 
         //for each file

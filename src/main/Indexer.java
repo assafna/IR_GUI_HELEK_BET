@@ -247,7 +247,7 @@ public class Indexer {
                 String term = termsList.get(i);
                 int sumTf = 0;
                 int numOfDocsOfTerm = 0;
-                //if the term already has tf-idf
+                //if the term already in dictionary
                 if (termsDictionary.get(term) != null) {
                     sumTf = termsDictionary.get(term).getKey();
                     numOfDocsOfTerm = termsDictionary.get(term).getValue();
@@ -298,10 +298,12 @@ public class Indexer {
         int counter = 0;
         ArrayList<Term> terms = new ArrayList<>();
         for (String term : termsDictionary.keySet()) {
-            Pair termPair = termsDictionary.get(term);
+            int termSumTf = termsDictionary.get(term).getKey();
             if (termsDictionary.get(term).getKey() >= 3) {
-                terms.add(new Term(term, (int) termPair.getKey()));
-                finalTermsDictionary.put(term, new Term(term, (int)termPair.getKey()).toString());
+                Term t = new Term(term,termSumTf);
+                System.out.printf(t.toString());
+                terms.add(t);
+                finalTermsDictionary.put(term, t.toString());
             }
         }
         termsDictionary.clear();
@@ -632,7 +634,7 @@ public class Indexer {
     private void updateTermInFinalDictionary(String termName, int df, int pointer){
         Term term = new Term(finalTermsDictionary.get(termName));
         term.setDf(df);
-        term.setIdf(log2(df/docsCounter));
+        term.setIdf(log2((double) df/docsCounter));
         term.setPointerToPostingList(pointer);
         finalTermsDictionary.put(termName, term.toString());
     }

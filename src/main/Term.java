@@ -31,13 +31,15 @@ public class Term implements Comparable<Term> {
         this.pointerToPostingList = pointerToPostingList;
     }
 
-    public Term(String termString){
+    public Term(String termString) {
         String[] splitString = termString.split("\t");
         this.term = splitString[0];
-        this.sumTf = Integer.parseInt(splitString[2]);
-        this.df = Integer.parseInt(splitString[2]);
-        this.idf = Double.parseDouble(splitString[3]);
-        this.pointerToPostingList = Integer.parseInt(splitString[4]);
+        this.sumTf = Integer.parseInt(splitString[1]);
+        if (splitString.length > 2) {
+            this.df = Integer.parseInt(splitString[2]);
+            this.idf = Double.parseDouble(splitString[3]);
+            this.pointerToPostingList = Integer.parseInt(splitString[4]);
+        }
     }
 
 
@@ -88,10 +90,10 @@ public class Term implements Comparable<Term> {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(term + '\t');
-        sb.append(sumTf + '\t');
-        sb.append(df + '\t');
-        sb.append(idf + '\t');
-        sb.append(pointerToPostingList + '\t');
+        sb.append(sumTf + "" + '\t');
+        sb.append(df + "" + '\t');
+        sb.append(idf + "" +'\t');
+        sb.append(pointerToPostingList + "" + '\t');
 
         return sb.toString();
 

@@ -77,7 +77,7 @@ public class Searcher {
      * find 5 most important sentences in doc
      * @param docNo doc number
      * @param path path to docs file
-     * @return list of 5 most important sentences in doc
+     * @return list of 50 most important sentences in doc
      */
     public List<String> find5MostImportantSentences(String docNo, String path) {
         List<Pair<String, Double>> sumTfPerSent = new ArrayList<>();
