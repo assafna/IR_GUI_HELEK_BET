@@ -15,7 +15,7 @@ public class Indexer {
 
     //static data structures for docs and terms
     private static HashMap<String, Pair<Integer, Integer>> termsDictionary; //in start - term, sumTf, numOfDocsForTerm -/- after final posting creation - term, df, pointerToPostingList
-    private static HashMap<String, Term> finalTermsDictionary;
+    private static HashMap<String, String> finalTermsDictionary;
     private static HashMap<String, String> docsDictionary;
     private static HashMap<String, Integer> mostCommonTermFrequency;
     private static HashMap<String, Pair<ArrayList<Pair<String, TermInDocCache>>, Integer>> cache; //term, list of docs, row num in posting
@@ -97,9 +97,10 @@ public class Indexer {
 
     }
 
-    Indexer(HashMap<String,Term> loadDictionary, HashMap<String, Pair<ArrayList<Pair<String, TermInDocCache>>, Integer>> loadCache) {
+    Indexer(HashMap<String,String> loadDictionary, HashMap<String, Pair<ArrayList<Pair<String, TermInDocCache>>, Integer>> loadCache, HashMap<String, String> loadDocs) {
         finalTermsDictionary = loadDictionary;
         cache = loadCache;
+        docsDictionary = loadDocs;
     }
 
     Indexer() {
@@ -300,7 +301,7 @@ public class Indexer {
             Pair termPair = termsDictionary.get(term);
             if (termsDictionary.get(term).getKey() >= 3) {
                 terms.add(new Term(term, (int) termPair.getKey()));
-                finalTermsDictionary.put(term, new Term(term, (int)termPair.getKey()));
+                finalTermsDictionary.put(term, new Term(term, (int)termPair.getKey()).toString());
             }
         }
         termsDictionary.clear();
@@ -310,6 +311,8 @@ public class Indexer {
         for (int i = 0; i < 10000; i++)
             mostCommonTerms.add(terms.get(i).getTerm());
     }
+
+
 
     /**
      * calculate the logarithmic value of x according to base 2
@@ -572,8 +575,7 @@ public class Indexer {
                 }
 
                 //add to dictionary
-                Term term = finalTermsDictionary.get(lineSplit0);
-                finalTermsDictionary.put(lineSplit0, new Term(lineSplit0, term.getSumTf(), docsInLineLength, log2(docsInLineLength/docsCounter), -1));
+                updateTermInFinalDictionary(lineSplit0, docsInLineLength, -1 );
             }
             //term is not in top 10k, need to write again, but now sorted
             else {
@@ -608,10 +610,7 @@ public class Indexer {
                 bw.write('\n');
 
                 //add to dictionary
-                Term term = finalTermsDictionary.get(lineSplit0);
-
-                finalTermsDictionary.put(lineSplit0, new Term(lineSplit0, term.getSumTf(), docsInLineLength, log2(docsInLineLength/docsCounter), bwln));
-
+                updateTermInFinalDictionary(lineSplit0, docsInLineLength, bwln );
 
                 //update line number
                 bufferedWriterLineNumberHashMap.put(c, bwln + 1);
@@ -622,6 +621,20 @@ public class Indexer {
         br.close();
         postingFile.delete();
 
+    }
+
+    /**
+     * update term in the final dictionary
+     * @param termName term name
+     * @param df term df
+     * @param pointer pointer to posting list. -1 if the term in the cache
+     */
+    private void updateTermInFinalDictionary(String termName, int df, int pointer){
+        Term term = new Term(finalTermsDictionary.get(termName));
+        term.setDf(df);
+        term.setIdf(log2(df/docsCounter));
+        term.setPointerToPostingList(pointer);
+        finalTermsDictionary.put(termName, term.toString());
     }
 
     /**
@@ -691,7 +704,7 @@ public class Indexer {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(path));
             for (String term : finalTermsDictionary.keySet()) {
-                bw.write(finalTermsDictionary.get(term).toString() + '\n' );
+                bw.write(finalTermsDictionary.get(term) + '\n' );
             }
             bw.close();
         } catch (IOException e) {
@@ -817,7 +830,7 @@ public class Indexer {
         //run through the dictionary
         for (String term : finalTermsDictionary.keySet())
             //add to list
-            strings.add(term + "\t\t\tAmount in corpus: " + finalTermsDictionary.get(term).getSumTf());
+            strings.add(term + "\t\t\tAmount in corpus: " + new Term(finalTermsDictionary.get(term)).getSumTf());
 
         //sort
         Collections.sort(strings);
@@ -827,7 +840,6 @@ public class Indexer {
 
     /**
      * calculate tf for each term in each doc
-     * @param docLength number of terms in doc
      * @param docNo doc name
      * @param termsInFile list of terms in file
      */
@@ -854,11 +866,11 @@ public class Indexer {
 
     }
 
-    public HashMap<String, Pair<Integer, Integer>> getFinalTermsDictionary() {
+    public HashMap<String, String> getFinalTermsDictionary() {
         return finalTermsDictionary;
     }
 
-    public HashMap<String, Integer> getDocsDictionary() {
+    public HashMap<String, String> getDocsDictionary() {
         return docsDictionary;
     }
 

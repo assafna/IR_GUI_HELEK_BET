@@ -25,7 +25,7 @@ public class Doc {
 
     }
 
-    Doc(String name, String code, int length, int mostCommonTerm, String date, String file) {
+    public Doc(String name, String code, int length, int mostCommonTerm, String date, String file) {
         this.name = name;
         this.code = code;
         this.length = length;
@@ -33,6 +33,16 @@ public class Doc {
         this.date = date;
         this.file = file;
 
+    }
+
+    public Doc(String docString){
+        String[] splitString = docString.split("\t");
+        this.name = splitString[0];
+        this.code = splitString[1];
+        this.length = Integer.parseInt(splitString[2]);
+        this.date = splitString[3];
+        this.file = splitString[4];
+        this.mostCommonTerm= Integer.parseInt(splitString[5]);
     }
 
     public String getName() {
@@ -90,6 +100,7 @@ public class Doc {
     public void setText(String text) {
         this.text = text;
     }
+
 
     @Override
     public String toString() {

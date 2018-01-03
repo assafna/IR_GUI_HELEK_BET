@@ -17,17 +17,19 @@ public class Ranker {
         //for each doc, have an hash map of terms, and for each term have term in doc
         HashMap<String, HashMap<String, TermInDocCache>> docToTermsToDoc = new HashMap<>();
         ArrayList<String> docs = new ArrayList<>();
+        HashMap<String, Term> termsObjects = new HashMap<>();
 
         //for each term in query, get all docs
         int queryTermsSize = queryTerms.size();
         for (int i = 0; i < queryTermsSize; i++) {
             //current term
             String queryTerm = queryTerms.get(i);
+            termsObjects.put(queryTerm, new Term(indexer.getFinalTermsDictionary().get(queryTerm)));
 
             //get all docs
             ArrayList<Pair<String, TermInDocCache>> cacheDocsForTerm = new ArrayList<>();
             //check if term in cache
-            if (indexer.getFinalTermsDictionary().get(queryTerm).getValue() == -1) {
+            if (termsObjects.get(queryTerm).getPointerToPostingList() == -1) {
                 //get all docs relevant for this term from cache
                 cacheDocsForTerm.addAll(indexer.getCache().get(queryTerm).getKey());
                 //check if there are more docs in posting
@@ -92,10 +94,8 @@ public class Ranker {
                 if (terms.containsKey(queryTerms.get(j))) {
                     //get term in doc
                     termInDocCache = terms.get(queryTerms.get(j));
-                    //get term in dic
-                    Pair<Integer, Integer> termInDic = indexer.getFinalTermsDictionary().get(queryTerms.get(j));
                     //calculate wij
-                    double weightTermInDoc = termInDocCache.tf * termInDic.getKey();
+                    double weightTermInDoc = termInDocCache.tf * termsObjects.get(queryTerms.get(j)).getIdf();
                     //add
                     numerator += weightTermInDoc;
                     denominator += Math.pow(weightTermInDoc, 2) * termInDocCache.indexOfFirstOccurrence; //NEED TO ADD DATE

@@ -46,7 +46,14 @@ public class Searcher {
 
         //ranking method
         Ranker ranker = new Ranker();
-        return ranker.getRankedDocs(queryTerms);
+        ArrayList<Pair<String, Double>> rankedDocs = ranker.getRankedDocs(queryTerms);
+
+        //get 50 first docs
+        int rankedDocsSize = rankedDocs.size();
+        ArrayList<String> docsToReturn = new ArrayList<>();
+        for(int i = 0; i < 50 && i < rankedDocsSize; i++ )
+            docsToReturn.add(rankedDocs.get(i).getKey());
+        return docsToReturn;
     }
 
     /**

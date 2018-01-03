@@ -385,10 +385,10 @@ public class MainWindow {
             BufferedReader dictionaryFile = new BufferedReader(new FileReader(pathToLoadDictionaryAndCache + "\\dictionary.txt"));
             BufferedReader cacheFile = new BufferedReader(new FileReader(pathToLoadDictionaryAndCache + "\\cache.txt"));
             BufferedReader docsFile = new BufferedReader(new FileReader(pathToLoadDictionaryAndCache + "\\docs.txt"));
-            HashMap<String, Term> dictionary = loadDictionary(dictionaryFile);
+            HashMap<String, String> dictionary = loadDictionary(dictionaryFile);
             HashMap<String, Pair<ArrayList<Pair<String, TermInDocCache>>, Integer>> cache = loadCache(cacheFile);
             HashMap<String, String> docs = loadDocs(docsFile);
-            Indexer indexer = new Indexer(dictionary, cache);
+            Indexer indexer = new Indexer(dictionary, cache, docs);
 
             //load hash
             try {
@@ -416,14 +416,14 @@ public class MainWindow {
      *
      * @return dictionary
      */
-    private HashMap<String, Term> loadDictionary(BufferedReader dictionaryFile) {
-        HashMap<String, Term> termsDictionary = new HashMap<>();
+    private HashMap<String, String> loadDictionary(BufferedReader dictionaryFile) {
+        HashMap<String, String> termsDictionary = new HashMap<>();
 
         try {
             String line;
             while ((line = dictionaryFile.readLine()) != null) {
                 String[] termLine = line.split("\t");
-                termsDictionary.put(termLine[0], new Term(termLine[0], Integer.parseInt(termLine[1]), Double.parseDouble(termLine[2]), Integer.parseInt(termLine[3])));
+                termsDictionary.put(termLine[0], new Term(line).toString());
             }
             dictionaryFile.close();
         } catch (IOException e) {

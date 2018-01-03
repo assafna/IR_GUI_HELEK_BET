@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/IR_GUI2/main/Indexer.class" afterPath="" />
+    <list default="true" id="5a2a71de-ed7a-492e-ae60-91aaf57b082b" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/IR_GUI2_jar.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/description.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Doc.java" afterPath="$PROJECT_DIR$/src/main/Doc.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Indexer.java" afterPath="$PROJECT_DIR$/src/main/Indexer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/MainWindow.java" afterPath="$PROJECT_DIR$/src/main/MainWindow.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Ranker.java" afterPath="$PROJECT_DIR$/src/main/Ranker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/ReadFile.java" afterPath="$PROJECT_DIR$/src/main/ReadFile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Searcher.java" afterPath="$PROJECT_DIR$/src/main/Searcher.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Term.java" afterPath="$PROJECT_DIR$/src/main/Term.java" />
     </list>
-    <ignored path="JavaFxApplication.iws" />
-    <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,194 +28,66 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
-  </component>
-  <component name="DebuggerManager">
-    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
-      <breakpoint>
-        <option name="NOTIFY_CAUGHT" value="true" />
-        <option name="NOTIFY_UNCAUGHT" value="true" />
-        <option name="ENABLED" value="false" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint>
-        <option name="NOTIFY_CAUGHT" value="true" />
-        <option name="NOTIFY_UNCAUGHT" value="true" />
-        <option name="ENABLED" value="false" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </breakpoint_any>
-    <ui_properties converted="true" />
-    <breakpoint_rules converted="true" />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="JavaFxApplication" />
-  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="MainWindow.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/MainWindow.java">
+    <leaf>
+      <file leaf-file-name="Indexer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Indexer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="70">
-              <caret line="142" column="7" lean-forward="true" selection-start-line="142" selection-start-column="7" selection-end-line="142" selection-end-column="7" />
+            <state relative-caret-position="385">
+              <caret line="851" column="42" lean-forward="false" selection-start-line="851" selection-start-column="42" selection-end-line="851" selection-end-column="42" />
               <folding>
-                <element signature="method#browseCorpusPath#0;class#MainWindow#0" expanded="false" />
-                <element signature="docComment;method#browseWorkingDirectory#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#browseWorkingDirectory#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#pathTextFieldKeyReleased#0;class#MainWindow#0" expanded="false" />
-                <element signature="docComment;method#workingDirectoryTextFieldKeyReleased#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#workingDirectoryTextFieldKeyReleased#0;class#MainWindow#0" expanded="false" />
-                <element signature="docComment;method#checkIfEnteredPath#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#checkIfEnteredPath#0;class#MainWindow#0" expanded="false" />
-                <element signature="docComment;method#playButtonPressed#0;class#MainWindow#0" expanded="false" />
-                <element signature="docComment;method#checkIfFolderExist#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#checkIfFolderExist#0;class#MainWindow#0" expanded="false" />
-                <element signature="docComment;method#createTempPostingDirectory#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#createTempPostingDirectory#0;class#MainWindow#0" expanded="false" />
-                <element signature="docComment;method#getFolderSize#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#getFolderSize#0;class#MainWindow#0" expanded="false" />
-                <element signature="docComment;method#createTempPosting#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#createTempPosting#0;class#MainWindow#0" expanded="false" />
-                <element signature="docComment;method#resetButtonPressed#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#resetButtonPressed#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#deleteFolder#0;class#MainWindow#0" expanded="false" />
-                <element signature="docComment;method#loadDictionary#0;class#MainWindow#0" expanded="false" />
-                <element signature="docComment;method#loadCache#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#loadCache#0;class#MainWindow#0" expanded="false" />
-                <element signature="docComment;method#saveDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#saveDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
-                <element signature="docComment;method#showAlert#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#showAlert#0;class#MainWindow#0" expanded="false" />
-                <element signature="docComment;method#showCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
-                <element signature="docComment;method#showDictionaryButtonPressed#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#showData#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#runQueryStringButtonClick#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#queryTextFieldKeyReleased#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#loadQueriesFileButtonPressed#0;class#MainWindow#0" expanded="false" />
+                <element signature="method#Indexer#0;class#Indexer#0" expanded="false" />
+                <element signature="method#Indexer#2;class#Indexer#0" expanded="false" />
+                <element signature="method#indexFile#0;class#Indexer#0" expanded="false" />
+                <element signature="method#getDocString#0;class#Indexer#0" expanded="false" />
+                <element signature="method#indexTerms#0;class#Indexer#0" expanded="false" />
+                <element signature="method#updateTermInDictionary#0;class#Indexer#0" expanded="false" />
+                <element signature="method#updateTermFrequency#0;class#Indexer#0" expanded="false" />
+                <element signature="method#writeTermsDictionaryToFile#0;class#Indexer#0" expanded="false" />
+                <element signature="docComment;method#updateTermInFinalDictionary#0;class#Indexer#0" expanded="false" />
+                <element signature="method#getDictionarySorted#0;class#Indexer#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainWindow.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/MainWindow.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
+      <file leaf-file-name="MainWindow.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/MainWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="173" column="67" lean-forward="false" selection-start-line="173" selection-start-column="41" selection-end-line="173" selection-end-column="67" />
+            <state relative-caret-position="357">
+              <caret line="395" column="76" lean-forward="true" selection-start-line="395" selection-start-column="76" selection-end-line="395" selection-end-column="76" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Parser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Parser.java">
+      <file leaf-file-name="ReadFile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/ReadFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
-              <caret line="372" column="29" lean-forward="false" selection-start-line="372" selection-start-column="29" selection-end-line="372" selection-end-column="29" />
-              <folding>
-                <element signature="method#parse#0;class#Parser#0" expanded="false" />
-                <element signature="docComment;method#parseNumber#0;class#Parser#0" expanded="false" />
-                <element signature="method#parseNumber#0;class#Parser#0" expanded="false" />
-                <element signature="docComment;method#parseExpressions#0;class#Parser#0" expanded="false" />
-                <element signature="method#parseExpressions#0;class#Parser#0" expanded="false" />
-                <element signature="method#skipHyphenAndApostrophe#0;class#Parser#0" expanded="false" />
-                <element signature="docComment;method#parseQuote#0;class#Parser#0" expanded="false" />
-                <element signature="method#parseQuote#0;class#Parser#0" expanded="false" />
-                <element signature="method#parseDateStartsWithTwoDigits#0;class#Parser#0" expanded="false" />
-                <element signature="docComment;method#parseDateStartsWithMonth#0;class#Parser#0" expanded="false" />
-                <element signature="method#parseDateStartsWithMonth#0;class#Parser#0" expanded="false" />
-                <element signature="method#getMonth#0;class#Parser#0" expanded="false" />
-                <element signature="method#skipDelimiters#0;class#Parser#0" expanded="false" />
-                <element signature="method#skipWhiteSpace#0;class#Parser#0" expanded="false" />
-                <element signature="method#skipLetters#0;class#Parser#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="260">
+              <caret line="418" column="39" lean-forward="true" selection-start-line="418" selection-start-column="39" selection-end-line="418" selection-end-column="39" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Indexer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Indexer.java">
+      <file leaf-file-name="Ranker.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Ranker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="575" column="17" lean-forward="true" selection-start-line="575" selection-start-column="17" selection-end-line="575" selection-end-column="17" />
-              <folding>
-                <element signature="docComment;method#Indexer#0;class#Indexer#0" expanded="false" />
-                <element signature="method#Indexer#0;class#Indexer#0" expanded="false" />
-                <element signature="method#Indexer#1;class#Indexer#0" expanded="false" />
-                <element signature="method#Indexer#2;class#Indexer#0" expanded="false" />
-                <element signature="docComment;method#indexFile#0;class#Indexer#0" expanded="false" />
-                <element signature="docComment;method#getDocString#0;class#Indexer#0" expanded="false" />
-                <element signature="docComment;method#indexTerms#0;class#Indexer#0" expanded="false" />
-                <element signature="method#indexTerms#0;class#Indexer#0" expanded="false" />
-                <element signature="docComment;method#updateTermInDictionary#0;class#Indexer#0" expanded="false" />
-                <element signature="method#updateTermInDictionary#0;class#Indexer#0" expanded="false" />
-                <element signature="docComment;method#updateTermFrequency#0;class#Indexer#0" expanded="false" />
-                <element signature="method#updateTermFrequency#0;class#Indexer#0" expanded="false" />
-                <element signature="docComment;method#writeTermsDictionaryToFile#0;class#Indexer#0" expanded="false" />
-                <element signature="method#writeTermsDictionaryToFile#0;class#Indexer#0" expanded="false" />
-                <element signature="docComment;method#findMostImportantWords#0;class#Indexer#0" expanded="false" />
-                <element signature="method#findMostImportantWords#0;class#Indexer#0" expanded="false" />
-                <element signature="docComment;method#log2#0;class#Indexer#0" expanded="false" />
-                <element signature="docComment;method#mergeTempPostingFiles#0;class#Indexer#0" expanded="false" />
-                <element signature="method#mergeTempPostingFiles#0;class#Indexer#0" expanded="false" />
-                <element signature="docComment;method#mergeTwoFiles#0;class#Indexer#0" expanded="false" />
-                <element signature="method#mergeTwoFiles#0;class#Indexer#0" expanded="false" />
-                <element signature="docComment;method#splitTermLine#0;class#Indexer#0" expanded="false" />
-                <element signature="method#splitTermLine#0;class#Indexer#0" expanded="false" />
-                <element signature="docComment;method#splitPostingSortCreateCacheAndUpdateDictionary#0;class#Indexer#0" expanded="false" />
-                <element signature="docComment;method#getSortedListOfDocsPerTerm#0;class#Indexer#0" expanded="false" />
-                <element signature="method#getSortedListOfDocsPerTerm#0;class#Indexer#0" expanded="false" />
-                <element signature="docComment;method#writeDictionaryToFile#0;class#Indexer#0" expanded="false" />
-                <element signature="method#writeDictionaryToFile#0;class#Indexer#0" expanded="false" />
-                <element signature="docComment;method#writeCacheToFile#0;class#Indexer#0" expanded="false" />
-                <element signature="method#writeCacheToFile#0;class#Indexer#0" expanded="false" />
-                <element signature="docComment;method#writeDocsToFile#0;class#Indexer#0" expanded="false" />
-                <element signature="method#writeDocsToFile#0;class#Indexer#0" expanded="false" />
-                <element signature="docComment;method#resetStaticFields#0;class#Indexer#0" expanded="false" />
-                <element signature="method#resetStaticFields#0;class#Indexer#0" expanded="false" />
-                <element signature="docComment;method#getCacheSorted#0;class#Indexer#0" expanded="false" />
-                <element signature="method#getCacheSorted#0;class#Indexer#0" expanded="false" />
-                <element signature="docComment;method#getDictionarySorted#0;class#Indexer#0" expanded="false" />
-                <element signature="method#getDictionarySorted#0;class#Indexer#0" expanded="false" />
-                <element signature="docComment;method#calculateTfPerTerm#0;class#Indexer#0" expanded="false" />
-                <element signature="method#calculateTfPerTerm#0;class#Indexer#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="153">
+              <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="42" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Collections.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/Collections.java">
+      <file leaf-file-name="Searcher.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/Searcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="139" column="57" lean-forward="false" selection-start-line="139" selection-start-column="57" selection-end-line="139" selection-end-column="57" />
+            <state relative-caret-position="408">
+              <caret line="35" column="3" lean-forward="false" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
               <folding>
-                <element signature="e#5644#5645#0" expanded="true" />
-                <element signature="e#5675#5676#0" expanded="true" />
+                <element signature="docComment;method#search#0;class#Searcher#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -216,49 +96,13 @@
       <file leaf-file-name="Term.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Term.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="29" lean-forward="false" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+            <state relative-caret-position="657">
+              <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
               <folding>
-                <element signature="e#824#825#0" expanded="true" />
-                <element signature="e#849#850#0" expanded="true" />
-                <element signature="e#882#883#0" expanded="true" />
-                <element signature="e#910#911#0" expanded="true" />
-                <element signature="e#940#941#0" expanded="true" />
-                <element signature="e#966#967#0" expanded="true" />
-                <element signature="e#1004#1005#0" expanded="true" />
-                <element signature="e#1034#1035#0" expanded="true" />
-                <element signature="e#1078#1079#0" expanded="true" />
-                <element signature="e#1121#1122#0" expanded="true" />
-                <element signature="e#1190#1191#0" expanded="true" />
-                <element signature="e#1254#1255#0" expanded="true" />
-                <element signature="e#1287#1288#0" expanded="true" />
-                <element signature="e#1314#1315#0" expanded="true" />
-                <element signature="e#1354#1355#0" expanded="true" />
-                <element signature="e#1386#1387#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TermInDocCache.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/TermInDocCache.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Searcher.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Searcher.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="666">
-              <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#find5MostImportantSentences#0;class#Searcher#0" expanded="false" />
-                <element signature="method#compare#0;class#3367:3640" expanded="false" />
+                <element signature="method#Term#0;class#Term#0" expanded="false" />
+                <element signature="method#Term#1;class#Term#0" expanded="false" />
+                <element signature="method#Term#2;class#Term#0" expanded="false" />
+                <element signature="method#toString#0;class#Term#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -267,104 +111,19 @@
       <file leaf-file-name="Doc.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Doc.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="29" column="25" lean-forward="false" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
-              <folding>
-                <element signature="e#1029#1030#0" expanded="true" />
-                <element signature="e#1056#1057#0" expanded="true" />
-                <element signature="e#1096#1097#0" expanded="true" />
-                <element signature="e#1128#1129#0" expanded="true" />
-                <element signature="e#1158#1159#0" expanded="true" />
-                <element signature="e#1187#1188#0" expanded="true" />
-                <element signature="e#1228#1229#0" expanded="true" />
-                <element signature="e#1264#1265#0" expanded="true" />
-                <element signature="e#1302#1303#0" expanded="true" />
-                <element signature="e#1339#1340#0" expanded="true" />
-                <element signature="e#1396#1397#0" expanded="true" />
-                <element signature="e#1448#1449#0" expanded="true" />
-                <element signature="e#1609#1610#0" expanded="true" />
-                <element signature="e#1636#1637#0" expanded="true" />
-                <element signature="e#1676#1677#0" expanded="true" />
-                <element signature="e#1708#1709#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReadFile.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/ReadFile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1268">
-              <caret line="372" column="0" lean-forward="true" selection-start-line="372" selection-start-column="0" selection-end-line="372" selection-end-column="0" />
-              <folding>
-                <element signature="docComment;method#getListOfAllFiles#0;class#ReadFile#0" expanded="false" />
-                <element signature="method#getListOfAllFiles#0;class#ReadFile#0" expanded="false" />
-                <element signature="docComment;method#getDocsFromFile#0;class#ReadFile#0" expanded="false" />
-                <element signature="docComment;method#createStopWordsMap#0;class#ReadFile#0" expanded="false" />
-                <element signature="method#createStopWordsMap#0;class#ReadFile#0" expanded="false" />
-                <element signature="docComment;method#parseDateForFBorFTfiles#0;class#ReadFile#0" expanded="false" />
-                <element signature="method#parseDateForFBorFTfiles#0;class#ReadFile#0" expanded="false" />
-                <element signature="docComment;method#convertDateToUniformFormat#0;class#ReadFile#0" expanded="false" />
-                <element signature="method#convertDateToUniformFormat#0;class#ReadFile#0" expanded="false" />
-                <element signature="method#readQueriesFile#0;class#ReadFile#0" expanded="false" />
-                <element signature="method#getListOfSentencesInFile#0;class#ReadFile#0" expanded="false" />
-                <element signature="docComment;method#isDigit#0;class#ReadFile#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="215">
+              <caret line="44" column="62" lean-forward="false" selection-start-line="44" selection-start-column="62" selection-end-line="44" selection-end-column="62" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="FxmlFile" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>hash</find>
-      <find>docNameHash</find>
-      <find>docstofile</find>
-      <find>docsto</find>
-      <find>termindex</find>
-      <find>termIndex</find>
-      <find>tempterms</find>
-      <find>tempTermsDictionary</find>
-      <find>postingListArray</find>
-      <find>temp</find>
-      <find>indexer</find>
-      <find>stemmedWords</find>
-      <find>cacheDocsPerTerm</find>
-      <find>runQueryStringButton</find>
-      <find>workingDirectoryTextFieldKeyReleased</find>
-      <find>runQueryStringButtonClick</find>
-      <find>stopWords</find>
-      <find>stop</find>
-      <find>loa</find>
-      <find>run</find>
-      <find>rese</find>
-      <find>most</find>
-      <find>importan</find>
-      <find>write</find>
-      <find>gettext</find>
       <find>load</find>
-      <find>finalTermsDictionary</find>
-      <find>corpus</find>
-      <find>calculateTfPerTerm</find>
-      <find>loaddi</find>
     </findStrings>
-    <dirStrings>
-      <dir>C:\Users\AssafNahum\Dropbox\Personal\BGU\Third Year\5th Semester\Information Retrieval\IR_GUI2</dir>
-    </dirStrings>
-  </component>
-  <component name="FindManager">
-    <FindUsagesManager>
-      <setting name="OPEN_NEW_TAB" value="false" />
-    </FindUsagesManager>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -377,44 +136,22 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/Threads.java" />
-        <option value="$PROJECT_DIR$/src/main/ThreadsExecuter.java" />
-        <option value="$PROJECT_DIR$/src/main/TermInDocCache.java" />
-        <option value="$PROJECT_DIR$/src/main/Time.java" />
-        <option value="$PROJECT_DIR$/src/main/ThreadsExecutor.java" />
-        <option value="$PROJECT_DIR$/src/main/ShowDictionary.fxml" />
-        <option value="$PROJECT_DIR$/src/main/ShowDictionary.java" />
-        <option value="$PROJECT_DIR$/src/main/ShowCache.fxml" />
-        <option value="$PROJECT_DIR$/src/main/ShowCache.java" />
-        <option value="$PROJECT_DIR$/src/main/DocNameHash.java" />
-        <option value="$PROJECT_DIR$/src/Searcher.java" />
-        <option value="$PROJECT_DIR$/src/main/Parser.java" />
-        <option value="$PROJECT_DIR$/src/main/Ranker.java" />
-        <option value="$PROJECT_DIR$/src/main/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/MainWindow.fxml" />
-        <option value="$PROJECT_DIR$/src/main/Searcher.java" />
         <option value="$PROJECT_DIR$/src/main/Term.java" />
         <option value="$PROJECT_DIR$/src/main/Doc.java" />
-        <option value="$PROJECT_DIR$/src/main/ReadFile.java" />
         <option value="$PROJECT_DIR$/src/main/Indexer.java" />
         <option value="$PROJECT_DIR$/src/main/MainWindow.java" />
+        <option value="$PROJECT_DIR$/src/main/ReadFile.java" />
+        <option value="$PROJECT_DIR$/src/main/Ranker.java" />
+        <option value="$PROJECT_DIR$/src/main/Searcher.java" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="260" />
+    <option name="y" value="20" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-14" />
-    <option name="y" value="-14" />
-    <option name="width" value="1924" />
-    <option name="height" value="1084" />
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -430,8 +167,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -454,33 +191,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
-  </component>
-  <component name="PropertiesComponent">
-    <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="OverrideImplement.combined" value="false" />
-    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
-    <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.file-colors" />
-    <property name="SearchEverywhereHistoryKey" value="color&#9;ACTION&#9;JumpToColorsAndFonts" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\AssafNahum\Dropbox\Personal\BGU\Third Year\5th Semester\Information Retrieval\IR_GUI2\src" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -511,16 +224,15 @@
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="IR_GUI2" />
+      <module name="IR_GUI_HELEK_BET" />
       <envs />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
-      <module />
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <module />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -547,18 +259,18 @@
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
+        <value defaultName="singleModule" />
       </option>
       <envs />
       <patterns />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
@@ -582,120 +294,7 @@
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-    </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
-      <module name="" />
-      <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="DEBUGGER_TYPE" value="Java" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <Java />
-      <Profilers>
-        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
-        <option name="GAPID_ENABLED" value="false" />
-        <option name="GAPID_DISABLE_PCS" value="false" />
-        <option name="SUPPORT_LIB_ENABLED" value="true" />
-        <option name="INSTRUMENTATION_ENABLED" value="true" />
-      </Profilers>
-      <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="EXTRA_OPTIONS" value="" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="DEBUGGER_TYPE" value="Java" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <Java />
-      <Profilers>
-        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
-        <option name="GAPID_ENABLED" value="false" />
-        <option name="GAPID_DISABLE_PCS" value="false" />
-        <option name="SUPPORT_LIB_ENABLED" value="true" />
-        <option name="INSTRUMENTATION_ENABLED" value="true" />
-      </Profilers>
-      <method />
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <option name="OUTPUT_DIRECTORY" />
       <option name="ANNOTATION_TYPE" />
       <option name="ENV_VARIABLES" />
@@ -708,190 +307,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Cold Fusion runner description" factoryName="Cold Fusion" custom_browser="" web_path="">
-      <method />
-    </configuration>
-    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="myFilePath" />
-      <option name="GLUE" />
-      <option name="myNameFilter" />
-      <option name="myGeneratedName" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
-      <option name="BCName" value="" />
-      <option name="IOSSimulatorSdkPath" value="" />
-      <option name="adlOptions" value="" />
-      <option name="airProgramParameters" value="" />
-      <option name="appDescriptorForEmulator" value="Android" />
-      <option name="debugTransport" value="USB" />
-      <option name="debuggerSdkRaw" value="BC SDK" />
-      <option name="emulator" value="NexusOne" />
-      <option name="emulatorAdlOptions" value="" />
-      <option name="fastPackaging" value="true" />
-      <option name="fullScreenHeight" value="0" />
-      <option name="fullScreenWidth" value="0" />
-      <option name="launchUrl" value="false" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="FlashPlayerDebugger.exe" />
-        </LauncherParameters>
-      </option>
-      <option name="mobileRunTarget" value="Emulator" />
-      <option name="moduleName" value="" />
-      <option name="overriddenMainClass" value="" />
-      <option name="overriddenOutputFileName" value="" />
-      <option name="overrideMainClass" value="false" />
-      <option name="runTrusted" value="true" />
-      <option name="screenDpi" value="0" />
-      <option name="screenHeight" value="0" />
-      <option name="screenWidth" value="0" />
-      <option name="url" value="http://" />
-      <option name="usbDebugPort" value="7936" />
-      <method />
-    </configuration>
-    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
-      <option name="BCName" value="" />
-      <option name="launcherParameters">
-        <LauncherParameters>
-          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
-          <option name="launcherType" value="OSDefault" />
-          <option name="newPlayerInstance" value="false" />
-          <option name="playerPath" value="FlashPlayerDebugger.exe" />
-        </LauncherParameters>
-      </option>
-      <option name="moduleName" value="" />
-      <option name="trusted" value="true" />
-      <method />
-    </configuration>
-    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list />
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
-      <setting name="vmparams" value="" />
-      <setting name="cmdLine" value="run-app" />
-      <setting name="passParentEnv" value="true" />
-      <setting name="launchBrowser" value="true" />
-      <setting name="launchBrowserUrl" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JarApplication" factoryName="JAR Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="SCRATCH_FILE_ID" value="0" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
-      <node-interpreter value="project" />
-      <working-dir value="" />
-      <envs />
-      <scope-kind value="ALL" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
-      <config-file value="" />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="IR_GUI2" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
-      <Host>localhost</Host>
-      <Port>5050</Port>
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run" />
-      <scripts />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
-      <method />
-    </configuration>
-    <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
-      <method />
     </configuration>
     <recent_temporary>
       <list size="1">
@@ -902,895 +317,126 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
-      <created>1359379246138</created>
+      <changelist id="5a2a71de-ed7a-492e-ae60-91aaf57b082b" name="Default" comment="" />
+      <created>1514970299429</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1359379246138</updated>
-      <workItem from="1359379250712" duration="1302000" />
-      <workItem from="1513201134104" duration="1764000" />
-      <workItem from="1513353207080" duration="38000" />
-      <workItem from="1513353386871" duration="44944000" />
-      <workItem from="1513557760719" duration="38000" />
-      <workItem from="1514535894246" duration="76000" />
-      <workItem from="1514536099713" duration="1207000" />
-      <workItem from="1514539945103" duration="54352000" />
+      <updated>1514970299429</updated>
     </task>
-    <task id="LOCAL-00001" summary="searcher">
-      <created>1514540300666</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1514540300666</updated>
-    </task>
-    <task id="LOCAL-00002" summary="searcher1">
-      <created>1514540647479</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1514540647479</updated>
-    </task>
-    <task id="LOCAL-00003" summary="readfile dates">
-      <created>1514545643374</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1514545643374</updated>
-    </task>
-    <task id="LOCAL-00004" summary="calculate tf">
-      <created>1514563167194</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1514563167194</updated>
-    </task>
-    <task id="LOCAL-00005" summary="dates, tf, connect searcher to gui">
-      <created>1514639547506</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1514639547506</updated>
-    </task>
-    <task id="LOCAL-00006" summary="5 most important sentences">
-      <created>1514652259424</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1514652259424</updated>
-    </task>
-    <task id="LOCAL-00007" summary="get doc file implemented">
-      <created>1514712677582</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1514712677582</updated>
-    </task>
-    <task id="LOCAL-00008" summary="get doc file implemented">
-      <created>1514740401144</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1514740401144</updated>
-    </task>
-    <task id="LOCAL-00009" summary="get doc file implemented">
-      <created>1514740433454</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1514740433454</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103721000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16807611" sideWeight="0.4846875" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2653277" sideWeight="0.4359375" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17615893" sideWeight="0.49625" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19947916" sideWeight="0.6703755" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2653277" sideWeight="0.4575" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2140625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
-      <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Floobits" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14701986" sideWeight="0.5640625" order="13" side_tool="true" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.49791667" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
-      <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26622516" sideWeight="0.4575" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16807611" sideWeight="0.4846875" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3308668" sideWeight="0.4359375" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17615893" sideWeight="0.49625" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Floobits" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14701986" sideWeight="0.5640625" order="13" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19947916" sideWeight="0.6703755" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.49791667" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="processedProjectFiles" value="true" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
-    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <MESSAGE value="searcher" />
-    <MESSAGE value="searcher1" />
-    <MESSAGE value="readfile dates" />
-    <MESSAGE value="calculate tf" />
-    <MESSAGE value="dates, tf, connect searcher to gui" />
-    <MESSAGE value="5 most important sentences" />
-    <MESSAGE value="get doc file implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="get doc file implemented" />
-  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/Indexer.java</url>
-          <line>824</line>
-          <properties />
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/Indexer.java</url>
-          <line>495</line>
-          <properties />
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/Searcher.java</url>
-          <line>39</line>
-          <properties />
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/MainWindow.java</url>
-          <line>609</line>
-          <properties />
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/Searcher.java</url>
-          <line>65</line>
-          <properties />
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/MainWindow.java</url>
-          <line>638</line>
-          <properties />
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/MainWindow.java</url>
-          <line>179</line>
-          <properties />
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/Indexer.java</url>
-          <line>361</line>
-          <properties />
-          <option name="timeStamp" value="62" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/Indexer.java</url>
-          <line>689</line>
-          <properties class="main.Indexer" method="writeDictionaryToFile">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/MainWindow.java</url>
-          <line>615</line>
-          <properties class="main.MainWindow" method="runQueryStringButtonClick">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="64" />
-    </breakpoint-manager>
+    <breakpoint-manager />
     <watches-manager />
   </component>
-  <component name="antWorkspaceConfiguration">
-    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
-    <option name="FILTER_TARGETS" value="false" />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/MainWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9175">
-          <caret line="367" column="0" lean-forward="false" selection-start-line="367" selection-start-column="0" selection-end-line="367" selection-end-column="0" />
-          <folding>
-            <element signature="method#browseCorpusPath#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#browseWorkingDirectory#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#browseWorkingDirectory#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#pathTextFieldKeyReleased#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#workingDirectoryTextFieldKeyReleased#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#workingDirectoryTextFieldKeyReleased#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#checkIfEnteredPath#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#checkIfEnteredPath#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#playButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#checkIfFolderExist#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#checkIfFolderExist#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#createTempPostingDirectory#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#createTempPostingDirectory#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#getFolderSize#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#getFolderSize#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#createTempPosting#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#createTempPosting#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#resetButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#resetButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#deleteFolder#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#loadDictionary#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#loadCache#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#loadCache#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#saveDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#saveDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#showAlert#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#showAlert#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#showCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#showDictionaryButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#showData#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#runQueryStringButtonClick#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#queryTextFieldKeyReleased#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#loadQueriesFileButtonPressed#0;class#MainWindow#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/DocNameHash.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2550">
-          <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Term.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        <state relative-caret-position="657">
+          <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
           <folding>
-            <element signature="e#824#825#0" expanded="true" />
-            <element signature="e#849#850#0" expanded="true" />
-            <element signature="e#882#883#0" expanded="true" />
-            <element signature="e#910#911#0" expanded="true" />
-            <element signature="e#940#941#0" expanded="true" />
-            <element signature="e#966#967#0" expanded="true" />
-            <element signature="e#1004#1005#0" expanded="true" />
-            <element signature="e#1034#1035#0" expanded="true" />
-            <element signature="e#1078#1079#0" expanded="true" />
-            <element signature="e#1121#1122#0" expanded="true" />
-            <element signature="e#1190#1191#0" expanded="true" />
-            <element signature="e#1254#1255#0" expanded="true" />
-            <element signature="e#1287#1288#0" expanded="true" />
-            <element signature="e#1314#1315#0" expanded="true" />
-            <element signature="e#1354#1355#0" expanded="true" />
-            <element signature="e#1386#1387#0" expanded="true" />
+            <element signature="method#Term#0;class#Term#0" expanded="false" />
+            <element signature="method#Term#1;class#Term#0" expanded="false" />
+            <element signature="method#Term#2;class#Term#0" expanded="false" />
+            <element signature="method#toString#0;class#Term#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/MainWindow.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/src/main/Doc.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1075">
-          <caret line="43" column="101" lean-forward="false" selection-start-line="43" selection-start-column="101" selection-end-line="43" selection-end-column="101" />
+        <state relative-caret-position="215">
+          <caret line="44" column="62" lean-forward="false" selection-start-line="44" selection-start-column="62" selection-end-line="44" selection-end-column="62" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/TermInDocCache.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ReadFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="51" column="34" lean-forward="false" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
-          <folding>
-            <element signature="docComment;method#getListOfAllFiles#0;class#ReadFile#0" expanded="false" />
-            <element signature="method#getListOfAllFiles#0;class#ReadFile#0" expanded="false" />
-            <element signature="docComment;method#getDocsFromFile#0;class#ReadFile#0" expanded="false" />
-            <element signature="docComment;method#createStopWordsMap#0;class#ReadFile#0" expanded="false" />
-            <element signature="method#createStopWordsMap#0;class#ReadFile#0" expanded="false" />
-            <element signature="docComment;method#parseDateForFBorFTfiles#0;class#ReadFile#0" expanded="false" />
-            <element signature="method#parseDateForFBorFTfiles#0;class#ReadFile#0" expanded="false" />
-            <element signature="docComment;method#convertDateToUniformFormat#0;class#ReadFile#0" expanded="false" />
-            <element signature="method#convertDateToUniformFormat#0;class#ReadFile#0" expanded="false" />
-            <element signature="method#readQueriesFile#0;class#ReadFile#0" expanded="false" />
-            <element signature="method#getListOfSentencesInFile#0;class#ReadFile#0" expanded="false" />
-            <element signature="docComment;method#isDigit#0;class#ReadFile#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Indexer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20275">
-          <caret line="811" column="0" lean-forward="false" selection-start-line="811" selection-start-column="0" selection-end-line="811" selection-end-column="0" />
+        <state relative-caret-position="385">
+          <caret line="851" column="42" lean-forward="false" selection-start-line="851" selection-start-column="42" selection-end-line="851" selection-end-column="42" />
           <folding>
-            <element signature="docComment;method#Indexer#0;class#Indexer#0" expanded="false" />
             <element signature="method#Indexer#0;class#Indexer#0" expanded="false" />
-            <element signature="method#Indexer#1;class#Indexer#0" expanded="false" />
             <element signature="method#Indexer#2;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#indexFile#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#getDocString#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#indexTerms#0;class#Indexer#0" expanded="false" />
+            <element signature="method#indexFile#0;class#Indexer#0" expanded="false" />
+            <element signature="method#getDocString#0;class#Indexer#0" expanded="false" />
             <element signature="method#indexTerms#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#updateTermInDictionary#0;class#Indexer#0" expanded="false" />
             <element signature="method#updateTermInDictionary#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#updateTermFrequency#0;class#Indexer#0" expanded="false" />
             <element signature="method#updateTermFrequency#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#writeTermsDictionaryToFile#0;class#Indexer#0" expanded="false" />
             <element signature="method#writeTermsDictionaryToFile#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#findMostImportantWords#0;class#Indexer#0" expanded="false" />
-            <element signature="method#findMostImportantWords#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#log2#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#mergeTempPostingFiles#0;class#Indexer#0" expanded="false" />
-            <element signature="method#mergeTempPostingFiles#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#mergeTwoFiles#0;class#Indexer#0" expanded="false" />
-            <element signature="method#mergeTwoFiles#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#splitTermLine#0;class#Indexer#0" expanded="false" />
-            <element signature="method#splitTermLine#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#splitPostingSortCreateCacheAndUpdateDictionary#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#getSortedListOfDocsPerTerm#0;class#Indexer#0" expanded="false" />
-            <element signature="method#getSortedListOfDocsPerTerm#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#writeDictionaryToFile#0;class#Indexer#0" expanded="false" />
-            <element signature="method#writeDictionaryToFile#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#writeCacheToFile#0;class#Indexer#0" expanded="false" />
-            <element signature="method#writeCacheToFile#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#writeDocsToFile#0;class#Indexer#0" expanded="false" />
-            <element signature="method#writeDocsToFile#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#resetStaticFields#0;class#Indexer#0" expanded="false" />
-            <element signature="method#resetStaticFields#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#getCacheSorted#0;class#Indexer#0" expanded="false" />
-            <element signature="method#getCacheSorted#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#getDictionarySorted#0;class#Indexer#0" expanded="false" />
+            <element signature="docComment;method#updateTermInFinalDictionary#0;class#Indexer#0" expanded="false" />
             <element signature="method#getDictionarySorted#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#calculateTfPerTerm#0;class#Indexer#0" expanded="false" />
-            <element signature="method#calculateTfPerTerm#0;class#Indexer#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ThreadsExecutor.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="50" lean-forward="false" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
-          <folding>
-            <element signature="method#wikipedia#0;class#Main#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7938">
-          <caret line="378" column="0" lean-forward="false" selection-start-line="378" selection-start-column="0" selection-end-line="378" selection-end-column="0" />
-          <folding>
-            <element signature="method#browseCorpusPath#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#browseWorkingDirectory#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#browseWorkingDirectory#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#pathTextFieldKeyReleased#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#workingDirectoryTextFieldKeyReleased#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#workingDirectoryTextFieldKeyReleased#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#checkIfEnteredPath#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#checkIfEnteredPath#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#playButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#checkIfFolderExist#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#checkIfFolderExist#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#createTempPostingDirectory#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#createTempPostingDirectory#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#getFolderSize#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#getFolderSize#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#createTempPosting#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#createTempPosting#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#resetButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#resetButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#deleteFolder#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#loadDictionary#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#loadCache#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#loadCache#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#saveDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#saveDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#showAlert#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#showAlert#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#showCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#showDictionaryButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#showData#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#runQueryStringButtonClick#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#queryTextFieldKeyReleased#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#loadQueriesFileButtonPressed#0;class#MainWindow#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/DocNameHash.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1470">
-          <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Term.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-          <folding>
-            <element signature="e#824#825#0" expanded="true" />
-            <element signature="e#849#850#0" expanded="true" />
-            <element signature="e#882#883#0" expanded="true" />
-            <element signature="e#910#911#0" expanded="true" />
-            <element signature="e#940#941#0" expanded="true" />
-            <element signature="e#966#967#0" expanded="true" />
-            <element signature="e#1004#1005#0" expanded="true" />
-            <element signature="e#1034#1035#0" expanded="true" />
-            <element signature="e#1078#1079#0" expanded="true" />
-            <element signature="e#1121#1122#0" expanded="true" />
-            <element signature="e#1190#1191#0" expanded="true" />
-            <element signature="e#1254#1255#0" expanded="true" />
-            <element signature="e#1287#1288#0" expanded="true" />
-            <element signature="e#1314#1315#0" expanded="true" />
-            <element signature="e#1354#1355#0" expanded="true" />
-            <element signature="e#1386#1387#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/MainWindow.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="819">
-          <caret line="39" column="145" lean-forward="true" selection-start-line="39" selection-start-column="145" selection-end-line="39" selection-end-column="145" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/TermInDocCache.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="357">
+          <caret line="395" column="76" lean-forward="true" selection-start-line="395" selection-start-column="76" selection-end-line="395" selection-end-column="76" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/ReadFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="51" column="34" lean-forward="false" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
-          <folding>
-            <element signature="docComment;method#getListOfAllFiles#0;class#ReadFile#0" expanded="false" />
-            <element signature="method#getListOfAllFiles#0;class#ReadFile#0" expanded="false" />
-            <element signature="docComment;method#getDocsFromFile#0;class#ReadFile#0" expanded="false" />
-            <element signature="docComment;method#createStopWordsMap#0;class#ReadFile#0" expanded="false" />
-            <element signature="method#createStopWordsMap#0;class#ReadFile#0" expanded="false" />
-            <element signature="docComment;method#parseDateForFBorFTfiles#0;class#ReadFile#0" expanded="false" />
-            <element signature="method#parseDateForFBorFTfiles#0;class#ReadFile#0" expanded="false" />
-            <element signature="docComment;method#convertDateToUniformFormat#0;class#ReadFile#0" expanded="false" />
-            <element signature="method#convertDateToUniformFormat#0;class#ReadFile#0" expanded="false" />
-            <element signature="method#readQueriesFile#0;class#ReadFile#0" expanded="false" />
-            <element signature="method#getListOfSentencesInFile#0;class#ReadFile#0" expanded="false" />
-            <element signature="docComment;method#isDigit#0;class#ReadFile#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Indexer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15225">
-          <caret line="734" column="0" lean-forward="false" selection-start-line="734" selection-start-column="0" selection-end-line="734" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;method#Indexer#0;class#Indexer#0" expanded="false" />
-            <element signature="method#Indexer#0;class#Indexer#0" expanded="false" />
-            <element signature="method#Indexer#1;class#Indexer#0" expanded="false" />
-            <element signature="method#Indexer#2;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#indexFile#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#getDocString#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#indexTerms#0;class#Indexer#0" expanded="false" />
-            <element signature="method#indexTerms#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#updateTermInDictionary#0;class#Indexer#0" expanded="false" />
-            <element signature="method#updateTermInDictionary#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#updateTermFrequency#0;class#Indexer#0" expanded="false" />
-            <element signature="method#updateTermFrequency#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#writeTermsDictionaryToFile#0;class#Indexer#0" expanded="false" />
-            <element signature="method#writeTermsDictionaryToFile#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#findMostImportantWords#0;class#Indexer#0" expanded="false" />
-            <element signature="method#findMostImportantWords#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#log2#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#mergeTempPostingFiles#0;class#Indexer#0" expanded="false" />
-            <element signature="method#mergeTempPostingFiles#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#mergeTwoFiles#0;class#Indexer#0" expanded="false" />
-            <element signature="method#mergeTwoFiles#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#splitTermLine#0;class#Indexer#0" expanded="false" />
-            <element signature="method#splitTermLine#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#splitPostingSortCreateCacheAndUpdateDictionary#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#getSortedListOfDocsPerTerm#0;class#Indexer#0" expanded="false" />
-            <element signature="method#getSortedListOfDocsPerTerm#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#writeDictionaryToFile#0;class#Indexer#0" expanded="false" />
-            <element signature="method#writeDictionaryToFile#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#writeCacheToFile#0;class#Indexer#0" expanded="false" />
-            <element signature="method#writeCacheToFile#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#writeDocsToFile#0;class#Indexer#0" expanded="false" />
-            <element signature="method#writeDocsToFile#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#resetStaticFields#0;class#Indexer#0" expanded="false" />
-            <element signature="method#resetStaticFields#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#getCacheSorted#0;class#Indexer#0" expanded="false" />
-            <element signature="method#getCacheSorted#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#getDictionarySorted#0;class#Indexer#0" expanded="false" />
-            <element signature="method#getDictionarySorted#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#calculateTfPerTerm#0;class#Indexer#0" expanded="false" />
-            <element signature="method#calculateTfPerTerm#0;class#Indexer#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/sample/Controller.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/javafx-src.zip!/javafx/application/Application.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/Time.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-816">
-          <caret line="3" column="38" lean-forward="false" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Stemmer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ThreadsExecutor.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/javafx-src.zip!/javafx/util/Pair.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/javafx-src.zip!/javafx/scene/control/TextInputControl.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/ShowDictionary.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/main/ShowDictionary.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/ShowCache.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/main/ShowCache.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/io/FileOutputStream.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/DocNameHash.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1115">
-          <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+        <state relative-caret-position="260">
+          <caret line="418" column="39" lean-forward="true" selection-start-line="418" selection-start-column="39" selection-end-line="418" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/io/FileInputStream.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/javafx-src.zip!/javafx/beans/property/BooleanPropertyBase.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/javafx-src.zip!/javafx/scene/control/CheckBox.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/javafx-src.zip!/javafx/fxml/FXMLLoader.java" />
     <entry file="file://$PROJECT_DIR$/src/main/Ranker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-          <folding>
-            <element signature="e#154#155#0" expanded="false" />
-            <element signature="e#181#182#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="19" column="43" lean-forward="false" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-          <folding>
-            <element signature="method#wikipedia#0;class#Main#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/Comparator.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/util/Collections.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="139" column="57" lean-forward="false" selection-start-line="139" selection-start-column="57" selection-end-line="139" selection-end-column="57" />
-          <folding>
-            <element signature="e#5644#5645#0" expanded="true" />
-            <element signature="e#5675#5676#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/TermInDocCache.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+          <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Searcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+        <state relative-caret-position="408">
+          <caret line="35" column="3" lean-forward="false" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#find5MostImportantSentences#0;class#Searcher#0" expanded="false" />
-            <element signature="method#compare#0;class#3367:3640" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Term.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="29" lean-forward="false" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
-          <folding>
-            <element signature="e#824#825#0" expanded="true" />
-            <element signature="e#849#850#0" expanded="true" />
-            <element signature="e#882#883#0" expanded="true" />
-            <element signature="e#910#911#0" expanded="true" />
-            <element signature="e#940#941#0" expanded="true" />
-            <element signature="e#966#967#0" expanded="true" />
-            <element signature="e#1004#1005#0" expanded="true" />
-            <element signature="e#1034#1035#0" expanded="true" />
-            <element signature="e#1078#1079#0" expanded="true" />
-            <element signature="e#1121#1122#0" expanded="true" />
-            <element signature="e#1190#1191#0" expanded="true" />
-            <element signature="e#1254#1255#0" expanded="true" />
-            <element signature="e#1287#1288#0" expanded="true" />
-            <element signature="e#1314#1315#0" expanded="true" />
-            <element signature="e#1354#1355#0" expanded="true" />
-            <element signature="e#1386#1387#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/MainWindow.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="173" column="67" lean-forward="false" selection-start-line="173" selection-start-column="41" selection-end-line="173" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Doc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="29" column="25" lean-forward="false" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
-          <folding>
-            <element signature="e#1029#1030#0" expanded="true" />
-            <element signature="e#1056#1057#0" expanded="true" />
-            <element signature="e#1096#1097#0" expanded="true" />
-            <element signature="e#1128#1129#0" expanded="true" />
-            <element signature="e#1158#1159#0" expanded="true" />
-            <element signature="e#1187#1188#0" expanded="true" />
-            <element signature="e#1228#1229#0" expanded="true" />
-            <element signature="e#1264#1265#0" expanded="true" />
-            <element signature="e#1302#1303#0" expanded="true" />
-            <element signature="e#1339#1340#0" expanded="true" />
-            <element signature="e#1396#1397#0" expanded="true" />
-            <element signature="e#1448#1449#0" expanded="true" />
-            <element signature="e#1609#1610#0" expanded="true" />
-            <element signature="e#1636#1637#0" expanded="true" />
-            <element signature="e#1676#1677#0" expanded="true" />
-            <element signature="e#1708#1709#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="372" column="29" lean-forward="false" selection-start-line="372" selection-start-column="29" selection-end-line="372" selection-end-column="29" />
-          <folding>
-            <element signature="method#parse#0;class#Parser#0" expanded="false" />
-            <element signature="docComment;method#parseNumber#0;class#Parser#0" expanded="false" />
-            <element signature="method#parseNumber#0;class#Parser#0" expanded="false" />
-            <element signature="docComment;method#parseExpressions#0;class#Parser#0" expanded="false" />
-            <element signature="method#parseExpressions#0;class#Parser#0" expanded="false" />
-            <element signature="method#skipHyphenAndApostrophe#0;class#Parser#0" expanded="false" />
-            <element signature="docComment;method#parseQuote#0;class#Parser#0" expanded="false" />
-            <element signature="method#parseQuote#0;class#Parser#0" expanded="false" />
-            <element signature="method#parseDateStartsWithTwoDigits#0;class#Parser#0" expanded="false" />
-            <element signature="docComment;method#parseDateStartsWithMonth#0;class#Parser#0" expanded="false" />
-            <element signature="method#parseDateStartsWithMonth#0;class#Parser#0" expanded="false" />
-            <element signature="method#getMonth#0;class#Parser#0" expanded="false" />
-            <element signature="method#skipDelimiters#0;class#Parser#0" expanded="false" />
-            <element signature="method#skipWhiteSpace#0;class#Parser#0" expanded="false" />
-            <element signature="method#skipLetters#0;class#Parser#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Indexer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="575" column="17" lean-forward="true" selection-start-line="575" selection-start-column="17" selection-end-line="575" selection-end-column="17" />
-          <folding>
-            <element signature="docComment;method#Indexer#0;class#Indexer#0" expanded="false" />
-            <element signature="method#Indexer#0;class#Indexer#0" expanded="false" />
-            <element signature="method#Indexer#1;class#Indexer#0" expanded="false" />
-            <element signature="method#Indexer#2;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#indexFile#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#getDocString#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#indexTerms#0;class#Indexer#0" expanded="false" />
-            <element signature="method#indexTerms#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#updateTermInDictionary#0;class#Indexer#0" expanded="false" />
-            <element signature="method#updateTermInDictionary#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#updateTermFrequency#0;class#Indexer#0" expanded="false" />
-            <element signature="method#updateTermFrequency#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#writeTermsDictionaryToFile#0;class#Indexer#0" expanded="false" />
-            <element signature="method#writeTermsDictionaryToFile#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#findMostImportantWords#0;class#Indexer#0" expanded="false" />
-            <element signature="method#findMostImportantWords#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#log2#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#mergeTempPostingFiles#0;class#Indexer#0" expanded="false" />
-            <element signature="method#mergeTempPostingFiles#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#mergeTwoFiles#0;class#Indexer#0" expanded="false" />
-            <element signature="method#mergeTwoFiles#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#splitTermLine#0;class#Indexer#0" expanded="false" />
-            <element signature="method#splitTermLine#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#splitPostingSortCreateCacheAndUpdateDictionary#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#getSortedListOfDocsPerTerm#0;class#Indexer#0" expanded="false" />
-            <element signature="method#getSortedListOfDocsPerTerm#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#writeDictionaryToFile#0;class#Indexer#0" expanded="false" />
-            <element signature="method#writeDictionaryToFile#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#writeCacheToFile#0;class#Indexer#0" expanded="false" />
-            <element signature="method#writeCacheToFile#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#writeDocsToFile#0;class#Indexer#0" expanded="false" />
-            <element signature="method#writeDocsToFile#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#resetStaticFields#0;class#Indexer#0" expanded="false" />
-            <element signature="method#resetStaticFields#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#getCacheSorted#0;class#Indexer#0" expanded="false" />
-            <element signature="method#getCacheSorted#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#getDictionarySorted#0;class#Indexer#0" expanded="false" />
-            <element signature="method#getDictionarySorted#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#calculateTfPerTerm#0;class#Indexer#0" expanded="false" />
-            <element signature="method#calculateTfPerTerm#0;class#Indexer#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ReadFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1268">
-          <caret line="372" column="0" lean-forward="true" selection-start-line="372" selection-start-column="0" selection-end-line="372" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;method#getListOfAllFiles#0;class#ReadFile#0" expanded="false" />
-            <element signature="method#getListOfAllFiles#0;class#ReadFile#0" expanded="false" />
-            <element signature="docComment;method#getDocsFromFile#0;class#ReadFile#0" expanded="false" />
-            <element signature="docComment;method#createStopWordsMap#0;class#ReadFile#0" expanded="false" />
-            <element signature="method#createStopWordsMap#0;class#ReadFile#0" expanded="false" />
-            <element signature="docComment;method#parseDateForFBorFTfiles#0;class#ReadFile#0" expanded="false" />
-            <element signature="method#parseDateForFBorFTfiles#0;class#ReadFile#0" expanded="false" />
-            <element signature="docComment;method#convertDateToUniformFormat#0;class#ReadFile#0" expanded="false" />
-            <element signature="method#convertDateToUniformFormat#0;class#ReadFile#0" expanded="false" />
-            <element signature="method#readQueriesFile#0;class#ReadFile#0" expanded="false" />
-            <element signature="method#getListOfSentencesInFile#0;class#ReadFile#0" expanded="false" />
-            <element signature="docComment;method#isDigit#0;class#ReadFile#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/MainWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="142" column="7" lean-forward="true" selection-start-line="142" selection-start-column="7" selection-end-line="142" selection-end-column="7" />
-          <folding>
-            <element signature="method#browseCorpusPath#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#browseWorkingDirectory#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#browseWorkingDirectory#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#pathTextFieldKeyReleased#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#workingDirectoryTextFieldKeyReleased#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#workingDirectoryTextFieldKeyReleased#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#checkIfEnteredPath#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#checkIfEnteredPath#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#playButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#checkIfFolderExist#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#checkIfFolderExist#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#createTempPostingDirectory#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#createTempPostingDirectory#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#getFolderSize#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#getFolderSize#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#createTempPosting#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#createTempPosting#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#resetButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#resetButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#deleteFolder#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#loadDictionary#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#loadCache#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#loadCache#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#saveDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#saveDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#showAlert#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#showAlert#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#showCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#showDictionaryButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#showData#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#runQueryStringButtonClick#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#queryTextFieldKeyReleased#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#loadQueriesFileButtonPressed#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#search#0;class#Searcher#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1798,92 +444,9 @@
   </component>
   <component name="masterDetails">
     <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <last-edited>JavaFXApp</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.5" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>IR_GUI2</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ScopeChooserConfigurable.UI">
-        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>
