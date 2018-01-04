@@ -173,8 +173,6 @@ public class MainWindow {
             System.out.println("Creating temp posting files");
 
             createTempPosting();
-            int numOfDocs = indexer.writeDocsToFile();
-            System.out.println("Amount of docs: " + numOfDocs);
 
             //log
             System.out.println("Finished creating temp posting files in " + (System.currentTimeMillis() - Main.time.getTempPostingStartTime()) + "ms (" + ((System.currentTimeMillis() - Main.time.getTempPostingStartTime()) / 1000.0 / 60.0) + " minutes)");
@@ -195,9 +193,13 @@ public class MainWindow {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
             indexer.writeDictionaryToFile(workingDirectoryPath + "\\dictionary.txt");
 
             System.out.println("Finished merging, splitting and creating final posting file in " + (System.currentTimeMillis() - Main.time.getFinalPostingStartTime()) + "ms (" + ((System.currentTimeMillis() - Main.time.getFinalPostingStartTime()) / 1000.0 / 60.0) + " minutes)");
+
+            int numOfDocs = indexer.writeDocsToFile();
+            System.out.println("Amount of docs: " + numOfDocs);
 
             //System.out.println("Writing cache to file");
             //indexer.writeCacheToFile(workingDirectoryPath + "\\cache.txt");
@@ -229,6 +231,7 @@ public class MainWindow {
             System.out.println("Finished everything in " + (System.currentTimeMillis() - Main.time.getPlayStartTime()) + "ms (" + ((System.currentTimeMillis() - Main.time.getPlayStartTime()) / 1000.0 / 60.0) + " minutes)");
 
         } catch (Exception e) {
+            e.printStackTrace();
 
         }
 
@@ -302,7 +305,7 @@ public class MainWindow {
         stopWords = readFile.createStopWordsMap(corpusPath + "\\stop_words.txt");
         Parser parser = new Parser(stopWords);
         ArrayList<File> files = new ArrayList<>();
-        readFile.getListOfAllFiles(corpusPath + "\\corpus2", files);
+        readFile.getListOfAllFiles(corpusPath + "\\corpus", files);
         int filesLength = files.size();
 
         //for each file
@@ -386,7 +389,7 @@ public class MainWindow {
             BufferedReader cacheFile = new BufferedReader(new FileReader(pathToLoadDictionaryAndCache + "\\cache.txt"));
             BufferedReader docsFile = new BufferedReader(new FileReader(pathToLoadDictionaryAndCache + "\\docs.txt"));
             HashMap<String, String> dictionary = loadDictionary(dictionaryFile);
-            HashMap<String, Pair<ArrayList<Pair<String, TermInDocCache>>, Integer>> cache = loadCache(cacheFile);
+            HashMap<String, Pair<ArrayList<String>, Integer>> cache = loadCache(cacheFile);
             HashMap<String, String> docs = loadDocs(docsFile);
             Indexer indexer = new Indexer(dictionary, cache, docs);
 
@@ -458,14 +461,14 @@ public class MainWindow {
      *
      * @return cache
      */
-    private HashMap<String, Pair<ArrayList<Pair<String, TermInDocCache>>, Integer>> loadCache(BufferedReader cacheFile) {
-        HashMap<String, Pair<ArrayList<Pair<String, TermInDocCache>>, Integer>> cache = new HashMap<>();
+    private HashMap<String, Pair<ArrayList<String>, Integer>> loadCache(BufferedReader cacheFile) {
+        HashMap<String, Pair<ArrayList<String>, Integer>> cache = new HashMap<>();
 
         try {
             String line;
             while ((line = cacheFile.readLine()) != null) {
                 char[] termLine = line.toCharArray();
-                ArrayList<Pair<String, TermInDocCache>> docs = new ArrayList<>();
+                ArrayList<String> docs = new ArrayList<>();
                 int index = 0;
                 StringBuilder term = new StringBuilder();
                 StringBuilder lineInPosting = new StringBuilder();
@@ -507,11 +510,10 @@ public class MainWindow {
 
                     //TermInDocCache doc = new TermInDocCache(docName.toString(), Integer.parseInt(frequency.toString()), Integer.parseInt(indexInDoc.toString()));
                     //docs.add(doc);
-                    docs.add(new Pair<>(docName.toString(),
-                            new TermInDocCache(
+                    docs.add(new TermInDocCache(docName.toString(),
                                     Integer.parseInt(frequency.toString()),
-                                    Integer.parseInt(indexInDoc.toString()),
-                                    Double.parseDouble(tf.toString()))));
+                                    Double.parseDouble(indexInDoc.toString()),
+                                    Double.parseDouble(tf.toString())).toString());
                 }
 
                 cache.put(term.toString(), new Pair<>(docs, Integer.parseInt(lineInPosting.toString())));

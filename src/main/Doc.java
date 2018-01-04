@@ -12,6 +12,7 @@ public class Doc {
     private int mostCommonTerm;
     private String date;
     private String file;
+    private double squardWightSum;
 
 
 
@@ -25,13 +26,14 @@ public class Doc {
 
     }
 
-    public Doc(String name, String code, int length, int mostCommonTerm, String date, String file) {
+    public Doc(String name, String code, int length, int mostCommonTerm, String date, String file, double wight) {
         this.name = name;
         this.code = code;
         this.length = length;
         this.mostCommonTerm= mostCommonTerm;
         this.date = date;
         this.file = file;
+        this.squardWightSum = wight;
 
     }
 
@@ -43,6 +45,7 @@ public class Doc {
         this.date = splitString[3];
         this.file = splitString[4];
         this.mostCommonTerm= Integer.parseInt(splitString[5]);
+        this.squardWightSum = Double.parseDouble(splitString[6]);
     }
 
     public String getName() {
@@ -101,6 +104,13 @@ public class Doc {
         this.text = text;
     }
 
+    public double getSquaredWightSum() {
+        return squardWightSum;
+    }
+
+    public void setSquaredWightSum(double wight) {
+        this.squardWightSum = wight;
+    }
 
     @Override
     public String toString() {

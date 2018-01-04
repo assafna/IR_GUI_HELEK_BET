@@ -73,6 +73,7 @@ public class Searcher {
         return queriesResults;
     }
 
+
     /**
      * find 5 most important sentences in doc
      * @param docNo doc number
@@ -81,11 +82,11 @@ public class Searcher {
      */
     public List<String> find5MostImportantSentences(String docNo, String path) {
         List<Pair<String, Double>> sumTfPerSent = new ArrayList<>();
-        String fileName = new ReadFile().getDoc(docNo, path).getFile();
-        File file;
-        file = new File(fileName);
+        Indexer indexer = new Indexer();
+        DocNameHash docNameHash = new DocNameHash();
+        String fileName = new Doc(indexer.getDocsDictionary().get(docNameHash.getHashFromDocNo(docNo))).getFile();
         //get list of all sentences in doc
-        List<String> sentences = new ReadFile().getListOfSentencesInFile(file, docNo);
+        List<String> sentences = new ReadFile().getListOfSentencesInFile(fileName, docNo);
 
         //parse per sentence
         Parser parser = new Parser(stopWords);
@@ -95,7 +96,7 @@ public class Searcher {
             //sum tf of all the term in the sentence
             double sumTf = 0;
             for (int j = 0; j < terms.size(); j++)
-                sumTf += getTf(terms.get(j), docNo);
+               // sumTf += getTf(terms.get(j), docNo);
             sumTfPerSent.add(new Pair<>(sentences.get(i), sumTf));
         }
         //sort list according to sumTf
@@ -117,10 +118,6 @@ public class Searcher {
 
     }
 
-    private double getTf(String term, String doc){
-        //TODO: implement
-        return 0;
-    }
 
 
 

@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 
@@ -138,7 +139,8 @@ public class ReadFile {
                     }
                     else
                         convertedDate = convertDateToUniformFormat(date.toString(), file.getName());
-                    pairs.add(new Doc(docNo.toString(), docNameHash.getHashFromDocNo(docNo.toString()),text.toString(), convertedDate ,file.getName()));
+                    String code = docNameHash.getHashFromDocNo(docNo.toString());
+                    pairs.add(new Doc(docNo.toString(),code ,text.toString(), convertedDate ,file.getName()));
                 }
 
             }
@@ -315,7 +317,7 @@ public class ReadFile {
      * @param file file to split
      * @return list of all sentences in file
      */
-    public List<String> getListOfSentencesInFile(File file, String docNo){
+    public List<String> getListOfSentencesInFile(String file, String docNo){
         List<String> sentences = new ArrayList<>();
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
@@ -363,6 +365,7 @@ public class ReadFile {
         return sentences;
     }
 
+    /*
     public Doc getDoc(String docNo, String path){
         Doc doc = null;
         try{
@@ -382,6 +385,7 @@ public class ReadFile {
         return doc;
 
     }
+    */
 
     public int getNumOfDocs() {
         return numOfDocs;
@@ -409,7 +413,7 @@ public class ReadFile {
      * @return list of docs for this term
      * @throws IOException exception
      */
-    public ArrayList<Pair<String, TermInDocCache>> getTermDocsFromPosting(Indexer indexer, String term) throws IOException {
+    public ArrayList<String> getTermDocsFromPosting(Indexer indexer, String term, String path) throws IOException {
         //get posting path
         String postingFilesPath = indexer.getTempPostingFilesPath();
         //get relevant row number
@@ -427,7 +431,7 @@ public class ReadFile {
         String[] docsPerTerm = line.split("\t");
 
         //create a list of docs
-        ArrayList<Pair<String, TermInDocCache>> docsList = new ArrayList<>();
+        ArrayList<String> docsList = new ArrayList<>();
         for (int i = 1; i < docsPerTerm.length; i++){
             char[] docsPerTermArray = docsPerTerm[i].toCharArray();
 
@@ -461,11 +465,9 @@ public class ReadFile {
                     break;
 
             //add
-            docsList.add(new Pair<>(docNameHash,
-                    new TermInDocCache(Integer.parseInt(
-                            occurrences.toString()),
+            docsList.add(new TermInDocCache(docNameHash, Integer.parseInt(occurrences.toString()),
                             Integer.parseInt(index.toString()),
-                            Double.parseDouble(tf.toString()))));
+                            Double.parseDouble(tf.toString())).toString());
         }
 
         return docsList;
