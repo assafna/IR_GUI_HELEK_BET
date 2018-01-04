@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0914cdc3-880e-40f7-8c73-86e54c21a02b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Doc.java" afterPath="$PROJECT_DIR$/src/main/Doc.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Indexer.java" afterPath="$PROJECT_DIR$/src/main/Indexer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/MainWindow.java" afterPath="$PROJECT_DIR$/src/main/MainWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Ranker.java" afterPath="$PROJECT_DIR$/src/main/Ranker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/ReadFile.java" afterPath="$PROJECT_DIR$/src/main/ReadFile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Searcher.java" afterPath="$PROJECT_DIR$/src/main/Searcher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/TermInDocCache.java" afterPath="$PROJECT_DIR$/src/main/TermInDocCache.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,8 +30,8 @@
       <file leaf-file-name="ReadFile.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/ReadFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="421" column="61" lean-forward="true" selection-start-line="421" selection-start-column="61" selection-end-line="421" selection-end-column="61" />
+            <state relative-caret-position="199">
+              <caret line="415" column="93" lean-forward="false" selection-start-line="415" selection-start-column="93" selection-end-line="415" selection-end-column="93" />
               <folding>
                 <element signature="method#readQueriesFile#0;class#ReadFile#0" expanded="false" />
                 <element signature="docComment;method#getListOfSentencesInFile#0;class#ReadFile#0" expanded="false" />
@@ -166,8 +157,8 @@
       <file leaf-file-name="Ranker.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Ranker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="84" column="89" lean-forward="false" selection-start-line="84" selection-start-column="89" selection-end-line="84" selection-end-column="89" />
+            <state relative-caret-position="-16">
+              <caret line="82" column="51" lean-forward="true" selection-start-line="82" selection-start-column="51" selection-end-line="82" selection-end-column="51" />
               <folding>
                 <element signature="docComment;method#getRankedDocs#0;class#Ranker#0" expanded="false" />
                 <element signature="docComment;method#getDocsWightAndDate#0;class#Ranker#0" expanded="false" />
@@ -415,6 +406,14 @@
       <option name="presentableId" value="Default" />
       <updated>1515055105864</updated>
     </task>
+    <task id="LOCAL-00001" summary="finish indexer, fix ranker">
+      <created>1515088794532</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1515088794532</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -479,6 +478,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="finish indexer, fix ranker" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish indexer, fix ranker" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -687,8 +690,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Ranker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="84" column="89" lean-forward="false" selection-start-line="84" selection-start-column="89" selection-end-line="84" selection-end-column="89" />
+        <state relative-caret-position="-16">
+          <caret line="82" column="51" lean-forward="true" selection-start-line="82" selection-start-column="51" selection-end-line="82" selection-end-column="51" />
           <folding>
             <element signature="docComment;method#getRankedDocs#0;class#Ranker#0" expanded="false" />
             <element signature="docComment;method#getDocsWightAndDate#0;class#Ranker#0" expanded="false" />
@@ -701,8 +704,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/ReadFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="421" column="61" lean-forward="true" selection-start-line="421" selection-start-column="61" selection-end-line="421" selection-end-column="61" />
+        <state relative-caret-position="199">
+          <caret line="415" column="93" lean-forward="false" selection-start-line="415" selection-start-column="93" selection-end-line="415" selection-end-column="93" />
           <folding>
             <element signature="method#readQueriesFile#0;class#ReadFile#0" expanded="false" />
             <element signature="docComment;method#getListOfSentencesInFile#0;class#ReadFile#0" expanded="false" />

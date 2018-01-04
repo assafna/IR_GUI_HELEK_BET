@@ -413,7 +413,7 @@ public class ReadFile {
      * @return list of docs for this term
      * @throws IOException exception
      */
-    public ArrayList<String> getTermDocsFromPosting(Indexer indexer, String term, String path) throws IOException {
+    public ArrayList<String> getTermDocsFromPosting(Indexer indexer, String term) throws IOException {
         //get posting path
         String postingFilesPath = indexer.getTempPostingFilesPath();
         //get relevant row number
