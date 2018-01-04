@@ -413,14 +413,18 @@ public class ReadFile {
      * @return list of docs for this term
      * @throws IOException exception
      */
-    public ArrayList<String> getTermDocsFromPosting(Indexer indexer, String term) throws IOException {
+    public ArrayList<String> getTermDocsFromPosting(Indexer indexer, String term, String path) throws IOException {
         //get posting path
         String postingFilesPath = indexer.getTempPostingFilesPath();
         //get relevant row number
         int rowNum = new Term(indexer.getFinalTermsDictionary().get(term)).getPointerToPostingList();
 
         //read from posting file until reaching relevant term
-        BufferedReader br = new BufferedReader(new FileReader(postingFilesPath + "\\" + term.charAt(0) + ".txt"));
+        BufferedReader br;
+        if(postingFilesPath == null)
+            br = new BufferedReader(new FileReader(path + "\\" + term.charAt(0) + ".txt"));
+        else
+            br = new BufferedReader(new FileReader(postingFilesPath + "\\" + term.charAt(0) + ".txt"));
         for (int i = 0; i < rowNum; i++)
             br.readLine();
 

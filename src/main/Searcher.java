@@ -21,9 +21,10 @@ public class Searcher {
      *
      * @param query  query as a string
      * @param isStem if to use stemming or not
+     * @param path of working directory
      * @return list of docs num (maximum 50)
      */
-    public List<String> search(String query, boolean isStem) {
+    public List<String> search(String query, boolean isStem, String path) {
         //create parser and parse text
         Parser parser = new Parser(stopWords);
         ArrayList<String> queryTerms = parser.parse(query.toCharArray());
@@ -42,11 +43,15 @@ public class Searcher {
             }
 
             queryTerms = queryTermsStemmed;
+            path += "\\output\\posting_files\\Stemming";
         }
+        else
+            path += "\\output\\posting_files\\No_Stemming";
 
         //ranking method
         Ranker ranker = new Ranker();
-        ArrayList<Pair<String, Double>> rankedDocs = ranker.getRankedDocs(queryTerms);
+
+        ArrayList<Pair<String, Double>> rankedDocs = ranker.getRankedDocs(queryTerms, path);
 
         //get 50 first docs
         int rankedDocsSize = rankedDocs.size();
@@ -63,12 +68,12 @@ public class Searcher {
      * @param isStem  if to use stem or not
      * @return hash map of query and his relevant docs
      */
-    public HashMap<String, List<String>> search(List<String> queries, boolean isStem) {
+    public HashMap<String, List<String>> search(List<String> queries, boolean isStem, String path) {
         HashMap<String, List<String>> queriesResults = new HashMap<>();
 
         //send each query to search function
         for(int i = 0; i < queries.size(); i++)
-            queriesResults.put(queries.get(i), search(queries.get(i), isStem));
+            queriesResults.put(queries.get(i), search(queries.get(i), isStem, path));
 
         return queriesResults;
     }

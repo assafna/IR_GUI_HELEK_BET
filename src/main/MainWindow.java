@@ -620,7 +620,7 @@ public class MainWindow {
             searcher = new Searcher(stopWords);
         if(!mostImportantLinesCheckBox.isSelected()) {
             String query = queryStringText.getText();
-            List<String> results = searcher.search(query, stemmingCheckBox.isSelected());
+            List<String> results = searcher.search(query, stemmingCheckBox.isSelected(), pathToLoadDictionaryAndCache);
 
             //TODO: show the results
         }
@@ -651,7 +651,7 @@ public class MainWindow {
             List<String> queries = new ReadFile().readQueriesFile(pathForQueriesFile + "\\queries.txt");
             if(searcher == null)
                 searcher = new Searcher(stopWords);
-            HashMap<String, List<String>> results = searcher.search(queries, stemmingCheckBox.isSelected());
+            HashMap<String, List<String>> results = searcher.search(queries, stemmingCheckBox.isSelected(), pathToLoadDictionaryAndCache);
 
             //TODO: show the results
 

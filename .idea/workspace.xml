@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0914cdc3-880e-40f7-8c73-86e54c21a02b" name="Default" comment="">
+    <list default="true" id="0914cdc3-880e-40f7-8c73-86e54c21a02b" name="Default" comment="u">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/MainWindow.java" afterPath="$PROJECT_DIR$/src/main/MainWindow.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Ranker.java" afterPath="$PROJECT_DIR$/src/main/Ranker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/ReadFile.java" afterPath="$PROJECT_DIR$/src/main/ReadFile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Searcher.java" afterPath="$PROJECT_DIR$/src/main/Searcher.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,23 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding>
-                <element signature="method#wikipedia#0;class#Main#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ReadFile.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/ReadFile.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="199">
-              <caret line="415" column="93" lean-forward="false" selection-start-line="415" selection-start-column="93" selection-end-line="415" selection-end-column="93" />
+              <caret line="415" column="51" lean-forward="false" selection-start-line="415" selection-start-column="29" selection-end-line="415" selection-end-column="51" />
               <folding>
                 <element signature="method#readQueriesFile#0;class#ReadFile#0" expanded="false" />
                 <element signature="docComment;method#getListOfSentencesInFile#0;class#ReadFile#0" expanded="false" />
@@ -45,8 +36,8 @@
       <file leaf-file-name="MainWindow.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/MainWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="393" column="0" lean-forward="false" selection-start-line="393" selection-start-column="0" selection-end-line="393" selection-end-column="0" />
+            <state relative-caret-position="583">
+              <caret line="653" column="136" lean-forward="false" selection-start-line="653" selection-start-column="136" selection-end-line="653" selection-end-column="136" />
               <folding>
                 <element signature="docComment;method#checkIfFolderExist#0;class#MainWindow#0" expanded="false" />
                 <element signature="method#checkIfFolderExist#0;class#MainWindow#0" expanded="false" />
@@ -56,6 +47,27 @@
                 <element signature="method#getFolderSize#0;class#MainWindow#0" expanded="false" />
                 <element signature="docComment;method#createTempPosting#0;class#MainWindow#0" expanded="false" />
                 <element signature="method#createTempPosting#0;class#MainWindow#0" expanded="false" />
+                <element signature="method#loadDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
+                <element signature="method#loadDictionary#0;class#MainWindow#0" expanded="false" />
+                <element signature="method#loadDocs#0;class#MainWindow#0" expanded="false" />
+                <element signature="docComment;method#loadCache#0;class#MainWindow#0" expanded="false" />
+                <element signature="method#loadCache#0;class#MainWindow#0" expanded="false" />
+                <element signature="docComment;method#saveDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
+                <element signature="method#saveDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
+                <element signature="method#showAlert#0;class#MainWindow#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Searcher.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Searcher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="167">
+              <caret line="47" column="12" lean-forward="true" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
+              <folding>
+                <element signature="docComment;method#search#1;class#Searcher#0" expanded="false" />
+                <element signature="method#search#1;class#Searcher#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -84,16 +96,18 @@
       <file leaf-file-name="Indexer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Indexer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-32">
-              <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+            <state relative-caret-position="171">
+              <caret line="560" column="54" lean-forward="true" selection-start-line="560" selection-start-column="54" selection-end-line="560" selection-end-column="54" />
               <folding>
                 <element signature="docComment;method#Indexer#0;class#Indexer#0" expanded="false" />
-                <element signature="method#Indexer#0;class#Indexer#0" expanded="false" />
                 <element signature="method#Indexer#1;class#Indexer#0" expanded="false" />
+                <element signature="method#Indexer#2;class#Indexer#0" expanded="false" />
                 <element signature="docComment;method#indexFile#0;class#Indexer#0" expanded="false" />
+                <element signature="method#indexFile#0;class#Indexer#0" expanded="false" />
                 <element signature="docComment;method#getDocString#0;class#Indexer#0" expanded="false" />
                 <element signature="method#getDocString#0;class#Indexer#0" expanded="false" />
                 <element signature="docComment;method#indexTerms#0;class#Indexer#0" expanded="false" />
+                <element signature="method#indexTerms#0;class#Indexer#0" expanded="false" />
                 <element signature="docComment;method#updateTermInDictionary#0;class#Indexer#0" expanded="false" />
                 <element signature="method#updateTermInDictionary#0;class#Indexer#0" expanded="false" />
                 <element signature="docComment;method#updateTermFrequency#0;class#Indexer#0" expanded="false" />
@@ -112,7 +126,6 @@
                 <element signature="docComment;method#splitTermLine#0;class#Indexer#0" expanded="false" />
                 <element signature="method#splitTermLine#0;class#Indexer#0" expanded="false" />
                 <element signature="docComment;method#splitPostingSortCreateCacheAndUpdateDictionary#0;class#Indexer#0" expanded="false" />
-                <element signature="method#splitPostingSortCreateCacheAndUpdateDictionary#0;class#Indexer#0" expanded="false" />
                 <element signature="docComment;method#updateTermInFinalDictionary#0;class#Indexer#0" expanded="false" />
                 <element signature="method#updateTermInFinalDictionary#0;class#Indexer#0" expanded="false" />
                 <element signature="docComment;method#getSortedListOfDocsPerTerm#0;class#Indexer#0" expanded="false" />
@@ -147,7 +160,7 @@
       <file leaf-file-name="FXMLLoader.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
+            <state relative-caret-position="1174">
               <caret line="1772" column="0" lean-forward="false" selection-start-line="1772" selection-start-column="0" selection-end-line="1772" selection-end-column="0" />
               <folding />
             </state>
@@ -157,14 +170,14 @@
       <file leaf-file-name="Ranker.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Ranker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-16">
-              <caret line="82" column="51" lean-forward="true" selection-start-line="82" selection-start-column="51" selection-end-line="82" selection-end-column="51" />
+            <state relative-caret-position="2431">
+              <caret line="161" column="0" lean-forward="false" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
               <folding>
                 <element signature="docComment;method#getRankedDocs#0;class#Ranker#0" expanded="false" />
                 <element signature="docComment;method#getDocsWightAndDate#0;class#Ranker#0" expanded="false" />
                 <element signature="docComment;method#rankDocs#0;class#Ranker#0" expanded="false" />
-                <element signature="e#6438#6439#0" expanded="true" />
-                <element signature="e#6462#6463#0" expanded="true" />
+                <element signature="e#6519#6520#0" expanded="true" />
+                <element signature="e#6543#6544#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -203,6 +216,7 @@
       <find>loadDictionary</find>
       <find>load</find>
       <find>cache</find>
+      <find>-1</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -218,12 +232,12 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/Doc.java" />
         <option value="$PROJECT_DIR$/src/main/TermInDocCache.java" />
-        <option value="$PROJECT_DIR$/src/main/Searcher.java" />
         <option value="$PROJECT_DIR$/src/main/Main.java" />
         <option value="$PROJECT_DIR$/src/main/Indexer.java" />
         <option value="$PROJECT_DIR$/src/main/MainWindow.java" />
-        <option value="$PROJECT_DIR$/src/main/Ranker.java" />
+        <option value="$PROJECT_DIR$/src/main/Searcher.java" />
         <option value="$PROJECT_DIR$/src/main/ReadFile.java" />
+        <option value="$PROJECT_DIR$/src/main/Ranker.java" />
       </list>
     </option>
   </component>
@@ -413,7 +427,14 @@
       <option name="project" value="LOCAL" />
       <updated>1515088794532</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="finish indexer, fix ranker2">
+      <created>1515088851457</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1515088851457</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -438,7 +459,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34778014" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3742072" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -481,7 +502,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="finish indexer, fix ranker" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish indexer, fix ranker" />
+    <MESSAGE value="finish indexer, fix ranker2" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish indexer, fix ranker2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -500,7 +522,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/Ranker.java</url>
-          <line>116</line>
+          <line>117</line>
           <properties />
           <option name="timeStamp" value="28" />
         </line-breakpoint>
@@ -511,7 +533,7 @@
           <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="36" />
+      <option name="time" value="38" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -553,18 +575,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Searcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="98" column="17" lean-forward="false" selection-start-line="98" selection-start-column="17" selection-end-line="98" selection-end-column="17" />
-          <folding>
-            <element signature="method#search#0;class#Searcher#0" expanded="false" />
-            <element signature="docComment;method#search#1;class#Searcher#0" expanded="false" />
-            <element signature="method#search#1;class#Searcher#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -599,14 +609,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="1772" column="0" lean-forward="false" selection-start-line="1772" selection-start-column="0" selection-end-line="1772" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Doc.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -622,8 +624,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="393" column="0" lean-forward="false" selection-start-line="393" selection-start-column="0" selection-end-line="393" selection-end-column="0" />
+        <state relative-caret-position="583">
+          <caret line="653" column="136" lean-forward="false" selection-start-line="653" selection-start-column="136" selection-end-line="653" selection-end-column="136" />
           <folding>
             <element signature="docComment;method#checkIfFolderExist#0;class#MainWindow#0" expanded="false" />
             <element signature="method#checkIfFolderExist#0;class#MainWindow#0" expanded="false" />
@@ -633,22 +635,51 @@
             <element signature="method#getFolderSize#0;class#MainWindow#0" expanded="false" />
             <element signature="docComment;method#createTempPosting#0;class#MainWindow#0" expanded="false" />
             <element signature="method#createTempPosting#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#loadDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#loadDictionary#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#loadDocs#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#loadCache#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#loadCache#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#saveDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#saveDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#showAlert#0;class#MainWindow#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1174">
+          <caret line="1772" column="0" lean-forward="false" selection-start-line="1772" selection-start-column="0" selection-end-line="1772" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Searcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="47" column="12" lean-forward="true" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
+          <folding>
+            <element signature="docComment;method#search#1;class#Searcher#0" expanded="false" />
+            <element signature="method#search#1;class#Searcher#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Indexer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-32">
-          <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+        <state relative-caret-position="171">
+          <caret line="560" column="54" lean-forward="true" selection-start-line="560" selection-start-column="54" selection-end-line="560" selection-end-column="54" />
           <folding>
             <element signature="docComment;method#Indexer#0;class#Indexer#0" expanded="false" />
-            <element signature="method#Indexer#0;class#Indexer#0" expanded="false" />
             <element signature="method#Indexer#1;class#Indexer#0" expanded="false" />
+            <element signature="method#Indexer#2;class#Indexer#0" expanded="false" />
             <element signature="docComment;method#indexFile#0;class#Indexer#0" expanded="false" />
+            <element signature="method#indexFile#0;class#Indexer#0" expanded="false" />
             <element signature="docComment;method#getDocString#0;class#Indexer#0" expanded="false" />
             <element signature="method#getDocString#0;class#Indexer#0" expanded="false" />
             <element signature="docComment;method#indexTerms#0;class#Indexer#0" expanded="false" />
+            <element signature="method#indexTerms#0;class#Indexer#0" expanded="false" />
             <element signature="docComment;method#updateTermInDictionary#0;class#Indexer#0" expanded="false" />
             <element signature="method#updateTermInDictionary#0;class#Indexer#0" expanded="false" />
             <element signature="docComment;method#updateTermFrequency#0;class#Indexer#0" expanded="false" />
@@ -667,7 +698,6 @@
             <element signature="docComment;method#splitTermLine#0;class#Indexer#0" expanded="false" />
             <element signature="method#splitTermLine#0;class#Indexer#0" expanded="false" />
             <element signature="docComment;method#splitPostingSortCreateCacheAndUpdateDictionary#0;class#Indexer#0" expanded="false" />
-            <element signature="method#splitPostingSortCreateCacheAndUpdateDictionary#0;class#Indexer#0" expanded="false" />
             <element signature="docComment;method#updateTermInFinalDictionary#0;class#Indexer#0" expanded="false" />
             <element signature="method#updateTermInFinalDictionary#0;class#Indexer#0" expanded="false" />
             <element signature="docComment;method#getSortedListOfDocsPerTerm#0;class#Indexer#0" expanded="false" />
@@ -690,14 +720,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Ranker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16">
-          <caret line="82" column="51" lean-forward="true" selection-start-line="82" selection-start-column="51" selection-end-line="82" selection-end-column="51" />
+        <state relative-caret-position="2431">
+          <caret line="161" column="0" lean-forward="false" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
           <folding>
             <element signature="docComment;method#getRankedDocs#0;class#Ranker#0" expanded="false" />
             <element signature="docComment;method#getDocsWightAndDate#0;class#Ranker#0" expanded="false" />
             <element signature="docComment;method#rankDocs#0;class#Ranker#0" expanded="false" />
-            <element signature="e#6438#6439#0" expanded="true" />
-            <element signature="e#6462#6463#0" expanded="true" />
+            <element signature="e#6519#6520#0" expanded="true" />
+            <element signature="e#6543#6544#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -705,7 +735,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/ReadFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
-          <caret line="415" column="93" lean-forward="false" selection-start-line="415" selection-start-column="93" selection-end-line="415" selection-end-column="93" />
+          <caret line="415" column="51" lean-forward="false" selection-start-line="415" selection-start-column="29" selection-end-line="415" selection-end-column="51" />
           <folding>
             <element signature="method#readQueriesFile#0;class#ReadFile#0" expanded="false" />
             <element signature="docComment;method#getListOfSentencesInFile#0;class#ReadFile#0" expanded="false" />
