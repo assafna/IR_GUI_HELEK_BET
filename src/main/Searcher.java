@@ -2,7 +2,6 @@ package main;
 
 import javafx.util.Pair;
 
-import java.io.File;
 import java.util.*;
 
 /**
@@ -12,7 +11,7 @@ public class Searcher {
 
     private HashSet<String> stopWords;
 
-    Searcher(HashSet<String> stopWords){
+    Searcher(HashSet<String> stopWords) {
         this.stopWords = stopWords;
     }
 
@@ -21,10 +20,10 @@ public class Searcher {
      *
      * @param query  query as a string
      * @param isStem if to use stemming or not
-     * @param path of working directory
+     * @param path   of working directory
      * @return list of docs num (maximum 50)
      */
-    public List<String> search(String query, boolean isStem, String path) {
+    public ArrayList<String> search(String query, boolean isStem, String path) {
         //create parser and parse text
         Parser parser = new Parser(stopWords);
         ArrayList<String> queryTerms = parser.parse(query.toCharArray());
@@ -44,8 +43,7 @@ public class Searcher {
 
             queryTerms = queryTermsStemmed;
             path += "\\output\\posting_files\\Stemming";
-        }
-        else
+        } else
             path += "\\output\\posting_files\\No_Stemming";
 
         //ranking method
@@ -56,8 +54,9 @@ public class Searcher {
         //get 50 first docs
         int rankedDocsSize = rankedDocs.size();
         ArrayList<String> docsToReturn = new ArrayList<>();
-        for(int i = 0; i < 50 && i < rankedDocsSize; i++ )
-            docsToReturn.add(rankedDocs.get(i).getKey());
+        DocNameHash docNameHash = new DocNameHash();
+        for (int i = 0; i < 50 && i < rankedDocsSize; i++)
+            docsToReturn.add(i + 1 + ".\t" + docNameHash.getDocNoFromHash(rankedDocs.get(i).getKey()) + "\t(Rank: " + rankedDocs.get(i).getValue() + ")");
         return docsToReturn;
     }
 
@@ -72,7 +71,7 @@ public class Searcher {
         HashMap<String, List<String>> queriesResults = new HashMap<>();
 
         //send each query to search function
-        for(int i = 0; i < queries.size(); i++)
+        for (int i = 0; i < queries.size(); i++)
             queriesResults.put(queries.get(i), search(queries.get(i), isStem, path));
 
         return queriesResults;
@@ -81,17 +80,20 @@ public class Searcher {
 
     /**
      * find 5 most important sentences in doc
+     *
      * @param docNo doc number
-     * @param path path to docs file
+     * @param path  path to docs file
      * @return list of 50 most important sentences in doc
      */
-    public List<String> find5MostImportantSentences(String docNo, String path) {
+    public ArrayList<String> find5MostImportantSentences(String docNo, String path) {
         List<Pair<String, Double>> sumTfPerSent = new ArrayList<>();
         Indexer indexer = new Indexer();
         DocNameHash docNameHash = new DocNameHash();
-        String fileName = new Doc(indexer.getDocsDictionary().get(docNameHash.getHashFromDocNo(docNo))).getFile();
+        HashMap<String, String> docsDictionary = indexer.getDocsDictionary();
+        String docHash = docNameHash.getHashFromDocNo(docNo);
+        String fileName = new Doc(docHash, docsDictionary.get(docHash)).getFile();
         //get list of all sentences in doc
-        List<String> sentences = new ReadFile().getListOfSentencesInFile(fileName, docNo);
+        List<String> sentences = new ReadFile().getListOfSentencesInFile(fileName, path + "\\" + docNo);
 
         //parse per sentence
         Parser parser = new Parser(stopWords);
@@ -101,31 +103,24 @@ public class Searcher {
             //sum tf of all the term in the sentence
             double sumTf = 0;
             for (int j = 0; j < terms.size(); j++)
-               // sumTf += getTf(terms.get(j), docNo);
-            sumTfPerSent.add(new Pair<>(sentences.get(i), sumTf));
+                // sumTf += getTf(terms.get(j), docNo);
+                sumTfPerSent.add(new Pair<>(sentences.get(i), sumTf));
         }
         //sort list according to sumTf
-        Collections.sort(sumTfPerSent, new Comparator<Pair<String, Double>>() {
-            @Override
-            public int compare(Pair<String, Double> o1, Pair<String, Double> o2) {
-                if (o1.getValue() < o2.getValue())
-                    return -1;
-                return 1;
-            }
+        sumTfPerSent.sort((o1, o2) -> {
+            if (o1.getValue() < o2.getValue())
+                return -1;
+            return 1;
         });
 
         //add 5 sentences with biggest sumTf to list
-        List<String> mostImportantSentences = new ArrayList<>();
-        for(int i = 0; i < 5; i++)
+        ArrayList<String> mostImportantSentences = new ArrayList<>();
+        for (int i = 0; i < 5; i++)
             mostImportantSentences.add(sumTfPerSent.get(i).getKey());
 
         return mostImportantSentences;
 
     }
-
-
-
-
 
 
 }

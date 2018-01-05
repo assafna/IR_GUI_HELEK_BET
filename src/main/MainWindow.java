@@ -59,7 +59,6 @@ public class MainWindow {
     private static boolean engineCreated = false;
 
 
-
     public void initialize() {
         System.out.println("GUI launched");
     }
@@ -403,7 +402,7 @@ public class MainWindow {
 
             showDictionaryButton.setDisable(false);
             showCacheButton.setDisable(false);
-            if(stopWords == null)
+            if (stopWords == null)
                 stopWords = new ReadFile().createStopWordsMap(pathToLoadDictionaryAndCache + "\\stop_words.txt");
             engineCreated = true;
             loadQueriesFileButton.setDisable(false);
@@ -435,7 +434,7 @@ public class MainWindow {
         return termsDictionary;
     }
 
-    private HashMap<String, String> loadDocs(BufferedReader docsFile){
+    private HashMap<String, String> loadDocs(BufferedReader docsFile) {
         HashMap<String, String> docDictionary = new HashMap<>();
 
         try {
@@ -444,7 +443,7 @@ public class MainWindow {
                 char[] lineArray = line.toCharArray();
                 StringBuilder name = new StringBuilder();
                 int index = 0;
-                while(lineArray[index] != '\t')
+                while (lineArray[index] != '\t')
                     name.append(lineArray[index++]);
 
                 docDictionary.put(name.toString(), line.substring(name.length() + 1));
@@ -511,9 +510,9 @@ public class MainWindow {
                     //TermInDocCache doc = new TermInDocCache(docName.toString(), Integer.parseInt(frequency.toString()), Integer.parseInt(indexInDoc.toString()));
                     //docs.add(doc);
                     docs.add(new TermInDocCache(docName.toString(),
-                                    Integer.parseInt(frequency.toString()),
-                                    Double.parseDouble(indexInDoc.toString()),
-                                    Double.parseDouble(tf.toString())).toString());
+                            Integer.parseInt(frequency.toString()),
+                            Double.parseDouble(indexInDoc.toString()),
+                            Double.parseDouble(tf.toString())).toString());
                 }
 
                 cache.put(term.toString(), new Pair<>(docs, Integer.parseInt(lineInPosting.toString())));
@@ -573,7 +572,8 @@ public class MainWindow {
      * @param actionEvent action event
      */
     public void showCacheButtonPressed(ActionEvent actionEvent) {
-        showData(true);
+        Indexer indexer = new Indexer();
+        showData("Cache", indexer.getCacheSorted());
     }
 
     /**
@@ -582,22 +582,16 @@ public class MainWindow {
      * @param actionEvent action event
      */
     public void showDictionaryButtonPressed(ActionEvent actionEvent) {
-        showData(false);
+        Indexer indexer = new Indexer();
+        showData("Dictionary", indexer.getDictionarySorted());
     }
 
-    private void showData(Boolean cache) {
+    private void showData(String type, ArrayList<String> strings) {
         ObservableList<String> lines = FXCollections.observableArrayList();
         ListView<String> listView = new ListView<>(lines);
         listView.setPrefHeight(1000);
         listView.setPrefWidth(1000);
         listView.getItems().clear();
-
-        Indexer indexer = new Indexer();
-        ArrayList<String> strings;
-        if (cache)
-            strings = indexer.getCacheSorted();
-        else
-            strings = indexer.getDictionarySorted();
 
         //run through the list
         int stringsSize = strings.size();
@@ -607,10 +601,7 @@ public class MainWindow {
         VBox pane = new VBox();
         pane.getChildren().addAll(listView);
         Stage stage = new Stage();
-        if (cache)
-            stage.setTitle("Cache");
-        else
-            stage.setTitle("Dictionary");
+        stage.setTitle(type);
         stage.setScene(new Scene(pane, 1000, 800));
         stage.show();
     }
@@ -618,29 +609,23 @@ public class MainWindow {
     public void runQueryStringButtonClick(ActionEvent actionEvent) {
         if (searcher == null)
             searcher = new Searcher(stopWords);
-        if(!mostImportantLinesCheckBox.isSelected()) {
+        if (!mostImportantLinesCheckBox.isSelected()) {
             String query = queryStringText.getText();
-            List<String> results = searcher.search(query, stemmingCheckBox.isSelected(), pathToLoadDictionaryAndCache);
-
-            //TODO: show the results
+            showData("Query", searcher.search(query, stemmingCheckBox.isSelected(), pathToLoadDictionaryAndCache));
+        } else {
+            showData("5 Most Important Sentences", searcher.find5MostImportantSentences(queryStringText.getText(), pathToLoadDictionaryAndCache));
         }
-        else{
-            List<String> mostImportantSenences = searcher.find5MostImportantSentences(queryStringText.getText(), pathToLoadDictionaryAndCache);
-            //TODO: show the results
-
-        }
-
     }
 
     public void resetQueriesDataButtonClick(ActionEvent actionEvent) {
     }
 
-    public void queryTextFieldKeyReleased(){
-        if(queryStringText.getText().length() > 0 && engineCreated)
+    public void queryTextFieldKeyReleased() {
+        if (queryStringText.getText().length() > 0 && engineCreated)
             runQueryStringButton.setDisable(false);
     }
 
-    public void loadQueriesFileButtonPressed(){
+    public void loadQueriesFileButtonPressed() {
         String pathForQueriesFile;
         //choose directory to load queries file
         DirectoryChooser directoryChooser = new DirectoryChooser();
@@ -649,7 +634,7 @@ public class MainWindow {
         if (selectedDirectory != null) {
             pathForQueriesFile = selectedDirectory.getAbsolutePath();
             List<String> queries = new ReadFile().readQueriesFile(pathForQueriesFile + "\\queries.txt");
-            if(searcher == null)
+            if (searcher == null)
                 searcher = new Searcher(stopWords);
             HashMap<String, List<String>> results = searcher.search(queries, stemmingCheckBox.isSelected(), pathToLoadDictionaryAndCache);
 

@@ -31,7 +31,7 @@ public class Main extends Application {
         primaryStage.show();
     }
 
-    public static void wikipedia(){
+    public static void wikipedia() {
         String subject = "Ed Sheeran";
         try {
             URL url = new URL("https://en.wikipedia.org/w/index.php?action=raw&title=" + subject.replace(" ", "_"));
@@ -53,8 +53,7 @@ public class Main extends Application {
                 }
             }
             System.out.println("text = " + text);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

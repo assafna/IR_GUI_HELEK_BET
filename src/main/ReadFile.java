@@ -1,13 +1,10 @@
 package main;
 
-import javafx.util.Pair;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 
@@ -136,11 +133,10 @@ public class ReadFile {
                     if (date.toString().length() == 0) {
                         date.append("-");
                         convertedDate = date.toString();
-                    }
-                    else
+                    } else
                         convertedDate = convertDateToUniformFormat(date.toString(), file.getName());
-                    String code = docNameHash.getHashFromDocNo(docNo.toString());
-                    pairs.add(new Doc(docNo.toString(),code ,text.toString(), convertedDate ,file.getName()));
+                    String code = docNameHash.addDocToHashArrayIncreaseAndGetHashCode(docNo.toString());
+                    pairs.add(new Doc(code, text.toString(), convertedDate, file.getName()));
                 }
 
             }
@@ -227,7 +223,8 @@ public class ReadFile {
 
     /**
      * convert date according to the format DD/NN/YYYY
-     * @param date date to convert
+     *
+     * @param date     date to convert
      * @param fileName file name
      * @return converted date
      */
@@ -265,13 +262,12 @@ public class ReadFile {
             //add day
             int i;
             for (i = 0; i < dateArray.length && !isDigit(dateArray[i]); i++) ;
-            if(i == dateArray.length)
+            if (i == dateArray.length)
                 return date.toString();
             if (dateArray[i + 1] == 32) {
                 newDate.append(0);
                 newDate.append(dateArray[i]);
-            }
-            else {
+            } else {
                 newDate.append(dateArray[i]);
                 newDate.append(dateArray[i + 1]);
             }
@@ -292,20 +288,20 @@ public class ReadFile {
 
     /**
      * read queries from file
+     *
      * @param file
      * @return list of queries
      */
-    public ArrayList<String> readQueriesFile(String file){
+    public ArrayList<String> readQueriesFile(String file) {
         ArrayList<String> queries = new ArrayList<>();
-        try{
+        try {
             BufferedReader br = new BufferedReader(new FileReader(file));
             String line;
-            while((line = br.readLine()) != null){
-                if(line.contains("<title>"))
+            while ((line = br.readLine()) != null) {
+                if (line.contains("<title>"))
                     queries.add(line.substring(8));
             }
-        }
-        catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return queries;
@@ -314,10 +310,11 @@ public class ReadFile {
 
     /**
      * split file into sentences
+     *
      * @param file file to split
      * @return list of all sentences in file
      */
-    public List<String> getListOfSentencesInFile(String file, String docNo){
+    public List<String> getListOfSentencesInFile(String file, String docNo) {
         List<String> sentences = new ArrayList<>();
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
@@ -358,8 +355,7 @@ public class ReadFile {
                 i++;
             }
 
-        }
-        catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return sentences;
@@ -399,17 +395,19 @@ public class ReadFile {
 
     /**
      * check if the char is a digit
+     *
      * @param c char to check
      * @return true if the char is digit
      */
-    private boolean isDigit(char c){
+    private boolean isDigit(char c) {
         return c >= 48 && c <= 57;
     }
 
     /**
      * reads a term from posting file and returns list of docs for this term
+     *
      * @param indexer indexer to use
-     * @param term term to read
+     * @param term    term to read
      * @return list of docs for this term
      * @throws IOException exception
      */
@@ -421,7 +419,7 @@ public class ReadFile {
 
         //read from posting file until reaching relevant term
         BufferedReader br;
-        if(postingFilesPath == null)
+        if (postingFilesPath == null)
             br = new BufferedReader(new FileReader(path + "\\" + term.charAt(0) + ".txt"));
         else
             br = new BufferedReader(new FileReader(postingFilesPath + "\\" + term.charAt(0) + ".txt"));
@@ -436,7 +434,7 @@ public class ReadFile {
 
         //create a list of docs
         ArrayList<String> docsList = new ArrayList<>();
-        for (int i = 1; i < docsPerTerm.length; i++){
+        for (int i = 1; i < docsPerTerm.length; i++) {
             char[] docsPerTermArray = docsPerTerm[i].toCharArray();
 
             //get doc name hash
@@ -469,12 +467,51 @@ public class ReadFile {
                     break;
 
             //add
+            /*
             docsList.add(new TermInDocCache(docNameHash, Integer.parseInt(occurrences.toString()),
-                            Integer.parseInt(index.toString()),
-                            Double.parseDouble(tf.toString())).toString());
+                    Double.parseDouble(index.toString()),
+                    Double.parseDouble(tf.toString())).toString());
+                    */
+            docsList.add(docNameHash + '\t' + occurrences + '\t' + index + '\t' + tf);
         }
 
         return docsList;
+    }
+
+    /**
+     * used to create only the hash values by reading the corpus
+     *
+     * @param directoryName directory of the corpus
+     * @throws IOException exception
+     */
+    public void createDocsHashFromCorpus(String directoryName) throws IOException {
+        ArrayList<File> files = new ArrayList<>();
+        getListOfAllFiles(directoryName, files);
+
+        DocNameHash docNameHash = new DocNameHash();
+        docNameHash.clear();
+
+        int filesSize = files.size();
+        for (int j = 0; j < filesSize; j++) {
+            try (BufferedReader br = new BufferedReader(new FileReader(files.get(j)))) {
+                String line;
+                while ((line = br.readLine()) != null) {
+                    StringBuilder docNo = new StringBuilder();
+                    //check if DOCNO
+                    if (line.contains("<DOCNO>")) {
+                        char[] lineCharArray = line.toCharArray();
+                        for (int i = 7; i < 120; i++) { //number 120 is not relevant
+                            char c;
+                            if ((c = lineCharArray[i]) == 60) //<
+                                break;
+                            if (c != 32) //*SPACE*
+                                docNo.append(lineCharArray[i]);
+                        }
+                        docNameHash.addDocToHashArrayIncreaseAndGetHashCode(docNo.toString());
+                    }
+                }
+            }
+        }
     }
 
 }

@@ -16,7 +16,7 @@ public class Term implements Comparable<Term> {
         this.sumTf = sumTf;
     }
 
-    public Term(String term,int sumTf, int df, double idf, int pointerToPostingList) {
+    public Term(String term, int sumTf, int df, double idf, int pointerToPostingList) {
         this.term = term;
         this.sumTf = sumTf;
         this.df = df;
@@ -68,7 +68,6 @@ public class Term implements Comparable<Term> {
     }
 
 
-
     public String getTerm() {
         return term;
     }
@@ -92,7 +91,7 @@ public class Term implements Comparable<Term> {
         sb.append(term + '\t');
         sb.append(sumTf + "" + '\t');
         sb.append(df + "" + '\t');
-        sb.append(idf + "" +'\t');
+        sb.append(idf + "" + '\t');
         sb.append(pointerToPostingList + "" + '\t');
 
         return sb.toString();

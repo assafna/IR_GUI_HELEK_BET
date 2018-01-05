@@ -20,7 +20,7 @@ public class Parser {
     Parser() {
     }
 
-    Parser(char[] docArray, int index){
+    Parser(char[] docArray, int index) {
         this.docArray = docArray;
         this.index = index;
         this.arrayLength = docArray.length;

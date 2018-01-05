@@ -97,7 +97,7 @@ public class Indexer {
 
     }
 
-    Indexer(HashMap<String,String> loadDictionary, HashMap<String, Pair<ArrayList<String>, Integer>> loadCache, HashMap<String, String> loadDocs) {
+    Indexer(HashMap<String, String> loadDictionary, HashMap<String, Pair<ArrayList<String>, Integer>> loadCache, HashMap<String, String> loadDocs) {
         finalTermsDictionary = loadDictionary;
         cache = loadCache;
         docsDictionary = loadDocs;
@@ -132,14 +132,15 @@ public class Indexer {
 
     /**
      * create doc string
-     * @param doc doc
+     *
+     * @param doc    doc
      * @param length doc length
      * @return string of the doc
      */
-    private String getDocString(Doc doc, int length){
+    private String getDocString(Doc doc, int length) {
         StringBuilder sb = new StringBuilder();
-        sb.append(doc.getName() + '\t');
-        sb.append(doc.getCode() + '\t');
+        //sb.append(doc.getName() + '\t');
+        //sb.append(doc.getCode() + '\t');
         sb.append(length + "" + '\t');
         sb.append(doc.getDate() + '\t');
         sb.append(doc.getFile());
@@ -180,7 +181,7 @@ public class Indexer {
                 int index = tempTermsDictionary.get(term);
                 updateTermInDictionary(term, docName, index, i);
             } else
-                updateTermInDictionary(term, docName, termIndex++, i/listSize);
+                updateTermInDictionary(term, docName, termIndex++, (double) i / listSize);
 
             //update term frequency
             updateTermFrequency(term, docName);
@@ -300,7 +301,7 @@ public class Indexer {
         for (String term : termsDictionary.keySet()) {
             int termSumTf = termsDictionary.get(term).getKey();
             if (termsDictionary.get(term).getKey() >= 3) {
-                Term t = new Term(term,termSumTf);
+                Term t = new Term(term, termSumTf);
                 terms.add(t);
                 finalTermsDictionary.put(term, t.toString());
             }
@@ -404,10 +405,10 @@ public class Indexer {
             //if term is equal, need to merge
             int compareAnswer = line1Split[0].compareTo(line2Split[0]);
             if (compareAnswer == 0) {
-             //   if (finalTermsDictionary.containsKey(line1Split[0])) {
-                    //term tab line1 tab line 2
-                    bw.write(line1Split[0] + '\t' + line1Split[1] + '\t' + line2Split[1] + '\n');
-            //    }
+                //   if (finalTermsDictionary.containsKey(line1Split[0])) {
+                //term tab line1 tab line 2
+                bw.write(line1Split[0] + '\t' + line1Split[1] + '\t' + line2Split[1] + '\n');
+                //    }
                 //next lines please
                 line1 = br1.readLine();
                 line2 = br2.readLine();
@@ -416,9 +417,9 @@ public class Indexer {
             }
             //term 1 is smaller
             else if (compareAnswer < 0) {
-              //  if (finalTermsDictionary.containsKey(line1Split[0])) {
-                    bw.write(line1 + '\n');
-             //   }
+                //  if (finalTermsDictionary.containsKey(line1Split[0])) {
+                bw.write(line1 + '\n');
+                //   }
                 line1 = br1.readLine();
                 //next line please
                 if (line1 != null) line1Split = splitTermLine(line1);
@@ -426,9 +427,9 @@ public class Indexer {
             }
             //term 2 is smaller
             else {
-              //  if (finalTermsDictionary.containsKey(line2Split[0])) {
-                    bw.write(line2 + '\n');
-              //  }
+                //  if (finalTermsDictionary.containsKey(line2Split[0])) {
+                bw.write(line2 + '\n');
+                //  }
                 line2 = br2.readLine();
                 //next line please
                 if (line2 != null) line2Split = splitTermLine(line2);
@@ -533,7 +534,7 @@ public class Indexer {
                 continue;
 
             //prev
-            if (c != prev){
+            if (c != prev) {
                 bufferedWriterHashMap.get(prev).close();
                 prev = c;
                 System.out.println("Started character: " + c);
@@ -561,7 +562,7 @@ public class Indexer {
                     bw.write(docsInLineLength + '\n');
 
                     //get list of cacheDocsPerTerm terms in docs and insert to cache, reference to posting
-                    cache.put(lineSplit0, new Pair<>(getSortedListOfDocsPerTerm(docsInLine, docsInLineLength,cacheDocsPerTerm +1), bwln));
+                    cache.put(lineSplit0, new Pair<>(getSortedListOfDocsPerTerm(docsInLine, docsInLineLength, cacheDocsPerTerm + 1), bwln));
 
                     //update line number
                     bufferedWriterLineNumberHashMap.put(c, bwln + 1);
@@ -571,7 +572,7 @@ public class Indexer {
                 }
 
                 //add to dictionary
-                updateTermInFinalDictionary(lineSplit0, docsInLineLength, -1 );
+                updateTermInFinalDictionary(lineSplit0, docsInLineLength, -1);
             }
             //term is not in top 10k, need to write again, but now sorted
             else {
@@ -605,7 +606,7 @@ public class Indexer {
                 bw.write('\n');
 
                 //add to dictionary
-                updateTermInFinalDictionary(lineSplit0, docsInLineLength, bwln );
+                updateTermInFinalDictionary(lineSplit0, docsInLineLength, bwln);
 
                 //update line number
                 bufferedWriterLineNumberHashMap.put(c, bwln + 1);
@@ -620,14 +621,15 @@ public class Indexer {
 
     /**
      * update term in the final dictionary
+     *
      * @param termName term name
-     * @param df term df
-     * @param pointer pointer to posting list. -1 if the term in the cache
+     * @param df       term df
+     * @param pointer  pointer to posting list. -1 if the term in the cache
      */
-    private void updateTermInFinalDictionary(String termName, int df, int pointer){
+    private void updateTermInFinalDictionary(String termName, int df, int pointer) {
         Term term = new Term(finalTermsDictionary.get(termName));
         term.setDf(df);
-        term.setIdf(log2((double) docsCounter/df));
+        term.setIdf(log2((double) docsCounter / df));
         term.setPointerToPostingList(pointer);
         finalTermsDictionary.put(termName, term.toString());
     }
@@ -643,7 +645,7 @@ public class Indexer {
      */
     private ArrayList<String> getSortedListOfDocsPerTerm(String[] docs, int length, int howMany) {
         ArrayList<String> termInDocCaches = new ArrayList<>();
-        double idf = log2((double) docsCounter/length);
+        double idf = log2((double) docsCounter / length);
 
         for (int i = 0; i < length && i < howMany; i++) {
             char[] docCharsArray = docs[i].toCharArray();
@@ -681,15 +683,15 @@ public class Indexer {
 
             //write term
             Double Tf = Double.parseDouble(tf.toString());
-            termInDocCaches.add(new TermInDocCache(docName,Integer.parseInt(occurrences.toString()), Double.parseDouble(index.toString()),Tf).toString());
+            termInDocCaches.add(new TermInDocCache(docName, Integer.parseInt(occurrences.toString()), Double.parseDouble(index.toString()), Tf).toString());
 
             //update term wight in doc in doc sum squared wight
             //Pair<Integer, Double> docPair = mostCommonTermFrequencyAndDocWight.get(docName);
-            double wight = Math.pow(Tf*idf, 2);
-            if(!docsWights.containsKey(docName))
+            double wight = Math.pow(Tf * idf, 2);
+            if (!docsWights.containsKey(docName))
                 docsWights.put(docName, wight);
             else
-                docsWights.put(docName,(double)docsWights.get(docName) + wight );
+                docsWights.put(docName, (double) docsWights.get(docName) + wight);
         }
 
         //sort terms
@@ -706,7 +708,7 @@ public class Indexer {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(path));
             for (String term : finalTermsDictionary.keySet()) {
-                bw.write(finalTermsDictionary.get(term) + '\n' );
+                bw.write(finalTermsDictionary.get(term) + '\n');
             }
             bw.close();
         } catch (IOException e) {
@@ -716,6 +718,7 @@ public class Indexer {
 
     /**
      * write cache object to file
+     *
      * @param path path of the file
      */
     public void writeCacheToFile(String path) {
@@ -749,6 +752,7 @@ public class Indexer {
         try {
             for (String doc : docsDictionary.keySet()) {
                 numOfDocs++;
+                docWriter.write(doc + '\t');
                 docWriter.write(docsDictionary.get(doc));
                 docWriter.write('\t');
                 docWriter.write(mostCommonTermFrequency.get(doc) + "");
@@ -844,7 +848,8 @@ public class Indexer {
 
     /**
      * calculate tf for each term in each doc
-     * @param docNo doc name
+     *
+     * @param docNo       doc name
      * @param termsInFile list of terms in file
      */
     private void calculateTfPerTerm(String docNo, List<String> termsInFile) {

@@ -8,14 +8,14 @@ public class TermInDocCache implements Comparable<TermInDocCache> {
     private double tf;
 
 
-    public TermInDocCache(String docName, int numOfOccurrencesInDoc, double indexOfFirstOccurrence, double tf ) {
+    public TermInDocCache(String docName, int numOfOccurrencesInDoc, double indexOfFirstOccurrence, double tf) {
         this.docName = docName;
         this.numOfOccurrencesInDoc = numOfOccurrencesInDoc;
         this.indexOfFirstOccurrence = indexOfFirstOccurrence;
         this.tf = tf;
     }
 
-    public TermInDocCache(String cacheString){
+    public TermInDocCache(String cacheString) {
         String[] splitString = cacheString.split("\t");
         this.docName = splitString[0];
         this.numOfOccurrencesInDoc = Integer.parseInt(splitString[1]);
@@ -58,13 +58,7 @@ public class TermInDocCache implements Comparable<TermInDocCache> {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(docName + "\t");
-        sb.append(numOfOccurrencesInDoc + "\t");
-        sb.append(indexOfFirstOccurrence + "\t");
-        sb.append(tf + "\t");
-
-        return sb.toString();
+        return docName + "\t" + numOfOccurrencesInDoc + "\t" + indexOfFirstOccurrence + "\t" + tf + "\t";
     }
 
     @Override

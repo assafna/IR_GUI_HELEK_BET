@@ -5,20 +5,15 @@ package main;
  */
 public class Doc {
 
-    private String name;
     private String code;
     private String text;
     private int length;
     private int mostCommonTerm;
     private String date;
     private String file;
-    private double squardWightSum;
+    private double squaredWeightSum;
 
-
-
-
-    Doc(String name, String code,String text, String date, String file) {
-        this.name = name;
+    Doc(String code, String text, String date, String file) {
         this.code = code;
         this.text = text;
         this.date = date;
@@ -26,34 +21,24 @@ public class Doc {
 
     }
 
-    public Doc(String name, String code, int length, int mostCommonTerm, String date, String file, double wight) {
-        this.name = name;
+    public Doc(String code, int length, int mostCommonTerm, String date, String file, double weight) {
         this.code = code;
         this.length = length;
-        this.mostCommonTerm= mostCommonTerm;
+        this.mostCommonTerm = mostCommonTerm;
         this.date = date;
         this.file = file;
-        this.squardWightSum = wight;
+        this.squaredWeightSum = weight;
 
     }
 
-    public Doc(String docString){
+    public Doc(String code, String docString) {
         String[] splitString = docString.split("\t");
-        this.name = splitString[0];
-        this.code = splitString[1];
-        this.length = Integer.parseInt(splitString[2]);
-        this.date = splitString[3];
-        this.file = splitString[4];
-        this.mostCommonTerm= Integer.parseInt(splitString[5]);
-        this.squardWightSum = Double.parseDouble(splitString[6]);
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+        this.code = code;
+        this.length = Integer.parseInt(splitString[0]);
+        this.date = splitString[1];
+        this.file = splitString[2];
+        this.mostCommonTerm = Integer.parseInt(splitString[3]);
+        this.squaredWeightSum = Double.parseDouble(splitString[4]);
     }
 
     public String getDate() {
@@ -105,15 +90,16 @@ public class Doc {
     }
 
     public double getSquaredWightSum() {
-        return squardWightSum;
+        return squaredWeightSum;
     }
 
     public void setSquaredWightSum(double wight) {
-        this.squardWightSum = wight;
+        this.squaredWeightSum = wight;
     }
 
     @Override
     public String toString() {
-        return name;
+        DocNameHash docNameHash = new DocNameHash();
+        return docNameHash.getDocNoFromHash(code);
     }
 }

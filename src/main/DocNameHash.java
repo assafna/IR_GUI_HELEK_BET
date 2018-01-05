@@ -16,7 +16,7 @@ public class DocNameHash {
 
     private int hashIndex;
 
-    public static String[] docNoHashArray = null;
+    private static String[] docNoHashArray = null;
 
     DocNameHash() {
         startAsciiCode = 33; //included
@@ -38,7 +38,7 @@ public class DocNameHash {
      * @param docNo string that represents a doc, used to insert into relevant array
      * @return string of 3 chars representing the doc
      */
-    public String getHashFromDocNo(String docNo) {
+    public String addDocToHashArrayIncreaseAndGetHashCode(String docNo) {
         //Maximum combinations = (endAsciiCode - startAsciiCode)^3
         //So, 830,584.
 
@@ -56,6 +56,46 @@ public class DocNameHash {
 
         docNoHashArray[hashIndex++] = docNo;
         return "" + aCode + bCode + cCode++;
+    }
+
+    /**
+     * runs through the array and returns the hash code from the string
+     *
+     * @param docNo the doc name
+     * @return hash code of 3 digits
+     */
+    public String getHashFromDocNo(String docNo) {
+        char a = startAsciiCode;
+        char b = startAsciiCode;
+        char c = startAsciiCode;
+
+        for (int i = 0; i < docNoHashArray.length; i++) {
+            //in case where (X, X, endAsciiCode)
+            if (c == endAsciiCode) {
+                b++;
+                c = startAsciiCode; //(X, X + 1, startAsciiCode)
+
+                //in case where (X, endAsciiCode, startAsciiCode)
+                if (b == endAsciiCode) {
+                    a++;
+                    b = startAsciiCode; //(X + 1, startAsciiCode, startAsciiCode)
+                }
+            }
+            if (docNoHashArray[i].compareTo(docNo) == 0)
+                return "" + a + b + c;
+            c++;
+        }
+
+        return null;
+    }
+
+    /**
+     * clears hash array to insert again
+     */
+    public void clear() {
+        docNoHashArray =
+                new String[(endAsciiCode - startAsciiCode) * (endAsciiCode - startAsciiCode) * (endAsciiCode - startAsciiCode)];
+        hashIndex = 0;
     }
 
     /**

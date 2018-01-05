@@ -2,8 +2,11 @@ package main;
 
 import javafx.util.Pair;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
 
 /**
  * Created by USER on 12/30/2017.
@@ -12,6 +15,7 @@ public class Ranker {
 
     /**
      * get list of ranked list according to query
+     *
      * @param queryTerms
      * @return
      */
@@ -20,7 +24,7 @@ public class Ranker {
 
         //for each doc, have an hash map of terms, and for each term have index of first occurrence anf tf
         HashMap<String, HashMap<String, Pair<Double, Double>>> termsDetailsPerDoc = new HashMap<>();
-        HashMap<String, Pair<Double, String>> docsWightAndDate = new HashMap<>(); //wight and date of each doc
+        HashMap<String, Pair<Double, String>> docsWeightAndDate; //weight and date of each doc
         HashMap<String, Term> termsObjects = new HashMap<>(); //object of each term
         ArrayList<String> docs = new ArrayList<>(); //list of docs names
 
@@ -54,9 +58,9 @@ public class Ranker {
         }
 
         //get date and wight per doc
-        docsWightAndDate = getDocsWightAndDate(docs, indexer);
+        docsWeightAndDate = getDocsWightAndDate(docs, indexer);
         //hash map for ratings
-        ArrayList<Pair<String, Double>> docsRank = rankDocs(docsWightAndDate, termsDetailsPerDoc, termsObjects);
+        ArrayList<Pair<String, Double>> docsRank = rankDocs(docsWeightAndDate, termsDetailsPerDoc, termsObjects);
         return docsRank;
 
 
@@ -64,10 +68,11 @@ public class Ranker {
 
     /**
      * get all relevant docs (with details per doc) form cache and posting file for term
+     *
      * @param queryTerm term from the query
-     * @param term terms object
-     * @param indexer indexer object
-     * @param path for posting files
+     * @param term      terms object
+     * @param indexer   indexer object
+     * @param path      for posting files
      * @return list of all relevant docs for the term
      */
     private ArrayList<String> getDocsForTerm(String queryTerm, Term term, Indexer indexer, String path) {
@@ -105,17 +110,20 @@ public class Ranker {
 
     /**
      * return hash map the squared wight sum and date per doc
-     * @param docs list of docs names
+     *
+     * @param docs    list of docs names
      * @param indexer object of indexer
      * @return hash map od docs details
      */
-    private HashMap<String, Pair<Double, String>> getDocsWightAndDate(ArrayList<String> docs, Indexer indexer){
+    private HashMap<String, Pair<Double, String>> getDocsWightAndDate(ArrayList<String> docs, Indexer indexer) {
         HashMap<String, Pair<Double, String>> docsDetails = new HashMap<>();
 
         int docsSize = docs.size();
-        for(int i = 0; i < docsSize; i++){
-            String docString = indexer.getDocsDictionary().get(docs.get(i));
-            Doc doc = new Doc(docString);
+        for (int i = 0; i < docsSize; i++) {
+            HashMap<String, String> docsDictionary = indexer.getDocsDictionary();
+            String docCode = docs.get(i);
+            String docString = docsDictionary.get(docCode);
+            Doc doc = new Doc(docCode, docString);
             docsDetails.put(docs.get(i), new Pair<>(doc.getSquaredWightSum(), doc.getDate()));
         }
 
@@ -124,43 +132,43 @@ public class Ranker {
 
     /**
      * rank docs according to tf-idf, doc date and term first index in doc
-     * @param docsDetails hash map of doc details
+     *
+     * @param docsDetails        hash map of doc details
      * @param termsDetailsPerDoc hash map of terms details per doc
-     * @param termsObject hash map of terms objects
+     * @param termsObject        hash map of terms objects
      * @return list of ranked docs
      */
-    private ArrayList<Pair<String, Double>> rankDocs(HashMap<String, Pair<Double, String>> docsDetails, HashMap<String, HashMap<String, Pair<Double, Double>>> termsDetailsPerDoc, HashMap<String, Term> termsObject){
+    private ArrayList<Pair<String, Double>> rankDocs(HashMap<String, Pair<Double, String>> docsDetails, HashMap<String, HashMap<String, Pair<Double, Double>>> termsDetailsPerDoc, HashMap<String, Term> termsObject) {
         ArrayList<Pair<String, Double>> rankedDocs = new ArrayList<>();
 
         //for each doc
-        for(String doc : termsDetailsPerDoc.keySet()){
-            HashMap<String, Pair<Double, Double >> terms = termsDetailsPerDoc.get(doc);
+        for (String doc : termsDetailsPerDoc.keySet()) {
+            HashMap<String, Pair<Double, Double>> terms = termsDetailsPerDoc.get(doc);
             double sumWightForDoc = 0;
 
             //for each term in doc
-            for(String term : terms.keySet()){
+            for (String term : terms.keySet()) {
                 Pair<Double, Double> termPair = terms.get(term);// normalized index, tf
                 //calculate sum wight of query terms
                 double idf = termsObject.get(term).getIdf();
-                sumWightForDoc += (termPair.getValue()* idf)/* / termPair.getKey()*/;
+                sumWightForDoc += (termPair.getValue() * idf)/* / termPair.getKey()*/;
             }
             double denominator = Math.sqrt(docsDetails.get(doc).getKey()) * getNormalizedDate(docsDetails.get(doc).getValue());
-            rankedDocs.add(new Pair(doc, sumWightForDoc/denominator));
+            rankedDocs.add(new Pair(doc, sumWightForDoc / denominator));
         }
 
-        //sort docs according to wight
-        rankedDocs.sort(Comparator.comparing(Pair::getValue));
+        //sort docs according to weight
+        rankedDocs.sort((o1, o2) -> o2.getValue().compareTo(o1.getValue()));
 
         //and finally, return
         return rankedDocs;
 
     }
 
-    private double getNormalizedDate(String date){
+    private double getNormalizedDate(String date) {
         return 1;
     }
 
 
-
-    }
+}
 
