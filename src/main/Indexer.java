@@ -176,7 +176,7 @@ public class Indexer {
                 int index = tempTermsDictionary.get(term);
                 updateTermInDictionary(term, docName, index, i);
             } else
-                updateTermInDictionary(term, docName, termIndex++, (double) i / listSize);
+                updateTermInDictionary(term, docName, termIndex++, (double) (i+1) / listSize);
 
             //update term frequency
             updateTermFrequency(term, docName);

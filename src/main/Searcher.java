@@ -67,12 +67,12 @@ public class Searcher {
      * @param isStem  if to use stem or not
      * @return hash map of query and his relevant docs
      */
-    public HashMap<String, List<String>> search(List<String> queries, boolean isStem, String path) {
+    public HashMap<String, List<String>> search(List<Pair<String,String>> queries, boolean isStem, String path) {
         HashMap<String, List<String>> queriesResults = new HashMap<>();
 
         //send each query to search function
         for (int i = 0; i < queries.size(); i++)
-            queriesResults.put(queries.get(i), search(queries.get(i), isStem, path));
+            queriesResults.put(queries.get(i).getKey(), search(queries.get(i).getValue(), isStem, path));
 
         return queriesResults;
     }

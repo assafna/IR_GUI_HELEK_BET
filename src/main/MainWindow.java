@@ -647,10 +647,25 @@ public class MainWindow {
 
         if (selectedDirectory != null) {
             pathForQueriesFile = selectedDirectory.getAbsolutePath();
-            List<String> queries = new ReadFile().readQueriesFile(pathForQueriesFile + "\\queries.txt");
+            List<Pair<String, String>> queries = new ReadFile().readQueriesFile(pathForQueriesFile + "\\queries.txt");
             if (searcher == null)
                 searcher = new Searcher(stopWords);
             HashMap<String, List<String>> results = searcher.search(queries, stemmingCheckBox.isSelected(), pathToLoadDictionaryAndCache);
+            //move to save function
+            try {
+                BufferedWriter bw = new BufferedWriter(new FileWriter(pathToLoadDictionaryAndCache + "\\results.txt"));
+                for(String query : results.keySet()){
+                    List<String> queryResults = results.get(query);
+                    for(int i = 0; i < queryResults.size(); i++){
+                        String[] splitLine = queryResults.get(i).split("\t");
+                        bw.write(query + " " + 0 + " " + splitLine[1] + " 1 42.38 mt" + '\n');
+                    }
+                }
+                bw.close();
+            }
+            catch (IOException e){
+                e.printStackTrace();
+            }
 
             //TODO: show the results
 

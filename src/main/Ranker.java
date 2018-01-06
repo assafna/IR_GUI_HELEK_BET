@@ -148,8 +148,7 @@ public class Ranker {
 
         //for each doc
         for (String doc : termsDetailsPerDoc.keySet()) {
-            if(doc.equals("=?4"))
-                System.out.println("f");
+
             HashMap<String, Pair<Double, Double>> terms = termsDetailsPerDoc.get(doc);
             double sumWeightForDoc = 0;
 
@@ -158,16 +157,10 @@ public class Ranker {
                 Pair<Double, Double> termPair = terms.get(term);// normalized index, tf
                 //calculate sum wight of query terms
                 double idf = termsObject.get(term).getIdf();
-                if(termPair.getKey() == 0)
-                    sumWeightForDoc += (termPair.getValue() * idf);
-                else
-                    sumWeightForDoc += (termPair.getValue() * idf) / termPair.getKey();
+
+                sumWeightForDoc += (termPair.getValue() * idf) / termPair.getKey();
             }
-            double b = getNormalizedDate(docsDetails.get(doc).getValue());
             double denominator = Math.sqrt(docsDetails.get(doc).getKey()) * getNormalizedDate(docsDetails.get(doc).getValue());
-            System.out.println(sumWeightForDoc);
-            System.out.println(denominator);
-            double a = sumWeightForDoc / denominator;
             rankedDocs.add(new Pair(doc, sumWeightForDoc / denominator));
         }
 
@@ -189,9 +182,8 @@ public class Ranker {
             long days = ChronoUnit.DAYS.between(docDate.toInstant(), today.toInstant());
             return (double) days/MAX_DAYS_BETWEEN_DAYS;
         } catch (ParseException e) {
-            e.printStackTrace();
+            return 1;
         }
-        return 1;
     }
 
 
