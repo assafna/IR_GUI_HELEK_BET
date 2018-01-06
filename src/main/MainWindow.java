@@ -57,6 +57,7 @@ public class MainWindow {
     private static Searcher searcher = null;
     private static HashSet<String> stopWords;
     private static boolean engineCreated = false;
+    private ArrayList<String> rankedDocs = null;
 
 
     public void initialize() {
@@ -197,7 +198,7 @@ public class MainWindow {
 
             System.out.println("Finished merging, splitting and creating final posting file in " + (System.currentTimeMillis() - Main.time.getFinalPostingStartTime()) + "ms (" + ((System.currentTimeMillis() - Main.time.getFinalPostingStartTime()) / 1000.0 / 60.0) + " minutes)");
 
-            int numOfDocs = indexer.writeDocsToFile();
+            int numOfDocs = indexer.writeDocsToFile(workingDirectoryPath + "\\docs.txt");
             System.out.println("Amount of docs: " + numOfDocs);
 
             //System.out.println("Writing cache to file");
@@ -544,6 +545,7 @@ public class MainWindow {
             Indexer indexer = new Indexer();
             indexer.writeDictionaryToFile(pathToSaveDictionaryAndCache + "\\dictionary.txt");
             indexer.writeCacheToFile(pathToSaveDictionaryAndCache + "\\cache.txt");
+            indexer.writeDocsToFile(pathToLoadDictionaryAndCache + "\\docs.txt");
         }
 
         showAlert("Dictionary and Cache Saved Successfully");
@@ -611,7 +613,19 @@ public class MainWindow {
             searcher = new Searcher(stopWords);
         if (!mostImportantLinesCheckBox.isSelected()) {
             String query = queryStringText.getText();
-            showData("Query", searcher.search(query, stemmingCheckBox.isSelected(), pathToLoadDictionaryAndCache));
+            if(workingDirectoryPath == null)
+                rankedDocs = searcher.search(query, stemmingCheckBox.isSelected(), pathToLoadDictionaryAndCache);
+            else
+                rankedDocs = searcher.search(query, stemmingCheckBox.isSelected(), corpusPath);
+
+            //case of the query doesn't have results
+            if(rankedDocs.size() == 0)
+                showAlert("No match results for the query");
+            else
+                showData("Query", rankedDocs);
+
+
+
         } else {
             showData("5 Most Important Sentences", searcher.find5MostImportantSentences(queryStringText.getText(), pathToLoadDictionaryAndCache));
         }
@@ -641,6 +655,12 @@ public class MainWindow {
             //TODO: show the results
 
         }
+
+    }
+
+    public void saveQueryResultButtonPressed(){
+        if(rankedDocs == null)
+            showAlert("No query results to save");
 
     }
 

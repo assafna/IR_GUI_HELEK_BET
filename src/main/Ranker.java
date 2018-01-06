@@ -3,15 +3,18 @@ package main;
 import javafx.util.Pair;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.util.*;
 
 /**
  * Created by USER on 12/30/2017.
  */
 public class Ranker {
+    final long MAX_DAYS_BETWEEN_DAYS = 373928;
 
     /**
      * get list of ranked list according to query
@@ -32,6 +35,8 @@ public class Ranker {
         int queryTermsSize = queryTerms.size();
         for (int i = 0; i < queryTermsSize; i++) {
             String queryTerm = queryTerms.get(i);
+            if(!indexer.getFinalTermsDictionary().containsKey(queryTerm))
+                continue;
             termsObjects.put(queryTerm, new Term(indexer.getFinalTermsDictionary().get(queryTerm)));
 
             //get all docs for term
@@ -143,18 +148,27 @@ public class Ranker {
 
         //for each doc
         for (String doc : termsDetailsPerDoc.keySet()) {
+            if(doc.equals("=?4"))
+                System.out.println("f");
             HashMap<String, Pair<Double, Double>> terms = termsDetailsPerDoc.get(doc);
-            double sumWightForDoc = 0;
+            double sumWeightForDoc = 0;
 
             //for each term in doc
             for (String term : terms.keySet()) {
                 Pair<Double, Double> termPair = terms.get(term);// normalized index, tf
                 //calculate sum wight of query terms
                 double idf = termsObject.get(term).getIdf();
-                sumWightForDoc += (termPair.getValue() * idf)/* / termPair.getKey()*/;
+                if(termPair.getKey() == 0)
+                    sumWeightForDoc += (termPair.getValue() * idf);
+                else
+                    sumWeightForDoc += (termPair.getValue() * idf) / termPair.getKey();
             }
+            double b = getNormalizedDate(docsDetails.get(doc).getValue());
             double denominator = Math.sqrt(docsDetails.get(doc).getKey()) * getNormalizedDate(docsDetails.get(doc).getValue());
-            rankedDocs.add(new Pair(doc, sumWightForDoc / denominator));
+            System.out.println(sumWeightForDoc);
+            System.out.println(denominator);
+            double a = sumWeightForDoc / denominator;
+            rankedDocs.add(new Pair(doc, sumWeightForDoc / denominator));
         }
 
         //sort docs according to weight
@@ -165,7 +179,18 @@ public class Ranker {
 
     }
 
-    private double getNormalizedDate(String date) {
+    public double getNormalizedDate(String date) {
+        try {
+            DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            Date today = new Date();
+            if(date.equals("-"))
+                return 1;
+            Date docDate = dateFormat.parse(date);
+            long days = ChronoUnit.DAYS.between(docDate.toInstant(), today.toInstant());
+            return (double) days/MAX_DAYS_BETWEEN_DAYS;
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         return 1;
     }
 

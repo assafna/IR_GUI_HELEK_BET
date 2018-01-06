@@ -85,11 +85,6 @@ public class Indexer {
             tempPostingFilesPath = path + "\\posting_files\\Stemming";
         else
             tempPostingFilesPath = path + "\\posting_files\\No_Stemming";
-        try {
-            docWriter = new BufferedWriter(new FileWriter(path + "\\docs.txt"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
         mostCommonTerms = new HashSet<>();
         // finalTermsDictionary = new HashMap<>();
@@ -646,12 +641,12 @@ public class Indexer {
     private ArrayList<String> getSortedListOfDocsPerTerm(String[] docs, int length, int howMany) {
         ArrayList<String> termInDocCaches = new ArrayList<>();
         double idf = log2((double) docsCounter / length);
-
+        String docName = "";
         for (int i = 0; i < length && i < howMany; i++) {
             char[] docCharsArray = docs[i].toCharArray();
 
             //doc name
-            String docName = String.valueOf(docCharsArray[0]) +
+            docName = String.valueOf(docCharsArray[0]) +
                     docCharsArray[1] +
                     docCharsArray[2];
 
@@ -692,7 +687,11 @@ public class Indexer {
                 docsWights.put(docName, wight);
             else
                 docsWights.put(docName, (double) docsWights.get(docName) + wight);
+
         }
+
+        //update doc string in dictionary
+        //docsDictionary.put(docName, docsDictionary.get(docName)+ '\t' + mostCommonTermFrequency.get(docName) + '\t' + docsWights.get(docName));
 
         //sort terms
         Collections.sort(termInDocCaches);
@@ -747,9 +746,11 @@ public class Indexer {
     /**
      * write docs details to file
      */
-    public int writeDocsToFile() {
+    public int writeDocsToFile(String path) {
         int numOfDocs = 0;
         try {
+            docWriter = new BufferedWriter(new FileWriter(path));
+
             for (String doc : docsDictionary.keySet()) {
                 numOfDocs++;
                 docWriter.write(doc + '\t');
@@ -760,6 +761,7 @@ public class Indexer {
                 docWriter.write(docsWights.get(doc) + "");
                 docWriter.write('\n');
             }
+
             docWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
