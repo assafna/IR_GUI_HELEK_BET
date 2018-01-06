@@ -3,6 +3,7 @@ package main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -602,6 +603,17 @@ public class MainWindow {
 
         VBox pane = new VBox();
         pane.getChildren().addAll(listView);
+
+        //if query, add button to save
+        if (type.compareTo("Query") == 0) {
+            Button button = new Button();
+            button.setDefaultButton(true);
+            button.setText("Save Results");
+            button.setOnAction(event -> saveQueryResultButtonPressed()); //TODO: save results to file
+            button.setPrefWidth(1000);
+            pane.getChildren().add(button);
+        }
+
         Stage stage = new Stage();
         stage.setTitle(type);
         stage.setScene(new Scene(pane, 1000, 800));
