@@ -174,7 +174,7 @@ public class Indexer {
             //update term in dictionaries
             if (tempTermsDictionary.containsKey(term)) {
                 int index = tempTermsDictionary.get(term);
-                updateTermInDictionary(term, docName, index, i);
+                updateTermInDictionary(term, docName, index, (double) (i+1) / listSize);
             } else
                 updateTermInDictionary(term, docName, termIndex++, (double) (i+1) / listSize);
 

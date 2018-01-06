@@ -1,5 +1,6 @@
 package main;
 
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Pair;
 
@@ -58,7 +60,11 @@ public class MainWindow {
     private static Searcher searcher = null;
     private static HashSet<String> stopWords;
     private static boolean engineCreated = false;
-    private ArrayList<String> rankedDocs = null;
+    private ArrayList<String> rankedDocsForQuery = null;
+    private HashMap<String,List<String>> rankedDocsForQueriesFile = null;
+    private static int queryNumber = 100;
+    private static File resultsFileNames;
+    private static BufferedWriter resultsFileNamesWriter = null;
 
 
     public void initialize() {
@@ -584,11 +590,17 @@ public class MainWindow {
      *
      * @param actionEvent action event
      */
-    public void showDictionaryButtonPressed(ActionEvent actionEvent) {
+    public void showDictionaryButtonPressed() {
         Indexer indexer = new Indexer();
         showData("Dictionary", indexer.getDictionarySorted());
     }
 
+    /**
+     * open new window and show data
+     *
+     * @param type      type of the data
+     * @param strings   data to show
+     */
     private void showData(String type, ArrayList<String> strings) {
         ObservableList<String> lines = FXCollections.observableArrayList();
         ListView<String> listView = new ListView<>(lines);
@@ -609,7 +621,7 @@ public class MainWindow {
             Button button = new Button();
             button.setDefaultButton(true);
             button.setText("Save Results");
-            button.setOnAction(event -> saveQueryResultButtonPressed()); //TODO: save results to file
+            button.setOnAction(event -> saveQueryResultButtonPressed());
             button.setPrefWidth(1000);
             pane.getChildren().add(button);
         }
@@ -620,21 +632,24 @@ public class MainWindow {
         stage.show();
     }
 
-    public void runQueryStringButtonClick(ActionEvent actionEvent) {
+    /**
+     * run query
+     */
+    public void runQueryStringButtonClick() {
         if (searcher == null)
             searcher = new Searcher(stopWords);
         if (!mostImportantLinesCheckBox.isSelected()) {
             String query = queryStringText.getText();
             if(workingDirectoryPath == null)
-                rankedDocs = searcher.search(query, stemmingCheckBox.isSelected(), pathToLoadDictionaryAndCache);
+                rankedDocsForQuery = searcher.search(query, stemmingCheckBox.isSelected(), pathToLoadDictionaryAndCache);
             else
-                rankedDocs = searcher.search(query, stemmingCheckBox.isSelected(), corpusPath);
+                rankedDocsForQuery = searcher.search(query, stemmingCheckBox.isSelected(), corpusPath);
 
             //case of the query doesn't have results
-            if(rankedDocs.size() == 0)
+            if(rankedDocsForQuery.size() == 0)
                 showAlert("No match results for the query");
             else
-                showData("Query", rankedDocs);
+                showData("Query", rankedDocsForQuery);
 
 
 
@@ -643,15 +658,53 @@ public class MainWindow {
         }
     }
 
-    public void resetQueriesDataButtonClick(ActionEvent actionEvent) {
+    public void resetQueriesDataButtonClick() {
+        rankedDocsForQuery = null;
+        rankedDocsForQueriesFile = null;
+
+        //delete all results files
+        try {
+            if (resultsFileNamesWriter != null) {
+                resultsFileNamesWriter.close();
+                BufferedReader br = new BufferedReader(new FileReader(resultsFileNames));
+                String line;
+                while ((line = br.readLine()) != null) {
+                    File file = new File(line);
+                    file.delete();
+                }
+                deleteFileContent(resultsFileNames);
+                resultsFileNamesWriter = null;
+
+            }
+        }
+
+        catch (IOException e){
+            e.printStackTrace();
+        }
+
+        showAlert("Program Restarted Successfully");
+    }
+
+    private void deleteFileContent(File file){
+        PrintWriter writer = null;
+        try {
+            writer = new PrintWriter(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        writer.print("");
+        writer.close();
     }
 
     public void queryTextFieldKeyReleased() {
         if (queryStringText.getText().length() > 0 && engineCreated)
             runQueryStringButton.setDisable(false);
+        if (queryStringText.getText().length() == 0)
+            runQueryStringButton.setDisable(true);
+
     }
 
-    public void loadQueriesFileButtonPressed() {
+    public void loadAndRunQueriesFileButtonPressed() {
         String pathForQueriesFile;
         //choose directory to load queries file
         DirectoryChooser directoryChooser = new DirectoryChooser();
@@ -662,22 +715,10 @@ public class MainWindow {
             List<Pair<String, String>> queries = new ReadFile().readQueriesFile(pathForQueriesFile + "\\queries.txt");
             if (searcher == null)
                 searcher = new Searcher(stopWords);
-            HashMap<String, List<String>> results = searcher.search(queries, stemmingCheckBox.isSelected(), pathToLoadDictionaryAndCache);
-            //move to save function
-            try {
-                BufferedWriter bw = new BufferedWriter(new FileWriter(pathToLoadDictionaryAndCache + "\\results.txt"));
-                for(String query : results.keySet()){
-                    List<String> queryResults = results.get(query);
-                    for(int i = 0; i < queryResults.size(); i++){
-                        String[] splitLine = queryResults.get(i).split("\t");
-                        bw.write(query + " " + 0 + " " + splitLine[1] + " 1 42.38 mt" + '\n');
-                    }
-                }
-                bw.close();
-            }
-            catch (IOException e){
-                e.printStackTrace();
-            }
+            rankedDocsForQueriesFile = searcher.search(queries, stemmingCheckBox.isSelected(), pathToLoadDictionaryAndCache);
+
+            showData("Query", new ArrayList<>()); //TODO:need to change!!
+
 
             //TODO: show the results
 
@@ -685,10 +726,72 @@ public class MainWindow {
 
     }
 
-    public void saveQueryResultButtonPressed(){
-        if(rankedDocs == null)
-            showAlert("No query results to save");
 
+    public void saveQueryResultButtonPressed(){
+        if(rankedDocsForQueriesFile == null && rankedDocsForQuery == null)
+            showAlert("No query results to save");
+        System.out.println("User pressed save results button");
+        try {
+            if (resultsFileNamesWriter == null) {
+                resultsFileNames = new File(pathToLoadDictionaryAndCache + "\\resultsFileNames.txt");
+                resultsFileNamesWriter = new BufferedWriter(new FileWriter(resultsFileNames));
+            }
+
+
+            //choose file to save results
+            FileChooser fileChooser = new FileChooser();
+            File selectedDirectory = fileChooser.showSaveDialog(null);
+
+            //save dictionary and cache
+            if (selectedDirectory != null) {
+                writeQueriesResultsToFile(selectedDirectory.getAbsolutePath());
+                //write to file the chosen file path in order to delete in reset
+                resultsFileNamesWriter.write(selectedDirectory.getAbsolutePath() + '\n');
+                showAlert("Results Saved Successfully");
+
+            }
+        }
+
+        catch(IOException e){
+            e.printStackTrace();
+        }
+
+    }
+
+    /**
+     * write results of the queries searches to file
+     *
+     * @param path path to the file
+     */
+    private void writeQueriesResultsToFile(String path){
+        try {
+            BufferedWriter bw = new BufferedWriter(new FileWriter(path));
+
+            //save results for queries file search
+            if(rankedDocsForQueriesFile != null) {
+                for (String query : rankedDocsForQueriesFile.keySet()) {
+                    List<String> queryResults = rankedDocsForQueriesFile.get(query);
+                    for (int i = 0; i < queryResults.size(); i++) {
+                        String[] splitLine = queryResults.get(i).split("\t");
+                        bw.write(query + " " + 0 + " " + splitLine[1] + " 1 42.38 mt" + '\n');
+                    }
+                }
+            }
+
+            //save results for query search
+            if(rankedDocsForQuery != null){
+                for(int i = 0; i < rankedDocsForQuery.size(); i++){
+                    String[] splitLine = rankedDocsForQuery.get(i).split("\t");
+                    bw.write(queryNumber + " " + 0 + " " + splitLine[1] + " 1 42.38 mt" + '\n');
+                    queryNumber++;
+                }
+            }
+
+            bw.close();
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
 }
