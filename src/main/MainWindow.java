@@ -654,11 +654,19 @@ public class MainWindow {
 
 
         } else {
-            showData("5 Most Important Sentences", searcher.find5MostImportantSentences(queryStringText.getText(), pathToLoadDictionaryAndCache));
+            ArrayList<Pair<String, Integer>> rankedSentences = searcher.find5MostImportantSentences(queryStringText.getText(), pathToLoadDictionaryAndCache + "\\corpus");
+            ArrayList<String> sentencesToPrint = new ArrayList<>();
+            for(int i = 0; i < rankedSentences.size(); i++)
+                sentencesToPrint.add(rankedSentences.get(i).getKey());
+            showData("5 Most Important Sentences", sentencesToPrint);
         }
     }
 
+    /**
+     * reset results and delete results files
+     */
     public void resetQueriesDataButtonClick() {
+        //initial fields
         rankedDocsForQuery = null;
         rankedDocsForQueriesFile = null;
 
@@ -672,6 +680,7 @@ public class MainWindow {
                     File file = new File(line);
                     file.delete();
                 }
+                //delete file content
                 deleteFileContent(resultsFileNames);
                 resultsFileNamesWriter = null;
 
@@ -685,6 +694,10 @@ public class MainWindow {
         showAlert("Program Restarted Successfully");
     }
 
+    /**
+     * delete file content
+     * @param file file to delete
+     */
     private void deleteFileContent(File file){
         PrintWriter writer = null;
         try {
@@ -696,6 +709,9 @@ public class MainWindow {
         writer.close();
     }
 
+    /**
+     * user entered query or deleted query
+     */
     public void queryTextFieldKeyReleased() {
         if (queryStringText.getText().length() > 0 && engineCreated)
             runQueryStringButton.setDisable(false);
@@ -704,6 +720,9 @@ public class MainWindow {
 
     }
 
+    /**
+     * load queries file and run each query
+     */
     public void loadAndRunQueriesFileButtonPressed() {
         String pathForQueriesFile;
         //choose directory to load queries file
@@ -726,7 +745,9 @@ public class MainWindow {
 
     }
 
-
+    /**
+     * save quert results
+     */
     public void saveQueryResultButtonPressed(){
         if(rankedDocsForQueriesFile == null && rankedDocsForQuery == null)
             showAlert("No query results to save");

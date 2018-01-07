@@ -125,6 +125,7 @@ public class Indexer {
         writeTermsDictionaryToFile();
     }
 
+
     /**
      * create doc string
      *

@@ -1,6 +1,7 @@
 package main;
 
 import javafx.util.Pair;
+import jdk.nashorn.internal.codegen.DumpBytecode;
 
 import java.util.*;
 
@@ -85,42 +86,160 @@ public class Searcher {
      * @param path  path to docs file
      * @return list of 50 most important sentences in doc
      */
-    public ArrayList<String> find5MostImportantSentences(String docNo, String path) {
-        List<Pair<String, Double>> sumTfPerSent = new ArrayList<>();
+    public ArrayList<Pair<String, Integer>> find5MostImportantSentences(String docNo, String path) {
+
         Indexer indexer = new Indexer();
         DocNameHash docNameHash = new DocNameHash();
         HashMap<String, String> docsDictionary = indexer.getDocsDictionary();
         String docHash = docNameHash.getHashFromDocNo(docNo);
         String fileName = new Doc(docHash, docsDictionary.get(docHash)).getFile();
-        //get list of all sentences in doc
-        List<String> sentences = new ReadFile().getListOfSentencesInFile(fileName, path + "\\" + docNo);
 
-        //parse per sentence
-        Parser parser = new Parser(stopWords);
-        for (int i = 0; i < sentences.size(); i++) {
-            List<String> terms = parser.parse(sentences.get(i).toCharArray());
+        //get text from doc
+        String docText = new ReadFile().getTextFromFile(fileName, docNo, path + "\\");
 
-            //sum tf of all the term in the sentence
-            double sumTf = 0;
-            for (int j = 0; j < terms.size(); j++)
-                // sumTf += getTf(terms.get(j), docNo);
-                sumTfPerSent.add(new Pair<>(sentences.get(i), sumTf));
-        }
+        List<Pair<String,Pair<Integer, Double>>> sumTfPerSent = findSentencesImportance(docText);
         //sort list according to sumTf
         sumTfPerSent.sort((o1, o2) -> {
-            if (o1.getValue() < o2.getValue())
+            if (o1.getValue().getValue() > o2.getValue().getValue())
                 return -1;
             return 1;
         });
 
         //add 5 sentences with biggest sumTf to list
-        ArrayList<String> mostImportantSentences = new ArrayList<>();
+        ArrayList<Pair<String, Integer>> mostImportantSentences = new ArrayList<>();
         for (int i = 0; i < 5; i++)
-            mostImportantSentences.add(sumTfPerSent.get(i).getKey());
+            mostImportantSentences.add(new Pair<>(sumTfPerSent.get(i).getKey() + " (rank: " + (i + 1) + ")", sumTfPerSent.get(i).getValue().getKey()));
+
+        //sort sentences according to line number
+        mostImportantSentences.sort((o1, o2) -> {
+            if (o1.getValue() < o2.getValue())
+                return -1;
+            return 1;
+        });
 
         return mostImportantSentences;
 
     }
+
+    /**
+     * split text into sentences
+     * @param text text to split
+     * @return list of text sentences
+     */
+    private List<String> splitTextToSentences(String text){
+        List<String> sentences = new ArrayList<>();
+        //split text into sentences
+        char[] textArray = text.toString().toCharArray();
+        StringBuilder sentence = new StringBuilder();
+        int i = 0;
+        while (i < textArray.length) {
+            if (textArray[i] == '.') {
+                //check special cases of dot
+                if (!((i > 0 && i < textArray.length - 1 && !isDigit(textArray[i - 1]) && isDigit(textArray[i + 1])) || //case of number
+                        (i > 1 && textArray[i - 2] == 'M' && (textArray[i - 1] == 'R' || textArray[i - 1] == 'S')) ||  //case of MR. of MS.
+                        (i > 1 && textArray[i - 2] == 'L' && textArray[i - 1] == 't') || //case of Lt.
+                        (i > 2 && textArray[i - 3] == 'C' && textArray[i - 2] == 'o' && textArray[i - 1] == 'l'))) { //case of Col.
+
+                    sentences.add(sentence.toString());
+                    sentence = new StringBuilder();
+                }
+                //case of U.S.
+                else if (!(i > 0 && textArray[i - 1] == 'U' && i < textArray.length - 2 && textArray[i + 1] == 'S' && textArray[i + 2] == '.')) {
+                    sentences.add(sentence.toString());
+                    sentence = new StringBuilder();
+                    i = i + 2;
+                }
+
+
+            }
+            //case of 3 spaces or tab or '\n'
+            else if((textArray[i] == ' ' && textArray.length - 2 > i && textArray[i + 1] == ' ' && textArray[i + 2] == ' ') || textArray[i] == '\t'||
+                        textArray[i] == '\n' && textArray.length - 1 > i && textArray[i + 1] == '\n') {
+                if (sentence.toString().length() > 0) {
+                    sentences.add(sentence.toString());
+                    sentence = new StringBuilder();
+
+                }
+                //skip all spaces and tabs
+                while (i < textArray.length && (textArray[i] == ' ' || textArray[i] == '\t'))
+                    i++;
+            }
+            else if(textArray[i] == ';'){
+                if (sentence.toString().length() > 0) {
+                    sentences.add(sentence.toString());
+                    sentence = new StringBuilder();
+
+                }
+            }
+            else
+                sentence.append(textArray[i]);
+            i++;
+        }
+
+
+        return sentences;
+    }
+
+    /**
+     * check if the char is a digit
+     *
+     * @param c char to check
+     * @return true if the char is digit
+     */
+    private boolean isDigit(char c) {
+        return c >= 48 && c <= 57;
+    }
+
+    /**
+     * find sentences index in text and importance
+     * @param docText text to split
+     * @return List of index and rank for each sentences
+     */
+    private List<Pair<String,Pair<Integer, Double>>> findSentencesImportance(String docText){
+        HashMap<String, Integer> termFrequency = new HashMap<>();
+        List<Pair<String, Pair<Integer, Double>>> sumTfPerSent = new ArrayList<>(); //for each term save the sentence index and sumTf
+
+        //parse per sentence
+        Parser parser = new Parser(stopWords);
+        List<String> terms = parser.parse(docText.toCharArray());
+
+        //update term frequency
+        int termsListSize = terms.size();
+        for(int i = 0; i < termsListSize; i++) {
+            String term = terms.get(i);
+            int freq;
+            if (!termFrequency.containsKey(term))
+                freq = 1;
+            else //first time of term in text
+                freq = termFrequency.get(term) + 1;
+            termFrequency.put(term, freq);
+        }
+
+        //get list of all sentences in doc
+        List<String> sentences = splitTextToSentences(docText);
+
+
+        //parse each sentence
+        int sentencesListSize = sentences.size();
+        for(int i = 0; i < sentencesListSize; i++) {
+            List<String> termsInSentence = parser.parse(sentences.get(i).toCharArray());
+            double sumTf = 0;
+            if (termsInSentence.size() > 7) { //only if sentence has more than 7 terms
+                for (int j = 0; j < termsInSentence.size(); j++) {
+                    String term = termsInSentence.get(j);
+                    if (termFrequency.containsKey(term) && termFrequency.get(term) > 4)
+                        sumTf += (double) termFrequency.get(term) / terms.size();
+                }
+                sumTfPerSent.add(new Pair(sentences.get(i), new Pair(i, sumTf / termsInSentence.size())));
+            }
+        }
+
+        return  sumTfPerSent;
+
+    }
+
+
+
 
 
 }

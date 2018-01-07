@@ -316,16 +316,17 @@ public class ReadFile {
     }
 
     /**
-     * split file into sentences
+     * get text from doc
      *
-     * @param file file to split
-     * @return list of all sentences in file
+     * @param fileName  file name
+     * @param docNo     doc number
+     * @path            file path
+     * @return          doc text
      */
-    public List<String> getListOfSentencesInFile(String file, String docNo) {
-        List<String> sentences = new ArrayList<>();
+    public String getTextFromFile(String fileName, String docNo, String path) {
+        StringBuilder text = new StringBuilder();
         try {
-            BufferedReader br = new BufferedReader(new FileReader(file));
-            StringBuilder text = new StringBuilder();
+            BufferedReader br = new BufferedReader(new FileReader(path + "\\" + fileName + "\\" + fileName));
             String line;
             while ((line = br.readLine()) != null) {
                 //looking for the doc
@@ -349,24 +350,27 @@ public class ReadFile {
                     break;
                 }
             }
-
-            char[] textArray = text.toString().toCharArray();
-            StringBuilder sentence = new StringBuilder();
-            int i = 0;
-            while (i < textArray.length) {
-                if (i > 0 && !isDigit(textArray[i - 1]) && textArray[i] == '.') {
-                    sentences.add(sentence.toString());
-                    sentence = new StringBuilder();
-                } else
-                    sentence.append(textArray[i]);
-                i++;
-            }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return sentences;
+        return text.toString();
     }
+
+    /**
+     * check if the char is a digit
+     *
+     * @param c char to check
+     * @return true if the char is digit
+     */
+    private boolean isDigit(char c) {
+        return c >= 48 && c <= 57;
+    }
+
+
+
+
+
+
 
     /*
     public Doc getDoc(String docNo, String path){
@@ -401,16 +405,6 @@ public class ReadFile {
 
 
     /**
-     * check if the char is a digit
-     *
-     * @param c char to check
-     * @return true if the char is digit
-     */
-    private boolean isDigit(char c) {
-        return c >= 48 && c <= 57;
-    }
-
-    /**
      * reads a term from posting file and returns list of docs for this term
      *
      * @param indexer indexer to use
@@ -431,9 +425,9 @@ public class ReadFile {
         else
             br = new BufferedReader(new FileReader(postingFilesPath + "\\" + term.charAt(0) + ".txt"));
         for (int i = 0; i < rowNum; i++)
-            br.readLine();
 
-        //reached relevant line, read term
+            //reached relevant line, read term
+            br.readLine();
         String line = br.readLine();
 
         //split to get data
