@@ -177,12 +177,12 @@ public class Ranker {
             DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
             Date today = new Date();
             if(date.equals("-"))
-                return 1;
+                return 0.5;
             Date docDate = dateFormat.parse(date);
             long days = ChronoUnit.DAYS.between(docDate.toInstant(), today.toInstant());
             return (double) days/MAX_DAYS_BETWEEN_DAYS;
         } catch (ParseException e) {
-            return 1;
+            return 0.5;
         }
     }
 
