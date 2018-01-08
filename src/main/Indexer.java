@@ -550,21 +550,36 @@ public class Indexer {
                     //write term
                     //bw.write(lineSplit[0] + '\t');
 
-                    //write docs
-                    for (int i = cacheDocsPerTerm; i < docsInLineLength; i++)
-                        bw.write(docsInLine[i] + '\t');
+                    //get list of all sorted
+                    ArrayList<String> termInDocCaches = getSortedListOfDocsPerTerm(docsInLine, docsInLineLength, Integer.MAX_VALUE);
+                    int termInDocCachesSize = termInDocCaches.size();
+
+                    //go through the list and write
+                    for (int i = cacheDocsPerTerm; i < termInDocCachesSize; i++) {
+                        TermInDocCache termInDocCache = new TermInDocCache(termInDocCaches.get(i));
+                        bw.write(termInDocCache.getDocName() + termInDocCache.getNumOfOccurrencesInDoc() + '*' + termInDocCache.getIndexOfFirstOccurrence() + '*' + termInDocCache.getTf());
+
+                        //add tab if not last
+                        if (i < termInDocCachesSize - 1)
+                            bw.write('\t');
+                    }
 
                     //write df
                     bw.write(docsInLineLength + '\n');
 
+                    //get all the rest to cache
+                    ArrayList<String> forCache = new ArrayList<>();
+                    for (int i = 0; i < cacheDocsPerTerm; i++)
+                        forCache.add(i, termInDocCaches.get(i));
+
                     //get list of cacheDocsPerTerm terms in docs and insert to cache, reference to posting
-                    cache.put(lineSplit0, new Pair<>(getSortedListOfDocsPerTerm(docsInLine, docsInLineLength, cacheDocsPerTerm + 1), bwln));
+                    cache.put(lineSplit0, new Pair<>(forCache, bwln));
 
                     //update line number
                     bufferedWriterLineNumberHashMap.put(c, bwln + 1);
                 } else {
                     //get list of cacheDocsPerTerm - 1 or less terms in docs and insert to cache, no reference to posting
-                    cache.put(lineSplit0, new Pair<>(getSortedListOfDocsPerTerm(docsInLine, docsInLineLength, cacheDocsPerTerm), -1));
+                    cache.put(lineSplit0, new Pair<>(getSortedListOfDocsPerTerm(docsInLine, docsInLineLength, Integer.MAX_VALUE), -1));
                 }
 
                 //add to dictionary
