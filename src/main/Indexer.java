@@ -22,12 +22,13 @@ public class Indexer {
     private static HashMap<String, Pair<ArrayList<String>, Integer>> cache; //term, list of docs, row num in posting
     private static int docsCounter = 0;
     private static Parser parser;
+    private static double avgLengthOfDocs;
 
     //constants for class
     private String tempPostingFilesPath;
     private int postingFileIndex = 5000; //starts from 5000 because there will be no more than 5000 files
     private final int termsArraysSize = 500000;
-    private final int cacheDocsPerTerm = 200;
+    private final int cacheDocsPerTerm = 1000;
 
     private Stemmer stemmer;
     private HashMap<String, String> stemmedWords;
@@ -92,10 +93,13 @@ public class Indexer {
 
     }
 
-    Indexer(HashMap<String, String> loadDictionary, HashMap<String, Pair<ArrayList<String>, Integer>> loadCache, HashMap<String, String> loadDocs) {
-        finalTermsDictionary = loadDictionary;
-        cache = loadCache;
-        docsDictionary = loadDocs;
+    Indexer(HashMap<String, String> loadDictionary, HashMap<String, Pair<ArrayList<String>,
+            Integer>> loadCache, HashMap<String, String> loadDocs, int numOfDocs, double avgLengthOfDoc) {
+        this.finalTermsDictionary = loadDictionary;
+        this.cache = loadCache;
+        this.docsDictionary = loadDocs;
+        docsCounter = numOfDocs;
+        avgLengthOfDocs = avgLengthOfDoc;
     }
 
     Indexer() {
@@ -154,7 +158,7 @@ public class Indexer {
     private void indexTerms(List<String> stringList, boolean isStem, String docName) {
 
         int listSize = stringList.size();
-
+        avgLengthOfDocs += listSize;
         //for each term in the list
         for (int i = 0; i < listSize; i++) {
 
@@ -716,6 +720,7 @@ public class Indexer {
         return termInDocCaches;
     }
 
+
     /**
      * write dictionary to file
      */
@@ -766,7 +771,8 @@ public class Indexer {
         int numOfDocs = 0;
         try {
             docWriter = new BufferedWriter(new FileWriter(path));
-
+            avgLengthOfDocs = (double)avgLengthOfDocs/docsCounter;
+            docWriter.write(docsCounter + "\t" + avgLengthOfDocs + "\n");
             for (String doc : docsDictionary.keySet()) {
                 numOfDocs++;
                 docWriter.write(doc + '\t');
@@ -907,5 +913,21 @@ public class Indexer {
 
     public String getTempPostingFilesPath() {
         return tempPostingFilesPath;
+    }
+
+    public static int getDocsCounter() {
+        return docsCounter;
+    }
+
+    public static void setDocsCounter(int docsCounter) {
+        Indexer.docsCounter = docsCounter;
+    }
+
+    public static double getAvgLengthOfDocs() {
+        return avgLengthOfDocs;
+    }
+
+    public static void setAvgLengthOfDocs(double avgLengthOfDocs) {
+        Indexer.avgLengthOfDocs = avgLengthOfDocs;
     }
 }

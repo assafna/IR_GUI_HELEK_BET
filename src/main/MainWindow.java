@@ -61,10 +61,12 @@ public class MainWindow {
     private static HashSet<String> stopWords;
     private static boolean engineCreated = false;
     private ArrayList<String> rankedDocsForQuery = null;
-    private HashMap<String,List<String>> rankedDocsForQueriesFile = null;
+    private List<Pair<String,List<String>>> rankedDocsForQueriesFile = null;
     private static int queryNumber = 100;
     private static File resultsFileNames;
     private static BufferedWriter resultsFileNamesWriter = null;
+    private int numberOfDocs;
+    private double avgLengthOfDocs;
 
 
     public void initialize() {
@@ -398,7 +400,7 @@ public class MainWindow {
             HashMap<String, String> dictionary = loadDictionary(dictionaryFile);
             HashMap<String, Pair<ArrayList<String>, Integer>> cache = loadCache(cacheFile);
             HashMap<String, String> docs = loadDocs(docsFile);
-            Indexer indexer = new Indexer(dictionary, cache, docs);
+            Indexer indexer = new Indexer(dictionary, cache, docs, numberOfDocs, avgLengthOfDocs);
 
             //load hash
             try {
@@ -446,7 +448,10 @@ public class MainWindow {
         HashMap<String, String> docDictionary = new HashMap<>();
 
         try {
-            String line;
+            String line = docsFile.readLine();
+            String[] splitLine = line.split("\t");
+            numberOfDocs = Integer.parseInt(splitLine[0]);
+            avgLengthOfDocs = Double.parseDouble(splitLine[1]);
             while ((line = docsFile.readLine()) != null) {
                 char[] lineArray = line.toCharArray();
                 StringBuilder name = new StringBuilder();
@@ -790,11 +795,12 @@ public class MainWindow {
 
             //save results for queries file search
             if(rankedDocsForQueriesFile != null) {
-                for (String query : rankedDocsForQueriesFile.keySet()) {
-                    List<String> queryResults = rankedDocsForQueriesFile.get(query);
-                    for (int i = 0; i < queryResults.size(); i++) {
-                        String[] splitLine = queryResults.get(i).split("\t");
-                        bw.write(query + " " + 0 + " " + splitLine[1] + " 1 42.38 mt" + '\n');
+                for(int i = 0; i < rankedDocsForQueriesFile.size(); i++){
+                    Pair<String,List<String>> queryPair = rankedDocsForQueriesFile.get(i);
+                    List<String> queryResults = queryPair.getValue();
+                    for (int j = 0; j < queryResults.size(); j++) {
+                        String[] splitLine = queryResults.get(j).split("\t");
+                        bw.write(queryPair.getKey() + " " + 0 + " " + splitLine[1] + " 1 42.38 mt" + '\n');
                     }
                 }
             }

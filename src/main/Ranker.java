@@ -68,9 +68,14 @@ public class Ranker {
         ArrayList<Pair<String, Double>> docsRank = rankDocs(docsWeightAndDate, termsDetailsPerDoc, termsObjects);
         return docsRank;
 
+    }
+/*
+    private double calculateBM25(String doc, String query, Indexer indexer){
+        double idf = 1;
+        double k = 1.5, b = 0.75;
 
     }
-
+*/
     /**
      * get all relevant docs (with details per doc) form cache and posting file for term
      *

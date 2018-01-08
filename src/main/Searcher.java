@@ -68,12 +68,12 @@ public class Searcher {
      * @param isStem  if to use stem or not
      * @return hash map of query and his relevant docs
      */
-    public HashMap<String, List<String>> search(List<Pair<String,String>> queries, boolean isStem, String path) {
-        HashMap<String, List<String>> queriesResults = new HashMap<>();
+    public List<Pair<String, List<String>>> search(List<Pair<String,String>> queries, boolean isStem, String path) {
+        List<Pair<String, List<String>>> queriesResults = new ArrayList<>();
 
         //send each query to search function
         for (int i = 0; i < queries.size(); i++)
-            queriesResults.put(queries.get(i).getKey(), search(queries.get(i).getValue(), isStem, path));
+            queriesResults.add(new Pair<>(queries.get(i).getKey(), search(queries.get(i).getValue(), isStem, path)));
 
         return queriesResults;
     }
@@ -87,7 +87,7 @@ public class Searcher {
      * @return list of 50 most important sentences in doc
      */
     public ArrayList<Pair<String, Integer>> find5MostImportantSentences(String docNo, String path) {
-
+        
         Indexer indexer = new Indexer();
         DocNameHash docNameHash = new DocNameHash();
         HashMap<String, String> docsDictionary = indexer.getDocsDictionary();
