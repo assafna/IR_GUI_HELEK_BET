@@ -595,7 +595,7 @@ public class MainWindow {
      *
      * @param actionEvent action event
      */
-    public void showDictionaryButtonPressed() {
+    public void showDictionaryButtonPressed(ActionEvent actionEvent) {
         Indexer indexer = new Indexer();
         showData("Dictionary", indexer.getDictionarySorted());
     }
@@ -612,6 +612,13 @@ public class MainWindow {
         listView.setPrefHeight(1000);
         listView.setPrefWidth(1000);
         listView.getItems().clear();
+
+        //if query, add time
+        if (type.compareTo("Query") == 0) {
+            listView.getItems().add("Amount of docs:\t" + strings.size());
+            Time time = new Time();
+            listView.getItems().add("Time to execute:\t" + time.getQueryDuration() + "ms");
+        }
 
         //run through the list
         int stringsSize = strings.size();
@@ -637,8 +644,9 @@ public class MainWindow {
         VBox pane = new VBox();
         pane.getChildren().addAll(listView);
 
-        //if query, add button to save
-        if (type.compareTo("Query") == 0) {
+        //if query
+        if (type.compareTo("Queries File") == 0) {
+            //add button to save
             Button button = new Button();
             button.setDefaultButton(true);
             button.setText("Save Results");
@@ -660,11 +668,17 @@ public class MainWindow {
         if (searcher == null)
             searcher = new Searcher(stopWords);
         if (!mostImportantLinesCheckBox.isSelected()) {
+
+            Time time = new Time();
+            time.addQueryStartTime();
+
             String query = queryStringText.getText();
             if(workingDirectoryPath == null)
                 rankedDocsForQuery = searcher.search(query, stemmingCheckBox.isSelected(), pathToLoadDictionaryAndCache);
             else
                 rankedDocsForQuery = searcher.search(query, stemmingCheckBox.isSelected(), corpusPath);
+
+            time.addQueryEndTime();
 
             //case of the query doesn't have results
             if(rankedDocsForQuery.size() == 0)
@@ -751,16 +765,38 @@ public class MainWindow {
         File selectedDirectory = directoryChooser.showDialog(null);
 
         if (selectedDirectory != null) {
+
+            Time time = new Time();
+            time.addQueryStartTime();
+
             pathForQueriesFile = selectedDirectory.getAbsolutePath();
             List<Pair<String, String>> queries = new ReadFile().readQueriesFile(pathForQueriesFile + "\\queries.txt");
             if (searcher == null)
                 searcher = new Searcher(stopWords);
             rankedDocsForQueriesFile = searcher.search(queries, stemmingCheckBox.isSelected(), pathToLoadDictionaryAndCache);
 
-            showData("Query", new ArrayList<>()); //TODO:need to change!!
+            time.addQueryEndTime();
 
+            //add information
+            ArrayList<String> strings = new ArrayList<>();
 
-            //TODO: show the results
+            strings.add("Time to execute everything: " + time.getQueryDuration() + "ms");
+
+            int rankedDocsForQueriesFileSize = rankedDocsForQueriesFile.size();
+            for (int i = 0; i < rankedDocsForQueriesFileSize; i++){
+                Pair<String, List<String>> pair = rankedDocsForQueriesFile.get(i);
+                strings.add("Query:\t" + pair.getKey());
+                List<String> docs = pair.getValue();
+                int docsSize = docs.size();
+                strings.add("# of docs: " + docsSize);
+                strings.add("\tTime to execute: " + time.getQueryDuration(pair.getKey()) + "ms");
+                strings.add("\tDocs:");
+                for (int j = 0; j < docsSize; j++)
+                    strings.add("\t\t" + docs.get(j));
+                strings.add(" "); //new line
+            }
+
+            showData("Queries File", strings);
 
         }
 

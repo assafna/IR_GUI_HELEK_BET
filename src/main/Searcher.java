@@ -71,10 +71,16 @@ public class Searcher {
      */
     public List<Pair<String, List<String>>> search(List<Pair<String,String>> queries, boolean isStem, String path) {
         List<Pair<String, List<String>>> queriesResults = new ArrayList<>();
+        Time time = new Time();
 
         //send each query to search function
-        for (int i = 0; i < queries.size(); i++)
-            queriesResults.add(new Pair<>(queries.get(i).getKey(), search(queries.get(i).getValue(), isStem, path)));
+        int queriesSize = queries.size();
+        for (int i = 0; i < queriesSize; i++) {
+            Pair<String, String> query = queries.get(i);
+            time.addQueryStartTime(query.getKey());
+            queriesResults.add(new Pair<>(query.getKey(), search(query.getValue(), isStem, path)));
+            time.addQueryEndtime(query.getKey());
+        }
 
         return queriesResults;
     }
