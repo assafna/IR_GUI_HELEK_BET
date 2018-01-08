@@ -557,7 +557,7 @@ public class MainWindow {
             Indexer indexer = new Indexer();
             indexer.writeDictionaryToFile(pathToSaveDictionaryAndCache + "\\dictionary.txt");
             indexer.writeCacheToFile(pathToSaveDictionaryAndCache + "\\cache.txt");
-            indexer.writeDocsToFile(pathToLoadDictionaryAndCache + "\\docs.txt");
+            indexer.writeDocsToFile(pathToSaveDictionaryAndCache + "\\docs.txt");
         }
 
         showAlert("Dictionary and Cache Saved Successfully");
@@ -615,8 +615,24 @@ public class MainWindow {
 
         //run through the list
         int stringsSize = strings.size();
-        for (int i = 0; i < stringsSize; i++)
-            listView.getItems().add(strings.get(i));
+        for (int i = 0; i < stringsSize; i++) {
+            char[] stringArray = strings.get(i).toCharArray();
+            if(stringArray.length > 180){
+                StringBuilder sb1 = new StringBuilder();
+                StringBuilder sb2 = new StringBuilder();
+                int index = 0;
+                while (index <= 170 || (index > 170 && stringArray[index] != ' '))
+                    sb1.append(stringArray[index++]);
+                sb2.append("                ");
+                while (index < stringArray.length)
+                    sb2.append(stringArray[index++]);
+                listView.getItems().add(sb1.toString());
+                listView.getItems().add(sb2.toString());
+
+            }
+            else
+                listView.getItems().add(strings.get(i));
+        }
 
         VBox pane = new VBox();
         pane.getChildren().addAll(listView);

@@ -3,6 +3,7 @@ package main;
 import javafx.util.Pair;
 import jdk.nashorn.internal.codegen.DumpBytecode;
 
+import java.text.BreakIterator;
 import java.util.*;
 
 /**
@@ -108,7 +109,7 @@ public class Searcher {
         //add 5 sentences with biggest sumTf to list
         ArrayList<Pair<String, Integer>> mostImportantSentences = new ArrayList<>();
         for (int i = 0; i < 5; i++)
-            mostImportantSentences.add(new Pair<>(sumTfPerSent.get(i).getKey() + " (rank: " + (i + 1) + ")", sumTfPerSent.get(i).getValue().getKey()));
+            mostImportantSentences.add(new Pair<>("RANK: " + (i + 1) + "    " + sumTfPerSent.get(i).getKey(), sumTfPerSent.get(i).getValue().getKey()));
 
         //sort sentences according to line number
         mostImportantSentences.sort((o1, o2) -> {
@@ -135,19 +136,21 @@ public class Searcher {
         while (i < textArray.length) {
             if (textArray[i] == '.') {
                 //check special cases of dot
-                if (!((i > 0 && i < textArray.length - 1 && !isDigit(textArray[i - 1]) && isDigit(textArray[i + 1])) || //case of number
-                        (i > 1 && textArray[i - 2] == 'M' && (textArray[i - 1] == 'R' || textArray[i - 1] == 'S')) ||  //case of MR. of MS.
-                        (i > 1 && textArray[i - 2] == 'L' && textArray[i - 1] == 't') || //case of Lt.
-                        (i > 2 && textArray[i - 3] == 'C' && textArray[i - 2] == 'o' && textArray[i - 1] == 'l'))) { //case of Col.
+                if (!(i > 0 && i < textArray.length - 1 && !isDigit(textArray[i - 1]) && isDigit(textArray[i + 1])) && //case of number
+                        !(i > 1 && textArray[i - 2] == 'M' && (textArray[i - 1] == 'R' || textArray[i - 1] == 'S')) &&  //case of MR. of MS.
+                        !(i > 1 && textArray[i - 2] == 'L' && textArray[i - 1] == 't') && //case of Lt.
+                        !(i > 2 && textArray[i - 3] == 'C' && textArray[i - 2] == 'o' && textArray[i - 1] == 'l') && //case of Col.
+                        !(i > 0 && textArray[i - 1] == 'U' && i < textArray.length - 2 && textArray[i + 1] == 'S' && textArray[i + 2] == '.')) {                //case of U.S.
+
 
                     sentences.add(sentence.toString());
                     sentence = new StringBuilder();
+                    i++;
                 }
-                //case of U.S.
-                else if (!(i > 0 && textArray[i - 1] == 'U' && i < textArray.length - 2 && textArray[i + 1] == 'S' && textArray[i + 2] == '.')) {
-                    sentences.add(sentence.toString());
-                    sentence = new StringBuilder();
-                    i = i + 2;
+                if (i > 0 && textArray[i - 1] == 'U' && i < textArray.length - 2 && textArray[i + 1] == 'S' && textArray[i + 2] == '.') {
+                    sentence.append(textArray[i++]);
+                    sentence.append(textArray[i++]);
+                    sentence.append(textArray[i++]);
                 }
 
 
@@ -168,12 +171,13 @@ public class Searcher {
                 if (sentence.toString().length() > 0) {
                     sentences.add(sentence.toString());
                     sentence = new StringBuilder();
+                    i++;
 
                 }
             }
             else
-                sentence.append(textArray[i]);
-            i++;
+                sentence.append(textArray[i++]);
+
         }
 
 
@@ -216,7 +220,9 @@ public class Searcher {
         }
 
         //get list of all sentences in doc
-        List<String> sentences = splitTextToSentences(docText);
+        //List<String> sentences = splitTextToSentences(docText);
+        List<String> sentences = breakIteratorBreakToSentences(docText);
+
 
 
         //parse each sentence
@@ -236,6 +242,26 @@ public class Searcher {
 
         return  sumTfPerSent;
 
+    }
+
+    /**
+     * use break iterator to split text to sentences
+     * @param text text to split
+     * @return list of sentences
+     */
+    private List<String> breakIteratorBreakToSentences(String text){
+        List<String> sentences = new ArrayList<>();
+        BreakIterator breakIterator = BreakIterator.getSentenceInstance(Locale.US);
+        breakIterator.setText(text);
+        int start = breakIterator.first();
+        for (int end = breakIterator.next();
+             end != BreakIterator.DONE;
+             start = end, end = breakIterator.next()) {
+            String sentence = text.substring(start,end);
+            sentences.addAll(splitTextToSentences(sentence));
+        }
+
+        return sentences;
     }
 
 

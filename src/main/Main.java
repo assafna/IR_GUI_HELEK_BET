@@ -9,6 +9,8 @@ import javafx.stage.Stage;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.text.BreakIterator;
+import java.util.Locale;
 
 public class Main extends Application {
 
@@ -57,5 +59,7 @@ public class Main extends Application {
             e.printStackTrace();
         }
     }
+
+
 
 }
