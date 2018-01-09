@@ -342,35 +342,35 @@ public class Indexer {
             filesLength--;
 
         //threads
-        ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+        //ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
         //ExecutorService executorService = Executors.newFixedThreadPool(1);
-        Runnable[] runnables = new Runnable[filesLength];
+        //Runnable[] runnables = new Runnable[filesLength];
 
         //set runnables
-        int j = 0;
+        //int j = 0;
         for (int i = 0; i < filesLength; i = i + 2) {
             final int finalI = i;
             final int finalPostingFileIndex = postingFileIndex++;
-            runnables[j++] = () -> {
+            //runnables[j++] = () -> {
                 try {
                     mergeTwoFiles(files[finalI], files[finalI + 1], finalPostingFileIndex);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            };
+            //};
         }
 
         //run them together
-        for (int i = 0; i < j; i++)
-            executorService.execute(runnables[i]);
+        //for (int i = 0; i < j; i++)
+        //    executorService.execute(runnables[i]);
 
         //wait for them to finish
-        executorService.shutdown();
-        try {
-            executorService.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        //executorService.shutdown();
+        //try {
+        //    executorService.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
+        //} catch (InterruptedException e) {
+        //    e.printStackTrace();
+        //}
 
         //merge again, recursively
         mergeTempPostingFiles();
