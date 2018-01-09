@@ -28,7 +28,7 @@ public class Indexer {
     private String tempPostingFilesPath;
     private int postingFileIndex = 5000; //starts from 5000 because there will be no more than 5000 files
     private final int termsArraysSize = 500000;
-    private final int cacheDocsPerTerm = 1000;
+    private final int cacheDocsPerTerm = 200;
 
     private Stemmer stemmer;
     private HashMap<String, String> stemmedWords;

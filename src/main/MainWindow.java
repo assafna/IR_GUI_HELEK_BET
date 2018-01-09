@@ -770,33 +770,38 @@ public class MainWindow {
             time.addQueryStartTime();
 
             pathForQueriesFile = selectedDirectory.getAbsolutePath();
-            List<Pair<String, String>> queries = new ReadFile().readQueriesFile(pathForQueriesFile + "\\queries.txt");
-            if (searcher == null)
-                searcher = new Searcher(stopWords);
-            rankedDocsForQueriesFile = searcher.search(queries, stemmingCheckBox.isSelected(), pathToLoadDictionaryAndCache);
+            File file = new File(pathForQueriesFile + "\\queries.txt");
+            if(!file.exists())
+                showAlert("Queries file does not exist in chosen directory");
+            else {
+                List<Pair<String, String>> queries = new ReadFile().readQueriesFile(pathForQueriesFile + "\\queries.txt");
+                if (searcher == null)
+                    searcher = new Searcher(stopWords);
+                rankedDocsForQueriesFile = searcher.search(queries, stemmingCheckBox.isSelected(), pathToLoadDictionaryAndCache);
 
-            time.addQueryEndTime();
+                time.addQueryEndTime();
 
-            //add information
-            ArrayList<String> strings = new ArrayList<>();
+                //add information
+                ArrayList<String> strings = new ArrayList<>();
 
-            strings.add("Time to execute everything: " + time.getQueryDuration() + "ms");
+                strings.add("Time to execute everything: " + time.getQueryDuration() + "ms");
 
-            int rankedDocsForQueriesFileSize = rankedDocsForQueriesFile.size();
-            for (int i = 0; i < rankedDocsForQueriesFileSize; i++){
-                Pair<String, List<String>> pair = rankedDocsForQueriesFile.get(i);
-                strings.add("Query:\t" + pair.getKey());
-                List<String> docs = pair.getValue();
-                int docsSize = docs.size();
-                strings.add("# of docs: " + docsSize);
-                strings.add("\tTime to execute: " + time.getQueryDuration(pair.getKey()) + "ms");
-                strings.add("\tDocs:");
-                for (int j = 0; j < docsSize; j++)
-                    strings.add("\t\t" + docs.get(j));
-                strings.add(" "); //new line
+                int rankedDocsForQueriesFileSize = rankedDocsForQueriesFile.size();
+                for (int i = 0; i < rankedDocsForQueriesFileSize; i++) {
+                    Pair<String, List<String>> pair = rankedDocsForQueriesFile.get(i);
+                    strings.add("Query:\t" + pair.getKey());
+                    List<String> docs = pair.getValue();
+                    int docsSize = docs.size();
+                    strings.add("# of docs: " + docsSize);
+                    strings.add("\tTime to execute: " + time.getQueryDuration(pair.getKey()) + "ms");
+                    strings.add("\tDocs:");
+                    for (int j = 0; j < docsSize; j++)
+                        strings.add("\t\t" + docs.get(j));
+                    strings.add(" "); //new line
+                }
+
+                showData("Queries File", strings);
             }
-
-            showData("Queries File", strings);
 
         }
 
