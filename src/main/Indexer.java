@@ -885,7 +885,7 @@ public class Indexer {
                 if (!duplicateTerms.contains(term)) {
                     duplicateTerms.add(term);
                     int index = tempTermsDictionary.get(term);
-                    double tfNormToDocLength = (double) postingListArray[index].get(docNo).getKey() / docLength;
+                    double tfNormToDocLength = (double) postingListArray[index].get(docNo).getKey() / mostCommonTermFrequency.get(docNo);
                     tfPerDoc[index].put(docNo, tfNormToDocLength);
 
                 }
