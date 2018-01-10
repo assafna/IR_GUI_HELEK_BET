@@ -584,7 +584,7 @@ public class Indexer {
                     }
 
                     //write df
-                    bw.write(docsInLineLength + '\n');
+                    bw.write("" + docsInLineLength + '\n');
 
                     //get all the rest to cache
                     ArrayList<String> forCache = new ArrayList<>();

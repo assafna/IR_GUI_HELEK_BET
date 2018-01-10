@@ -16,7 +16,9 @@ public class Main extends Application {
 
     public static Time time = new Time();
 
+
     public static void main(String[] args) {
+        wikipedia();
         //set launch start time
         time.setLaunchStartTime(System.currentTimeMillis());
         System.out.println("App launched");
@@ -42,7 +44,8 @@ public class Main extends Application {
                 String line = null;
                 while (null != (line = br.readLine())) {
                     line = line.trim();
-                    if (!line.startsWith("|")
+                    System.out.println("k");
+                  /*  if (!line.startsWith("|")
                             && !line.startsWith("{")
                             && !line.startsWith("}")
                             && !line.startsWith("<center>")
@@ -52,6 +55,7 @@ public class Main extends Application {
                     if (text.length() > 200) {
                         break;
                     }
+                    */
                 }
             }
             System.out.println("text = " + text);
@@ -59,6 +63,8 @@ public class Main extends Application {
             e.printStackTrace();
         }
     }
+
+
 
 
 

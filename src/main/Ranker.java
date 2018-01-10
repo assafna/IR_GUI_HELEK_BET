@@ -6,10 +6,9 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
+import java.util.*;
 
 /**
  * Created by USER on 12/30/2017.
@@ -29,7 +28,7 @@ public class Ranker {
         //for each doc, have an hash map of terms, and for each term have index of first occurrence, tf and bm25
         HashMap<String, HashMap<String, Pair<Double, Pair<Double, Double>>>> termsDetailsPerDoc = new HashMap<>();
         HashMap<String, Pair<Double, String>> docsWeightAndDate; //weight and date of each doc
-        HashMap<String, Term> termsObjects = new HashMap<>(); //object of each term
+        HashMap<String, Pair<Term, Double>> termsObjects = new HashMap<>(); //object and bm of each term
         ArrayList<String> docs = new ArrayList<>(); //list of docs names
 
         //for each term in query, get all docs
@@ -38,14 +37,14 @@ public class Ranker {
             String queryTerm = queryTerms.get(i);
             if(!indexer.getFinalTermsDictionary().containsKey(queryTerm))
                 continue;
-            termsObjects.put(queryTerm, new Term(indexer.getFinalTermsDictionary().get(queryTerm)));
+            Term term = new Term(indexer.getFinalTermsDictionary().get(queryTerm));
 
             //get all docs for term
-            ArrayList<String> docsForTerm = getDocsForTerm(queryTerm, termsObjects.get(queryTerm), indexer, path);
+            ArrayList<String> docsForTerm = getDocsForTerm(queryTerm, term, indexer, path);
 
             //calculate idf for term
             double idf = getIdfForBM(docsForTerm.size(), indexer.getDocsCounter());
-
+            termsObjects.put(queryTerm, new Pair(term, idf));
 
             //for each doc, add to hash
             int docsForTermSize = docsForTerm.size();
@@ -60,7 +59,7 @@ public class Ranker {
                     terms = new HashMap<>();
                     docs.add(termInDocCache.getDocName());
                     //add term
-                    double bm = calculateBM25PerTerm(termInDocCache, idf, indexer);
+                    double bm = calculateBM25PerTerm(termInDocCache, termsObjects.get(queryTerm).getValue(), indexer);
                     terms.put(queryTerm, new Pair<>(termInDocCache.getIndexOfFirstOccurrence(),new Pair(termInDocCache.getTf(), bm)));
                     termsDetailsPerDoc.put(termInDocCache.getDocName(), terms);
 
@@ -91,7 +90,7 @@ public class Ranker {
 
     private double calculateBM25PerTerm(TermInDocCache term, double idf, Indexer indexer){
 
-        double k = 1.5, b = 0.75;
+        double k = 1.3, b = 0.75;
         String docName = term.getDocName();
         Doc doc = new Doc(docName, indexer.getDocsDictionary().get(docName));
         int docLength = doc.getLength();
@@ -173,7 +172,7 @@ public class Ranker {
      * @param termsObject        hash map of terms objects
      * @return list of ranked docs
      */
-    private ArrayList<Pair<String, Double>> rankDocs(HashMap<String, Pair<Double, String>> docsDetails, HashMap<String, HashMap<String, Pair<Double, Pair<Double, Double>>>> termsDetailsPerDoc, HashMap<String, Term> termsObject) {
+    private ArrayList<Pair<String, Double>> rankDocs(HashMap<String, Pair<Double, String>> docsDetails, HashMap<String, HashMap<String, Pair<Double, Pair<Double, Double>>>> termsDetailsPerDoc, HashMap<String, Pair<Term, Double>> termsObject) {
         ArrayList<Pair<String, Double>> rankedDocs = new ArrayList<>();
 
         //for each doc
@@ -187,14 +186,29 @@ public class Ranker {
             for (String term : terms.keySet()) {
                 Pair<Double, Pair<Double,Double>> termPair = terms.get(term);// normalized index, tf
                 //calculate sum wight of query terms
-                double idf = termsObject.get(term).getIdf();
+                double idf = termsObject.get(term).getKey().getIdf();
                 double tf = termPair.getValue().getKey();
                 sumBm += termPair.getValue().getValue();
 
-                sumWeightForDoc += (tf * idf) / termPair.getKey();
+                sumWeightForDoc += (tf * idf)*(1-termPair.getKey()) /*/ termPair.getKey()*/;
             }
-            double denominator = Math.sqrt(docsDetails.get(doc).getKey()) * getNormalizedDate(docsDetails.get(doc).getValue());
-            double rank = (sumWeightForDoc / denominator) + sumBm;
+            double denominator = Math.sqrt(docsDetails.get(doc).getKey())/* * getNormalizedDate(docsDetails.get(doc).getValue())*/;
+            //double rank = (sumWeightForDoc / denominator) /*+ sumBm*/;
+            double cosSin = sumWeightForDoc / denominator;
+            double rank = (sumWeightForDoc / denominator)+sumBm;
+            double sumDistanceBetweenTerms = 0;
+            if(terms.size() > 1) {
+                List<String> queryTerms = new ArrayList<>();
+                queryTerms.addAll(terms.keySet());
+                for (int i = 0; i < queryTerms.size() - 1; i++) {
+                    for (int j = i + 1; j < queryTerms.size(); j++) {
+                        sumDistanceBetweenTerms += Math.abs(terms.get(queryTerms.get(i)).getKey() - terms.get(queryTerms.get(j)).getKey());
+                    }
+                }
+                rank += (sumDistanceBetweenTerms/choose(queryTerms.size(), 2));/*+ sumBm*/;
+            }
+            //double rank = sumBm;
+
             rankedDocs.add(new Pair(doc, rank));
         }
 
@@ -204,6 +218,14 @@ public class Ranker {
         //and finally, return
         return rankedDocs;
 
+    }
+
+    public static long choose(long total, long choose){
+        if(total < choose)
+            return 0;
+        if(choose == 0 || choose == total)
+            return 1;
+        return choose(total-1,choose-1)+choose(total-1,choose);
     }
 
     public double getNormalizedDate(String date) {
