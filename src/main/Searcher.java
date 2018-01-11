@@ -72,16 +72,16 @@ public class Searcher {
      * @param isStem  if to use stem or not
      * @return hash map of query and his relevant docs
      */
-    public List<Pair<String, List<String>>> search(List<Pair<String,String>> queries, boolean isStem, String path) {
+    public List<Pair<String, List<String>>> search(List<Pair<String,Pair<String, String>>> queries, boolean isStem, String path) {
         List<Pair<String, List<String>>> queriesResults = new ArrayList<>();
         Time time = new Time();
 
         //send each query to search function
         int queriesSize = queries.size();
         for (int i = 0; i < queriesSize; i++) {
-            Pair<String, String> query = queries.get(i);
+            Pair<String, Pair<String,String>> query = queries.get(i);
             time.addQueryStartTime(query.getKey());
-            queriesResults.add(new Pair<>(query.getKey(), search(query.getValue(), isStem, path)));
+            queriesResults.add(new Pair(query.getKey(), search(query.getValue().getKey()  + " " + query.getValue().getValue(), isStem, path)));
             time.addQueryEndtime(query.getKey());
         }
 

@@ -10,6 +10,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 
+
 /**
  * Created by USER on 12/30/2017.
  */
@@ -88,6 +89,13 @@ public class Ranker {
 
     }
 
+    /**
+     * calculate BM25 for one term in doc
+     * @param term term
+     * @param idf idf of the term
+     * @param indexer indexer
+     * @return BM25 of term
+     */
     private double calculateBM25PerTerm(TermInDocCache term, double idf, Indexer indexer){
 
         double k = 1.3, b = 0.75;
@@ -195,7 +203,9 @@ public class Ranker {
             double denominator = Math.sqrt(docsDetails.get(doc).getKey())/* * getNormalizedDate(docsDetails.get(doc).getValue())*/;
             //double rank = (sumWeightForDoc / denominator) /*+ sumBm*/;
             double cosSin = sumWeightForDoc / denominator;
-            double rank = (sumWeightForDoc / denominator)+sumBm;
+            double rank = cosSin;
+
+            //find distance between query terms
             double sumDistanceBetweenTerms = 0;
             if(terms.size() > 1) {
                 List<String> queryTerms = new ArrayList<>();
@@ -220,6 +230,12 @@ public class Ranker {
 
     }
 
+    /**
+     * implement n choose k
+     * @param total total size of group
+     * @param choose number to choose
+     * @return n choose k
+     */
     public static long choose(long total, long choose){
         if(total < choose)
             return 0;
@@ -228,6 +244,11 @@ public class Ranker {
         return choose(total-1,choose-1)+choose(total-1,choose);
     }
 
+    /**
+     * get normalize date
+     * @param date original date
+     * @return normalize date
+     */
     public double getNormalizedDate(String date) {
         try {
             DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");

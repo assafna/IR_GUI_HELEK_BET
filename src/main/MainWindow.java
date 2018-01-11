@@ -774,7 +774,7 @@ public class MainWindow {
             if(!file.exists())
                 showAlert("Queries file does not exist in chosen directory");
             else {
-                List<Pair<String, String>> queries = new ReadFile().readQueriesFile(pathForQueriesFile + "\\queries.txt");
+                List<Pair<String, Pair<String,String>>> queries = new ReadFile().readQueriesFile(pathForQueriesFile + "\\queries.txt");
                 if (searcher == null)
                     searcher = new Searcher(stopWords);
                 rankedDocsForQueriesFile = searcher.search(queries, stemmingCheckBox.isSelected(), pathToLoadDictionaryAndCache);

@@ -294,19 +294,26 @@ public class ReadFile {
      * @param file
      * @return list of queries
      */
-    public ArrayList<Pair<String, String>> readQueriesFile(String file) {
-        ArrayList<Pair<String, String>> queries = new ArrayList<>();
+    public ArrayList<Pair<String, Pair<String, String>>> readQueriesFile(String file) {
+        ArrayList<Pair<String, Pair<String, String>>> queries = new ArrayList<>();
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
             String line;
             String num = "", name = "";
+            StringBuilder description = new StringBuilder();
             while ((line = br.readLine()) != null) {
                 if (line.contains("<num>"))
                     num = line.substring(14);
-                if (line.contains("<title>")) {
+                if (line.contains("<title>"))
                     name = line.substring(8);
-                    queries.add(new Pair<>(num, name));
-                }
+                    if(line.contains("Description")) {
+                        while ((line = br.readLine()) != null && !line.equals(""))
+                            description.append(line + " ");
+
+                        queries.add(new Pair(num, new Pair(name, description.toString())));
+                        description = new StringBuilder();
+                    }
+
             }
         } catch (IOException e) {
             e.printStackTrace();

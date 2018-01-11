@@ -786,8 +786,7 @@ public class Indexer {
         int numOfDocs = 0;
         try {
             docWriter = new BufferedWriter(new FileWriter(path));
-            avgLengthOfDocs = (double)avgLengthOfDocs/docsCounter;
-            docWriter.write(docsCounter + "\t" + avgLengthOfDocs + "\n");
+            docWriter.write(docsCounter + "\t" + (double)avgLengthOfDocs/docsCounter + "\n");
             for (String doc : docsDictionary.keySet()) {
                 numOfDocs++;
                 docWriter.write(doc + '\t');

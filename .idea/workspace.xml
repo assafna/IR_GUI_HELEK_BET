@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79d701db-55eb-42c6-8fe7-7cae2c048fc1" name="Default" comment="find most important sentences">
+    <list default="true" id="79d701db-55eb-42c6-8fe7-7cae2c048fc1" name="Default" comment="trying to make things work :(">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Indexer.java" afterPath="$PROJECT_DIR$/src/main/Indexer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Main.java" afterPath="$PROJECT_DIR$/src/main/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/MainWindow.java" afterPath="$PROJECT_DIR$/src/main/MainWindow.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Ranker.java" afterPath="$PROJECT_DIR$/src/main/Ranker.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/ReadFile.java" afterPath="$PROJECT_DIR$/src/main/ReadFile.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Searcher.java" afterPath="$PROJECT_DIR$/src/main/Searcher.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -27,50 +29,12 @@
       <file leaf-file-name="Indexer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Indexer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="925">
-              <caret line="37" column="22" lean-forward="true" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+            <state relative-caret-position="425">
+              <caret line="784" column="44" lean-forward="false" selection-start-line="784" selection-start-column="44" selection-end-line="784" selection-end-column="44" />
               <folding>
-                <element signature="method#Indexer#1;class#Indexer#0" expanded="false" />
-                <element signature="docComment;method#getDocString#0;class#Indexer#0" expanded="false" />
-                <element signature="docComment;method#updateTermInDictionary#0;class#Indexer#0" expanded="false" />
-                <element signature="method#writeTermsDictionaryToFile#0;class#Indexer#0" expanded="false" />
-                <element signature="e#33299#33300#0" expanded="true" />
-                <element signature="e#33333#33334#0" expanded="true" />
-                <element signature="e#33391#33392#0" expanded="true" />
-                <element signature="e#33440#33441#0" expanded="true" />
-                <element signature="e#33489#33490#0" expanded="true" />
-                <element signature="e#33527#33528#0" expanded="true" />
-                <element signature="e#33596#33597#0" expanded="true" />
-                <element signature="e#33653#33654#0" expanded="true" />
-                <marker date="1515425894547" expanded="true" signature="22229:22345" ph="//..." />
-                <marker date="1515425894547" expanded="true" signature="23604:23805" ph="/**...*/" />
-                <marker date="1515425894547" expanded="true" signature="23889:24148" ph="{...}" />
-                <marker date="1515425894547" expanded="true" signature="24154:24497" ph="/**...*/" />
-                <marker date="1515425894547" expanded="true" signature="24595:26897" ph="{...}" />
-                <marker date="1515425894547" expanded="true" signature="26182:26328" ph="//..." />
-                <marker date="1515425894547" expanded="true" signature="26597:26798" ph="//..." />
-                <marker date="1515425894547" expanded="true" signature="26904:26947" ph="/**...*/" />
-                <marker date="1515425894547" expanded="false" signature="26999:27338" ph="{...}" />
-                <marker date="1515425894547" expanded="false" signature="27344:27432" ph="/**...*/" />
-                <marker date="1515425894547" expanded="false" signature="27479:28470" ph="{...}" />
-                <marker date="1515425894547" expanded="true" signature="28476:28521" ph="/**...*/" />
-                <marker date="1515425894547" expanded="true" signature="28566:29408" ph="{...}" />
-                <marker date="1515425894547" expanded="true" signature="29414:29469" ph="/**...*/" />
-                <marker date="1515425894547" expanded="false" signature="29506:29860" ph="{...}" />
-                <marker date="1515425894547" expanded="false" signature="29866:29964" ph="/**...*/" />
-                <marker date="1515425894547" expanded="false" signature="30011:31344" ph="{...}" />
-                <marker date="1515425894547" expanded="true" signature="31350:31482" ph="/**...*/" />
-                <marker date="1515425894547" expanded="false" signature="31534:31929" ph="{...}" />
-                <marker date="1515425894547" expanded="false" signature="31935:32082" ph="/**...*/" />
-                <marker date="1515425894547" expanded="false" signature="32159:32863" ph="{...}" />
-                <marker date="1515425894547" expanded="false" signature="32925:32936" ph=" { " />
-                <marker date="1515425894547" expanded="false" signature="32964:32970" ph=" }" />
-                <marker date="1515425894547" expanded="false" signature="33026:33037" ph=" { " />
-                <marker date="1515425894547" expanded="false" signature="33059:33065" ph=" }" />
-                <marker date="1515425894547" expanded="false" signature="33138:33149" ph=" { " />
-                <marker date="1515425894547" expanded="false" signature="33162:33168" ph=" }" />
-                <marker date="1515425894547" expanded="false" signature="33213:33224" ph=" { " />
-                <marker date="1515425894547" expanded="false" signature="33252:33258" ph=" }" />
+                <element signature="method#writeDocsToFile#0;class#Indexer#0" expanded="false" />
+                <marker date="1515649156287" expanded="true" signature="13880:13917" ph="//..." />
+                <marker date="1515649156287" expanded="true" signature="13880:13956" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -79,30 +43,31 @@
       <file leaf-file-name="MainWindow.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/MainWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="402" column="96" lean-forward="false" selection-start-line="402" selection-start-column="96" selection-end-line="402" selection-end-column="96" />
+            <state relative-caret-position="370">
+              <caret line="64" column="39" lean-forward="true" selection-start-line="63" selection-start-column="39" selection-end-line="64" selection-end-column="39" />
               <folding>
                 <element signature="docComment;method#resetButtonPressed#0;class#MainWindow#0" expanded="false" />
                 <element signature="method#resetButtonPressed#0;class#MainWindow#0" expanded="false" />
                 <element signature="method#deleteFolder#0;class#MainWindow#0" expanded="false" />
+                <element signature="method#loadDictionary#0;class#MainWindow#0" expanded="false" />
+                <element signature="docComment;method#loadCache#0;class#MainWindow#0" expanded="false" />
+                <element signature="method#loadCache#0;class#MainWindow#0" expanded="false" />
+                <element signature="docComment;method#saveDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
+                <element signature="method#saveDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
                 <element signature="docComment;method#showAlert#0;class#MainWindow#0" expanded="false" />
                 <element signature="method#showAlert#0;class#MainWindow#0" expanded="false" />
                 <element signature="docComment;method#showCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
                 <element signature="method#showCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
                 <element signature="docComment;method#showDictionaryButtonPressed#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#showDictionaryButtonPressed#0;class#MainWindow#0" expanded="false" />
                 <element signature="docComment;method#showData#0;class#MainWindow#0" expanded="false" />
                 <element signature="method#showData#0;class#MainWindow#0" expanded="false" />
-                <element signature="docComment;method#runQueryStringButtonClick#0;class#MainWindow#0" expanded="false" />
+                <element signature="method#runQueryStringButtonClick#0;class#MainWindow#0" expanded="false" />
                 <element signature="docComment;method#resetQueriesDataButtonClick#0;class#MainWindow#0" expanded="false" />
                 <element signature="method#resetQueriesDataButtonClick#0;class#MainWindow#0" expanded="false" />
                 <element signature="docComment;method#deleteFileContent#0;class#MainWindow#0" expanded="false" />
                 <element signature="method#deleteFileContent#0;class#MainWindow#0" expanded="false" />
                 <element signature="docComment;method#queryTextFieldKeyReleased#0;class#MainWindow#0" expanded="false" />
                 <element signature="method#queryTextFieldKeyReleased#0;class#MainWindow#0" expanded="false" />
-                <element signature="docComment;method#loadAndRunQueriesFileButtonPressed#0;class#MainWindow#0" expanded="false" />
-                <element signature="docComment;method#saveQueryResultButtonPressed#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#saveQueryResultButtonPressed#0;class#MainWindow#0" expanded="false" />
                 <element signature="docComment;method#writeQueriesResultsToFile#0;class#MainWindow#0" expanded="false" />
                 <element signature="method#writeQueriesResultsToFile#0;class#MainWindow#0" expanded="false" />
               </folding>
@@ -112,25 +77,41 @@
       </file>
       <file leaf-file-name="MainWindow.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/MainWindow.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="170" column="91" lean-forward="true" selection-start-line="170" selection-start-column="91" selection-end-line="170" selection-end-column="91" />
+            <state relative-caret-position="6290">
+              <caret line="170" column="91" lean-forward="false" selection-start-line="170" selection-start-column="91" selection-end-line="170" selection-end-column="91" />
               <folding>
                 <marker date="1515322404313" expanded="true" signature="12767:12801" ph="..." />
               </folding>
             </state>
           </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ranker.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Ranker.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/Ranker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2553">
-              <caret line="77" column="2" lean-forward="false" selection-start-line="77" selection-start-column="2" selection-end-line="77" selection-end-column="2" />
-              <folding />
+            <state relative-caret-position="406">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;method#getRankedDocs#0;class#Ranker#0" expanded="false" />
+                <element signature="method#getRankedDocs#0;class#Ranker#0" expanded="false" />
+                <element signature="docComment;method#getIdfForBM#0;class#Ranker#0" expanded="false" />
+                <element signature="method#getIdfForBM#0;class#Ranker#0" expanded="false" />
+                <element signature="docComment;method#calculateBM25PerTerm#0;class#Ranker#0" expanded="false" />
+                <element signature="docComment;method#getDocsForTerm#0;class#Ranker#0" expanded="false" />
+                <element signature="method#getDocsForTerm#0;class#Ranker#0" expanded="false" />
+                <element signature="docComment;method#getDocsWightAndDate#0;class#Ranker#0" expanded="false" />
+                <element signature="method#getDocsWightAndDate#0;class#Ranker#0" expanded="false" />
+                <element signature="docComment;method#rankDocs#0;class#Ranker#0" expanded="false" />
+                <element signature="docComment;method#choose#0;class#Ranker#0" expanded="false" />
+                <element signature="method#choose#0;class#Ranker#0" expanded="false" />
+                <element signature="docComment;method#getNormalizedDate#0;class#Ranker#0" expanded="false" />
+                <element signature="method#getNormalizedDate#0;class#Ranker#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -138,9 +119,78 @@
       <file leaf-file-name="FXMLLoader.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="1778" column="5" lean-forward="true" selection-start-line="1778" selection-start-column="5" selection-end-line="1778" selection-end-column="5" />
-              <folding />
+            <state relative-caret-position="61346">
+              <caret line="1778" column="5" lean-forward="false" selection-start-line="1778" selection-start-column="5" selection-end-line="1778" selection-end-column="5" />
+              <folding>
+                <element signature="e#0#127539#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#3555#3556#0" expanded="false" />
+                <element signature="e#3595#3596#0" expanded="false" />
+                <element signature="e#6271#6272#0" expanded="false" />
+                <element signature="e#6331#6332#0" expanded="false" />
+                <element signature="e#45311#45312#0" expanded="false" />
+                <element signature="e#45372#45373#0" expanded="false" />
+                <element signature="e#57599#57600#0" expanded="false" />
+                <element signature="e#57671#57672#0" expanded="false" />
+                <element signature="e#60461#60462#0" expanded="false" />
+                <element signature="e#60497#60498#0" expanded="false" />
+                <element signature="e#60556#60557#0" expanded="false" />
+                <element signature="e#60598#60599#0" expanded="false" />
+                <element signature="e#61112#61113#0" expanded="false" />
+                <element signature="e#61148#61149#0" expanded="false" />
+                <element signature="e#65761#65762#0" expanded="false" />
+                <element signature="e#65796#65797#0" expanded="false" />
+                <element signature="e#66818#66819#0" expanded="false" />
+                <element signature="e#66864#66865#0" expanded="false" />
+                <element signature="e#66921#66922#0" expanded="false" />
+                <element signature="e#66966#66967#0" expanded="false" />
+                <element signature="e#68431#68432#0" expanded="false" />
+                <element signature="e#68477#68478#0" expanded="false" />
+                <element signature="e#68921#68922#0" expanded="false" />
+                <element signature="e#68967#68968#0" expanded="false" />
+                <element signature="e#69372#69373#0" expanded="false" />
+                <element signature="e#69418#69419#0" expanded="false" />
+                <element signature="e#69818#69819#0" expanded="false" />
+                <element signature="e#69864#69865#0" expanded="false" />
+                <element signature="e#78649#78650#0" expanded="false" />
+                <element signature="e#78724#78725#0" expanded="false" />
+                <element signature="e#78827#78828#0" expanded="false" />
+                <element signature="e#78858#78859#0" expanded="false" />
+                <element signature="e#79010#79011#0" expanded="false" />
+                <element signature="e#79046#79047#0" expanded="false" />
+                <element signature="e#79248#79249#0" expanded="false" />
+                <element signature="e#79295#79296#0" expanded="false" />
+                <element signature="e#80212#80213#0" expanded="false" />
+                <element signature="e#80265#80266#0" expanded="false" />
+                <element signature="e#81592#81593#0" expanded="false" />
+                <element signature="e#81623#81624#0" expanded="false" />
+                <element signature="e#81787#81788#0" expanded="false" />
+                <element signature="e#81827#81828#0" expanded="false" />
+                <element signature="e#81963#81964#0" expanded="false" />
+                <element signature="e#81995#81996#0" expanded="false" />
+                <element signature="e#82173#82174#0" expanded="false" />
+                <element signature="e#82215#82216#0" expanded="false" />
+                <element signature="e#82340#82341#0" expanded="false" />
+                <element signature="e#82372#82373#0" expanded="false" />
+                <element signature="e#82502#82503#0" expanded="false" />
+                <element signature="e#82532#82533#0" expanded="false" />
+                <element signature="e#82931#82932#0" expanded="false" />
+                <element signature="e#82963#82964#0" expanded="false" />
+                <element signature="e#83880#83881#0" expanded="false" />
+                <element signature="e#83916#83917#0" expanded="false" />
+                <element signature="e#84840#84841#0" expanded="false" />
+                <element signature="e#84877#84878#0" expanded="false" />
+                <element signature="e#85050#85051#0" expanded="false" />
+                <element signature="e#85102#85103#0" expanded="false" />
+                <element signature="e#85270#85271#0" expanded="false" />
+                <element signature="e#85310#85311#0" expanded="false" />
+                <element signature="e#85699#85700#0" expanded="false" />
+                <element signature="e#85729#85730#0" expanded="false" />
+                <element signature="e#96278#96279#0" expanded="false" />
+                <element signature="e#96346#96347#0" expanded="false" />
+                <element signature="e#105847#105848#0" expanded="false" />
+                <element signature="e#105919#105920#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -148,55 +198,61 @@
       <file leaf-file-name="ReadFile.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/ReadFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="478" column="0" lean-forward="false" selection-start-line="478" selection-start-column="0" selection-end-line="478" selection-end-column="0" />
+            <state relative-caret-position="-956">
+              <caret line="308" column="49" lean-forward="false" selection-start-line="308" selection-start-column="49" selection-end-line="308" selection-end-column="49" />
               <folding>
-                <element signature="e#373#374#0" expanded="true" />
-                <element signature="e#420#421#0" expanded="true" />
                 <element signature="method#createStopWordsMap#0;class#ReadFile#0" expanded="false" />
                 <element signature="docComment;method#parseDateForFBorFTfiles#0;class#ReadFile#0" expanded="false" />
                 <element signature="docComment;method#convertDateToUniformFormat#0;class#ReadFile#0" expanded="false" />
                 <element signature="docComment;method#readQueriesFile#0;class#ReadFile#0" expanded="false" />
+                <element signature="method#getTextFromFile#0;class#ReadFile#0" expanded="false" />
+                <element signature="docComment;method#getTermDocsFromPosting#0;class#ReadFile#0" expanded="false" />
+                <element signature="method#getTermDocsFromPosting#0;class#ReadFile#0" expanded="false" />
                 <element signature="method#createDocsHashFromCorpus#0;class#ReadFile#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DocNameHash.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/DocNameHash.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="534">
-              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Searcher.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Searcher.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Searcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="987">
-              <caret line="34" column="44" lean-forward="true" selection-start-line="34" selection-start-column="44" selection-end-line="34" selection-end-column="44" />
+            <state relative-caret-position="629">
+              <caret line="89" column="0" lean-forward="true" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
               <folding>
+                <element signature="docComment;method#search#0;class#Searcher#0" expanded="false" />
+                <element signature="docComment;method#search#1;class#Searcher#0" expanded="false" />
                 <element signature="docComment;method#find5MostImportantSentences#0;class#Searcher#0" expanded="false" />
-                <element signature="e#3648#3789#0" expanded="false" />
-                <element signature="e#4206#4325#0" expanded="false" />
+                <element signature="method#find5MostImportantSentences#0;class#Searcher#0" expanded="false" />
+                <element signature="e#4061#4202#0" expanded="false" />
+                <element signature="e#4620#4739#0" expanded="false" />
                 <element signature="docComment;method#splitTextToSentences#0;class#Searcher#0" expanded="false" />
                 <element signature="method#splitTextToSentences#0;class#Searcher#0" expanded="false" />
                 <element signature="docComment;method#isDigit#0;class#Searcher#0" expanded="false" />
                 <element signature="docComment;method#findSentencesImportance#0;class#Searcher#0" expanded="false" />
                 <element signature="method#findSentencesImportance#0;class#Searcher#0" expanded="false" />
+                <element signature="docComment;method#breakIteratorBreakToSentences#0;class#Searcher#0" expanded="false" />
+                <element signature="method#breakIteratorBreakToSentences#0;class#Searcher#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Comparator.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/Comparator.java">
+      <file leaf-file-name="Pair.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/javafx-src.zip!/javafx/util/Pair.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="149" column="8" lean-forward="false" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="8" />
+            <state relative-caret-position="740">
+              <caret line="56" column="25" lean-forward="false" selection-start-line="56" selection-start-column="25" selection-end-line="56" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-296">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -205,10 +261,9 @@
       <file leaf-file-name="Parser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-844">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state relative-caret-position="2072">
+              <caret line="59" column="49" lean-forward="false" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="49" />
               <folding>
-                <element signature="method#parse#0;class#Parser#0" expanded="false" />
                 <element signature="method#parseNumber#0;class#Parser#0" expanded="false" />
               </folding>
             </state>
@@ -234,6 +289,10 @@
       <find>find5mo</find>
       <find>loaddoc</find>
       <find>loaddo</find>
+      <find>avgLengthOfDocs</find>
+      <find>25</find>
+      <find>loadd</find>
+      <find>writedocs</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -247,13 +306,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/ReadFile.java" />
         <option value="$PROJECT_DIR$/src/main/MainWindow.fxml" />
-        <option value="$PROJECT_DIR$/src/main/MainWindow.java" />
-        <option value="$PROJECT_DIR$/src/main/Ranker.java" />
         <option value="$PROJECT_DIR$/src/main/Indexer.java" />
+        <option value="$PROJECT_DIR$/src/main/MainWindow.java" />
+        <option value="$PROJECT_DIR$/src/main/Main.java" />
         <option value="$PROJECT_DIR$/src/main/Searcher.java" />
+        <option value="$PROJECT_DIR$/src/main/ReadFile.java" />
+        <option value="$PROJECT_DIR$/src/main/Ranker.java" />
       </list>
     </option>
   </component>
@@ -267,10 +326,10 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-12" />
-    <option name="y" value="2" />
-    <option name="width" value="3222" />
-    <option name="height" value="1720" />
+    <option name="x" value="-14" />
+    <option name="y" value="-14" />
+    <option name="width" value="3228" />
+    <option name="height" value="1738" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -287,8 +346,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -336,122 +393,14 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../NetworkAlignment" />
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/main/Indexer.java</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -894,7 +843,11 @@
       <updated>1514984976882</updated>
       <workItem from="1514984981360" duration="6080000" />
       <workItem from="1515222298135" duration="36115000" />
-      <workItem from="1515304176879" duration="26871000" />
+      <workItem from="1515304176879" duration="36453000" />
+      <workItem from="1515475365845" duration="999000" />
+      <workItem from="1515481849582" duration="896000" />
+      <workItem from="1515536311464" duration="15650000" />
+      <workItem from="1515648513834" duration="4739000" />
     </task>
     <task id="LOCAL-00001" summary="dates function, alert if cant find result to query">
       <created>1515244760382</created>
@@ -931,14 +884,42 @@
       <option name="project" value="LOCAL" />
       <updated>1515322483963</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="find 750 docs">
+      <created>1515425933759</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1515425933759</updated>
+    </task>
+    <task id="LOCAL-00007" summary="improve 5 most important sentences">
+      <created>1515448368777</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1515448368777</updated>
+    </task>
+    <task id="LOCAL-00008" summary="error messages">
+      <created>1515482748816</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1515482748816</updated>
+    </task>
+    <task id="LOCAL-00009" summary="trying to make things work :(">
+      <created>1515594035043</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1515594035043</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69066000" />
+    <option name="totallyTimeSpent" value="100932000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-12" y="2" width="3222" height="1720" extended-state="0" />
+    <frame x="-14" y="-14" width="3228" height="1738" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -950,21 +931,21 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990354" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16528355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2406639" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1646175" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27527323" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Floobits" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20006444" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20064309" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24983923" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12568305" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24931695" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -974,36 +955,36 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990354" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24983923" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21721311" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24931695" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991803" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13251366" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991803" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24180327" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990354" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1646175" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16734973" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990354" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Floobits" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14405145" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20064309" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -1019,7 +1000,11 @@
     <MESSAGE value="reset, file query search, save results" />
     <MESSAGE value="index correction" />
     <MESSAGE value="find most important sentences" />
-    <option name="LAST_COMMIT_MESSAGE" value="find most important sentences" />
+    <MESSAGE value="find 750 docs" />
+    <MESSAGE value="improve 5 most important sentences" />
+    <MESSAGE value="error messages" />
+    <MESSAGE value="trying to make things work :(" />
+    <option name="LAST_COMMIT_MESSAGE" value="trying to make things work :(" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1031,40 +1016,52 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/Searcher.java</url>
-          <line>77</line>
-          <properties />
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/Indexer.java</url>
-          <line>200</line>
+          <line>201</line>
           <properties />
           <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/Searcher.java</url>
-          <line>179</line>
+          <line>192</line>
           <properties />
           <option name="timeStamp" value="64" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/Searcher.java</url>
-          <line>119</line>
+          <line>129</line>
           <properties />
           <option name="timeStamp" value="68" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/Searcher.java</url>
-          <line>52</line>
+          <line>141</line>
           <properties />
-          <option name="timeStamp" value="70" />
+          <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/ReadFile.java</url>
-          <line>478</line>
+          <url>file://$PROJECT_DIR$/src/main/Searcher.java</url>
+          <line>187</line>
           <properties />
-          <option name="timeStamp" value="71" />
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/Ranker.java</url>
+          <line>217</line>
+          <properties />
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/Searcher.java</url>
+          <line>31</line>
+          <properties />
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/Searcher.java</url>
+          <line>81</line>
+          <properties />
+          <option name="timeStamp" value="110" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/MainWindow.java</url>
@@ -1075,11 +1072,12 @@
           <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="72" />
+      <option name="time" value="113" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="ReadFile.numOfDocs" language="JAVA" />
+        <watch expression="indexer.getAvgLengthOfDocs()" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
@@ -1088,52 +1086,464 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23125">
+          <caret line="625" column="44" lean-forward="false" selection-start-line="625" selection-start-column="44" selection-end-line="625" selection-end-column="44" />
+          <folding>
+            <element signature="docComment;method#resetButtonPressed#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#resetButtonPressed#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#deleteFolder#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#loadDictionary#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#loadCache#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#loadCache#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#saveDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#saveDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#showAlert#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#showAlert#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#showCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#showCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#showDictionaryButtonPressed#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#showData#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#showData#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#runQueryStringButtonClick#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#resetQueriesDataButtonClick#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#resetQueriesDataButtonClick#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#deleteFileContent#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#deleteFileContent#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#queryTextFieldKeyReleased#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#queryTextFieldKeyReleased#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#writeQueriesResultsToFile#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#writeQueriesResultsToFile#0;class#MainWindow#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/MainWindow.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6290">
+          <caret line="170" column="91" lean-forward="false" selection-start-line="170" selection-start-column="91" selection-end-line="170" selection-end-column="91" />
+          <folding>
+            <marker date="1515322404313" expanded="true" signature="12767:12801" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Ranker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2553">
+          <caret line="77" column="2" lean-forward="false" selection-start-line="77" selection-start-column="2" selection-end-line="77" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#getRankedDocs#0;class#Ranker#0" expanded="false" />
+            <element signature="method#getRankedDocs#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#getIdfForBM#0;class#Ranker#0" expanded="false" />
+            <element signature="method#getIdfForBM#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#calculateBM25PerTerm#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#getDocsForTerm#0;class#Ranker#0" expanded="false" />
+            <element signature="method#getDocsForTerm#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#getDocsWightAndDate#0;class#Ranker#0" expanded="false" />
+            <element signature="method#getDocsWightAndDate#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#rankDocs#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#choose#0;class#Ranker#0" expanded="false" />
+            <element signature="method#choose#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#getNormalizedDate#0;class#Ranker#0" expanded="false" />
+            <element signature="method#getNormalizedDate#0;class#Ranker#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65786">
+          <caret line="1778" column="5" lean-forward="false" selection-start-line="1778" selection-start-column="5" selection-end-line="1778" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#127539#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#3555#3556#0" expanded="false" />
+            <element signature="e#3595#3596#0" expanded="false" />
+            <element signature="e#6271#6272#0" expanded="false" />
+            <element signature="e#6331#6332#0" expanded="false" />
+            <element signature="e#45311#45312#0" expanded="false" />
+            <element signature="e#45372#45373#0" expanded="false" />
+            <element signature="e#57599#57600#0" expanded="false" />
+            <element signature="e#57671#57672#0" expanded="false" />
+            <element signature="e#60461#60462#0" expanded="false" />
+            <element signature="e#60497#60498#0" expanded="false" />
+            <element signature="e#60556#60557#0" expanded="false" />
+            <element signature="e#60598#60599#0" expanded="false" />
+            <element signature="e#61112#61113#0" expanded="false" />
+            <element signature="e#61148#61149#0" expanded="false" />
+            <element signature="e#65761#65762#0" expanded="false" />
+            <element signature="e#65796#65797#0" expanded="false" />
+            <element signature="e#66818#66819#0" expanded="false" />
+            <element signature="e#66864#66865#0" expanded="false" />
+            <element signature="e#66921#66922#0" expanded="false" />
+            <element signature="e#66966#66967#0" expanded="false" />
+            <element signature="e#68431#68432#0" expanded="false" />
+            <element signature="e#68477#68478#0" expanded="false" />
+            <element signature="e#68921#68922#0" expanded="false" />
+            <element signature="e#68967#68968#0" expanded="false" />
+            <element signature="e#69372#69373#0" expanded="false" />
+            <element signature="e#69418#69419#0" expanded="false" />
+            <element signature="e#69818#69819#0" expanded="false" />
+            <element signature="e#69864#69865#0" expanded="false" />
+            <element signature="e#78649#78650#0" expanded="false" />
+            <element signature="e#78724#78725#0" expanded="false" />
+            <element signature="e#78827#78828#0" expanded="false" />
+            <element signature="e#78858#78859#0" expanded="false" />
+            <element signature="e#79010#79011#0" expanded="false" />
+            <element signature="e#79046#79047#0" expanded="false" />
+            <element signature="e#79248#79249#0" expanded="false" />
+            <element signature="e#79295#79296#0" expanded="false" />
+            <element signature="e#80212#80213#0" expanded="false" />
+            <element signature="e#80265#80266#0" expanded="false" />
+            <element signature="e#81592#81593#0" expanded="false" />
+            <element signature="e#81623#81624#0" expanded="false" />
+            <element signature="e#81787#81788#0" expanded="false" />
+            <element signature="e#81827#81828#0" expanded="false" />
+            <element signature="e#81963#81964#0" expanded="false" />
+            <element signature="e#81995#81996#0" expanded="false" />
+            <element signature="e#82173#82174#0" expanded="false" />
+            <element signature="e#82215#82216#0" expanded="false" />
+            <element signature="e#82340#82341#0" expanded="false" />
+            <element signature="e#82372#82373#0" expanded="false" />
+            <element signature="e#82502#82503#0" expanded="false" />
+            <element signature="e#82532#82533#0" expanded="false" />
+            <element signature="e#82931#82932#0" expanded="false" />
+            <element signature="e#82963#82964#0" expanded="false" />
+            <element signature="e#83880#83881#0" expanded="false" />
+            <element signature="e#83916#83917#0" expanded="false" />
+            <element signature="e#84840#84841#0" expanded="false" />
+            <element signature="e#84877#84878#0" expanded="false" />
+            <element signature="e#85050#85051#0" expanded="false" />
+            <element signature="e#85102#85103#0" expanded="false" />
+            <element signature="e#85270#85271#0" expanded="false" />
+            <element signature="e#85310#85311#0" expanded="false" />
+            <element signature="e#85699#85700#0" expanded="false" />
+            <element signature="e#85729#85730#0" expanded="false" />
+            <element signature="e#96278#96279#0" expanded="false" />
+            <element signature="e#96346#96347#0" expanded="false" />
+            <element signature="e#105847#105848#0" expanded="false" />
+            <element signature="e#105919#105920#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/ReadFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16095">
+          <caret line="478" column="0" lean-forward="false" selection-start-line="478" selection-start-column="0" selection-end-line="478" selection-end-column="0" />
+          <folding>
+            <element signature="method#createStopWordsMap#0;class#ReadFile#0" expanded="false" />
+            <element signature="docComment;method#parseDateForFBorFTfiles#0;class#ReadFile#0" expanded="false" />
+            <element signature="docComment;method#convertDateToUniformFormat#0;class#ReadFile#0" expanded="false" />
+            <element signature="docComment;method#readQueriesFile#0;class#ReadFile#0" expanded="false" />
+            <element signature="method#getTextFromFile#0;class#ReadFile#0" expanded="false" />
+            <element signature="docComment;method#getTermDocsFromPosting#0;class#ReadFile#0" expanded="false" />
+            <element signature="method#getTermDocsFromPosting#0;class#ReadFile#0" expanded="false" />
+            <element signature="method#createDocsHashFromCorpus#0;class#ReadFile#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Searcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5365">
+          <caret line="169" column="41" lean-forward="false" selection-start-line="169" selection-start-column="41" selection-end-line="169" selection-end-column="41" />
+          <folding>
+            <element signature="docComment;method#search#0;class#Searcher#0" expanded="false" />
+            <element signature="docComment;method#search#1;class#Searcher#0" expanded="false" />
+            <element signature="docComment;method#find5MostImportantSentences#0;class#Searcher#0" expanded="false" />
+            <element signature="method#find5MostImportantSentences#0;class#Searcher#0" expanded="false" />
+            <element signature="e#4061#4202#0" expanded="false" />
+            <element signature="e#4620#4739#0" expanded="false" />
+            <element signature="docComment;method#splitTextToSentences#0;class#Searcher#0" expanded="false" />
+            <element signature="method#splitTextToSentences#0;class#Searcher#0" expanded="false" />
+            <element signature="docComment;method#isDigit#0;class#Searcher#0" expanded="false" />
+            <element signature="docComment;method#findSentencesImportance#0;class#Searcher#0" expanded="false" />
+            <element signature="method#findSentencesImportance#0;class#Searcher#0" expanded="false" />
+            <element signature="docComment;method#breakIteratorBreakToSentences#0;class#Searcher#0" expanded="false" />
+            <element signature="method#breakIteratorBreakToSentences#0;class#Searcher#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/Comparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5513">
+          <caret line="149" column="8" lean-forward="false" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#22438#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#7819#7820#0" expanded="false" />
+            <element signature="e#7872#7873#0" expanded="false" />
+            <element signature="e#14106#14107#0" expanded="false" />
+            <element signature="e#14155#14156#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2183">
+          <caret line="59" column="49" lean-forward="false" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="49" />
+          <folding>
+            <element signature="method#parseNumber#0;class#Parser#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Indexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1147">
+          <caret line="37" column="22" lean-forward="false" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+          <folding>
+            <element signature="method#writeDocsToFile#0;class#Indexer#0" expanded="false" />
+            <marker date="1515649156287" expanded="true" signature="13880:13917" ph="//..." />
+            <marker date="1515649156287" expanded="true" signature="13880:13956" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23125">
+          <caret line="625" column="44" lean-forward="false" selection-start-line="625" selection-start-column="44" selection-end-line="625" selection-end-column="44" />
+          <folding>
+            <element signature="docComment;method#resetButtonPressed#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#resetButtonPressed#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#deleteFolder#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#loadDictionary#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#loadCache#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#loadCache#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#saveDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#saveDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#showAlert#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#showAlert#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#showCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#showCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#showDictionaryButtonPressed#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#showData#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#showData#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#runQueryStringButtonClick#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#resetQueriesDataButtonClick#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#resetQueriesDataButtonClick#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#deleteFileContent#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#deleteFileContent#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#queryTextFieldKeyReleased#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#queryTextFieldKeyReleased#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#writeQueriesResultsToFile#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#writeQueriesResultsToFile#0;class#MainWindow#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/MainWindow.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6290">
+          <caret line="170" column="91" lean-forward="true" selection-start-line="170" selection-start-column="91" selection-end-line="170" selection-end-column="91" />
+          <folding>
+            <marker date="1515322404313" expanded="true" signature="12767:12801" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Ranker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2553">
+          <caret line="77" column="2" lean-forward="false" selection-start-line="77" selection-start-column="2" selection-end-line="77" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#getRankedDocs#0;class#Ranker#0" expanded="false" />
+            <element signature="method#getRankedDocs#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#getIdfForBM#0;class#Ranker#0" expanded="false" />
+            <element signature="method#getIdfForBM#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#calculateBM25PerTerm#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#getDocsForTerm#0;class#Ranker#0" expanded="false" />
+            <element signature="method#getDocsForTerm#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#getDocsWightAndDate#0;class#Ranker#0" expanded="false" />
+            <element signature="method#getDocsWightAndDate#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#rankDocs#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#choose#0;class#Ranker#0" expanded="false" />
+            <element signature="method#choose#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#getNormalizedDate#0;class#Ranker#0" expanded="false" />
+            <element signature="method#getNormalizedDate#0;class#Ranker#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65786">
+          <caret line="1778" column="5" lean-forward="true" selection-start-line="1778" selection-start-column="5" selection-end-line="1778" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#127539#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#3555#3556#0" expanded="false" />
+            <element signature="e#3595#3596#0" expanded="false" />
+            <element signature="e#6271#6272#0" expanded="false" />
+            <element signature="e#6331#6332#0" expanded="false" />
+            <element signature="e#45311#45312#0" expanded="false" />
+            <element signature="e#45372#45373#0" expanded="false" />
+            <element signature="e#57599#57600#0" expanded="false" />
+            <element signature="e#57671#57672#0" expanded="false" />
+            <element signature="e#60461#60462#0" expanded="false" />
+            <element signature="e#60497#60498#0" expanded="false" />
+            <element signature="e#60556#60557#0" expanded="false" />
+            <element signature="e#60598#60599#0" expanded="false" />
+            <element signature="e#61112#61113#0" expanded="false" />
+            <element signature="e#61148#61149#0" expanded="false" />
+            <element signature="e#65761#65762#0" expanded="false" />
+            <element signature="e#65796#65797#0" expanded="false" />
+            <element signature="e#66818#66819#0" expanded="false" />
+            <element signature="e#66864#66865#0" expanded="false" />
+            <element signature="e#66921#66922#0" expanded="false" />
+            <element signature="e#66966#66967#0" expanded="false" />
+            <element signature="e#68431#68432#0" expanded="false" />
+            <element signature="e#68477#68478#0" expanded="false" />
+            <element signature="e#68921#68922#0" expanded="false" />
+            <element signature="e#68967#68968#0" expanded="false" />
+            <element signature="e#69372#69373#0" expanded="false" />
+            <element signature="e#69418#69419#0" expanded="false" />
+            <element signature="e#69818#69819#0" expanded="false" />
+            <element signature="e#69864#69865#0" expanded="false" />
+            <element signature="e#78649#78650#0" expanded="false" />
+            <element signature="e#78724#78725#0" expanded="false" />
+            <element signature="e#78827#78828#0" expanded="false" />
+            <element signature="e#78858#78859#0" expanded="false" />
+            <element signature="e#79010#79011#0" expanded="false" />
+            <element signature="e#79046#79047#0" expanded="false" />
+            <element signature="e#79248#79249#0" expanded="false" />
+            <element signature="e#79295#79296#0" expanded="false" />
+            <element signature="e#80212#80213#0" expanded="false" />
+            <element signature="e#80265#80266#0" expanded="false" />
+            <element signature="e#81592#81593#0" expanded="false" />
+            <element signature="e#81623#81624#0" expanded="false" />
+            <element signature="e#81787#81788#0" expanded="false" />
+            <element signature="e#81827#81828#0" expanded="false" />
+            <element signature="e#81963#81964#0" expanded="false" />
+            <element signature="e#81995#81996#0" expanded="false" />
+            <element signature="e#82173#82174#0" expanded="false" />
+            <element signature="e#82215#82216#0" expanded="false" />
+            <element signature="e#82340#82341#0" expanded="false" />
+            <element signature="e#82372#82373#0" expanded="false" />
+            <element signature="e#82502#82503#0" expanded="false" />
+            <element signature="e#82532#82533#0" expanded="false" />
+            <element signature="e#82931#82932#0" expanded="false" />
+            <element signature="e#82963#82964#0" expanded="false" />
+            <element signature="e#83880#83881#0" expanded="false" />
+            <element signature="e#83916#83917#0" expanded="false" />
+            <element signature="e#84840#84841#0" expanded="false" />
+            <element signature="e#84877#84878#0" expanded="false" />
+            <element signature="e#85050#85051#0" expanded="false" />
+            <element signature="e#85102#85103#0" expanded="false" />
+            <element signature="e#85270#85271#0" expanded="false" />
+            <element signature="e#85310#85311#0" expanded="false" />
+            <element signature="e#85699#85700#0" expanded="false" />
+            <element signature="e#85729#85730#0" expanded="false" />
+            <element signature="e#96278#96279#0" expanded="false" />
+            <element signature="e#96346#96347#0" expanded="false" />
+            <element signature="e#105847#105848#0" expanded="false" />
+            <element signature="e#105919#105920#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/ReadFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17686">
+          <caret line="478" column="0" lean-forward="false" selection-start-line="478" selection-start-column="0" selection-end-line="478" selection-end-column="0" />
+          <folding>
+            <element signature="method#createStopWordsMap#0;class#ReadFile#0" expanded="false" />
+            <element signature="docComment;method#parseDateForFBorFTfiles#0;class#ReadFile#0" expanded="false" />
+            <element signature="docComment;method#convertDateToUniformFormat#0;class#ReadFile#0" expanded="false" />
+            <element signature="docComment;method#readQueriesFile#0;class#ReadFile#0" expanded="false" />
+            <element signature="method#getTextFromFile#0;class#ReadFile#0" expanded="false" />
+            <element signature="docComment;method#getTermDocsFromPosting#0;class#ReadFile#0" expanded="false" />
+            <element signature="method#getTermDocsFromPosting#0;class#ReadFile#0" expanded="false" />
+            <element signature="method#createDocsHashFromCorpus#0;class#ReadFile#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/Comparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5513">
+          <caret line="149" column="8" lean-forward="false" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#22438#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#7819#7820#0" expanded="false" />
+            <element signature="e#7872#7873#0" expanded="false" />
+            <element signature="e#14106#14107#0" expanded="false" />
+            <element signature="e#14155#14156#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2183">
+          <caret line="59" column="49" lean-forward="true" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="49" />
+          <folding>
+            <element signature="method#parseNumber#0;class#Parser#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Searcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5439">
+          <caret line="147" column="24" lean-forward="true" selection-start-line="147" selection-start-column="24" selection-end-line="147" selection-end-column="24" />
+          <folding>
+            <element signature="docComment;method#search#0;class#Searcher#0" expanded="false" />
+            <element signature="docComment;method#search#1;class#Searcher#0" expanded="false" />
+            <element signature="docComment;method#find5MostImportantSentences#0;class#Searcher#0" expanded="false" />
+            <element signature="method#find5MostImportantSentences#0;class#Searcher#0" expanded="false" />
+            <element signature="e#4061#4202#0" expanded="false" />
+            <element signature="e#4620#4739#0" expanded="false" />
+            <element signature="docComment;method#splitTextToSentences#0;class#Searcher#0" expanded="false" />
+            <element signature="method#splitTextToSentences#0;class#Searcher#0" expanded="false" />
+            <element signature="docComment;method#isDigit#0;class#Searcher#0" expanded="false" />
+            <element signature="docComment;method#findSentencesImportance#0;class#Searcher#0" expanded="false" />
+            <element signature="method#findSentencesImportance#0;class#Searcher#0" expanded="false" />
+            <element signature="docComment;method#breakIteratorBreakToSentences#0;class#Searcher#0" expanded="false" />
+            <element signature="method#breakIteratorBreakToSentences#0;class#Searcher#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Indexer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5994">
           <caret line="174" column="56" lean-forward="false" selection-start-line="174" selection-start-column="56" selection-end-line="174" selection-end-column="56" />
           <folding>
-            <element signature="method#Indexer#1;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#getDocString#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#updateTermInDictionary#0;class#Indexer#0" expanded="false" />
-            <element signature="method#writeTermsDictionaryToFile#0;class#Indexer#0" expanded="false" />
-            <element signature="e#33299#33300#0" expanded="true" />
-            <element signature="e#33333#33334#0" expanded="true" />
-            <element signature="e#33391#33392#0" expanded="true" />
-            <element signature="e#33440#33441#0" expanded="true" />
-            <element signature="e#33489#33490#0" expanded="true" />
-            <element signature="e#33527#33528#0" expanded="true" />
-            <element signature="e#33596#33597#0" expanded="true" />
-            <element signature="e#33653#33654#0" expanded="true" />
-            <marker date="1515425894547" expanded="true" signature="22229:22345" ph="//..." />
-            <marker date="1515425894547" expanded="true" signature="23604:23805" ph="/**...*/" />
-            <marker date="1515425894547" expanded="true" signature="23889:24148" ph="{...}" />
-            <marker date="1515425894547" expanded="true" signature="24154:24497" ph="/**...*/" />
-            <marker date="1515425894547" expanded="true" signature="24595:26897" ph="{...}" />
-            <marker date="1515425894547" expanded="true" signature="26182:26328" ph="//..." />
-            <marker date="1515425894547" expanded="true" signature="26597:26798" ph="//..." />
-            <marker date="1515425894547" expanded="true" signature="26904:26947" ph="/**...*/" />
-            <marker date="1515425894547" expanded="false" signature="26999:27338" ph="{...}" />
-            <marker date="1515425894547" expanded="false" signature="27344:27432" ph="/**...*/" />
-            <marker date="1515425894547" expanded="false" signature="27479:28470" ph="{...}" />
-            <marker date="1515425894547" expanded="true" signature="28476:28521" ph="/**...*/" />
-            <marker date="1515425894547" expanded="true" signature="28566:29408" ph="{...}" />
-            <marker date="1515425894547" expanded="true" signature="29414:29469" ph="/**...*/" />
-            <marker date="1515425894547" expanded="false" signature="29506:29860" ph="{...}" />
-            <marker date="1515425894547" expanded="false" signature="29866:29964" ph="/**...*/" />
-            <marker date="1515425894547" expanded="false" signature="30011:31344" ph="{...}" />
-            <marker date="1515425894547" expanded="true" signature="31350:31482" ph="/**...*/" />
-            <marker date="1515425894547" expanded="false" signature="31534:31929" ph="{...}" />
-            <marker date="1515425894547" expanded="false" signature="31935:32082" ph="/**...*/" />
-            <marker date="1515425894547" expanded="false" signature="32159:32863" ph="{...}" />
-            <marker date="1515425894547" expanded="false" signature="32925:32936" ph=" { " />
-            <marker date="1515425894547" expanded="false" signature="32964:32970" ph=" }" />
-            <marker date="1515425894547" expanded="false" signature="33026:33037" ph=" { " />
-            <marker date="1515425894547" expanded="false" signature="33059:33065" ph=" }" />
-            <marker date="1515425894547" expanded="false" signature="33138:33149" ph=" { " />
-            <marker date="1515425894547" expanded="false" signature="33162:33168" ph=" }" />
-            <marker date="1515425894547" expanded="false" signature="33213:33224" ph=" { " />
-            <marker date="1515425894547" expanded="false" signature="33252:33258" ph=" }" />
+            <element signature="method#writeDocsToFile#0;class#Indexer#0" expanded="false" />
+            <marker date="1515649156287" expanded="true" signature="13880:13917" ph="//..." />
+            <marker date="1515649156287" expanded="true" signature="13880:13956" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1142,7 +1552,76 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="61309">
           <caret line="1657" column="0" lean-forward="false" selection-start-line="1657" selection-start-column="0" selection-end-line="1657" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#127539#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#3555#3556#0" expanded="false" />
+            <element signature="e#3595#3596#0" expanded="false" />
+            <element signature="e#6271#6272#0" expanded="false" />
+            <element signature="e#6331#6332#0" expanded="false" />
+            <element signature="e#45311#45312#0" expanded="false" />
+            <element signature="e#45372#45373#0" expanded="false" />
+            <element signature="e#57599#57600#0" expanded="false" />
+            <element signature="e#57671#57672#0" expanded="false" />
+            <element signature="e#60461#60462#0" expanded="false" />
+            <element signature="e#60497#60498#0" expanded="false" />
+            <element signature="e#60556#60557#0" expanded="false" />
+            <element signature="e#60598#60599#0" expanded="false" />
+            <element signature="e#61112#61113#0" expanded="false" />
+            <element signature="e#61148#61149#0" expanded="false" />
+            <element signature="e#65761#65762#0" expanded="false" />
+            <element signature="e#65796#65797#0" expanded="false" />
+            <element signature="e#66818#66819#0" expanded="false" />
+            <element signature="e#66864#66865#0" expanded="false" />
+            <element signature="e#66921#66922#0" expanded="false" />
+            <element signature="e#66966#66967#0" expanded="false" />
+            <element signature="e#68431#68432#0" expanded="false" />
+            <element signature="e#68477#68478#0" expanded="false" />
+            <element signature="e#68921#68922#0" expanded="false" />
+            <element signature="e#68967#68968#0" expanded="false" />
+            <element signature="e#69372#69373#0" expanded="false" />
+            <element signature="e#69418#69419#0" expanded="false" />
+            <element signature="e#69818#69819#0" expanded="false" />
+            <element signature="e#69864#69865#0" expanded="false" />
+            <element signature="e#78649#78650#0" expanded="false" />
+            <element signature="e#78724#78725#0" expanded="false" />
+            <element signature="e#78827#78828#0" expanded="false" />
+            <element signature="e#78858#78859#0" expanded="false" />
+            <element signature="e#79010#79011#0" expanded="false" />
+            <element signature="e#79046#79047#0" expanded="false" />
+            <element signature="e#79248#79249#0" expanded="false" />
+            <element signature="e#79295#79296#0" expanded="false" />
+            <element signature="e#80212#80213#0" expanded="false" />
+            <element signature="e#80265#80266#0" expanded="false" />
+            <element signature="e#81592#81593#0" expanded="false" />
+            <element signature="e#81623#81624#0" expanded="false" />
+            <element signature="e#81787#81788#0" expanded="false" />
+            <element signature="e#81827#81828#0" expanded="false" />
+            <element signature="e#81963#81964#0" expanded="false" />
+            <element signature="e#81995#81996#0" expanded="false" />
+            <element signature="e#82173#82174#0" expanded="false" />
+            <element signature="e#82215#82216#0" expanded="false" />
+            <element signature="e#82340#82341#0" expanded="false" />
+            <element signature="e#82372#82373#0" expanded="false" />
+            <element signature="e#82502#82503#0" expanded="false" />
+            <element signature="e#82532#82533#0" expanded="false" />
+            <element signature="e#82931#82932#0" expanded="false" />
+            <element signature="e#82963#82964#0" expanded="false" />
+            <element signature="e#83880#83881#0" expanded="false" />
+            <element signature="e#83916#83917#0" expanded="false" />
+            <element signature="e#84840#84841#0" expanded="false" />
+            <element signature="e#84877#84878#0" expanded="false" />
+            <element signature="e#85050#85051#0" expanded="false" />
+            <element signature="e#85102#85103#0" expanded="false" />
+            <element signature="e#85270#85271#0" expanded="false" />
+            <element signature="e#85310#85311#0" expanded="false" />
+            <element signature="e#85699#85700#0" expanded="false" />
+            <element signature="e#85729#85730#0" expanded="false" />
+            <element signature="e#96278#96279#0" expanded="false" />
+            <element signature="e#96346#96347#0" expanded="false" />
+            <element signature="e#105847#105848#0" expanded="false" />
+            <element signature="e#105919#105920#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1150,7 +1629,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4218">
           <caret line="122" column="39" lean-forward="false" selection-start-line="122" selection-start-column="33" selection-end-line="122" selection-end-column="39" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#getRankedDocs#0;class#Ranker#0" expanded="false" />
+            <element signature="method#getRankedDocs#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#getIdfForBM#0;class#Ranker#0" expanded="false" />
+            <element signature="method#getIdfForBM#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#calculateBM25PerTerm#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#getDocsForTerm#0;class#Ranker#0" expanded="false" />
+            <element signature="method#getDocsForTerm#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#getDocsWightAndDate#0;class#Ranker#0" expanded="false" />
+            <element signature="method#getDocsWightAndDate#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#rankDocs#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#choose#0;class#Ranker#0" expanded="false" />
+            <element signature="method#choose#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#getNormalizedDate#0;class#Ranker#0" expanded="false" />
+            <element signature="method#getNormalizedDate#0;class#Ranker#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1159,14 +1654,19 @@
         <state relative-caret-position="2664">
           <caret line="76" column="30" lean-forward="true" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="30" />
           <folding>
+            <element signature="docComment;method#search#0;class#Searcher#0" expanded="false" />
+            <element signature="docComment;method#search#1;class#Searcher#0" expanded="false" />
             <element signature="docComment;method#find5MostImportantSentences#0;class#Searcher#0" expanded="false" />
-            <element signature="e#3648#3789#0" expanded="false" />
-            <element signature="e#4206#4325#0" expanded="false" />
+            <element signature="method#find5MostImportantSentences#0;class#Searcher#0" expanded="false" />
+            <element signature="e#4061#4202#0" expanded="false" />
+            <element signature="e#4620#4739#0" expanded="false" />
             <element signature="docComment;method#splitTextToSentences#0;class#Searcher#0" expanded="false" />
             <element signature="method#splitTextToSentences#0;class#Searcher#0" expanded="false" />
             <element signature="docComment;method#isDigit#0;class#Searcher#0" expanded="false" />
             <element signature="docComment;method#findSentencesImportance#0;class#Searcher#0" expanded="false" />
             <element signature="method#findSentencesImportance#0;class#Searcher#0" expanded="false" />
+            <element signature="docComment;method#breakIteratorBreakToSentences#0;class#Searcher#0" expanded="false" />
+            <element signature="method#breakIteratorBreakToSentences#0;class#Searcher#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1192,24 +1692,25 @@
             <element signature="docComment;method#resetButtonPressed#0;class#MainWindow#0" expanded="false" />
             <element signature="method#resetButtonPressed#0;class#MainWindow#0" expanded="false" />
             <element signature="method#deleteFolder#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#loadDictionary#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#loadCache#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#loadCache#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#saveDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#saveDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
             <element signature="docComment;method#showAlert#0;class#MainWindow#0" expanded="false" />
             <element signature="method#showAlert#0;class#MainWindow#0" expanded="false" />
             <element signature="docComment;method#showCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
             <element signature="method#showCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
             <element signature="docComment;method#showDictionaryButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#showDictionaryButtonPressed#0;class#MainWindow#0" expanded="false" />
             <element signature="docComment;method#showData#0;class#MainWindow#0" expanded="false" />
             <element signature="method#showData#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#runQueryStringButtonClick#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#runQueryStringButtonClick#0;class#MainWindow#0" expanded="false" />
             <element signature="docComment;method#resetQueriesDataButtonClick#0;class#MainWindow#0" expanded="false" />
             <element signature="method#resetQueriesDataButtonClick#0;class#MainWindow#0" expanded="false" />
             <element signature="docComment;method#deleteFileContent#0;class#MainWindow#0" expanded="false" />
             <element signature="method#deleteFileContent#0;class#MainWindow#0" expanded="false" />
             <element signature="docComment;method#queryTextFieldKeyReleased#0;class#MainWindow#0" expanded="false" />
             <element signature="method#queryTextFieldKeyReleased#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#loadAndRunQueriesFileButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#saveQueryResultButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#saveQueryResultButtonPressed#0;class#MainWindow#0" expanded="false" />
             <element signature="docComment;method#writeQueriesResultsToFile#0;class#MainWindow#0" expanded="false" />
             <element signature="method#writeQueriesResultsToFile#0;class#MainWindow#0" expanded="false" />
           </folding>
@@ -1221,47 +1722,9 @@
         <state relative-caret-position="814">
           <caret line="22" column="39" lean-forward="false" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
           <folding>
-            <element signature="method#Indexer#1;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#getDocString#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#updateTermInDictionary#0;class#Indexer#0" expanded="false" />
-            <element signature="method#writeTermsDictionaryToFile#0;class#Indexer#0" expanded="false" />
-            <element signature="e#33299#33300#0" expanded="true" />
-            <element signature="e#33333#33334#0" expanded="true" />
-            <element signature="e#33391#33392#0" expanded="true" />
-            <element signature="e#33440#33441#0" expanded="true" />
-            <element signature="e#33489#33490#0" expanded="true" />
-            <element signature="e#33527#33528#0" expanded="true" />
-            <element signature="e#33596#33597#0" expanded="true" />
-            <element signature="e#33653#33654#0" expanded="true" />
-            <marker date="1515425894547" expanded="true" signature="22229:22345" ph="//..." />
-            <marker date="1515425894547" expanded="true" signature="23604:23805" ph="/**...*/" />
-            <marker date="1515425894547" expanded="true" signature="23889:24148" ph="{...}" />
-            <marker date="1515425894547" expanded="true" signature="24154:24497" ph="/**...*/" />
-            <marker date="1515425894547" expanded="true" signature="24595:26897" ph="{...}" />
-            <marker date="1515425894547" expanded="true" signature="26182:26328" ph="//..." />
-            <marker date="1515425894547" expanded="true" signature="26597:26798" ph="//..." />
-            <marker date="1515425894547" expanded="true" signature="26904:26947" ph="/**...*/" />
-            <marker date="1515425894547" expanded="false" signature="26999:27338" ph="{...}" />
-            <marker date="1515425894547" expanded="false" signature="27344:27432" ph="/**...*/" />
-            <marker date="1515425894547" expanded="false" signature="27479:28470" ph="{...}" />
-            <marker date="1515425894547" expanded="true" signature="28476:28521" ph="/**...*/" />
-            <marker date="1515425894547" expanded="true" signature="28566:29408" ph="{...}" />
-            <marker date="1515425894547" expanded="true" signature="29414:29469" ph="/**...*/" />
-            <marker date="1515425894547" expanded="false" signature="29506:29860" ph="{...}" />
-            <marker date="1515425894547" expanded="false" signature="29866:29964" ph="/**...*/" />
-            <marker date="1515425894547" expanded="false" signature="30011:31344" ph="{...}" />
-            <marker date="1515425894547" expanded="true" signature="31350:31482" ph="/**...*/" />
-            <marker date="1515425894547" expanded="false" signature="31534:31929" ph="{...}" />
-            <marker date="1515425894547" expanded="false" signature="31935:32082" ph="/**...*/" />
-            <marker date="1515425894547" expanded="false" signature="32159:32863" ph="{...}" />
-            <marker date="1515425894547" expanded="false" signature="32925:32936" ph=" { " />
-            <marker date="1515425894547" expanded="false" signature="32964:32970" ph=" }" />
-            <marker date="1515425894547" expanded="false" signature="33026:33037" ph=" { " />
-            <marker date="1515425894547" expanded="false" signature="33059:33065" ph=" }" />
-            <marker date="1515425894547" expanded="false" signature="33138:33149" ph=" { " />
-            <marker date="1515425894547" expanded="false" signature="33162:33168" ph=" }" />
-            <marker date="1515425894547" expanded="false" signature="33213:33224" ph=" { " />
-            <marker date="1515425894547" expanded="false" signature="33252:33258" ph=" }" />
+            <element signature="method#writeDocsToFile#0;class#Indexer#0" expanded="false" />
+            <marker date="1515649156287" expanded="true" signature="13880:13917" ph="//..." />
+            <marker date="1515649156287" expanded="true" signature="13880:13956" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1274,24 +1737,25 @@
             <element signature="docComment;method#resetButtonPressed#0;class#MainWindow#0" expanded="false" />
             <element signature="method#resetButtonPressed#0;class#MainWindow#0" expanded="false" />
             <element signature="method#deleteFolder#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#loadDictionary#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#loadCache#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#loadCache#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#saveDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#saveDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
             <element signature="docComment;method#showAlert#0;class#MainWindow#0" expanded="false" />
             <element signature="method#showAlert#0;class#MainWindow#0" expanded="false" />
             <element signature="docComment;method#showCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
             <element signature="method#showCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
             <element signature="docComment;method#showDictionaryButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#showDictionaryButtonPressed#0;class#MainWindow#0" expanded="false" />
             <element signature="docComment;method#showData#0;class#MainWindow#0" expanded="false" />
             <element signature="method#showData#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#runQueryStringButtonClick#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#runQueryStringButtonClick#0;class#MainWindow#0" expanded="false" />
             <element signature="docComment;method#resetQueriesDataButtonClick#0;class#MainWindow#0" expanded="false" />
             <element signature="method#resetQueriesDataButtonClick#0;class#MainWindow#0" expanded="false" />
             <element signature="docComment;method#deleteFileContent#0;class#MainWindow#0" expanded="false" />
             <element signature="method#deleteFileContent#0;class#MainWindow#0" expanded="false" />
             <element signature="docComment;method#queryTextFieldKeyReleased#0;class#MainWindow#0" expanded="false" />
             <element signature="method#queryTextFieldKeyReleased#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#loadAndRunQueriesFileButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#saveQueryResultButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#saveQueryResultButtonPressed#0;class#MainWindow#0" expanded="false" />
             <element signature="docComment;method#writeQueriesResultsToFile#0;class#MainWindow#0" expanded="false" />
             <element signature="method#writeQueriesResultsToFile#0;class#MainWindow#0" expanded="false" />
           </folding>
@@ -1302,7 +1766,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1184">
           <caret line="32" column="35" lean-forward="true" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#getRankedDocs#0;class#Ranker#0" expanded="false" />
+            <element signature="method#getRankedDocs#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#getIdfForBM#0;class#Ranker#0" expanded="false" />
+            <element signature="method#getIdfForBM#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#calculateBM25PerTerm#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#getDocsForTerm#0;class#Ranker#0" expanded="false" />
+            <element signature="method#getDocsForTerm#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#getDocsWightAndDate#0;class#Ranker#0" expanded="false" />
+            <element signature="method#getDocsWightAndDate#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#rankDocs#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#choose#0;class#Ranker#0" expanded="false" />
+            <element signature="method#choose#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#getNormalizedDate#0;class#Ranker#0" expanded="false" />
+            <element signature="method#getNormalizedDate#0;class#Ranker#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1310,7 +1790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="383">
           <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1318,9 +1797,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
           <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <element signature="e#925#926#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1328,7 +1804,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="366">
           <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1336,15 +1811,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="716">
           <caret line="365" column="77" lean-forward="true" selection-start-line="365" selection-start-column="77" selection-end-line="365" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="789">
-          <caret line="51" column="21" lean-forward="true" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1352,7 +1818,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
           <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1363,24 +1828,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/javafx-src.zip!/javafx/util/Pair.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1184">
-          <caret line="56" column="25" lean-forward="false" selection-start-line="56" selection-start-column="25" selection-end-line="56" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#3158#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#1415#1416#0" expanded="false" />
-            <element signature="e#1455#1456#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/javafx-src.zip!/javafx/scene/control/Button.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
           <caret line="180" column="0" lean-forward="true" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1388,7 +1839,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
           <caret line="8413" column="0" lean-forward="false" selection-start-line="8413" selection-start-column="0" selection-end-line="8413" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1396,7 +1846,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="801">
           <caret line="198" column="0" lean-forward="false" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1404,7 +1853,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4479">
           <caret line="186" column="7" lean-forward="true" selection-start-line="186" selection-start-column="7" selection-end-line="186" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1412,7 +1860,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="365">
           <caret line="347" column="35" lean-forward="false" selection-start-line="347" selection-start-column="35" selection-end-line="347" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1420,61 +1867,186 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="534">
           <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-844">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="method#parse#0;class#Parser#0" expanded="false" />
-            <element signature="method#parseNumber#0;class#Parser#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/Comparator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
+        <state relative-caret-position="4477">
           <caret line="149" column="8" lean-forward="false" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="8" />
-          <folding />
+          <folding>
+            <element signature="e#0#22438#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#7819#7820#0" expanded="false" />
+            <element signature="e#7872#7873#0" expanded="false" />
+            <element signature="e#14106#14107#0" expanded="false" />
+            <element signature="e#14155#14156#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="1778" column="5" lean-forward="true" selection-start-line="1778" selection-start-column="5" selection-end-line="1778" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="61346">
+          <caret line="1778" column="5" lean-forward="false" selection-start-line="1778" selection-start-column="5" selection-end-line="1778" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#127539#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#3555#3556#0" expanded="false" />
+            <element signature="e#3595#3596#0" expanded="false" />
+            <element signature="e#6271#6272#0" expanded="false" />
+            <element signature="e#6331#6332#0" expanded="false" />
+            <element signature="e#45311#45312#0" expanded="false" />
+            <element signature="e#45372#45373#0" expanded="false" />
+            <element signature="e#57599#57600#0" expanded="false" />
+            <element signature="e#57671#57672#0" expanded="false" />
+            <element signature="e#60461#60462#0" expanded="false" />
+            <element signature="e#60497#60498#0" expanded="false" />
+            <element signature="e#60556#60557#0" expanded="false" />
+            <element signature="e#60598#60599#0" expanded="false" />
+            <element signature="e#61112#61113#0" expanded="false" />
+            <element signature="e#61148#61149#0" expanded="false" />
+            <element signature="e#65761#65762#0" expanded="false" />
+            <element signature="e#65796#65797#0" expanded="false" />
+            <element signature="e#66818#66819#0" expanded="false" />
+            <element signature="e#66864#66865#0" expanded="false" />
+            <element signature="e#66921#66922#0" expanded="false" />
+            <element signature="e#66966#66967#0" expanded="false" />
+            <element signature="e#68431#68432#0" expanded="false" />
+            <element signature="e#68477#68478#0" expanded="false" />
+            <element signature="e#68921#68922#0" expanded="false" />
+            <element signature="e#68967#68968#0" expanded="false" />
+            <element signature="e#69372#69373#0" expanded="false" />
+            <element signature="e#69418#69419#0" expanded="false" />
+            <element signature="e#69818#69819#0" expanded="false" />
+            <element signature="e#69864#69865#0" expanded="false" />
+            <element signature="e#78649#78650#0" expanded="false" />
+            <element signature="e#78724#78725#0" expanded="false" />
+            <element signature="e#78827#78828#0" expanded="false" />
+            <element signature="e#78858#78859#0" expanded="false" />
+            <element signature="e#79010#79011#0" expanded="false" />
+            <element signature="e#79046#79047#0" expanded="false" />
+            <element signature="e#79248#79249#0" expanded="false" />
+            <element signature="e#79295#79296#0" expanded="false" />
+            <element signature="e#80212#80213#0" expanded="false" />
+            <element signature="e#80265#80266#0" expanded="false" />
+            <element signature="e#81592#81593#0" expanded="false" />
+            <element signature="e#81623#81624#0" expanded="false" />
+            <element signature="e#81787#81788#0" expanded="false" />
+            <element signature="e#81827#81828#0" expanded="false" />
+            <element signature="e#81963#81964#0" expanded="false" />
+            <element signature="e#81995#81996#0" expanded="false" />
+            <element signature="e#82173#82174#0" expanded="false" />
+            <element signature="e#82215#82216#0" expanded="false" />
+            <element signature="e#82340#82341#0" expanded="false" />
+            <element signature="e#82372#82373#0" expanded="false" />
+            <element signature="e#82502#82503#0" expanded="false" />
+            <element signature="e#82532#82533#0" expanded="false" />
+            <element signature="e#82931#82932#0" expanded="false" />
+            <element signature="e#82963#82964#0" expanded="false" />
+            <element signature="e#83880#83881#0" expanded="false" />
+            <element signature="e#83916#83917#0" expanded="false" />
+            <element signature="e#84840#84841#0" expanded="false" />
+            <element signature="e#84877#84878#0" expanded="false" />
+            <element signature="e#85050#85051#0" expanded="false" />
+            <element signature="e#85102#85103#0" expanded="false" />
+            <element signature="e#85270#85271#0" expanded="false" />
+            <element signature="e#85310#85311#0" expanded="false" />
+            <element signature="e#85699#85700#0" expanded="false" />
+            <element signature="e#85729#85730#0" expanded="false" />
+            <element signature="e#96278#96279#0" expanded="false" />
+            <element signature="e#96346#96347#0" expanded="false" />
+            <element signature="e#105847#105848#0" expanded="false" />
+            <element signature="e#105919#105920#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/MainWindow.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="170" column="91" lean-forward="true" selection-start-line="170" selection-start-column="91" selection-end-line="170" selection-end-column="91" />
+        <state relative-caret-position="6290">
+          <caret line="170" column="91" lean-forward="false" selection-start-line="170" selection-start-column="91" selection-end-line="170" selection-end-column="91" />
           <folding>
             <marker date="1515322404313" expanded="true" signature="12767:12801" ph="..." />
           </folding>
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2072">
+          <caret line="59" column="49" lean-forward="false" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="49" />
+          <folding>
+            <element signature="method#parseNumber#0;class#Parser#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Indexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="784" column="44" lean-forward="false" selection-start-line="784" selection-start-column="44" selection-end-line="784" selection-end-column="44" />
+          <folding>
+            <element signature="method#writeDocsToFile#0;class#Indexer#0" expanded="false" />
+            <marker date="1515649156287" expanded="true" signature="13880:13917" ph="//..." />
+            <marker date="1515649156287" expanded="true" signature="13880:13956" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-296">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/javafx-src.zip!/javafx/util/Pair.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="740">
+          <caret line="56" column="25" lean-forward="false" selection-start-line="56" selection-start-column="25" selection-end-line="56" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Searcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="89" column="0" lean-forward="true" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;method#search#0;class#Searcher#0" expanded="false" />
+            <element signature="docComment;method#search#1;class#Searcher#0" expanded="false" />
+            <element signature="docComment;method#find5MostImportantSentences#0;class#Searcher#0" expanded="false" />
+            <element signature="method#find5MostImportantSentences#0;class#Searcher#0" expanded="false" />
+            <element signature="e#4061#4202#0" expanded="false" />
+            <element signature="e#4620#4739#0" expanded="false" />
+            <element signature="docComment;method#splitTextToSentences#0;class#Searcher#0" expanded="false" />
+            <element signature="method#splitTextToSentences#0;class#Searcher#0" expanded="false" />
+            <element signature="docComment;method#isDigit#0;class#Searcher#0" expanded="false" />
+            <element signature="docComment;method#findSentencesImportance#0;class#Searcher#0" expanded="false" />
+            <element signature="method#findSentencesImportance#0;class#Searcher#0" expanded="false" />
+            <element signature="docComment;method#breakIteratorBreakToSentences#0;class#Searcher#0" expanded="false" />
+            <element signature="method#breakIteratorBreakToSentences#0;class#Searcher#0" expanded="false" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/ReadFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="478" column="0" lean-forward="false" selection-start-line="478" selection-start-column="0" selection-end-line="478" selection-end-column="0" />
+        <state relative-caret-position="-956">
+          <caret line="308" column="49" lean-forward="false" selection-start-line="308" selection-start-column="49" selection-end-line="308" selection-end-column="49" />
           <folding>
-            <element signature="e#373#374#0" expanded="true" />
-            <element signature="e#420#421#0" expanded="true" />
             <element signature="method#createStopWordsMap#0;class#ReadFile#0" expanded="false" />
             <element signature="docComment;method#parseDateForFBorFTfiles#0;class#ReadFile#0" expanded="false" />
             <element signature="docComment;method#convertDateToUniformFormat#0;class#ReadFile#0" expanded="false" />
             <element signature="docComment;method#readQueriesFile#0;class#ReadFile#0" expanded="false" />
+            <element signature="method#getTextFromFile#0;class#ReadFile#0" expanded="false" />
+            <element signature="docComment;method#getTermDocsFromPosting#0;class#ReadFile#0" expanded="false" />
+            <element signature="method#getTermDocsFromPosting#0;class#ReadFile#0" expanded="false" />
             <element signature="method#createDocsHashFromCorpus#0;class#ReadFile#0" expanded="false" />
           </folding>
         </state>
@@ -1482,30 +2054,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="402" column="96" lean-forward="false" selection-start-line="402" selection-start-column="96" selection-end-line="402" selection-end-column="96" />
+        <state relative-caret-position="370">
+          <caret line="64" column="39" lean-forward="true" selection-start-line="63" selection-start-column="39" selection-end-line="64" selection-end-column="39" />
           <folding>
             <element signature="docComment;method#resetButtonPressed#0;class#MainWindow#0" expanded="false" />
             <element signature="method#resetButtonPressed#0;class#MainWindow#0" expanded="false" />
             <element signature="method#deleteFolder#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#loadDictionary#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#loadCache#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#loadCache#0;class#MainWindow#0" expanded="false" />
+            <element signature="docComment;method#saveDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#saveDictionaryAndCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
             <element signature="docComment;method#showAlert#0;class#MainWindow#0" expanded="false" />
             <element signature="method#showAlert#0;class#MainWindow#0" expanded="false" />
             <element signature="docComment;method#showCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
             <element signature="method#showCacheButtonPressed#0;class#MainWindow#0" expanded="false" />
             <element signature="docComment;method#showDictionaryButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#showDictionaryButtonPressed#0;class#MainWindow#0" expanded="false" />
             <element signature="docComment;method#showData#0;class#MainWindow#0" expanded="false" />
             <element signature="method#showData#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#runQueryStringButtonClick#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#runQueryStringButtonClick#0;class#MainWindow#0" expanded="false" />
             <element signature="docComment;method#resetQueriesDataButtonClick#0;class#MainWindow#0" expanded="false" />
             <element signature="method#resetQueriesDataButtonClick#0;class#MainWindow#0" expanded="false" />
             <element signature="docComment;method#deleteFileContent#0;class#MainWindow#0" expanded="false" />
             <element signature="method#deleteFileContent#0;class#MainWindow#0" expanded="false" />
             <element signature="docComment;method#queryTextFieldKeyReleased#0;class#MainWindow#0" expanded="false" />
             <element signature="method#queryTextFieldKeyReleased#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#loadAndRunQueriesFileButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="docComment;method#saveQueryResultButtonPressed#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#saveQueryResultButtonPressed#0;class#MainWindow#0" expanded="false" />
             <element signature="docComment;method#writeQueriesResultsToFile#0;class#MainWindow#0" expanded="false" />
             <element signature="method#writeQueriesResultsToFile#0;class#MainWindow#0" expanded="false" />
           </folding>
@@ -1514,75 +2087,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Ranker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2553">
-          <caret line="77" column="2" lean-forward="false" selection-start-line="77" selection-start-column="2" selection-end-line="77" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Indexer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="925">
-          <caret line="37" column="22" lean-forward="true" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+        <state relative-caret-position="406">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
-            <element signature="method#Indexer#1;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#getDocString#0;class#Indexer#0" expanded="false" />
-            <element signature="docComment;method#updateTermInDictionary#0;class#Indexer#0" expanded="false" />
-            <element signature="method#writeTermsDictionaryToFile#0;class#Indexer#0" expanded="false" />
-            <element signature="e#33299#33300#0" expanded="true" />
-            <element signature="e#33333#33334#0" expanded="true" />
-            <element signature="e#33391#33392#0" expanded="true" />
-            <element signature="e#33440#33441#0" expanded="true" />
-            <element signature="e#33489#33490#0" expanded="true" />
-            <element signature="e#33527#33528#0" expanded="true" />
-            <element signature="e#33596#33597#0" expanded="true" />
-            <element signature="e#33653#33654#0" expanded="true" />
-            <marker date="1515425894547" expanded="true" signature="22229:22345" ph="//..." />
-            <marker date="1515425894547" expanded="true" signature="23604:23805" ph="/**...*/" />
-            <marker date="1515425894547" expanded="true" signature="23889:24148" ph="{...}" />
-            <marker date="1515425894547" expanded="true" signature="24154:24497" ph="/**...*/" />
-            <marker date="1515425894547" expanded="true" signature="24595:26897" ph="{...}" />
-            <marker date="1515425894547" expanded="true" signature="26182:26328" ph="//..." />
-            <marker date="1515425894547" expanded="true" signature="26597:26798" ph="//..." />
-            <marker date="1515425894547" expanded="true" signature="26904:26947" ph="/**...*/" />
-            <marker date="1515425894547" expanded="false" signature="26999:27338" ph="{...}" />
-            <marker date="1515425894547" expanded="false" signature="27344:27432" ph="/**...*/" />
-            <marker date="1515425894547" expanded="false" signature="27479:28470" ph="{...}" />
-            <marker date="1515425894547" expanded="true" signature="28476:28521" ph="/**...*/" />
-            <marker date="1515425894547" expanded="true" signature="28566:29408" ph="{...}" />
-            <marker date="1515425894547" expanded="true" signature="29414:29469" ph="/**...*/" />
-            <marker date="1515425894547" expanded="false" signature="29506:29860" ph="{...}" />
-            <marker date="1515425894547" expanded="false" signature="29866:29964" ph="/**...*/" />
-            <marker date="1515425894547" expanded="false" signature="30011:31344" ph="{...}" />
-            <marker date="1515425894547" expanded="true" signature="31350:31482" ph="/**...*/" />
-            <marker date="1515425894547" expanded="false" signature="31534:31929" ph="{...}" />
-            <marker date="1515425894547" expanded="false" signature="31935:32082" ph="/**...*/" />
-            <marker date="1515425894547" expanded="false" signature="32159:32863" ph="{...}" />
-            <marker date="1515425894547" expanded="false" signature="32925:32936" ph=" { " />
-            <marker date="1515425894547" expanded="false" signature="32964:32970" ph=" }" />
-            <marker date="1515425894547" expanded="false" signature="33026:33037" ph=" { " />
-            <marker date="1515425894547" expanded="false" signature="33059:33065" ph=" }" />
-            <marker date="1515425894547" expanded="false" signature="33138:33149" ph=" { " />
-            <marker date="1515425894547" expanded="false" signature="33162:33168" ph=" }" />
-            <marker date="1515425894547" expanded="false" signature="33213:33224" ph=" { " />
-            <marker date="1515425894547" expanded="false" signature="33252:33258" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Searcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="987">
-          <caret line="34" column="44" lean-forward="true" selection-start-line="34" selection-start-column="44" selection-end-line="34" selection-end-column="44" />
-          <folding>
-            <element signature="docComment;method#find5MostImportantSentences#0;class#Searcher#0" expanded="false" />
-            <element signature="e#3648#3789#0" expanded="false" />
-            <element signature="e#4206#4325#0" expanded="false" />
-            <element signature="docComment;method#splitTextToSentences#0;class#Searcher#0" expanded="false" />
-            <element signature="method#splitTextToSentences#0;class#Searcher#0" expanded="false" />
-            <element signature="docComment;method#isDigit#0;class#Searcher#0" expanded="false" />
-            <element signature="docComment;method#findSentencesImportance#0;class#Searcher#0" expanded="false" />
-            <element signature="method#findSentencesImportance#0;class#Searcher#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#getRankedDocs#0;class#Ranker#0" expanded="false" />
+            <element signature="method#getRankedDocs#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#getIdfForBM#0;class#Ranker#0" expanded="false" />
+            <element signature="method#getIdfForBM#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#calculateBM25PerTerm#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#getDocsForTerm#0;class#Ranker#0" expanded="false" />
+            <element signature="method#getDocsForTerm#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#getDocsWightAndDate#0;class#Ranker#0" expanded="false" />
+            <element signature="method#getDocsWightAndDate#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#rankDocs#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#choose#0;class#Ranker#0" expanded="false" />
+            <element signature="method#choose#0;class#Ranker#0" expanded="false" />
+            <element signature="docComment;method#getNormalizedDate#0;class#Ranker#0" expanded="false" />
+            <element signature="method#getNormalizedDate#0;class#Ranker#0" expanded="false" />
           </folding>
         </state>
       </provider>

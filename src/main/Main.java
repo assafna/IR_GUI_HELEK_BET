@@ -18,7 +18,6 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-        wikipedia();
         //set launch start time
         time.setLaunchStartTime(System.currentTimeMillis());
         System.out.println("App launched");
