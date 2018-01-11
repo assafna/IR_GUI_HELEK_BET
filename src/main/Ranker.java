@@ -126,6 +126,7 @@ public class Ranker {
             //get all docs relevant for this term from cache
             docsForTerm.addAll(indexer.getCache().get(queryTerm).getKey());
             //check if there are more docs in posting
+            /*
             if (indexer.getCache().get(queryTerm).getValue() != -1) {
                 //get all docs relevant for this term from posting
                 ReadFile readFile = new ReadFile();
@@ -135,13 +136,14 @@ public class Ranker {
                     e.printStackTrace();
                 }
             }
+            */
         }
         //all docs are in posting
         else {
             //get all docs relevant for this term from posting
             ReadFile readFile = new ReadFile();
             try {
-                docsForTerm.addAll(readFile.getTermDocsFromPosting(indexer, queryTerm, path));
+                docsForTerm.addAll(readFile.getTermDocsFromPosting(indexer, queryTerm, path, indexer.getCacheDocsPerTerm()));
             } catch (IOException e) {
                 e.printStackTrace();
             }

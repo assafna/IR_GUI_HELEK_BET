@@ -416,7 +416,7 @@ public class ReadFile {
      * @return list of docs for this term
      * @throws IOException exception
      */
-    public ArrayList<String> getTermDocsFromPosting(Indexer indexer, String term, String path) throws IOException {
+    public ArrayList<String> getTermDocsFromPosting(Indexer indexer, String term, String path, Integer amount) throws IOException {
         //get posting path
         String postingFilesPath = indexer.getTempPostingFilesPath();
         //get relevant row number
@@ -434,8 +434,8 @@ public class ReadFile {
             br = new BufferedReader(new FileReader(postingFilesPath + "\\" + term.charAt(0) + ".txt"));
         for (int i = 0; i < rowNum; i++)
 
-            //reached relevant line, read term
-            br.readLine();
+        //reached relevant line, read term
+        br.readLine();
         String line = br.readLine();
 
         //split to get data
@@ -443,7 +443,7 @@ public class ReadFile {
 
         //create a list of docs
         ArrayList<String> docsList = new ArrayList<>();
-        for (int i = 1; i < docsPerTerm.length; i++) {
+        for (int i = 1; i < docsPerTerm.length && i < amount; i++) {
             char[] docsPerTermArray = docsPerTerm[i].toCharArray();
 
             //get doc name hash
