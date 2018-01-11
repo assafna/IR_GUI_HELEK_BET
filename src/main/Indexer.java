@@ -674,7 +674,7 @@ public class Indexer {
      * @return array list of terms in docs
      */
     private ArrayList<String> getSortedListOfDocsPerTerm(String[] docs, int length, int howMany) {
-        ArrayList<String> termInDocCaches = new ArrayList<>();
+        ArrayList<Pair<String, Integer>> termInDocCaches = new ArrayList<>();
         double idf = log2((double) docsCounter / length);
         String docName = "";
         for (int i = 0; i < length && i < howMany; i++) {
@@ -713,7 +713,7 @@ public class Indexer {
 
             //write term
             Double Tf = Double.parseDouble(tf.toString());
-            termInDocCaches.add(new TermInDocCache(docName, Integer.parseInt(occurrences.toString()), Double.parseDouble(index.toString()), Tf).toString());
+            termInDocCaches.add(new Pair<>(new TermInDocCache(docName, Integer.parseInt(occurrences.toString()), Double.parseDouble(index.toString()), Tf).toString(), Integer.parseInt(occurrences.toString())));
 
             //update term wight in doc in doc sum squared wight
             //Pair<Integer, Double> docPair = mostCommonTermFrequencyAndDocWight.get(docName);
@@ -729,10 +729,16 @@ public class Indexer {
         //docsDictionary.put(docName, docsDictionary.get(docName)+ '\t' + mostCommonTermFrequency.get(docName) + '\t' + docsWights.get(docName));
 
         //sort terms
-        Collections.sort(termInDocCaches);
+        termInDocCaches.sort((o1, o2) -> o2.getValue().compareTo(o1.getValue()));
+
+        //create new list
+        ArrayList<String> strings = new ArrayList<>();
+        int termInDocCachesSize = termInDocCaches.size();
+        for (int i = 0; i < termInDocCachesSize; i++)
+            strings.add(termInDocCaches.get(i).getKey());
 
         //return
-        return termInDocCaches;
+        return strings;
     }
 
 
