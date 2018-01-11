@@ -98,7 +98,7 @@ public class Ranker {
      */
     private double calculateBM25PerTerm(TermInDocCache term, double idf, Indexer indexer){
 
-        double k = 1.3, b = 0.75;
+        double k = 1.6, b = 0.6;
         String docName = term.getDocName();
         Doc doc = new Doc(docName, indexer.getDocsDictionary().get(docName));
         int docLength = doc.getLength();
@@ -203,7 +203,7 @@ public class Ranker {
             double denominator = Math.sqrt(docsDetails.get(doc).getKey())/* * getNormalizedDate(docsDetails.get(doc).getValue())*/;
             //double rank = (sumWeightForDoc / denominator) /*+ sumBm*/;
             double cosSin = sumWeightForDoc / denominator;
-            double rank =  sumBm + (10 * cosSin);
+            double rank =  (sumBm * 0.3) + cosSin;
 /*
             //find distance between query terms
             double sumDistanceBetweenTerms = 0;

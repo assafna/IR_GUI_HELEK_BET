@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79d701db-55eb-42c6-8fe7-7cae2c048fc1" name="Default" comment="improve to 75 docs">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="79d701db-55eb-42c6-8fe7-7cae2c048fc1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Main.java" afterPath="$PROJECT_DIR$/src/main/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Ranker.java" afterPath="$PROJECT_DIR$/src/main/Ranker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/ReadFile.java" afterPath="$PROJECT_DIR$/src/main/ReadFile.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -113,8 +110,8 @@
       <file leaf-file-name="Ranker.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/Ranker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="885">
-              <caret line="205" column="41" lean-forward="false" selection-start-line="205" selection-start-column="41" selection-end-line="205" selection-end-column="41" />
+            <state relative-caret-position="487">
+              <caret line="205" column="40" lean-forward="false" selection-start-line="205" selection-start-column="40" selection-end-line="205" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;method#getRankedDocs#0;class#Ranker#0" expanded="false" />
@@ -845,7 +842,7 @@
       <workItem from="1515481849582" duration="896000" />
       <workItem from="1515536311464" duration="15650000" />
       <workItem from="1515648513834" duration="4857000" />
-      <workItem from="1515653606243" duration="5981000" />
+      <workItem from="1515653606243" duration="8211000" />
     </task>
     <task id="LOCAL-00001" summary="dates function, alert if cant find result to query">
       <created>1515244760382</created>
@@ -931,11 +928,18 @@
       <option name="project" value="LOCAL" />
       <updated>1515654103221</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="105 docs">
+      <created>1515662066340</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1515662066343</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107031000" />
+    <option name="totallyTimeSpent" value="109261000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-14" y="-14" width="3228" height="1738" extended-state="6" />
@@ -1024,7 +1028,8 @@
     <MESSAGE value="error messages" />
     <MESSAGE value="trying to make things work :(" />
     <MESSAGE value="improve to 75 docs" />
-    <option name="LAST_COMMIT_MESSAGE" value="improve to 75 docs" />
+    <MESSAGE value="105 docs" />
+    <option name="LAST_COMMIT_MESSAGE" value="105 docs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2222,8 +2227,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Ranker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="205" column="41" lean-forward="false" selection-start-line="205" selection-start-column="41" selection-end-line="205" selection-end-column="41" />
+        <state relative-caret-position="487">
+          <caret line="205" column="40" lean-forward="false" selection-start-line="205" selection-start-column="40" selection-end-line="205" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#getRankedDocs#0;class#Ranker#0" expanded="false" />
