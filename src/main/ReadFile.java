@@ -420,7 +420,11 @@ public class ReadFile {
         //get posting path
         String postingFilesPath = indexer.getTempPostingFilesPath();
         //get relevant row number
-        int rowNum = new Term(indexer.getFinalTermsDictionary().get(term)).getPointerToPostingList();
+        int rowNum;
+        if(indexer.getCache().containsKey(term))
+            rowNum = new Indexer().getCache().get(term).getValue();
+        else
+            rowNum = new Term(indexer.getFinalTermsDictionary().get(term)).getPointerToPostingList();
 
         //read from posting file until reaching relevant term
         BufferedReader br;

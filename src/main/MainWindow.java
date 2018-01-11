@@ -777,7 +777,7 @@ public class MainWindow {
                 List<Pair<String, Pair<String,String>>> queries = new ReadFile().readQueriesFile(pathForQueriesFile + "\\queries.txt");
                 if (searcher == null)
                     searcher = new Searcher(stopWords);
-                rankedDocsForQueriesFile = searcher.search(queries, stemmingCheckBox.isSelected(), pathToLoadDictionaryAndCache);
+                rankedDocsForQueriesFile = searcher.searchFile(queries, stemmingCheckBox.isSelected(), pathToLoadDictionaryAndCache);
 
                 time.addQueryEndTime();
 
@@ -808,7 +808,7 @@ public class MainWindow {
     }
 
     /**
-     * save quert results
+     * save query results
      */
     public void saveQueryResultButtonPressed(){
         if(rankedDocsForQueriesFile == null && rankedDocsForQuery == null)
