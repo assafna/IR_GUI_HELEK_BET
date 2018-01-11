@@ -49,7 +49,7 @@ public class Ranker {
             //for each doc, add to hash
             int docsForTermSize = docsForTerm.size();
             for (int j = 0; j < docsForTermSize; j++) {
-                HashMap<String, Pair<Double,  Pair<Double, Double>>> terms;
+                HashMap<String, Pair<Double, Pair<Double, Double>>> terms;
                 //check if hash already exists in hash map
                 TermInDocCache termInDocCache = new TermInDocCache(docsForTerm.get(j));
                 if (termsDetailsPerDoc.containsKey(termInDocCache.getDocName()))
@@ -58,12 +58,13 @@ public class Ranker {
                 else {
                     terms = new HashMap<>();
                     docs.add(termInDocCache.getDocName());
-                    //add term
-                    double bm = calculateBM25PerTerm(termInDocCache, termsObjects.get(queryTerm).getValue(), indexer);
-                    terms.put(queryTerm, new Pair<>(termInDocCache.getIndexOfFirstOccurrence(),new Pair(termInDocCache.getTf(), bm)));
-                    termsDetailsPerDoc.put(termInDocCache.getDocName(), terms);
-
                 }
+                //add term
+                double bm = calculateBM25PerTerm(termInDocCache, termsObjects.get(queryTerm).getKey().getIdf(), indexer);
+                terms.put(queryTerm, new Pair<>(termInDocCache.getIndexOfFirstOccurrence(), new Pair(termInDocCache.getTf(), bm)));
+                termsDetailsPerDoc.put(termInDocCache.getDocName(), terms);
+
+
             }
         }
 
@@ -202,8 +203,8 @@ public class Ranker {
             double denominator = Math.sqrt(docsDetails.get(doc).getKey())/* * getNormalizedDate(docsDetails.get(doc).getValue())*/;
             //double rank = (sumWeightForDoc / denominator) /*+ sumBm*/;
             double cosSin = sumWeightForDoc / denominator;
-            double rank = cosSin;
-
+            double rank =  sumBm + (10 * cosSin);
+/*
             //find distance between query terms
             double sumDistanceBetweenTerms = 0;
             if(terms.size() > 1) {
@@ -214,10 +215,10 @@ public class Ranker {
                         sumDistanceBetweenTerms += Math.abs(terms.get(queryTerms.get(i)).getKey() - terms.get(queryTerms.get(j)).getKey());
                     }
                 }
-                rank += (sumDistanceBetweenTerms/choose(queryTerms.size(), 2));/*+ sumBm*/;
+                rank += (sumDistanceBetweenTerms/choose(queryTerms.size(), 2));
             }
             //double rank = sumBm;
-
+*/
             rankedDocs.add(new Pair(doc, rank));
         }
 

@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="79d701db-55eb-42c6-8fe7-7cae2c048fc1" name="Default" comment="">
+    <list default="true" id="79d701db-55eb-42c6-8fe7-7cae2c048fc1" name="Default" comment="improve to 75 docs">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Main.java" afterPath="$PROJECT_DIR$/src/main/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Ranker.java" afterPath="$PROJECT_DIR$/src/main/Ranker.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/ReadFile.java" afterPath="$PROJECT_DIR$/src/main/ReadFile.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -109,12 +113,11 @@
       <file leaf-file-name="Ranker.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/Ranker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+            <state relative-caret-position="885">
+              <caret line="205" column="41" lean-forward="false" selection-start-line="205" selection-start-column="41" selection-end-line="205" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;method#getRankedDocs#0;class#Ranker#0" expanded="false" />
-                <element signature="method#getRankedDocs#0;class#Ranker#0" expanded="false" />
                 <element signature="docComment;method#getIdfForBM#0;class#Ranker#0" expanded="false" />
                 <element signature="method#getIdfForBM#0;class#Ranker#0" expanded="false" />
                 <element signature="docComment;method#calculateBM25PerTerm#0;class#Ranker#0" expanded="false" />
@@ -214,23 +217,14 @@
       <file leaf-file-name="ReadFile.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/ReadFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9953">
-              <caret line="308" column="49" lean-forward="false" selection-start-line="308" selection-start-column="49" selection-end-line="308" selection-end-column="49" />
+            <state relative-caret-position="8130">
+              <caret line="409" column="0" lean-forward="true" selection-start-line="409" selection-start-column="0" selection-end-line="409" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#373#374#0" expanded="false" />
-                <element signature="e#420#421#0" expanded="false" />
                 <element signature="method#createStopWordsMap#0;class#ReadFile#0" expanded="false" />
                 <element signature="docComment;method#parseDateForFBorFTfiles#0;class#ReadFile#0" expanded="false" />
                 <element signature="docComment;method#convertDateToUniformFormat#0;class#ReadFile#0" expanded="false" />
                 <element signature="docComment;method#readQueriesFile#0;class#ReadFile#0" expanded="false" />
                 <element signature="method#getTextFromFile#0;class#ReadFile#0" expanded="false" />
-                <element signature="e#12220#12221#0" expanded="false" />
-                <element signature="e#12261#12262#0" expanded="false" />
-                <element signature="e#12933#12934#0" expanded="false" />
-                <element signature="e#12965#12966#0" expanded="false" />
-                <element signature="e#13011#13012#0" expanded="false" />
-                <element signature="e#13048#13049#0" expanded="false" />
                 <element signature="docComment;method#getTermDocsFromPosting#0;class#ReadFile#0" expanded="false" />
                 <element signature="method#getTermDocsFromPosting#0;class#ReadFile#0" expanded="false" />
                 <element signature="method#createDocsHashFromCorpus#0;class#ReadFile#0" expanded="false" />
@@ -242,12 +236,9 @@
       <file leaf-file-name="Searcher.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Searcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2479">
-              <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+            <state relative-caret-position="291">
+              <caret line="208" column="47" lean-forward="false" selection-start-line="208" selection-start-column="47" selection-end-line="208" selection-end-column="47" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#377#378#0" expanded="false" />
-                <element signature="e#419#420#0" expanded="false" />
                 <element signature="docComment;method#search#0;class#Searcher#0" expanded="false" />
                 <element signature="docComment;method#search#1;class#Searcher#0" expanded="false" />
                 <element signature="docComment;method#find5MostImportantSentences#0;class#Searcher#0" expanded="false" />
@@ -257,9 +248,6 @@
                 <element signature="docComment;method#splitTextToSentences#0;class#Searcher#0" expanded="false" />
                 <element signature="method#splitTextToSentences#0;class#Searcher#0" expanded="false" />
                 <element signature="docComment;method#isDigit#0;class#Searcher#0" expanded="false" />
-                <element signature="e#7685#7686#0" expanded="false" />
-                <element signature="e#7726#7727#0" expanded="false" />
-                <element signature="docComment;method#findSentencesImportance#0;class#Searcher#0" expanded="false" />
                 <element signature="method#findSentencesImportance#0;class#Searcher#0" expanded="false" />
                 <element signature="docComment;method#breakIteratorBreakToSentences#0;class#Searcher#0" expanded="false" />
                 <element signature="method#breakIteratorBreakToSentences#0;class#Searcher#0" expanded="false" />
@@ -286,11 +274,9 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+            <state relative-caret-position="589">
+              <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -347,6 +333,7 @@
       <find>25</find>
       <find>loadd</find>
       <find>writedocs</find>
+      <find>for each doc</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -363,8 +350,8 @@
         <option value="$PROJECT_DIR$/src/main/MainWindow.fxml" />
         <option value="$PROJECT_DIR$/src/main/Indexer.java" />
         <option value="$PROJECT_DIR$/src/main/MainWindow.java" />
-        <option value="$PROJECT_DIR$/src/main/Main.java" />
         <option value="$PROJECT_DIR$/src/main/Searcher.java" />
+        <option value="$PROJECT_DIR$/src/main/Main.java" />
         <option value="$PROJECT_DIR$/src/main/ReadFile.java" />
         <option value="$PROJECT_DIR$/src/main/Ranker.java" />
       </list>
@@ -386,7 +373,7 @@
     <option name="height" value="1738" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -399,62 +386,18 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IR_GUI_HELEK_BET" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IR_GUI_HELEK_BET" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IR_GUI_HELEK_BET" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IR_GUI_HELEK_BET" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IR_GUI_HELEK_BET" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IR_GUI_HELEK_BET" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../NetworkAlignment" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -902,7 +845,7 @@
       <workItem from="1515481849582" duration="896000" />
       <workItem from="1515536311464" duration="15650000" />
       <workItem from="1515648513834" duration="4857000" />
-      <workItem from="1515653606243" duration="482000" />
+      <workItem from="1515653606243" duration="5981000" />
     </task>
     <task id="LOCAL-00001" summary="dates function, alert if cant find result to query">
       <created>1515244760382</created>
@@ -981,11 +924,18 @@
       <option name="project" value="LOCAL" />
       <updated>1515653680530</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="improve to 75 docs">
+      <created>1515654103221</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1515654103221</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101532000" />
+    <option name="totallyTimeSpent" value="107031000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-14" y="-14" width="3228" height="1738" extended-state="6" />
@@ -995,32 +945,32 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13251366" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2773224" sideWeight="0.50128615" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990354" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990354" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2773224" sideWeight="0.49871382" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1646175" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Floobits" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20064309" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24983923" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24983923" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24931695" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990354" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990354" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -1117,7 +1067,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/Ranker.java</url>
-          <line>216</line>
+          <line>217</line>
           <properties />
           <option name="timeStamp" value="85" />
         </line-breakpoint>
@@ -1212,7 +1162,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#getRankedDocs#0;class#Ranker#0" expanded="false" />
-            <element signature="method#getRankedDocs#0;class#Ranker#0" expanded="false" />
             <element signature="docComment;method#getIdfForBM#0;class#Ranker#0" expanded="false" />
             <element signature="method#getIdfForBM#0;class#Ranker#0" expanded="false" />
             <element signature="docComment;method#calculateBM25PerTerm#0;class#Ranker#0" expanded="false" />
@@ -1311,20 +1260,11 @@
         <state relative-caret-position="16095">
           <caret line="478" column="0" lean-forward="false" selection-start-line="478" selection-start-column="0" selection-end-line="478" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#373#374#0" expanded="false" />
-            <element signature="e#420#421#0" expanded="false" />
             <element signature="method#createStopWordsMap#0;class#ReadFile#0" expanded="false" />
             <element signature="docComment;method#parseDateForFBorFTfiles#0;class#ReadFile#0" expanded="false" />
             <element signature="docComment;method#convertDateToUniformFormat#0;class#ReadFile#0" expanded="false" />
             <element signature="docComment;method#readQueriesFile#0;class#ReadFile#0" expanded="false" />
             <element signature="method#getTextFromFile#0;class#ReadFile#0" expanded="false" />
-            <element signature="e#12220#12221#0" expanded="false" />
-            <element signature="e#12261#12262#0" expanded="false" />
-            <element signature="e#12933#12934#0" expanded="false" />
-            <element signature="e#12965#12966#0" expanded="false" />
-            <element signature="e#13011#13012#0" expanded="false" />
-            <element signature="e#13048#13049#0" expanded="false" />
             <element signature="docComment;method#getTermDocsFromPosting#0;class#ReadFile#0" expanded="false" />
             <element signature="method#getTermDocsFromPosting#0;class#ReadFile#0" expanded="false" />
             <element signature="method#createDocsHashFromCorpus#0;class#ReadFile#0" expanded="false" />
@@ -1337,9 +1277,6 @@
         <state relative-caret-position="5365">
           <caret line="169" column="41" lean-forward="false" selection-start-line="169" selection-start-column="41" selection-end-line="169" selection-end-column="41" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#377#378#0" expanded="false" />
-            <element signature="e#419#420#0" expanded="false" />
             <element signature="docComment;method#search#0;class#Searcher#0" expanded="false" />
             <element signature="docComment;method#search#1;class#Searcher#0" expanded="false" />
             <element signature="docComment;method#find5MostImportantSentences#0;class#Searcher#0" expanded="false" />
@@ -1349,9 +1286,6 @@
             <element signature="docComment;method#splitTextToSentences#0;class#Searcher#0" expanded="false" />
             <element signature="method#splitTextToSentences#0;class#Searcher#0" expanded="false" />
             <element signature="docComment;method#isDigit#0;class#Searcher#0" expanded="false" />
-            <element signature="e#7685#7686#0" expanded="false" />
-            <element signature="e#7726#7727#0" expanded="false" />
-            <element signature="docComment;method#findSentencesImportance#0;class#Searcher#0" expanded="false" />
             <element signature="method#findSentencesImportance#0;class#Searcher#0" expanded="false" />
             <element signature="docComment;method#breakIteratorBreakToSentences#0;class#Searcher#0" expanded="false" />
             <element signature="method#breakIteratorBreakToSentences#0;class#Searcher#0" expanded="false" />
@@ -1363,9 +1297,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="370">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1490,7 +1422,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#getRankedDocs#0;class#Ranker#0" expanded="false" />
-            <element signature="method#getRankedDocs#0;class#Ranker#0" expanded="false" />
             <element signature="docComment;method#getIdfForBM#0;class#Ranker#0" expanded="false" />
             <element signature="method#getIdfForBM#0;class#Ranker#0" expanded="false" />
             <element signature="docComment;method#calculateBM25PerTerm#0;class#Ranker#0" expanded="false" />
@@ -1589,20 +1520,11 @@
         <state relative-caret-position="17686">
           <caret line="478" column="0" lean-forward="false" selection-start-line="478" selection-start-column="0" selection-end-line="478" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#373#374#0" expanded="false" />
-            <element signature="e#420#421#0" expanded="false" />
             <element signature="method#createStopWordsMap#0;class#ReadFile#0" expanded="false" />
             <element signature="docComment;method#parseDateForFBorFTfiles#0;class#ReadFile#0" expanded="false" />
             <element signature="docComment;method#convertDateToUniformFormat#0;class#ReadFile#0" expanded="false" />
             <element signature="docComment;method#readQueriesFile#0;class#ReadFile#0" expanded="false" />
             <element signature="method#getTextFromFile#0;class#ReadFile#0" expanded="false" />
-            <element signature="e#12220#12221#0" expanded="false" />
-            <element signature="e#12261#12262#0" expanded="false" />
-            <element signature="e#12933#12934#0" expanded="false" />
-            <element signature="e#12965#12966#0" expanded="false" />
-            <element signature="e#13011#13012#0" expanded="false" />
-            <element signature="e#13048#13049#0" expanded="false" />
             <element signature="docComment;method#getTermDocsFromPosting#0;class#ReadFile#0" expanded="false" />
             <element signature="method#getTermDocsFromPosting#0;class#ReadFile#0" expanded="false" />
             <element signature="method#createDocsHashFromCorpus#0;class#ReadFile#0" expanded="false" />
@@ -1614,9 +1536,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="370">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1659,9 +1579,6 @@
         <state relative-caret-position="5439">
           <caret line="147" column="24" lean-forward="true" selection-start-line="147" selection-start-column="24" selection-end-line="147" selection-end-column="24" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#377#378#0" expanded="false" />
-            <element signature="e#419#420#0" expanded="false" />
             <element signature="docComment;method#search#0;class#Searcher#0" expanded="false" />
             <element signature="docComment;method#search#1;class#Searcher#0" expanded="false" />
             <element signature="docComment;method#find5MostImportantSentences#0;class#Searcher#0" expanded="false" />
@@ -1671,9 +1588,6 @@
             <element signature="docComment;method#splitTextToSentences#0;class#Searcher#0" expanded="false" />
             <element signature="method#splitTextToSentences#0;class#Searcher#0" expanded="false" />
             <element signature="docComment;method#isDigit#0;class#Searcher#0" expanded="false" />
-            <element signature="e#7685#7686#0" expanded="false" />
-            <element signature="e#7726#7727#0" expanded="false" />
-            <element signature="docComment;method#findSentencesImportance#0;class#Searcher#0" expanded="false" />
             <element signature="method#findSentencesImportance#0;class#Searcher#0" expanded="false" />
             <element signature="docComment;method#breakIteratorBreakToSentences#0;class#Searcher#0" expanded="false" />
             <element signature="method#breakIteratorBreakToSentences#0;class#Searcher#0" expanded="false" />
@@ -1796,7 +1710,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#getRankedDocs#0;class#Ranker#0" expanded="false" />
-            <element signature="method#getRankedDocs#0;class#Ranker#0" expanded="false" />
             <element signature="docComment;method#getIdfForBM#0;class#Ranker#0" expanded="false" />
             <element signature="method#getIdfForBM#0;class#Ranker#0" expanded="false" />
             <element signature="docComment;method#calculateBM25PerTerm#0;class#Ranker#0" expanded="false" />
@@ -1818,9 +1731,6 @@
         <state relative-caret-position="2664">
           <caret line="76" column="30" lean-forward="true" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="30" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#377#378#0" expanded="false" />
-            <element signature="e#419#420#0" expanded="false" />
             <element signature="docComment;method#search#0;class#Searcher#0" expanded="false" />
             <element signature="docComment;method#search#1;class#Searcher#0" expanded="false" />
             <element signature="docComment;method#find5MostImportantSentences#0;class#Searcher#0" expanded="false" />
@@ -1830,9 +1740,6 @@
             <element signature="docComment;method#splitTextToSentences#0;class#Searcher#0" expanded="false" />
             <element signature="method#splitTextToSentences#0;class#Searcher#0" expanded="false" />
             <element signature="docComment;method#isDigit#0;class#Searcher#0" expanded="false" />
-            <element signature="e#7685#7686#0" expanded="false" />
-            <element signature="e#7726#7727#0" expanded="false" />
-            <element signature="docComment;method#findSentencesImportance#0;class#Searcher#0" expanded="false" />
             <element signature="method#findSentencesImportance#0;class#Searcher#0" expanded="false" />
             <element signature="docComment;method#breakIteratorBreakToSentences#0;class#Searcher#0" expanded="false" />
             <element signature="method#breakIteratorBreakToSentences#0;class#Searcher#0" expanded="false" />
@@ -1963,7 +1870,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#getRankedDocs#0;class#Ranker#0" expanded="false" />
-            <element signature="method#getRankedDocs#0;class#Ranker#0" expanded="false" />
             <element signature="docComment;method#getIdfForBM#0;class#Ranker#0" expanded="false" />
             <element signature="method#getIdfForBM#0;class#Ranker#0" expanded="false" />
             <element signature="docComment;method#calculateBM25PerTerm#0;class#Ranker#0" expanded="false" />
@@ -2219,16 +2125,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/javafx-src.zip!/javafx/util/Pair.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1184">
@@ -2238,59 +2134,6 @@
             <element signature="imports" expanded="false" />
             <element signature="e#1415#1416#0" expanded="false" />
             <element signature="e#1455#1456#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Searcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2479">
-          <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#377#378#0" expanded="false" />
-            <element signature="e#419#420#0" expanded="false" />
-            <element signature="docComment;method#search#0;class#Searcher#0" expanded="false" />
-            <element signature="docComment;method#search#1;class#Searcher#0" expanded="false" />
-            <element signature="docComment;method#find5MostImportantSentences#0;class#Searcher#0" expanded="false" />
-            <element signature="method#find5MostImportantSentences#0;class#Searcher#0" expanded="false" />
-            <element signature="e#4061#4202#0" expanded="false" />
-            <element signature="e#4620#4739#0" expanded="false" />
-            <element signature="docComment;method#splitTextToSentences#0;class#Searcher#0" expanded="false" />
-            <element signature="method#splitTextToSentences#0;class#Searcher#0" expanded="false" />
-            <element signature="docComment;method#isDigit#0;class#Searcher#0" expanded="false" />
-            <element signature="e#7685#7686#0" expanded="false" />
-            <element signature="e#7726#7727#0" expanded="false" />
-            <element signature="docComment;method#findSentencesImportance#0;class#Searcher#0" expanded="false" />
-            <element signature="method#findSentencesImportance#0;class#Searcher#0" expanded="false" />
-            <element signature="docComment;method#breakIteratorBreakToSentences#0;class#Searcher#0" expanded="false" />
-            <element signature="method#breakIteratorBreakToSentences#0;class#Searcher#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/ReadFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9953">
-          <caret line="308" column="49" lean-forward="false" selection-start-line="308" selection-start-column="49" selection-end-line="308" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#373#374#0" expanded="false" />
-            <element signature="e#420#421#0" expanded="false" />
-            <element signature="method#createStopWordsMap#0;class#ReadFile#0" expanded="false" />
-            <element signature="docComment;method#parseDateForFBorFTfiles#0;class#ReadFile#0" expanded="false" />
-            <element signature="docComment;method#convertDateToUniformFormat#0;class#ReadFile#0" expanded="false" />
-            <element signature="docComment;method#readQueriesFile#0;class#ReadFile#0" expanded="false" />
-            <element signature="method#getTextFromFile#0;class#ReadFile#0" expanded="false" />
-            <element signature="e#12220#12221#0" expanded="false" />
-            <element signature="e#12261#12262#0" expanded="false" />
-            <element signature="e#12933#12934#0" expanded="false" />
-            <element signature="e#12965#12966#0" expanded="false" />
-            <element signature="e#13011#13012#0" expanded="false" />
-            <element signature="e#13048#13049#0" expanded="false" />
-            <element signature="docComment;method#getTermDocsFromPosting#0;class#ReadFile#0" expanded="false" />
-            <element signature="method#getTermDocsFromPosting#0;class#ReadFile#0" expanded="false" />
-            <element signature="method#createDocsHashFromCorpus#0;class#ReadFile#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2331,14 +2174,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Searcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="208" column="47" lean-forward="false" selection-start-line="208" selection-start-column="47" selection-end-line="208" selection-end-column="47" />
+          <folding>
+            <element signature="docComment;method#search#0;class#Searcher#0" expanded="false" />
+            <element signature="docComment;method#search#1;class#Searcher#0" expanded="false" />
+            <element signature="docComment;method#find5MostImportantSentences#0;class#Searcher#0" expanded="false" />
+            <element signature="method#find5MostImportantSentences#0;class#Searcher#0" expanded="false" />
+            <element signature="e#4061#4202#0" expanded="false" />
+            <element signature="e#4620#4739#0" expanded="false" />
+            <element signature="docComment;method#splitTextToSentences#0;class#Searcher#0" expanded="false" />
+            <element signature="method#splitTextToSentences#0;class#Searcher#0" expanded="false" />
+            <element signature="docComment;method#isDigit#0;class#Searcher#0" expanded="false" />
+            <element signature="method#findSentencesImportance#0;class#Searcher#0" expanded="false" />
+            <element signature="docComment;method#breakIteratorBreakToSentences#0;class#Searcher#0" expanded="false" />
+            <element signature="method#breakIteratorBreakToSentences#0;class#Searcher#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/ReadFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8130">
+          <caret line="409" column="0" lean-forward="true" selection-start-line="409" selection-start-column="0" selection-end-line="409" selection-end-column="0" />
+          <folding>
+            <element signature="method#createStopWordsMap#0;class#ReadFile#0" expanded="false" />
+            <element signature="docComment;method#parseDateForFBorFTfiles#0;class#ReadFile#0" expanded="false" />
+            <element signature="docComment;method#convertDateToUniformFormat#0;class#ReadFile#0" expanded="false" />
+            <element signature="docComment;method#readQueriesFile#0;class#ReadFile#0" expanded="false" />
+            <element signature="method#getTextFromFile#0;class#ReadFile#0" expanded="false" />
+            <element signature="docComment;method#getTermDocsFromPosting#0;class#ReadFile#0" expanded="false" />
+            <element signature="method#getTermDocsFromPosting#0;class#ReadFile#0" expanded="false" />
+            <element signature="method#createDocsHashFromCorpus#0;class#ReadFile#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Ranker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+        <state relative-caret-position="885">
+          <caret line="205" column="41" lean-forward="false" selection-start-line="205" selection-start-column="41" selection-end-line="205" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#getRankedDocs#0;class#Ranker#0" expanded="false" />
-            <element signature="method#getRankedDocs#0;class#Ranker#0" expanded="false" />
             <element signature="docComment;method#getIdfForBM#0;class#Ranker#0" expanded="false" />
             <element signature="method#getIdfForBM#0;class#Ranker#0" expanded="false" />
             <element signature="docComment;method#calculateBM25PerTerm#0;class#Ranker#0" expanded="false" />
@@ -2355,5 +2243,93 @@
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>IR_GUI_HELEK_BET</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>IR_GUI2</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
