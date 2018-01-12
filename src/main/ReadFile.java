@@ -416,7 +416,7 @@ public class ReadFile {
      * @return list of docs for this term
      * @throws IOException exception
      */
-    public ArrayList<String> getTermDocsFromPosting(Indexer indexer, String term, String path, Integer amount) throws IOException {
+    public ArrayList<String> getTermDocsFromPosting1(Indexer indexer, String term, String path, Integer amount) throws IOException {
         //get posting path
         String postingFilesPath = indexer.getTempPostingFilesPath();
         //get relevant row number
@@ -439,11 +439,74 @@ public class ReadFile {
         String line = br.readLine();
 
         //split to get data
+       // String[] docsPerTerm = line.split("\t");
+        char[] lineArray = line.toCharArray();
+        int index = 0;
+        ArrayList<String> docsList = new ArrayList<>();
+        while (index < lineArray.length && lineArray[index] != '\t')
+            index++;
+        index++;
+
+        while(index < lineArray.length){
+        //create a list of docs
+
+            //get doc name hash
+            String docNameHash = String.valueOf(lineArray[index++]) + lineArray[index++] + lineArray[index++];
+
+            StringBuilder occurrences = new StringBuilder();
+            StringBuilder indexInFile = new StringBuilder();
+
+            //find numOfOccurrencesInDoc
+            while (index < lineArray.length && lineArray[index] != '*')
+                occurrences.append(lineArray[index++]);
+            index++;
+
+            //find firstIndexOfTermInDoc
+            while (index < lineArray.length && lineArray[index] != '\t')
+                indexInFile.append(lineArray[index++]);
+            index++;
+
+
+            //add
+            /*
+            docsList.add(new TermInDocCache(docNameHash, Integer.parseInt(occurrences.toString()),
+                    Double.parseDouble(index.toString()),
+                    Double.parseDouble(tf.toString())).toString());
+                    */
+            docsList.add(docNameHash + '\t' + occurrences + '\t' + indexInFile);
+        }
+
+        return docsList;
+    }
+
+    public ArrayList<String> getTermDocsFromPosting(Indexer indexer, String term, String path, Integer amount) throws IOException {
+        //get posting path
+        String postingFilesPath = indexer.getTempPostingFilesPath();
+        //get relevant row number
+        int rowNum;
+        if(indexer.getCache().containsKey(term))
+            rowNum = new Indexer().getCache().get(term).getValue();
+        else
+            rowNum = new Term(indexer.getFinalTermsDictionary().get(term)).getPointerToPostingList();
+
+        //read from posting file until reaching relevant term
+        BufferedReader br;
+        if (postingFilesPath == null)
+            br = new BufferedReader(new FileReader(path + "\\" + term.charAt(0) + ".txt"));
+        else
+            br = new BufferedReader(new FileReader(postingFilesPath + "\\" + term.charAt(0) + ".txt"));
+        for (int i = 0; i < rowNum; i++)
+
+            //reached relevant line, read term
+            br.readLine();
+        String line = br.readLine();
+
+        //split to get data
         String[] docsPerTerm = line.split("\t");
 
         //create a list of docs
         ArrayList<String> docsList = new ArrayList<>();
-        for (int i = 1; i < docsPerTerm.length && i < amount; i++) {
+        for (int i = 1; i < docsPerTerm.length /*&& i < amount*/; i++) {
             char[] docsPerTermArray = docsPerTerm[i].toCharArray();
 
             //get doc name hash
@@ -467,21 +530,21 @@ public class ReadFile {
                     index.append(docsPerTermArray[j]);
                 else
                     break;
-
+/*
             //find tf
             for (j = j + 1; j < docsPerTermArray.length; j++)
                 if (docsPerTermArray[j] != '*')
                     tf.append(docsPerTermArray[j]);
                 else
                     break;
-
+*/
             //add
             /*
             docsList.add(new TermInDocCache(docNameHash, Integer.parseInt(occurrences.toString()),
                     Double.parseDouble(index.toString()),
                     Double.parseDouble(tf.toString())).toString());
                     */
-            docsList.add(docNameHash + '\t' + occurrences + '\t' + index + '\t' + tf);
+            //docsList.add(docNameHash + '\t' + occurrences + '\t' + index + '\t' + tf);
         }
 
         return docsList;

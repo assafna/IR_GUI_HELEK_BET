@@ -37,8 +37,10 @@ public class Doc {
         this.length = Integer.parseInt(splitString[0]);
         this.date = splitString[1];
         this.file = splitString[2];
-        this.mostCommonTerm = Integer.parseInt(splitString[3]);
-        this.squaredWeightSum = Double.parseDouble(splitString[4]);
+        if(splitString.length > 3) {
+            this.mostCommonTerm = Integer.parseInt(splitString[3]);
+            this.squaredWeightSum = Double.parseDouble(splitString[4]);
+        }
     }
 
     public String getDate() {

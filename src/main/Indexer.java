@@ -23,7 +23,7 @@ public class Indexer {
     private static int docsCounter = 0;
     private static Parser parser;
     private static double avgLengthOfDocs;
-    private boolean useThreads = false;
+    private boolean useThreads = true;
 
     //constants for class
     private String tempPostingFilesPath;
@@ -41,7 +41,7 @@ public class Indexer {
     private int termIndex;
     //data structures for terms
     private HashMap<String, Integer> tempTermsDictionary;
-    private HashMap<String, Pair<Integer, Double>>[] postingListArray;
+    private HashMap<String, Pair<Integer, Integer>>[] postingListArray;
     private HashMap<String, Double>[] tfPerDoc;
     private BufferedWriter tempPosting;
     private BufferedWriter docWriter;
@@ -127,7 +127,7 @@ public class Indexer {
 
             //index terms in doc
             indexTerms(termsInFile, isStem, doc.getCode());
-            calculateTfPerTerm(doc.getCode(), termsInFile);
+            //calculateTfPerTerm(doc.getCode(), termsInFile);
             docsCounter++;
 
         }
@@ -185,9 +185,9 @@ public class Indexer {
             //update term in dictionaries
             if (tempTermsDictionary.containsKey(term)) {
                 int index = tempTermsDictionary.get(term);
-                updateTermInDictionary(term, docName, index, (double) (i+1) / listSize);
+                updateTermInDictionary(term, docName, index,  (i+1));
             } else
-                updateTermInDictionary(term, docName, termIndex++, (double) (i+1) / listSize);
+                updateTermInDictionary(term, docName, termIndex++, (i+1) );
 
             //update term frequency
             updateTermFrequency(term, docName);
@@ -202,7 +202,7 @@ public class Indexer {
      * @param index            term index in the terms dictionary
      * @param indexOfTermInDoc term index in the doc
      */
-    private void updateTermInDictionary(String term, String docName, int index, double indexOfTermInDoc) {
+    private void updateTermInDictionary(String term, String docName, int index, int indexOfTermInDoc) {
         //term already in the dictionary
         if (tempTermsDictionary.containsKey(term)) {
             //not the first time of the term in this doc
@@ -274,9 +274,9 @@ public class Indexer {
                         tempPosting.write(doc);
                         int tf = postingListArray[indexTerm].get(doc).getKey();
                         tempPosting.write(tf + "*");
-                        double indexInDoc = postingListArray[indexTerm].get(doc).getValue();
-                        tempPosting.write(indexInDoc + "*");
-                        tempPosting.write(tfPerDoc[indexTerm].get(doc) + "");
+                        int indexInDoc = postingListArray[indexTerm].get(doc).getValue();
+                        tempPosting.write(indexInDoc + "");
+                        //tempPosting.write(tfPerDoc[indexTerm].get(doc) + "");
                         if (counter < postingDocsSize)
                             tempPosting.write('\t');
                         //m.lock();
@@ -581,7 +581,7 @@ public class Indexer {
                     //go through the list and write
                     for (int i = cacheDocsPerTerm; i < termInDocCachesSize; i++) {
                         TermInDocCache termInDocCache = new TermInDocCache(termInDocCaches.get(i));
-                        bw.write(termInDocCache.getDocName() + termInDocCache.getNumOfOccurrencesInDoc() + '*' + termInDocCache.getIndexOfFirstOccurrence() + '*' + termInDocCache.getTf());
+                        bw.write(termInDocCache.getDocName() + termInDocCache.getNumOfOccurrencesInDoc() + '*' + termInDocCache.getIndexOfFirstOccurrence());
 
                         //add tab if not last
                         if (i < termInDocCachesSize - 1)
@@ -630,7 +630,7 @@ public class Indexer {
                 //go through the list and write
                 for (int i = 0; i < termInDocCachesSize; i++) {
                     TermInDocCache termInDocCache = new TermInDocCache(termInDocCaches.get(i));
-                    bw.write(termInDocCache.getDocName() + termInDocCache.getNumOfOccurrencesInDoc() + '*' + termInDocCache.getIndexOfFirstOccurrence() + '*' + termInDocCache.getTf());
+                    bw.write(termInDocCache.getDocName() + termInDocCache.getNumOfOccurrencesInDoc() + '*' + termInDocCache.getIndexOfFirstOccurrence());
 
                     //add tab if not last
                     if (i < termInDocCachesSize - 1)
@@ -692,7 +692,7 @@ public class Indexer {
 
             StringBuilder occurrences = new StringBuilder();
             StringBuilder index = new StringBuilder();
-            StringBuilder tf = new StringBuilder();
+            //StringBuilder tf = new StringBuilder();
 
             int j;
             //find numOfOccurrencesInDoc
@@ -708,7 +708,7 @@ public class Indexer {
                     index.append(docCharsArray[j]);
                 else
                     break;
-
+/*
             //find tf
             for (j = j + 1; j < docCharsArray.length; j++)
                 if (docCharsArray[j] != '*')
@@ -717,12 +717,14 @@ public class Indexer {
                     break;
 
             //write term
-            Double Tf = Double.parseDouble(tf.toString());
-            termInDocCaches.add(new Pair<>(new TermInDocCache(docName, Integer.parseInt(occurrences.toString()), Double.parseDouble(index.toString()), Tf).toString(), Integer.parseInt(occurrences.toString())));
+            Double Tf = Double.parseDouble(tf.toString());*/
+            int occurrencesInteger = Integer.parseInt(occurrences.toString());
+            double tf = (double) occurrencesInteger/new Doc("XXX", docsDictionary.get(docName)).getLength();
+            termInDocCaches.add(new Pair<>(new TermInDocCache(docName, occurrencesInteger, Integer.parseInt(index.toString())).toString(), occurrencesInteger));
 
             //update term wight in doc in doc sum squared wight
             //Pair<Integer, Double> docPair = mostCommonTermFrequencyAndDocWight.get(docName);
-            double wight = Math.pow(Tf * idf, 2);
+            double wight = Math.pow(tf * idf, 2);
             if (!docsWights.containsKey(docName))
                 docsWights.put(docName, wight);
             else
@@ -777,7 +779,7 @@ public class Indexer {
                 int docsSize = cacheDocsForTerms.size();
                 for (int i = 0; i < docsSize; i++) {
                     TermInDocCache termInDocCache = new TermInDocCache(cacheDocsForTerms.get(i));
-                    bw.write(termInDocCache.getDocName() + termInDocCache.getNumOfOccurrencesInDoc() + '*' + termInDocCache.getIndexOfFirstOccurrence() + '*' + termInDocCache.getTf());
+                    bw.write(termInDocCache.getDocName() + termInDocCache.getNumOfOccurrencesInDoc() + '*' + termInDocCache.getIndexOfFirstOccurrence());
                     if (i + 1 < docsSize)
                         bw.write('\t');
                 }
@@ -861,8 +863,7 @@ public class Indexer {
                 TermInDocCache termInDocCache = new TermInDocCache(termInDocCaches.get(i));
                 stringBuilder.append("\t(Doc: " + docNameHash.getDocNoFromHash(termInDocCache.getDocName()) +
                         "\tAmount in doc: " + termInDocCache.getNumOfOccurrencesInDoc() +
-                        "\tFirst index of term in doc: " + termInDocCache.getIndexOfFirstOccurrence() +
-                        "\tTf: " + termInDocCache.getTf() + "),");
+                        "\tFirst index of term in doc: " + termInDocCache.getIndexOfFirstOccurrence() + "),");
             }
 
             //add to list

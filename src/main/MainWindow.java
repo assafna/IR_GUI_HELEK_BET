@@ -511,21 +511,16 @@ public class MainWindow {
                     index++;
 
                     //read term index in doc
-                    while (termLine[index] != '*')
+                    while (index < termLine.length && termLine[index] != '\t')
                         indexInDoc.append(termLine[index++]);
                     index++;
 
-                    //read tf
-                    while (index < termLine.length && termLine[index] != '\t')
-                        tf.append(termLine[index++]);
-                    index++;
 
                     //TermInDocCache doc = new TermInDocCache(docName.toString(), Integer.parseInt(frequency.toString()), Integer.parseInt(indexInDoc.toString()));
                     //docs.add(doc);
                     docs.add(new TermInDocCache(docName.toString(),
                             Integer.parseInt(frequency.toString()),
-                            Double.parseDouble(indexInDoc.toString()),
-                            Double.parseDouble(tf.toString())).toString());
+                            Integer.parseInt(indexInDoc.toString())).toString());
                 }
 
                 cache.put(term.toString(), new Pair<>(docs, Integer.parseInt(lineInPosting.toString())));
