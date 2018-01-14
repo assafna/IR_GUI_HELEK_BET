@@ -101,18 +101,15 @@ public class Ranker {
 
     /**
      * calculate BM25 for one term in doc
-     * @param term term
      * @param idf idf of the term
      * @param indexer indexer
      * @return BM25 of term
      */
     private double calculateBM25PerTerm(String docName, int numOfOccurrecnes, int docLength, double idf, Indexer indexer){
-
         double k = 1.6, b = 0.6;
         double mone = numOfOccurrecnes * (k + 1);
         double mechane = numOfOccurrecnes + (k *(1 - b + (b * docLength / indexer.getAvgLengthOfDocs())));
         return  idf * mone / mechane;
-
     }
 
     /**
@@ -214,7 +211,7 @@ public class Ranker {
             double denominator = Math.sqrt(docsDetails.get(doc).getKey())/* * getNormalizedDate(docsDetails.get(doc).getValue())*/;
             //double rank = (sumWeightForDoc / denominator) /*+ sumBm*/;
             double cosSin = sumWeightForDoc / denominator;
-            double rank =  (sumBm * 0.2) + cosSin;
+            double rank =  Math.sqrt(sumBm) + cosSin;
 /*
             //find distance between query terms
             double sumDistanceBetweenTerms = 0;
