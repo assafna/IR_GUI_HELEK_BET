@@ -680,7 +680,7 @@ public class MainWindow {
             time.addQueryEndTime();
 
             //case of the query doesn't have results
-            if(rankedDocsForQuery.size() == 0)
+            if(rankedDocsForQuery == null || rankedDocsForQuery.size() == 0)
                 showAlert("No match results for the query");
             else
                 showData("Query", rankedDocsForQuery);

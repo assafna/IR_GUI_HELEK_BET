@@ -317,7 +317,12 @@ public class Searcher {
 
     public ArrayList<String> expandQueryFromWikipedia(String term, boolean isStem, String path) throws IOException {
         //get url as printable format
-        Document document = Jsoup.connect("https://en.wikipedia.org/w/index.php?title=" + term + "&printable=yes").get();
+        Document document;
+        try {
+            document = Jsoup.connect("https://en.wikipedia.org/w/index.php?title=" + term + "&printable=yes").get();
+        } catch (Exception e) {
+            return null;
+        }
         //remove all tags
         Elements sup = document.select("sup");
         sup.remove();
