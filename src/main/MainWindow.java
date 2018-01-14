@@ -1,10 +1,8 @@
 package main;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -22,6 +20,8 @@ import java.util.List;
 
 public class MainWindow {
 
+    @FXML
+    public CheckBox expandQueryCheckbox;
     @FXML
     private Button playButton;
     @FXML
@@ -662,16 +662,20 @@ public class MainWindow {
     public void runQueryStringButtonClick() {
         if (searcher == null)
             searcher = new Searcher(stopWords);
-        if (!mostImportantLinesCheckBox.isSelected()) {
 
+        if (expandQueryCheckbox.isSelected()){
             Time time = new Time();
             time.addQueryStartTime();
 
-            String query = queryStringText.getText();
-            if(workingDirectoryPath == null)
-                rankedDocsForQuery = searcher.search(query, stemmingCheckBox.isSelected(), pathToLoadDictionaryAndCache);
-            else
-                rankedDocsForQuery = searcher.search(query, stemmingCheckBox.isSelected(), corpusPath);
+            try {
+                String query = queryStringText.getText();
+                if(workingDirectoryPath == null)
+                    rankedDocsForQuery = searcher.expandQueryFromWikipedia(query, stemmingCheckBox.isSelected(), pathToLoadDictionaryAndCache);
+                else
+                    rankedDocsForQuery = searcher.expandQueryFromWikipedia(query, stemmingCheckBox.isSelected(), corpusPath);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
             time.addQueryEndTime();
 
@@ -680,8 +684,25 @@ public class MainWindow {
                 showAlert("No match results for the query");
             else
                 showData("Query", rankedDocsForQuery);
+        }
+        else if (!mostImportantLinesCheckBox.isSelected()) {
 
+            Time time = new Time();
+            time.addQueryStartTime();
 
+            String query = queryStringText.getText();
+            if(workingDirectoryPath == null)
+                rankedDocsForQuery = searcher.search(query, stemmingCheckBox.isSelected(), pathToLoadDictionaryAndCache, 50);
+            else
+                rankedDocsForQuery = searcher.search(query, stemmingCheckBox.isSelected(), corpusPath, 50);
+
+            time.addQueryEndTime();
+
+            //case of the query doesn't have results
+            if(rankedDocsForQuery.size() == 0)
+                showAlert("No match results for the query");
+            else
+                showData("Query", rankedDocsForQuery);
 
         } else {
             ArrayList<Pair<String, Integer>> rankedSentences = searcher.find5MostImportantSentences(queryStringText.getText(), pathToLoadDictionaryAndCache + "\\corpus");
@@ -743,11 +764,12 @@ public class MainWindow {
      * user entered query or deleted query
      */
     public void queryTextFieldKeyReleased() {
-        if (queryStringText.getText().length() > 0 && engineCreated)
+        if (queryStringText.getText().length() > 0 && engineCreated &&
+                (!expandQueryCheckbox.isSelected() ||
+                        (expandQueryCheckbox.isSelected() && !queryStringText.getText().contains(" "))))
             runQueryStringButton.setDisable(false);
-        if (queryStringText.getText().length() == 0)
+        else
             runQueryStringButton.setDisable(true);
-
     }
 
     /**

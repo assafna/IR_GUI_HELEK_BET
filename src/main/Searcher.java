@@ -2,9 +2,14 @@ package main;
 
 import javafx.util.Pair;
 import jdk.nashorn.internal.codegen.DumpBytecode;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.BreakIterator;
 import java.util.*;
@@ -26,9 +31,10 @@ public class Searcher {
      * @param query  query as a string
      * @param isStem if to use stemming or not
      * @param path   of working directory
-     * @return list of docs num (maximum 50)
+     * @param amountToReturn maximum amount of docs to return
+     * @return list of docs num (maximum amountToReturn)
      */
-    public ArrayList<String> search(String query, boolean isStem, String path) {
+    public ArrayList<String> search(String query, boolean isStem, String path, int amountToReturn) {
         //create parser and parse text
         Parser parser = new Parser(stopWords);
         ArrayList<String> queryTerms = parser.parse(query.toCharArray());
@@ -69,7 +75,7 @@ public class Searcher {
         int rankedDocsSize = rankedDocs.size();
         ArrayList<String> docsToReturn = new ArrayList<>();
         DocNameHash docNameHash = new DocNameHash();
-        for (int i = 0; i < 50 && i < rankedDocsSize; i++)
+        for (int i = 0; i < amountToReturn && i < rankedDocsSize; i++)
             docsToReturn.add(i + 1 + ".\t" + docNameHash.getDocNoFromHash(rankedDocs.get(i).getKey()) + "\t(Rank: " + rankedDocs.get(i).getValue() + ")");
         return docsToReturn;
     }
@@ -90,7 +96,7 @@ public class Searcher {
         for (int i = 0; i < queriesSize; i++) {
             Pair<String, Pair<String,String>> query = queries.get(i);
             time.addQueryStartTime(query.getKey());
-            queriesResults.add(new Pair(query.getKey(), search(query.getValue().getKey()  + " " + query.getValue().getValue(), isStem, path)));
+            queriesResults.add(new Pair(query.getKey(), search(query.getValue().getKey()  + " " + query.getValue().getValue(), isStem, path, 50)));
             time.addQueryEndtime(query.getKey());
         }
 
@@ -103,7 +109,7 @@ public class Searcher {
      *
      * @param docNo doc number
      * @param path  path to docs file
-     * @return list of 50 most important sentences in doc
+     * @return list of 5 most important sentences in doc
      */
     public ArrayList<Pair<String, Integer>> find5MostImportantSentences(String docNo, String path) {
         
@@ -309,8 +315,33 @@ public class Searcher {
         }
     }
 
+    public ArrayList<String> expandQueryFromWikipedia(String term, boolean isStem, String path) throws IOException {
+        //get url as printable format
+        Document document = Jsoup.connect("https://en.wikipedia.org/w/index.php?title=" + term + "&printable=yes").get();
+        //remove all tags
+        Elements sup = document.select("sup");
+        sup.remove();
+        //get all paragraphs
+        Elements paragraphs = document.select("#mw-content-text p");
 
+        //get 5 best sentences using our algorithm
+        List<Pair<String,Pair<Integer, Double>>> sumTfPerSent = findSentencesImportance(paragraphs.text());
+        //sort list according to sumTf
+        sumTfPerSent.sort((o1, o2) -> {
+            if (o1.getValue().getValue() > o2.getValue().getValue())
+                return -1;
+            return 1;
+        });
 
+        //add relevant words to the query
+        StringBuilder newQuery = new StringBuilder();
+        newQuery.append(term);
+        newQuery.append(' ');
+        for (int i = 0; i < 5; i++)
+            newQuery.append(sumTfPerSent.get(i).getKey());
 
+        //search using the new query, return 70 results
+        return search(newQuery.toString(), isStem, path, 70);
+    }
 
 }
