@@ -117,6 +117,8 @@ public class Searcher {
         DocNameHash docNameHash = new DocNameHash();
         HashMap<String, String> docsDictionary = indexer.getDocsDictionary();
         String docHash = docNameHash.getHashFromDocNo(docNo);
+        if (docHash == null)
+            return null;
         String fileName = new Doc(docHash, docsDictionary.get(docHash)).getFile();
 
         //get text from doc

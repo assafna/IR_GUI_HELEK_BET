@@ -706,10 +706,14 @@ public class MainWindow {
 
         } else {
             ArrayList<Pair<String, Integer>> rankedSentences = searcher.find5MostImportantSentences(queryStringText.getText(), pathToLoadDictionaryAndCache + "\\corpus");
-            ArrayList<String> sentencesToPrint = new ArrayList<>();
-            for(int i = 0; i < rankedSentences.size(); i++)
-                sentencesToPrint.add(rankedSentences.get(i).getKey());
-            showData("5 Most Important Sentences", sentencesToPrint);
+            if (rankedSentences != null) {
+                ArrayList<String> sentencesToPrint = new ArrayList<>();
+                for (int i = 0; i < rankedSentences.size(); i++)
+                    sentencesToPrint.add(rankedSentences.get(i).getKey());
+                showData("5 Most Important Sentences", sentencesToPrint);
+            }
+            else
+                showAlert("No such document!");
         }
     }
 
@@ -765,8 +769,8 @@ public class MainWindow {
      */
     public void queryTextFieldKeyReleased() {
         if (queryStringText.getText().length() > 0 && engineCreated &&
-                (!expandQueryCheckbox.isSelected() ||
-                        (expandQueryCheckbox.isSelected() && !queryStringText.getText().contains(" "))))
+                ((!expandQueryCheckbox.isSelected() && !mostImportantLinesCheckBox.isSelected()) ||
+                        ((expandQueryCheckbox.isSelected() || mostImportantLinesCheckBox.isSelected()) && !queryStringText.getText().contains(" "))))
             runQueryStringButton.setDisable(false);
         else
             runQueryStringButton.setDisable(true);
@@ -895,5 +899,16 @@ public class MainWindow {
         }
     }
 
+    public void expandQueryCheckboxAction(ActionEvent actionEvent) {
+        queryTextFieldKeyReleased();
+        if (expandQueryCheckbox.isSelected())
+            mostImportantLinesCheckBox.setSelected(false);
+    }
+
+    public void mostImportantSentencesCheckboxAction(ActionEvent actionEvent) {
+        queryTextFieldKeyReleased();
+        if (mostImportantLinesCheckBox.isSelected())
+            expandQueryCheckbox.setSelected(false);
+    }
 }
 
