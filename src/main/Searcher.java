@@ -296,7 +296,7 @@ public class Searcher {
         try {
             document = Jsoup.connect("https://en.wikipedia.org/w/index.php?title=" + term + "&printable=yes").get();
         } catch (Exception e) {
-            return null;
+            return search(term, isStem, path, 50);
         }
         //remove all tags
         Elements sup = document.select("sup");
@@ -306,6 +306,11 @@ public class Searcher {
 
         //get 5 best sentences using our algorithm
         List<Pair<String, Pair<Integer, Double>>> sumTfPerSent = findSentencesImportance(paragraphs.text());
+
+        //check if nothing returned
+        if (sumTfPerSent.size() == 0)
+            return search(term, isStem, path, 50);
+
         //sort list according to sumTf
         sumTfPerSent.sort((o1, o2) -> {
             if (o1.getValue().getValue() > o2.getValue().getValue())
@@ -317,7 +322,7 @@ public class Searcher {
         StringBuilder newQuery = new StringBuilder();
         newQuery.append(term);
         newQuery.append(' ');
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < sumTfPerSent.size() && i < 5; i++)
             newQuery.append(sumTfPerSent.get(i).getKey());
 
         //search using the new query, return 70 results

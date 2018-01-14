@@ -23,6 +23,8 @@ public class MainWindow {
     @FXML
     public CheckBox expandQueryCheckbox;
     @FXML
+    public Button resetQueriesDataButton;
+    @FXML
     private Button playButton;
     @FXML
     private Button resetButton;
@@ -640,7 +642,7 @@ public class MainWindow {
         pane.getChildren().addAll(listView);
 
         //if query
-        if (type.compareTo("Queries File") == 0) {
+        if (type.compareTo("Queries File") == 0 || type.compareTo("Query") == 0) {
             //add button to save
             Button button = new Button();
             button.setDefaultButton(true);
@@ -711,6 +713,8 @@ public class MainWindow {
             else
                 showAlert("No such document!");
         }
+
+        resetQueriesDataButton.setDisable(false);
     }
 
     /**
@@ -742,6 +746,7 @@ public class MainWindow {
             e.printStackTrace();
         }
 
+        resetQueriesDataButton.setDisable(true);
         showAlert("Program Restarted Successfully");
     }
 
@@ -821,6 +826,8 @@ public class MainWindow {
             }
 
         }
+
+        resetQueriesDataButton.setDisable(false);
 
     }
 

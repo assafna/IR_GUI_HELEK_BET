@@ -181,9 +181,10 @@
                         </CheckBox>
                     </children>
                 </HBox>
-                <Button fx:id="resetQueriesDataButton" mnemonicParsing="false" onAction="#resetQueriesDataButtonClick"
-                        prefHeight="39.0" prefWidth="760.0" text="Reset Queries Data" GridPane.columnIndex="1"
-                        GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                <Button fx:id="resetQueriesDataButton" disable="true" mnemonicParsing="false"
+                        onAction="#resetQueriesDataButtonClick" prefHeight="39.0" prefWidth="760.0"
+                        text="Reset Queries Data" GridPane.columnIndex="1" GridPane.halignment="CENTER"
+                        GridPane.rowIndex="7">
                     <GridPane.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
                     </GridPane.margin>
