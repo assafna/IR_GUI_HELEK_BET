@@ -15,7 +15,6 @@ import java.util.*;
  */
 public class Ranker {
     final long MAX_DAYS_BETWEEN_DAYS = 373928;
-    static long startTime;
 
     /**
      * get list of ranked list according to query
@@ -31,7 +30,6 @@ public class Ranker {
         HashMap<String, Pair<Double, String>> docsWeightAndDate; //weight and date of each doc
         HashMap<String, Pair<Term, Double>> termsObjects = new HashMap<>(); //object and bm of each term
         ArrayList<String> docs = new ArrayList<>(); //list of docs names
-        startTime = System.currentTimeMillis();
         //for each term in query, get all docs
         int queryTermsSize = queryTerms.size();
         for (int i = 0; i < queryTermsSize; i++) {
@@ -42,7 +40,6 @@ public class Ranker {
 
             //get all docs for term
             ArrayList<String> docsForTerm = getDocsForTerm(queryTerm, term, indexer, path);
-            startTime = System.currentTimeMillis();
 
             //calculate idf for term
             double idf = getIdfForBM(docsForTerm.size(), indexer.getDocsCounter());
@@ -266,7 +263,7 @@ public class Ranker {
      * @param date original date
      * @return normalize date
      */
-    public double getNormalizedDate(String date) {
+    private double getNormalizedDate(String date) {
         try {
             DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
             Date today = new Date();

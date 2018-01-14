@@ -68,7 +68,6 @@ public class Searcher {
         }
 
         queryTerms.addAll(queryTermsPairs);
-
         ArrayList<Pair<String, Double>> rankedDocs = ranker.getRankedDocs(queryTerms, path);
 
         //get 50 first docs
@@ -117,6 +116,8 @@ public class Searcher {
         DocNameHash docNameHash = new DocNameHash();
         HashMap<String, String> docsDictionary = indexer.getDocsDictionary();
         String docHash = docNameHash.getHashFromDocNo(docNo);
+        if(docHash == null)
+            return null;
         String fileName = new Doc(docHash, docsDictionary.get(docHash)).getFile();
 
         //get text from doc
@@ -164,7 +165,7 @@ public class Searcher {
                         !(i > 1 && textArray[i - 2] == 'M' && (textArray[i - 1] == 'R' || textArray[i - 1] == 'S')) &&  //case of MR. of MS.
                         !(i > 1 && textArray[i - 2] == 'L' && textArray[i - 1] == 't') && //case of Lt.
                         !(i > 2 && textArray[i - 3] == 'C' && textArray[i - 2] == 'o' && textArray[i - 1] == 'l') && //case of Col.
-                        !(i > 0 && textArray[i - 1] == 'U' && i < textArray.length - 2 && textArray[i + 1] == 'S' && textArray[i + 2] == '.')) {                //case of U.S.
+                        !(i > 0 && textArray[i - 1] == 'U' && i < textArray.length - 2 && textArray[i + 1] == 'S' && textArray[i + 2] == '.')) { //case of U.S.
 
 
                     sentences.add(sentence.toString());
@@ -288,32 +289,6 @@ public class Searcher {
         return sentences;
     }
 
-    public static void ExpendQueryUsingWikipedia(String term) {
-        String subject = term;
-        try {
-            URL url = new URL("https://en.wikipedia.org/w/index.php?action=raw&title=" + subject.replace(" ", "_"));
-            String text = "";
-            try (BufferedReader br = new BufferedReader(new InputStreamReader(url.openConnection().getInputStream()))) {
-                String line = null;
-                while (null != (line = br.readLine())) {
-                    line = line.trim();
-                    if (!line.startsWith("|")
-                            && !line.startsWith("{")
-                            && !line.startsWith("}")
-                            && !line.startsWith("<center>")
-                            && !line.startsWith("---")) {
-                        text += line;
-                    }
-                    if (text.length() > 200) {
-                        break;
-                    }
-                }
-            }
-            System.out.println("text = " + text);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     public ArrayList<String> expandQueryFromWikipedia(String term, boolean isStem, String path) throws IOException {
         //get url as printable format

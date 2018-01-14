@@ -81,6 +81,8 @@ public class DocNameHash {
                     b = startAsciiCode; //(X + 1, startAsciiCode, startAsciiCode)
                 }
             }
+            if(docNoHashArray[i] == null)
+                return null;
             if (docNoHashArray[i].compareTo(docNo) == 0)
                 return "" + a + b + c;
             c++;

@@ -706,10 +706,14 @@ public class MainWindow {
 
         } else {
             ArrayList<Pair<String, Integer>> rankedSentences = searcher.find5MostImportantSentences(queryStringText.getText(), pathToLoadDictionaryAndCache + "\\corpus");
-            ArrayList<String> sentencesToPrint = new ArrayList<>();
-            for(int i = 0; i < rankedSentences.size(); i++)
-                sentencesToPrint.add(rankedSentences.get(i).getKey());
-            showData("5 Most Important Sentences", sentencesToPrint);
+            if(rankedSentences != null) {
+                ArrayList<String> sentencesToPrint = new ArrayList<>();
+                for (int i = 0; i < rankedSentences.size(); i++)
+                    sentencesToPrint.add(rankedSentences.get(i).getKey());
+                showData("5 Most Important Sentences", sentencesToPrint);
+            }
+            else
+                showAlert("No such document");
         }
     }
 
