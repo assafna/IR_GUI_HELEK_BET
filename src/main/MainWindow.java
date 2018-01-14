@@ -618,22 +618,22 @@ public class MainWindow {
         //run through the list
         int stringsSize = strings.size();
         for (int i = 0; i < stringsSize; i++) {
-            char[] stringArray = strings.get(i).toCharArray();
-            if(stringArray.length > 180){
-                StringBuilder sb1 = new StringBuilder();
-                StringBuilder sb2 = new StringBuilder();
-                int index = 0;
-                while (index <= 170 || (index > 170 && stringArray[index] != ' '))
-                    sb1.append(stringArray[index++]);
-                sb2.append("                ");
-                while (index < stringArray.length)
-                    sb2.append(stringArray[index++]);
-                listView.getItems().add(sb1.toString());
-                listView.getItems().add(sb2.toString());
-
+            String[] lineSpaces = strings.get(i).split(" ");
+            boolean firstSentence = true;
+            for (int j = 0; j < lineSpaces.length; j = j + 20){ //maximum 20 words per sentence
+                StringBuilder stringBuilder = new StringBuilder();
+                for (int k = j; k < lineSpaces.length && k < j + 20; k++){
+                    stringBuilder.append(lineSpaces[k]);
+                    stringBuilder.append(" ");
+                }
+                if (firstSentence) {
+                    firstSentence = false;
+                    listView.getItems().add(stringBuilder.toString());
+                }
+                else {
+                    listView.getItems().add("\t\t" + stringBuilder.toString());
+                }
             }
-            else
-                listView.getItems().add(strings.get(i));
         }
 
         VBox pane = new VBox();
