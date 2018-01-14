@@ -7,11 +7,12 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.temporal.ChronoUnit;
-import java.util.*;
-
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 
 /**
- * Created by USER on 12/30/2017.
+ * ranks docs for queries
  */
 public class Ranker {
     final long MAX_DAYS_BETWEEN_DAYS = 373928;
@@ -19,8 +20,8 @@ public class Ranker {
     /**
      * get list of ranked list according to query
      *
-     * @param queryTerms
-     * @return
+     * @param queryTerms query terms to get docs for
+     * @return list of docs with ranking
      */
     public ArrayList<Pair<String, Double>> getRankedDocs(ArrayList<String> queryTerms, String path) {
         Indexer indexer = new Indexer();
@@ -34,7 +35,7 @@ public class Ranker {
         int queryTermsSize = queryTerms.size();
         for (int i = 0; i < queryTermsSize; i++) {
             String queryTerm = queryTerms.get(i);
-            if(!indexer.getFinalTermsDictionary().containsKey(queryTerm))
+            if (!indexer.getFinalTermsDictionary().containsKey(queryTerm))
                 continue;
             Term term = new Term(indexer.getFinalTermsDictionary().get(queryTerm));
 
@@ -57,10 +58,10 @@ public class Ranker {
                 int numOfOccurrencesInDoc = Integer.parseInt(splitString[1]);
                 int indexOfFirstOccurrence = Integer.parseInt(splitString[2]);
                 Doc doc = new Doc(docName, indexer.getDocsDictionary().get(docName));
-                double tf = (double)numOfOccurrencesInDoc/doc.getLength();
+                double tf = (double) numOfOccurrencesInDoc / doc.getLength();
 
                 //check if hash already exists in hash map
-               // TermInDocCache termInDocCache = new TermInDocCache(docsForTerm.get(j));
+                // TermInDocCache termInDocCache = new TermInDocCache(docsForTerm.get(j));
                 if (termsDetailsPerDoc.containsKey(docName))
                     terms = termsDetailsPerDoc.get(docName);
                     //first time this doc is present
@@ -69,10 +70,9 @@ public class Ranker {
                     docs.add(docName);
                 }
                 //add term
-                double bm = calculateBM25PerTerm(docName, numOfOccurrencesInDoc,doc.getLength(), termsObjects.get(queryTerm).getKey().getIdf(), indexer);
+                double bm = calculateBM25PerTerm(docName, numOfOccurrencesInDoc, doc.getLength(), termsObjects.get(queryTerm).getKey().getIdf(), indexer);
                 terms.put(queryTerm, new Pair(indexOfFirstOccurrence, new Pair(tf, bm)));
                 termsDetailsPerDoc.put(docName, terms);
-
 
             }
 
@@ -88,11 +88,12 @@ public class Ranker {
 
     /**
      * calculate idf according to BM25
-     * @param numOfDocsForTerm number of docs for term
+     *
+     * @param numOfDocsForTerm  number of docs for term
      * @param numOfDocsInCorpus total number of docs in corpus
      * @return idf for term
      */
-    private double getIdfForBM(int numOfDocsForTerm, int numOfDocsInCorpus){
+    private double getIdfForBM(int numOfDocsForTerm, int numOfDocsInCorpus) {
         double mone = numOfDocsInCorpus - numOfDocsForTerm + 0.5;
         double mechane = numOfDocsForTerm + 0.5;
         return Math.log(mone / mechane) / Math.log(2);
@@ -101,15 +102,16 @@ public class Ranker {
 
     /**
      * calculate BM25 for one term in doc
-     * @param idf idf of the term
+     *
+     * @param idf     idf of the term
      * @param indexer indexer
      * @return BM25 of term
      */
-    private double calculateBM25PerTerm(String docName, int numOfOccurrecnes, int docLength, double idf, Indexer indexer){
+    private double calculateBM25PerTerm(String docName, int numOfOccurrecnes, int docLength, double idf, Indexer indexer) {
         double k = 1.6, b = 0.6;
         double mone = numOfOccurrecnes * (k + 1);
-        double mechane = numOfOccurrecnes + (k *(1 - b + (b * docLength / indexer.getAvgLengthOfDocs())));
-        return  idf * mone / mechane;
+        double mechane = numOfOccurrecnes + (k * (1 - b + (b * docLength / indexer.getAvgLengthOfDocs())));
+        return idf * mone / mechane;
     }
 
     /**
@@ -135,7 +137,7 @@ public class Ranker {
                 //get all docs relevant for this term from posting
                 ReadFile readFile = new ReadFile();
                 try {
-                    docsForTerm.addAll(readFile.getTermDocsFromPosting1(indexer, queryTerm, path, 0));
+                    docsForTerm.addAll(readFile.getTermDocsFromPosting(indexer, queryTerm, path));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -147,7 +149,7 @@ public class Ranker {
             //get all docs relevant for this term from posting
             ReadFile readFile = new ReadFile();
             try {
-                docsForTerm.addAll(readFile.getTermDocsFromPosting1(indexer, queryTerm, path, indexer.getCacheDocsPerTerm()));
+                docsForTerm.addAll(readFile.getTermDocsFromPosting(indexer, queryTerm, path));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -199,20 +201,22 @@ public class Ranker {
 
             //for each term in doc
             for (String term : terms.keySet()) {
-                Pair<Integer, Pair<Double,Double>> termPair = terms.get(term);// normalized index, tf
+                Pair<Integer, Pair<Double, Double>> termPair = terms.get(term);// normalized index, tf
                 //calculate sum wight of query terms
                 double idf = termsObject.get(term).getKey().getIdf();
                 double tf = termPair.getValue().getKey();
                 sumBm += termPair.getValue().getValue();
-                double normalizedIndex = (double) termPair.getKey()/docObj.getLength();
+                double normalizedIndex = (double) termPair.getKey() / docObj.getLength();
 
-                sumWeightForDoc += (tf * idf)*(1 - normalizedIndex) /*/ termPair.getKey()*/;
+                sumWeightForDoc += (tf * idf) * (1 - normalizedIndex) /*/ termPair.getKey()*/;
             }
             double denominator = Math.sqrt(docsDetails.get(doc).getKey())/* * getNormalizedDate(docsDetails.get(doc).getValue())*/;
             //double rank = (sumWeightForDoc / denominator) /*+ sumBm*/;
             double cosSin = sumWeightForDoc / denominator;
-            double rank =  Math.sqrt(sumBm) + cosSin;
-/*
+            double rank = Math.sqrt(sumBm) + cosSin;
+
+            /*
+            // vector distances
             //find distance between query terms
             double sumDistanceBetweenTerms = 0;
             if(terms.size() > 1) {
@@ -226,10 +230,10 @@ public class Ranker {
                 rank += (sumDistanceBetweenTerms/choose(queryTerms.size(), 2));
             }
             //double rank = sumBm;
-*/
+            */
+
             rankedDocs.add(new Pair(doc, rank));
         }
-
 
 
         //sort docs according to weight
@@ -243,20 +247,22 @@ public class Ranker {
 
     /**
      * implement n choose k
-     * @param total total size of group
+     *
+     * @param total  total size of group
      * @param choose number to choose
      * @return n choose k
      */
-    public static long choose(long total, long choose){
-        if(total < choose)
+    public static long choose(long total, long choose) {
+        if (total < choose)
             return 0;
-        if(choose == 0 || choose == total)
+        if (choose == 0 || choose == total)
             return 1;
-        return choose(total-1,choose-1)+choose(total-1,choose);
+        return choose(total - 1, choose - 1) + choose(total - 1, choose);
     }
 
     /**
      * get normalize date
+     *
      * @param date original date
      * @return normalize date
      */
@@ -264,11 +270,11 @@ public class Ranker {
         try {
             DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
             Date today = new Date();
-            if(date.equals("-"))
+            if (date.equals("-"))
                 return 0.5;
             Date docDate = dateFormat.parse(date);
             long days = ChronoUnit.DAYS.between(docDate.toInstant(), today.toInstant());
-            return (double) days/MAX_DAYS_BETWEEN_DAYS;
+            return (double) days / MAX_DAYS_BETWEEN_DAYS;
         } catch (ParseException e) {
             return 0.5;
         }

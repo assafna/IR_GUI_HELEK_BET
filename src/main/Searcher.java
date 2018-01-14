@@ -1,16 +1,10 @@
 package main;
 
 import javafx.util.Pair;
-import jdk.nashorn.internal.codegen.DumpBytecode;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.text.BreakIterator;
 import java.util.*;
 
@@ -28,9 +22,9 @@ public class Searcher {
     /**
      * searches for a query given as a string, and returns relevant docs
      *
-     * @param query  query as a string
-     * @param isStem if to use stemming or not
-     * @param path   of working directory
+     * @param query          query as a string
+     * @param isStem         if to use stemming or not
+     * @param path           of working directory
      * @param amountToReturn maximum amount of docs to return
      * @return list of docs num (maximum amountToReturn)
      */
@@ -61,10 +55,10 @@ public class Searcher {
         ArrayList<String> queryTermsPairs = new ArrayList<>();
         Ranker ranker = new Ranker();
         Indexer indexer = new Indexer();
-        for(int i = 0; i < queryTerms.size() - 1; i++){
+        for (int i = 0; i < queryTerms.size() - 1; i++) {
             String pair = queryTerms.get(i).toLowerCase() + " " + queryTerms.get(i + 1).toLowerCase();
-            if(indexer.getFinalTermsDictionary().containsKey(pair))
-              queryTermsPairs.add(pair);
+            if (indexer.getFinalTermsDictionary().containsKey(pair))
+                queryTermsPairs.add(pair);
         }
 
         queryTerms.addAll(queryTermsPairs);
@@ -87,22 +81,21 @@ public class Searcher {
      * @param isStem  if to use stem or not
      * @return hash map of query and his relevant docs
      */
-    public List<Pair<String, List<String>>> searchFile(List<Pair<String,Pair<String, String>>> queries, boolean isStem, String path) {
+    public List<Pair<String, List<String>>> searchFile(List<Pair<String, Pair<String, String>>> queries, boolean isStem, String path) {
         List<Pair<String, List<String>>> queriesResults = new ArrayList<>();
         Time time = new Time();
 
         //send each query to search function
         int queriesSize = queries.size();
         for (int i = 0; i < queriesSize; i++) {
-            Pair<String, Pair<String,String>> query = queries.get(i);
+            Pair<String, Pair<String, String>> query = queries.get(i);
             time.addQueryStartTime(query.getKey());
-            queriesResults.add(new Pair(query.getKey(), search(query.getValue().getKey()  + " " + query.getValue().getValue(), isStem, path, 50)));
+            queriesResults.add(new Pair(query.getKey(), search(query.getValue().getKey() + " " + query.getValue().getValue(), isStem, path, 50)));
             time.addQueryEndtime(query.getKey());
         }
 
         return queriesResults;
     }
-
 
     /**
      * find 5 most important sentences in doc
@@ -112,7 +105,7 @@ public class Searcher {
      * @return list of 5 most important sentences in doc
      */
     public ArrayList<Pair<String, Integer>> find5MostImportantSentences(String docNo, String path) {
-        
+
         Indexer indexer = new Indexer();
         DocNameHash docNameHash = new DocNameHash();
         HashMap<String, String> docsDictionary = indexer.getDocsDictionary();
@@ -124,7 +117,7 @@ public class Searcher {
         //get text from doc
         String docText = new ReadFile().getTextFromFile(fileName, docNo, path + "\\");
 
-        List<Pair<String,Pair<Integer, Double>>> sumTfPerSent = findSentencesImportance(docText);
+        List<Pair<String, Pair<Integer, Double>>> sumTfPerSent = findSentencesImportance(docText);
         //sort list according to sumTf
         sumTfPerSent.sort((o1, o2) -> {
             if (o1.getValue().getValue() > o2.getValue().getValue())
@@ -150,13 +143,14 @@ public class Searcher {
 
     /**
      * split text into sentences
+     *
      * @param text text to split
      * @return list of text sentences
      */
-    private List<String> splitTextToSentences(String text){
+    private List<String> splitTextToSentences(String text) {
         List<String> sentences = new ArrayList<>();
         //split text into sentences
-        char[] textArray = text.toString().toCharArray();
+        char[] textArray = text.toCharArray();
         StringBuilder sentence = new StringBuilder();
         int i = 0;
         while (i < textArray.length) {
@@ -177,15 +171,14 @@ public class Searcher {
                     sentence.append(textArray[i++]);
                     sentence.append(textArray[i++]);
                     sentence.append(textArray[i++]);
-                }
-                else
+                } else
                     i++;
 
 
             }
             //case of 3 spaces or tab or '\n'
-            else if((textArray[i] == ' ' && textArray.length - 2 > i && textArray[i + 1] == ' ' && textArray[i + 2] == ' ') || textArray[i] == '\t'||
-                        textArray[i] == '\n' && textArray.length - 1 > i && textArray[i + 1] == '\n') {
+            else if ((textArray[i] == ' ' && textArray.length - 2 > i && textArray[i + 1] == ' ' && textArray[i + 2] == ' ') || textArray[i] == '\t' ||
+                    textArray[i] == '\n' && textArray.length - 1 > i && textArray[i + 1] == '\n') {
                 if (sentence.toString().length() > 0) {
                     sentences.add(sentence.toString());
                     sentence = new StringBuilder();
@@ -194,16 +187,14 @@ public class Searcher {
                 //skip all spaces and tabs
                 while (i < textArray.length && (textArray[i] == ' ' || textArray[i] == '\t'))
                     i++;
-            }
-            else if(textArray[i] == ';'){
+            } else if (textArray[i] == ';') {
                 if (sentence.toString().length() > 0) {
                     sentences.add(sentence.toString());
                     sentence = new StringBuilder();
                     i++;
 
                 }
-            }
-            else
+            } else
                 sentence.append(textArray[i++]);
 
         }
@@ -223,10 +214,11 @@ public class Searcher {
 
     /**
      * find sentences index in text and importance
+     *
      * @param docText text to split
      * @return List of index and rank for each sentences
      */
-    private List<Pair<String,Pair<Integer, Double>>> findSentencesImportance(String docText){
+    private List<Pair<String, Pair<Integer, Double>>> findSentencesImportance(String docText) {
         HashMap<String, Integer> termFrequency = new HashMap<>();
         List<Pair<String, Pair<Integer, Double>>> sumTfPerSent = new ArrayList<>(); //for each term save the sentence index and sumTf
 
@@ -236,7 +228,7 @@ public class Searcher {
 
         //update term frequency
         int termsListSize = terms.size();
-        for(int i = 0; i < termsListSize; i++) {
+        for (int i = 0; i < termsListSize; i++) {
             String term = terms.get(i);
             int freq;
             if (!termFrequency.containsKey(term))
@@ -250,11 +242,9 @@ public class Searcher {
         //List<String> sentences = splitTextToSentences(docText);
         List<String> sentences = breakIteratorBreakToSentences(docText);
 
-
-
         //parse each sentence
         int sentencesListSize = sentences.size();
-        for(int i = 0; i < sentencesListSize; i++) {
+        for (int i = 0; i < sentencesListSize; i++) {
             List<String> termsInSentence = parser.parse(sentences.get(i).toCharArray());
             double sumTf = 0;
             if (termsInSentence.size() > 7) { //only if sentence has more than 7 terms
@@ -267,16 +257,17 @@ public class Searcher {
             }
         }
 
-        return  sumTfPerSent;
+        return sumTfPerSent;
 
     }
 
     /**
      * use break iterator to split text to sentences
+     *
      * @param text text to split
      * @return list of sentences
      */
-    private List<String> breakIteratorBreakToSentences(String text){
+    private List<String> breakIteratorBreakToSentences(String text) {
         List<String> sentences = new ArrayList<>();
         BreakIterator breakIterator = BreakIterator.getSentenceInstance(Locale.US);
         breakIterator.setText(text);
@@ -284,41 +275,22 @@ public class Searcher {
         for (int end = breakIterator.next();
              end != BreakIterator.DONE;
              start = end, end = breakIterator.next()) {
-            String sentence = text.substring(start,end);
+            String sentence = text.substring(start, end);
             sentences.addAll(splitTextToSentences(sentence));
         }
 
         return sentences;
     }
 
-    public static void ExpendQueryUsingWikipedia(String term) {
-        String subject = term;
-        try {
-            URL url = new URL("https://en.wikipedia.org/w/index.php?action=raw&title=" + subject.replace(" ", "_"));
-            String text = "";
-            try (BufferedReader br = new BufferedReader(new InputStreamReader(url.openConnection().getInputStream()))) {
-                String line = null;
-                while (null != (line = br.readLine())) {
-                    line = line.trim();
-                    if (!line.startsWith("|")
-                            && !line.startsWith("{")
-                            && !line.startsWith("}")
-                            && !line.startsWith("<center>")
-                            && !line.startsWith("---")) {
-                        text += line;
-                    }
-                    if (text.length() > 200) {
-                        break;
-                    }
-                }
-            }
-            System.out.println("text = " + text);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public ArrayList<String> expandQueryFromWikipedia(String term, boolean isStem, String path) throws IOException {
+    /**
+     * expands query by searching in wikipedia.org and collecting the most important sentences
+     *
+     * @param term   term to search for (query)
+     * @param isStem depends on stemming yes or no
+     * @param path   path to file
+     * @return list of relevant docs
+     */
+    public ArrayList<String> expandQueryFromWikipedia(String term, boolean isStem, String path) {
         //get url as printable format
         Document document;
         try {
@@ -333,7 +305,7 @@ public class Searcher {
         Elements paragraphs = document.select("#mw-content-text p");
 
         //get 5 best sentences using our algorithm
-        List<Pair<String,Pair<Integer, Double>>> sumTfPerSent = findSentencesImportance(paragraphs.text());
+        List<Pair<String, Pair<Integer, Double>>> sumTfPerSent = findSentencesImportance(paragraphs.text());
         //sort list according to sumTf
         sumTfPerSent.sort((o1, o2) -> {
             if (o1.getValue().getValue() > o2.getValue().getValue())

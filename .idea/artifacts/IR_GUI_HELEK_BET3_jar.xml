@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="IR_GUI_HELEK_BET3:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/IR_GUI_HELEK_BET3_jar</output-path>
+    <root id="archive" name="IR_GUI_HELEK_BET3.jar">
+      <element id="module-output" name="IR_GUI_HELEK_BET3" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jsoup/jsoup/1.11.2/jsoup-1.11.2.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

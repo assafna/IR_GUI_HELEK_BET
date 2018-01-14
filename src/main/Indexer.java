@@ -185,9 +185,9 @@ public class Indexer {
             //update term in dictionaries
             if (tempTermsDictionary.containsKey(term)) {
                 int index = tempTermsDictionary.get(term);
-                updateTermInDictionary(term, docName, index,  (i+1));
+                updateTermInDictionary(term, docName, index, (i + 1));
             } else
-                updateTermInDictionary(term, docName, termIndex++, (i+1) );
+                updateTermInDictionary(term, docName, termIndex++, (i + 1));
 
             //update term frequency
             updateTermFrequency(term, docName);
@@ -348,7 +348,7 @@ public class Indexer {
             filesLength--;
 
         //threads
-        if (useThreads){
+        if (useThreads) {
             ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
             //ExecutorService executorService = Executors.newFixedThreadPool(1);
             Runnable[] runnables = new Runnable[filesLength];
@@ -359,11 +359,11 @@ public class Indexer {
                 final int finalI = i;
                 final int finalPostingFileIndex = postingFileIndex++;
                 runnables[j++] = () -> {
-                try {
-                    mergeTwoFiles(files[finalI], files[finalI + 1], finalPostingFileIndex);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                    try {
+                        mergeTwoFiles(files[finalI], files[finalI + 1], finalPostingFileIndex);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 };
             }
 
@@ -681,7 +681,7 @@ public class Indexer {
     private ArrayList<String> getSortedListOfDocsPerTerm(String[] docs, int length, int howMany) {
         ArrayList<Pair<String, Integer>> termInDocCaches = new ArrayList<>();
         double idf = log2((double) docsCounter / length);
-        String docName = "";
+        String docName;
         for (int i = 0; i < length && i < howMany; i++) {
             char[] docCharsArray = docs[i].toCharArray();
 
@@ -708,7 +708,7 @@ public class Indexer {
                     index.append(docCharsArray[j]);
                 else
                     break;
-/*
+            /*
             //find tf
             for (j = j + 1; j < docCharsArray.length; j++)
                 if (docCharsArray[j] != '*')
@@ -718,8 +718,9 @@ public class Indexer {
 
             //write term
             Double Tf = Double.parseDouble(tf.toString());*/
+
             int occurrencesInteger = Integer.parseInt(occurrences.toString());
-            double tf = (double) occurrencesInteger/new Doc("XXX", docsDictionary.get(docName)).getLength();
+            double tf = (double) occurrencesInteger / new Doc("XXX", docsDictionary.get(docName)).getLength();
             termInDocCaches.add(new Pair<>(new TermInDocCache(docName, occurrencesInteger, Integer.parseInt(index.toString())).toString(), occurrencesInteger));
 
             //update term wight in doc in doc sum squared wight
@@ -799,7 +800,7 @@ public class Indexer {
         int numOfDocs = 0;
         try {
             docWriter = new BufferedWriter(new FileWriter(path));
-            docWriter.write(docsCounter + "\t" + (double)avgLengthOfDocs/docsCounter + "\n");
+            docWriter.write(docsCounter + "\t" + (double) avgLengthOfDocs / docsCounter + "\n");
             for (String doc : docsDictionary.keySet()) {
                 numOfDocs++;
                 docWriter.write(doc + '\t');

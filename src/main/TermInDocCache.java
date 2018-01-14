@@ -1,5 +1,8 @@
 package main;
 
+/**
+ * represents a term in doc for the cache
+ */
 public class TermInDocCache implements Comparable<TermInDocCache> {
 
     private String docName;

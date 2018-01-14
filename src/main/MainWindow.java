@@ -96,7 +96,7 @@ public class MainWindow {
     /**
      * choose the working directory
      *
-     * @throws IOException
+     * @throws IOException exception
      */
     public void browseWorkingDirectory() throws IOException {
         DirectoryChooser directoryChooser = new DirectoryChooser();
@@ -667,15 +667,11 @@ public class MainWindow {
             Time time = new Time();
             time.addQueryStartTime();
 
-            try {
-                String query = queryStringText.getText();
-                if(workingDirectoryPath == null)
-                    rankedDocsForQuery = searcher.expandQueryFromWikipedia(query, stemmingCheckBox.isSelected(), pathToLoadDictionaryAndCache);
-                else
-                    rankedDocsForQuery = searcher.expandQueryFromWikipedia(query, stemmingCheckBox.isSelected(), corpusPath);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            String query = queryStringText.getText();
+            if(workingDirectoryPath == null)
+                rankedDocsForQuery = searcher.expandQueryFromWikipedia(query, stemmingCheckBox.isSelected(), pathToLoadDictionaryAndCache);
+            else
+                rankedDocsForQuery = searcher.expandQueryFromWikipedia(query, stemmingCheckBox.isSelected(), corpusPath);
 
             time.addQueryEndTime();
 
@@ -831,7 +827,7 @@ public class MainWindow {
     /**
      * save query results
      */
-    public void saveQueryResultButtonPressed(){
+    private void saveQueryResultButtonPressed(){
         if(rankedDocsForQueriesFile == null && rankedDocsForQuery == null)
             showAlert("No query results to save");
         System.out.println("User pressed save results button");
