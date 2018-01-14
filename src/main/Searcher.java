@@ -134,7 +134,7 @@ public class Searcher {
         //add 5 sentences with biggest sumTf to list
         ArrayList<Pair<String, Integer>> mostImportantSentences = new ArrayList<>();
         for (int i = 0; i < 5; i++)
-            mostImportantSentences.add(new Pair<>("RANK: " + (i + 1) + "    " + sumTfPerSent.get(i).getKey(), sumTfPerSent.get(i).getValue().getKey()));
+            mostImportantSentences.add(new Pair<>("(Rank: " + (i + 1) + ")\t" + sumTfPerSent.get(i).getKey(), sumTfPerSent.get(i).getValue().getKey()));
 
         //sort sentences according to line number
         mostImportantSentences.sort((o1, o2) -> {
@@ -177,6 +177,8 @@ public class Searcher {
                     sentence.append(textArray[i++]);
                     sentence.append(textArray[i++]);
                 }
+                else
+                    i++;
 
 
             }
@@ -204,7 +206,6 @@ public class Searcher {
                 sentence.append(textArray[i++]);
 
         }
-
 
         return sentences;
     }
